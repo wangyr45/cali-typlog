@@ -1,0 +1,1831 @@
+{% from "macros.j2" import render_social_icons %}
+{% set zh = (site.primary_lang|default('en')).startswith('zh') %}
+{% set defaults = {"intro": ["我与我周旋久，宁做我。", "喜欢阅读，保持好奇。在这里记录读书、历史与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "", "records": [], "books": [], "recent_count": 10, "recent_title": "", "nav_cards": none, "records_title": "", "books_title": "", "show_toc": true, "show_cover": true} %}
+{% set supplied = query.config('cali-typlog') %}
+{% set supplied = supplied if supplied is mapping else {} %}
+{% set config = namespace(intro=defaults.intro, portrait=defaults.portrait,
+  recent_count=defaults.recent_count, recent_title=defaults.recent_title,
+  nav_cards=defaults.nav_cards, records=defaults.records, books=defaults.books,
+  records_title=defaults.records_title, books_title=defaults.books_title,
+  show_toc=defaults.show_toc, show_cover=defaults.show_cover) %}
+{% if supplied.intro is string %}
+  {% set config.intro = supplied.intro.splitlines() %}
+{% elif supplied.intro is defined and supplied.intro is sequence and supplied.intro is not mapping %}
+  {% set config.intro = supplied.intro|select('string')|list %}
+{% endif %}
+{% if supplied.portrait is string %}{% set config.portrait = supplied.portrait %}{% endif %}
+{% if supplied.recent_count is number and supplied.recent_count == supplied.recent_count and supplied.recent_count is not sameas true and supplied.recent_count is not sameas false %}
+  {% set config.recent_count = ([30, [1, supplied.recent_count]|max]|min)|int %}
+{% endif %}
+{% if supplied.recent_title is string %}{% set config.recent_title = supplied.recent_title %}{% endif %}
+{% if supplied.records_title is string %}{% set config.records_title = supplied.records_title %}{% endif %}
+{% if supplied.books_title is string %}{% set config.books_title = supplied.books_title %}{% endif %}
+{% if supplied.nav_cards is none %}{% set config.nav_cards = none %}{% endif %}
+{% if supplied.nav_cards is defined and supplied.nav_cards is sequence and supplied.nav_cards is not string and supplied.nav_cards is not mapping %}
+  {% set config.nav_cards = supplied.nav_cards|select('mapping')|list %}
+{% endif %}
+{% if supplied.records is defined and supplied.records is sequence and supplied.records is not string and supplied.records is not mapping %}
+  {% set config.records = supplied.records|select('mapping')|list %}
+{% endif %}
+{% if supplied.books is defined and supplied.books is sequence and supplied.books is not string and supplied.books is not mapping %}
+  {% set config.books = supplied.books|select('mapping')|list %}
+{% endif %}
+{% if supplied.show_toc is sameas true or supplied.show_toc is sameas false %}
+  {% set config.show_toc = supplied.show_toc %}
+{% endif %}
+{% if supplied.show_cover is sameas true or supplied.show_cover is sameas false %}
+  {% set config.show_cover = supplied.show_cover %}
+{% endif %}
+
+{% set valid = namespace(records=[], books=[]) %}
+{% for item in config.records %}
+  {% if item is mapping and item.title is string and item.title|trim %}{% set valid.records = valid.records + [item] %}{% endif %}
+{% endfor %}
+{% for item in config.books %}
+  {% if item is mapping and item.title is string and item.title|trim %}{% set valid.books = valid.books + [item] %}{% endif %}
+{% endfor %}
+{% set config.records = valid.records %}
+{% set config.books = valid.books %}
+
+{% macro public_url(value) -%}
+  {%- if value is string -%}
+    {%- set value = value|trim -%}
+    {%- set normalized = value|lower -%}
+    {%- if value.split()|join('') == value and '\\' not in value and '\x00' not in value -%}
+      {%- if normalized.startswith('https://') or normalized.startswith('http://') -%}
+        {%- set authority = value.split('://', 1)[1].split('/', 1)[0].split('?', 1)[0].split('#', 1)[0] -%}
+        {%- if authority and not authority.startswith(':') and '@' not in authority -%}{{- value -}}{%- endif -%}
+      {%- elif value.startswith('/') and not value.startswith('//') -%}
+        {{- value -}}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endmacro %}
+{% set portrait_url = public_url(config.portrait)|trim %}
+{% set portrait_url = portrait_url or (site.logo.src if site.logo else '') %}
+
+{% set labels = {'home': '首页' if zh else 'Home', 'archive': '文章归档' if zh else 'Archive', 'recent': '写作' if zh else 'Recent writing', 'subscribe': '订阅更新' if zh else 'Subscribe', 'search': '搜索文章' if zh else 'Search articles', 'topics': '阅读主题' if zh else 'Topics', 'empty': '暂时没有文章。' if zh else 'No articles yet.', 'menu': '导航与偏好' if zh else 'Navigation and preferences', 'toc': '本文目录' if zh else 'On this page', 'skip': '跳至正文' if zh else 'Skip to content', 'previous': '上一页' if zh else 'Previous', 'next': '下一页' if zh else 'Next', 'dark': '深色模式' if zh else 'Dark mode', 'protected': '受保护文章' if zh else 'Protected article'} %}
+
+{% macro icon(index) %}<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{% if index == 0 %}<rect x="5" y="3" width="14" height="18" rx="2"/>
+<path d="M8 8h8M8 12h8M8 16h5"/>{% elif index == 1 %}<rect x="3" y="5" width="18" height="14" rx="2"/>
+<path d="m3 6 9 7 9-7"/>{% elif index == 2 %}<path d="M4 5h6a3 3 0 0 1 3 3v13a4 4 0 0 0-4-3H4ZM20 5h-4a3 3 0 0 0-3 3v13a4 4 0 0 1 4-3h3Z"/>{% elif index == 3 %}<circle cx="12" cy="8" r="4"/>
+<path d="M5 21v-2a7 7 0 0 1 14 0v2"/>{% elif index == 5 %}<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>{% else %}<path d="M4 7h16M4 17h16"/>
+<circle cx="9" cy="7" r="2" fill="var(--background)"/>
+<circle cx="15" cy="17" r="2" fill="var(--background)"/>{% endif %}</svg>{% endmacro %}
+
+
+{% macro nav_link(nav, class='') %}<a class="{{ class }}" href="{{ nav.url }}"{% if nav.blank %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ nav.title }}</a>{% endmacro %}
+
+{% macro dock_link(nav, index) %}
+<a class="dock-item" href="{{ nav.url }}" aria-label="{{ nav.title }}" title="{{ nav.title }}"{% if nav.blank %} target="_blank" rel="noopener noreferrer"{% endif %}{% if page and linkify(page.url).rstrip('/') == linkify(nav.url).rstrip('/') %} aria-current="page"{% endif %}>{{ icon(index) }}<span class="dock-label">{{ nav.title }}</span></a>
+{% endmacro %}
+
+
+{% macro tag(number, text) %}<h2 class="section-tag">
+<span class="section-tag-index">{{ '%02d'|format(number) }}</span>
+<span class="section-tag-hatch" aria-hidden="true">
+</span>
+<span class="section-tag-label">{{ text }}</span>
+</h2>{% endmacro %}
+
+
+{% macro header() %}
+{% set dock = namespace(about=none) %}
+{% for nav in site.primary_links|default([], true) %}
+  {% set title = nav.title|trim|lower %}
+  {% set path = nav.url.split('?')[0].split('#')[0].rstrip('/') %}
+  {% set base_url = site.base_url|default('', true) %}
+  {% if base_url and path.startswith(base_url.rstrip('/') + '/') %}{% set path = path[base_url.rstrip('/')|length:] %}{% endif %}
+  {% if not dock.about and (title in ['关于', '关于我', '关于我们', 'about', 'about me', 'about us'] or path in ['/me', '/about']) %}{% set dock.about = nav %}{% endif %}
+{% endfor %}
+<noscript><style>.cali-theme-control,.cali-search,.cali-preferences .js-subscribe{display:none!important}</style></noscript>
+<a class="cali-skip" href="#cali-main">{{ labels.skip }}</a>
+<nav class="dock" aria-label="{{ labels.menu }}">
+<span class="dock-glass" aria-hidden="true">
+</span>
+<a class="dock-item" href="{{ linkify('/') }}" aria-label="{{ labels.home }}"{% if not page %} aria-current="page"{% endif %}>
+<span class="dock-avatar"><span aria-hidden="true">{{ site.name[:1] }}</span>{% if portrait_url %}<img data-cali-image src="{{ portrait_url|thumbnail('ss') }}" alt="">{% endif %}</span>
+<span class="dock-label">{{ labels.home }}</span>
+</a>
+<span class="dock-rule" aria-hidden="true">
+</span>
+{{ dock_link({'url': linkify(site.list_url), 'title': labels.archive, 'blank': false}, 0) }}
+{% if dock.about %}{{ dock_link(dock.about, 3) }}{% endif %}
+{% if site.secondary_links %}
+<div class="dock-secondary" role="group" aria-label="{{ '次要链接（可横向滑动）' if zh else 'Secondary links (scroll horizontally)' }}">
+{% for nav in site.secondary_links %}{{ dock_link(nav, 5) }}{% endfor %}
+</div>
+{% endif %}
+<span class="dock-rule" aria-hidden="true">
+</span>
+<details class="cali-mobile-nav cali-preferences">
+<summary class="dock-item" aria-label="{{ labels.menu }}">{{ icon(4) }}<span class="dock-label">{{ labels.menu }}</span>
+</summary>
+<div class="cali-preferences-panel">
+<p>{{ labels.menu }}</p>
+<label class="cali-theme-control" for="js-theme-toggle">{{ labels.dark }}<input type="checkbox" id="js-theme-toggle" aria-label="{{ labels.dark }}">
+</label>{% if features.algolia %}<input class="js-search cali-search" type="search" aria-label="{{ labels.search }}" placeholder="{{ labels.search }}…" autocomplete="off">{% endif %}{% if features.subscriber %}<button class="js-subscribe cali-button" type="button">{{ labels.subscribe }} ↗</button>{% endif %}{% if site.primary_links %}<nav aria-label="{{ '主要链接' if zh else 'Primary links' }}">{% for nav in site.primary_links %}{{ nav_link(nav) }}{% endfor %}</nav>{% endif %}{% if site.secondary_links %}<nav aria-label="{{ '次要链接' if zh else 'Secondary links' }}">{% for nav in site.secondary_links %}{{ nav_link(nav) }}{% endfor %}</nav>{% endif %}
+</div>
+</details>
+</nav>
+{% endmacro %}
+
+
+{% macro footer() %}
+<footer class="cali-footer">
+<div>
+<h2>{{ '关注' if zh else 'Follow' }}</h2>
+<nav class="cali-social">{{ render_social_icons(site) }}<a href="{{ linkify('/feed.xml') }}">RSS ↗</a>
+</nav>
+</div>
+<div>
+<h2>{{ '索引' if zh else 'Index' }}</h2>
+<nav>
+<a href="{{ linkify('/') }}">{{ labels.home }}</a>{% for nav in site.primary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}{% for nav in site.secondary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}</nav>
+</div>
+<p class="cali-colophon">© {{ site.name }}<span>Powered by <a href="https://typlog.com/">Typlog</a>
+</span>
+</p>
+</footer>
+{% endmacro %}
+
+
+{% macro card(subject) %}
+<article id="item-{{ subject.id }}">
+<a class="blog-row hairline-top" href="{{ linkify(subject.url) }}">
+<span class="print-pile" aria-hidden="true">
+<span class="print-pile-sheet">
+</span>
+<span class="print-pile-sheet">
+</span>
+<span class="print-thumb"><span class="print-lines"></span>{% if subject.cover and subject.cover.src and subject.visibility|default('public') == 'public' %}<img data-cali-image src="{{ subject.cover.src|thumbnail('s') }}" alt="" width="64" height="44" loading="lazy" decoding="async">{% endif %}</span>
+</span>
+<h2 class="blog-row-title">{{ subject.title }}{% if subject.visibility|default('public') != 'public' %}<span class="cali-sr-only"> · {{ labels.protected }}</span>{% endif %}</h2>
+<span class="blog-row-leader" aria-hidden="true">
+</span>{% if subject.published_at %}<time class="blog-row-date" datetime="{{ subject.published_at|xmldatetime }}">{{ subject.published_at.strftime('%y/%m/%d') }}</time>{% endif %}</a>
+</article>
+{% endmacro %}
+
+
+{% macro shelf(items, kind, number, title) %}
+{% set entries = namespace(items=[]) %}
+{% for item in items %}
+  {% if item is mapping and item.title is string and item.title|trim %}
+    {% set entries.items = entries.items + [item] %}
+  {% endif %}
+{% endfor %}
+{% if entries.items %}
+<section class="cali-section">
+  {{ tag(number, title) }}
+  <div class="cali-collection" data-collection="{{ kind }}">
+    <div class="cali-shelf cali-{{ kind }}" hidden role="group" aria-label="{{ title }}">
+      {% for item in entries.items %}
+      <button type="button" class="cali-sleeve" disabled aria-pressed="{{ 'true' if loop.first else 'false' }}" aria-label="{{ item.title }}">
+        <span class="cali-spine">{{ item.title }}</span>
+        <span class="cali-front">
+          {% set cover = public_url(item.cover)|trim %}
+          <span>{{ item.title }}</span>
+          {% if cover %}<img data-cali-image src="{{ cover }}" alt="" loading="lazy">{% endif %}
+        </span>
+      </button>
+      {% endfor %}
+    </div>
+    <div class="cali-shelf-captions" hidden aria-live="polite" aria-atomic="true">
+      {% for item in entries.items %}
+      <p{% if not loop.first %} hidden{% endif %}>
+        {% set url = public_url(item.url)|trim %}
+        {% if url %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} ↗</a>
+        {% else %}{{ item.title }}{% endif %}
+        {% if item.author is string and item.author %}<span> · {{ item.author }}</span>{% endif %}
+      </p>
+      {% endfor %}
+    </div>
+    <ul class="cali-collection-list">
+      {% for item in entries.items %}
+      <li>
+        {% set url = public_url(item.url)|trim %}
+        {% if url %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} ↗</a>
+        {% else %}{{ item.title }}{% endif %}
+        {% if item.author is string and item.author %}<span> · {{ item.author }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+{% endmacro %}
+
+{% from "macros.j2" import render_subject_content, render_subject_license, render_subject_authors %}
+{% block style %}<style>
+/* Adapted from Cali Castle, upstream/dev a35dcf2. See LICENSE. */
+.section-tag {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  color: var(--gray-8, var(--muted-foreground));
+  font-family: var(--font-geist-mono), var(--font-frex-gb, ui-monospace), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-tag-index {
+  display: flex;
+  align-items: center;
+  padding: 0.0625rem 0.375rem;
+  border: var(--border-hairline) solid color-mix(in oklab, var(--muted-foreground) 45%, transparent);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* hazard hatch: fine diagonal strokes in a bordered chip */
+.section-tag-hatch {
+  width: 0.75rem;
+  border: var(--border-hairline) solid color-mix(in oklab, var(--muted-foreground) 45%, transparent);
+  border-left: none;
+  background: repeating-linear-gradient(
+    -45deg,
+    color-mix(in oklab, var(--muted-foreground) 55%, transparent) 0,
+    color-mix(in oklab, var(--muted-foreground) 55%, transparent) 1px,
+    transparent 1px,
+    transparent 3.5px
+  );
+}
+
+.section-tag-label {
+  align-self: center;
+  padding-left: 0.625rem;
+}
+
+
+.blog-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+}
+
+/* the date is quiet metadata — one step down from the row's title */
+.blog-row-date {
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+.print-pile {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 4rem;
+  height: 2.75rem;
+  flex: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.print-pile-sheet {
+  position: absolute;
+  inset: 1px;
+  border-radius: 3px;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--paper-ink) 22%, transparent);
+}
+
+.print-pile-sheet:first-child {
+  opacity: 0.62;
+  transform: translate(-2px, 1px) rotate(-1.6deg);
+}
+
+.print-pile-sheet:nth-child(2) {
+  opacity: 0.82;
+  transform: translate(2px, -1px) rotate(1.1deg);
+}
+
+.print-thumb {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.print-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.print-thumb-empty {
+  background: var(--muted);
+}
+
+.blog-row-title {
+  min-width: 0;
+  color: var(--gray-11, var(--foreground));
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 39.99rem) {
+  .blog-row-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    white-space: normal;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* dotted leader between title and date — the typewriter TOC register */
+.blog-row-leader {
+  flex: 1;
+  min-width: 1.5rem;
+  height: 1px;
+  align-self: center;
+  background: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--muted-foreground) 41%, transparent) 0.5px,
+      transparent 0.5px
+    )
+    0 0 / 6px 1px repeat-x;
+}
+
+
+.polaroid {
+  background: var(--paper);
+  padding: 2% 2% 0;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 0.04),
+    0 2px 4px -1px rgb(0 0 0 / 0.18);
+}
+
+/* hairline ring where photo meets frame — sells the print edge */
+.polaroid-photo {
+  position: relative;
+  display: block;
+}
+
+.polaroid-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 2px rgb(0 0 0 / 0.14);
+  pointer-events: none;
+}
+
+.polaroid-caption {
+  display: flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.2rem 0.125rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--paper-ink);
+  user-select: none;
+}
+
+.polaroid-tilted {
+  transform: rotate(var(--tilt, 0deg));
+}
+
+
+.dock {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-nav);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 3.5rem;
+  padding: 0.375rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--background) 68%, transparent);
+  box-shadow: 0 0 0 1px var(--border), var(--shadow-medium);
+}
+
+@media (max-width: 39.99rem) {
+  .dock {
+    bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* the frosted pane — its backdrop-filter is set inline from the
+   component (LightningCSS strips the property from stylesheets) */
+.dock-glass {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  /* specular rim: light catching the top edge of the glass */
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.2),
+    inset 0 -1px 0 rgb(255 255 255 / 0.06);
+}
+
+.dock-item {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dock-item:hover {
+    color: var(--foreground);
+    background: color-mix(in oklab, var(--foreground) 6%, transparent);
+  }
+}
+
+.dock-item:active {
+  transform: scale(0.97);
+}
+
+.dock-item[data-active] {
+  color: var(--foreground);
+}
+
+.dock-active-indicator {
+  --dock-indicator-x: 0px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 8px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--foreground);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(calc(var(--dock-indicator-x) - 50%), 0, 0);
+  transition:
+    transform 220ms var(--ease-swift),
+    opacity 120ms ease;
+  will-change: transform;
+}
+
+.dock-active-indicator[data-ready] {
+  opacity: 1;
+}
+
+.dock-active-indicator[data-instant] {
+  transition: none;
+}
+
+.dock-avatar {
+  display: block;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.dock-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dock-rule {
+  /* positioned so it paints above the glass layer — static children fall
+     in the earlier paint phase and get refracted like the backdrop */
+  position: relative;
+  width: 1px;
+  height: 1.125rem;
+  margin: 0 0.125rem;
+  background: color-mix(in oklab, var(--foreground) 16%, transparent);
+}
+
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3.5rem;
+  /* bleed to the column's outer edges (through the px-6 padding), not
+     the viewport */
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  border-top: var(--border-hairline) solid var(--border);
+  border-bottom: var(--border-hairline) solid var(--border);
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem 0.75rem 1.25rem;
+}
+
+.nav-card + .nav-card {
+  border-left: var(--border-hairline) solid var(--border);
+}
+
+.nav-card:active {
+  transform: scale(0.985);
+}
+
+.nc-vignette {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 3.5rem;
+  width: 100%;
+  margin-bottom: 0.375rem;
+}
+
+/* manuscript pages: three ruled sheets, loosely stacked */
+.nc-sheets span {
+  position: absolute;
+  width: 2.375rem;
+  height: 2.875rem;
+  transition: transform 300ms var(--ease-spring);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 7px,
+      color-mix(in oklab, var(--paper-ink) 35%, transparent) 7px 7.5px
+    )
+    50% 60% / 70% 60% no-repeat,
+    var(--paper);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.12);
+}
+
+.nc-sheets span:nth-child(1) {
+  transform: rotate(-7deg) translateX(-9px);
+}
+
+.nc-sheets span:nth-child(2) {
+  transform: rotate(4deg) translateX(9px);
+}
+
+.nc-sheets span:nth-child(3) {
+  transform: rotate(-1deg) translateY(-2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-card:hover .nc-sheets span:nth-child(1) {
+    transform: rotate(-13deg) translateX(-16px) translateY(-2px);
+  }
+
+  .nav-card:hover .nc-sheets span:nth-child(2) {
+    transform: rotate(9deg) translateX(16px) translateY(-1px);
+  }
+
+  .nav-card:hover .nc-sheets span:nth-child(3) {
+    transform: rotate(-2deg) translateY(-5px);
+  }
+}
+
+/* fanned polaroid minis */
+.nc-polaroid {
+  position: absolute;
+  padding: 3px 3px 8px;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08), 0 1px 3px rgb(0 0 0 / 0.15);
+  transform: rotate(calc(var(--i) * 9deg - 9deg)) translateX(calc(var(--i) * 16px - 16px));
+  transition: transform 300ms var(--ease-spring);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-card:hover .nc-polaroid {
+    transform: rotate(calc(var(--i) * 15deg - 15deg)) translateX(calc(var(--i) * 24px - 24px))
+      translateY(calc((1 - var(--i)) * (1 - var(--i)) * 2px - 3px));
+  }
+}
+
+.nc-polaroid img {
+  display: block;
+  width: 2.25rem;
+  height: 1.875rem;
+  object-fit: cover;
+}
+
+.nc-polaroid-placeholder::before {
+  display: block;
+  width: 2.25rem;
+  height: 1.875rem;
+  background: color-mix(in oklab, var(--foreground) 8%, var(--paper));
+  content: '';
+}
+
+/* standalone construction icon + the crossed project mark */
+.nc-project-icon {
+  position: absolute;
+  isolation: isolate;
+  width: 3.25rem;
+  height: 3.25rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: var(--border-hairline) solid color-mix(in oklab, var(--foreground) 20%, var(--border));
+  border-radius: 0.75rem;
+  background: color-mix(in oklab, var(--foreground) 4%, var(--background));
+  box-shadow: var(--shadow-3);
+  transition: transform 300ms var(--ease-spring);
+}
+
+@media (max-width: 39.99rem) {
+  .nav-card {
+    min-width: 0;
+    gap: 0.125rem;
+    padding: 1.25rem 0.375rem 1rem;
+  }
+
+  .nc-vignette {
+    min-width: 0;
+    max-width: 100%;
+    height: 3.25rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.nc-construction-guides {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.nc-guide-solid {
+  stroke: color-mix(in oklab, var(--foreground) 25%, transparent);
+  stroke-width: 0.65;
+  vector-effect: non-scaling-stroke;
+}
+
+.nc-project-mark {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  color: color-mix(in oklab, var(--foreground) 84%, var(--muted-foreground));
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+
+.nc-explode-a,
+.nc-explode-b,
+.nc-explode-c {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 300ms var(--ease-spring);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-card:hover .nc-project-icon {
+    transform: translate(-50%, calc(-50% - 2px));
+  }
+
+  .nav-card:hover .nc-explode-a {
+    transform: translate(1.5px, -1.5px) rotate(3deg);
+  }
+
+  .nav-card:hover .nc-explode-b {
+    transform: translate(-2.5px, -2px) rotate(-6deg);
+  }
+
+  .nav-card:hover .nc-explode-c {
+    transform: translate(2px, 2.5px) rotate(5deg);
+  }
+}
+
+.nc-label {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+}
+
+.nc-sub {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 39.99rem) {
+  .nc-label {
+    font-size: 0.8125rem;
+    line-height: 1.25;
+  }
+
+  .nc-sub {
+    font-size: 0.75rem;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-sheets span,
+  .nc-polaroid,
+  .nc-project-icon,
+  .nc-explode-a,
+  .nc-explode-b,
+  .nc-explode-c {
+    transition: none;
+  }
+
+  .nav-card:hover .nc-project-icon {
+    transform: translate(-50%, -50%);
+  }
+}
+
+:root {
+  --border-hairline:1px;
+  --gray-1:oklch(.99 .001 95);
+  --gray-2:oklch(.975 .0015 95);
+  --gray-3:oklch(.95 .002 95);
+  --gray-4:oklch(.91 .0025 92);
+  --gray-8:oklch(.56 .004 78);
+  --gray-10:oklch(.39 .0045 74);
+  --gray-11:oklch(.31 .0045 72);
+  --gray-12:oklch(.23 .0045 70);
+  --paper:oklch(.98 .004 95);
+  --paper-ink:oklch(.52 .012 95);
+  --signal:oklch(.62 .17 45);
+  --background:var(--gray-1);
+  --foreground:var(--gray-12);
+  --muted:var(--gray-3);
+  --muted-foreground:var(--gray-8);
+  --border:var(--gray-4);
+  --font-geist-mono:ui-monospace;
+  --font-weight-normal:400;
+  --font-weight-medium:500;
+  --shadow-medium:0 8px 30px #00000010,0 2px 5px #00000008;
+  --shadow-3:0 2px 4px #0000000a;
+  --ease-spring:cubic-bezier(.22,1,.36,1);
+  --ease-swift:cubic-bezier(.2,.8,.2,1);
+  --z-nav:40;
+}
+.dark-theme {
+  color-scheme:dark;
+  --gray-1:oklch(.16 .006 80);
+  --gray-2:oklch(.19 .007 80);
+  --gray-3:oklch(.22 .008 80);
+  --gray-4:oklch(.27 .009 80);
+  --gray-8:oklch(.61 .01 84);
+  --gray-10:oklch(.78 .008 88);
+  --gray-11:oklch(.87 .007 90);
+  --gray-12:oklch(.94 .006 92);
+  --signal:oklch(.7 .17 48);
+  --paper:oklch(.26 .006 80);
+  --paper-ink:oklch(.7 .012 95);
+}
+*,*::before,*::after {
+  box-sizing:border-box;
+}
+html {
+  font-size:16px;
+  scroll-padding-top:24px;
+}
+body {
+  margin:0;
+  background:var(--background);
+  color:var(--foreground);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  font-size:14px;
+  line-height:1.72;
+}
+.cali-shell a {
+  color:inherit;
+  text-decoration:none;
+}
+.cali-shell a:hover {
+  color:var(--foreground);
+}
+.cali-shell button,.cali-shell input {
+  font:inherit;
+}
+.cali-shell button {
+  cursor:pointer;
+}
+.dock-item>svg {
+  display:block;
+  width:22px;
+  height:22px;
+}
+.cali-shell img {
+  max-width:100%;
+  height:auto;
+}
+.cali-shell h1,.cali-shell h2,.cali-shell p {
+  margin:0;
+}
+.cali-shell :focus-visible {
+  outline:2px solid var(--signal);
+  outline-offset:4px;
+}
+.cali-shell [hidden] {
+  display:none!important;
+}
+.cali-shell {
+  max-width:600px;
+  margin:0 auto;
+  padding:56px 24px 0;
+  min-height:100vh;
+  border-left:1px dashed var(--border);
+  border-right:1px dashed var(--border);
+}
+.cali-hero {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 240px;
+  gap:32px;
+}
+.cali-introduction h1 {
+  font-size:16px;
+  line-height:24px;
+  font-weight:600;
+  display:flex;
+  gap:9px;
+  align-items:center;
+}
+.cali-introduction p {
+  margin-top:18px;
+  font-size:14px;
+  line-height:1.72;
+  color:var(--gray-11);
+}
+.cali-pixel-mark {
+  font-size:10px;
+  line-height:7px;
+  letter-spacing:-1px;
+  color:var(--signal);
+}
+.cali-portrait {
+  border-radius:50%;
+  position:relative;
+  width:240px;
+  height:240px;
+  align-self:start;
+  overflow:hidden;
+}
+.cali-portrait img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.cali-portrait-monogram {
+  display:grid;
+  place-items:center;
+  width:100%;
+  height:100%;
+  font-size:120px;
+  line-height:1;
+  background:var(--gray-2);
+  color:var(--muted-foreground);
+  font-family:serif;
+}
+.nc-project-mark svg {
+  width:30px;
+  height:30px;
+}
+.nav-cards {
+  margin-top:56px;
+}
+.cali-section {
+  margin-top:40px;
+}
+.cali-section-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+  gap:16px;
+}
+.cali-section-heading>a {
+  font-size:12px;
+  color:var(--muted-foreground);
+}
+.cali-section>.section-tag {
+  margin-bottom:18px;
+}
+.hairline-top {
+  border-top:var(--border-hairline) solid var(--border);
+}
+.cali-list-grid article:first-child .hairline-top {
+  border-top:0;
+}
+.blog-row-title {
+  font-weight:500;
+  font-size:15px;
+  line-height:1.6;
+}
+.blog-row-date {
+  color:var(--muted-foreground);
+  font-family:ui-monospace,monospace;
+  white-space:nowrap;
+}
+.blog-row-leader {
+  flex:1;
+  min-width:24px;
+  height:1px;
+  background:repeating-linear-gradient(to right,var(--border) 0 2px,transparent 2px 6px);
+}
+.print-thumb {
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:var(--paper);
+}
+.print-thumb img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.print-lines {
+  width:65%;
+  height:55%;
+  background:repeating-linear-gradient(to bottom,transparent 0 5px,var(--border) 5px 6px);
+}
+.dock-glass {
+  backdrop-filter:blur(20px) saturate(1.4);
+  -webkit-backdrop-filter:blur(20px) saturate(1.4);
+}
+.dock {
+  width:max-content;
+  max-width:calc(100vw - 24px);
+}
+.dock-rule,.cali-preferences {
+  flex-shrink:0;
+}
+.dock-secondary {
+  display:flex;
+  align-items:center;
+  gap:4px;
+  min-width:0;
+  max-width:240px;
+  height:52px;
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border) transparent;
+  z-index:1;
+}
+.dock-secondary .dock-item {
+  position:static;
+}
+.dock-secondary .dock-item:focus-visible {
+  outline-offset:-3px;
+}
+.dock-secondary .dock-item[aria-current] {
+  background:var(--muted);
+}
+.dock-secondary .dock-item[aria-current]::after {
+  content:none;
+}
+.dock-secondary .dock-item:active {
+  transform:none;
+}
+.dock-item {
+  border:0;
+  background:none;
+  flex:none;
+  cursor:pointer;
+}
+.dock-label {
+  position:absolute;
+  bottom:calc(100% + 14px);
+  left:50%;
+  transform:translateX(-50%);
+  padding:3px 9px;
+  border-radius:6px;
+  width:max-content;
+  max-width:min(280px, calc(100vw - 40px));
+  white-space:normal;
+  overflow-wrap:anywhere;
+  text-align:center;
+  font-size:12px;
+  background:var(--foreground);
+  color:var(--background);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s;
+}
+.dock-item:hover>.dock-label,.dock-item:focus-visible>.dock-label {
+  opacity:1;
+}
+.dock-item[aria-current]::after {
+  position:absolute;
+  bottom:1px;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:currentColor;
+  content:"";
+}
+.dock-avatar {
+  display:grid;
+  place-items:center;
+  font-size:13px;
+  background:var(--gray-3);
+}
+.cali-preferences summary {
+  list-style:none;
+}
+.cali-preferences summary::-webkit-details-marker {
+  display:none;
+}
+.cali-preferences-panel {
+  position:absolute;
+  bottom:64px;
+  right:-6px;
+  width:280px;
+  padding:16px;
+  background:var(--background);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow-medium);
+  max-height:65vh;
+  overflow:auto;
+}
+.cali-preferences-panel>p {
+  font-size:12px;
+  color:var(--muted-foreground);
+  margin-bottom:12px;
+}
+.cali-preferences-panel nav {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:14px;
+  border-top:1px solid var(--border);
+  padding-top:10px;
+}
+.cali-theme-control {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:40px;
+  cursor:pointer;
+}
+.cali-theme-control input {
+  accent-color:var(--foreground);
+  width:18px;
+  height:18px;
+}
+.cali-search {
+  display:block;
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:9px;
+  background:var(--gray-2);
+  color:var(--foreground);
+  margin:10px 0;
+}
+.cali-button {
+  width:100%;
+  padding:8px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--foreground);
+  background:var(--gray-2);
+}
+.cali-footer {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin-top:56px;
+  padding:32px 0 110px;
+  border-top:1px solid var(--border);
+  font-size:12px;
+}
+.cali-footer h2 {
+  font-size:12px;
+  color:var(--muted-foreground);
+  font-weight:400;
+  letter-spacing:.08em;
+  margin-bottom:12px;
+}
+.cali-footer nav {
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  gap:5px;
+}
+.cali-footer .cali-social svg {
+  width:16px;
+  height:16px;
+}
+.cali-colophon {
+  grid-column:1/-1;
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted-foreground);
+  padding-top:32px;
+}
+.cali-page-heading {
+  padding-bottom:30px;
+}
+.cali-page-heading h1 {
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.cali-page-heading p {
+  margin-top:12px;
+  color:var(--muted-foreground);
+}
+.cali-pagination,.cali-years {
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  margin-top:30px;
+  font-size:13px;
+}
+.cali-years a[aria-current] {
+  text-decoration:underline;
+}
+.cali-pagination {
+  justify-content:space-between;
+}
+.cali-empty {
+  color:var(--muted-foreground);
+  padding:24px 0;
+}
+.cali-back {
+  font-size:12px;
+  color:var(--muted-foreground)!important;
+  display:inline-block;
+  margin-bottom:32px;
+}
+.cali-article-heading h1 {
+  font-size:24px;
+  line-height:1.4;
+  font-weight:600;
+  letter-spacing:-.025em;
+  margin:24px 0 12px;
+}
+.cali-article-heading .p-summary {
+  color:var(--muted-foreground);
+  margin-bottom:20px;
+}
+.cali-article-cover {
+  display:block;
+  width:100%;
+  max-height:360px;
+  object-fit:cover;
+  padding:9px 9px 30px;
+  background:var(--paper);
+  border:1px solid var(--border);
+  box-shadow:0 2px 5px #0000000a;
+  transform:rotate(-1deg);
+  margin:12px 0 32px;
+}
+.cali-meta {
+  display:flex;
+  gap:16px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:10px 0;
+  font-family:ui-monospace,monospace;
+  font-size:11px;
+  color:var(--muted-foreground);
+}
+.cali-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  font-size:12px;
+  margin:12px 0 24px;
+  color:var(--muted-foreground);
+}
+.cali-prose {
+  font-size:16px;
+  line-height:1.9;
+  margin-top:32px;
+  color:var(--gray-11);
+  overflow-wrap:anywhere;
+}
+.cali-prose p {
+  margin:1.35em 0;
+}
+.cali-prose h2 {
+  font-size:21px;
+  margin:2.1em 0 .75em;
+  font-weight:600;
+}
+.cali-prose h3 {
+  font-size:18px;
+  margin:1.7em 0 .6em;
+}
+.cali-prose a {
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.cali-prose blockquote {
+  margin:24px 0;
+  padding:0 20px;
+  border-left:2px solid var(--border);
+  color:var(--muted-foreground);
+}
+.cali-prose pre {
+  overflow:auto;
+  white-space:pre;
+  padding:16px;
+  background:var(--gray-2);
+  border:1px solid var(--border);
+  border-radius:6px;
+  font-size:13px;
+}
+.cali-prose code {
+  font-family:ui-monospace,monospace;
+}
+.cali-prose table {
+  display:block;
+  max-width:100%;
+  overflow:auto;
+  border-collapse:collapse;
+  font-size:14px;
+}
+.cali-prose th,.cali-prose td {
+  border:1px solid var(--border);
+  padding:8px 14px;
+  min-width:100px;
+}
+.cali-prose figure {
+  margin:24px 0;
+}
+.cali-prose iframe,.cali-prose video {
+  max-width:100%;
+}
+.cali-prose audio {
+  width:100%;
+}
+.cali-prose figcaption {
+  font-size:12px;
+  color:var(--muted-foreground);
+  text-align:center;
+}
+.cali-toc {
+  position:fixed;
+  top:110px;
+  left:calc(50% - 510px);
+  width:170px;
+  font-size:12px;
+  color:var(--muted-foreground);
+}
+.cali-toc nav {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top:14px;
+}
+.cali-toc a[data-depth="3"] {
+  padding-left:12px;
+}
+.cali-toc a[aria-current] {
+  color:var(--foreground);
+}
+.cali-native-share,.cali-native-foot,.subject-license {
+  margin-top:32px;
+  font-size:13px;
+  color:var(--muted-foreground);
+}
+.cali-sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+.cali-skip {
+  position:fixed;
+  top:-100px;
+  left:20px;
+  z-index:80;
+  padding:8px;
+  background:var(--background);
+}
+.cali-skip:focus {
+  top:10px;
+}
+.cali-shelf {
+  display:flex;
+  align-items:end;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:15px 8px 18px;
+  perspective:1000px;
+  isolation:isolate;
+  border-bottom:1px solid var(--border);
+}
+.cali-sleeve {
+  position:relative;
+  flex:0 0 30px;
+  height:200px;
+  border:0;
+  padding:0;
+  background:transparent;
+  color:var(--foreground);
+  transition:flex-basis .45s var(--ease-spring);
+  text-align:left;
+}
+.cali-spine {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  writing-mode:vertical-rl;
+  padding:12px 6px;
+  border:1px solid var(--border);
+  background:var(--paper);
+  box-shadow:inset -3px 0 4px #00000010;
+  font-size:12px;
+  overflow:hidden;
+}
+.cali-front {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  background:var(--paper);
+  border:1px solid var(--border);
+  transform-origin:left;
+  transform:rotateY(-88deg);
+  backface-visibility:hidden;
+  transition:transform .45s var(--ease-spring);
+  width:142px;
+  box-shadow:3px 3px 6px #00000012;
+}
+.cali-front img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.cali-front>span {
+  padding:20px;
+  font-size:22px;
+  font-family:serif;
+}
+.cali-sleeve[aria-pressed="true"] {
+  flex-basis:156px;
+}
+.cali-sleeve[aria-pressed="true"] .cali-front {
+  transform:rotateY(-12deg);
+}
+.cali-records .cali-sleeve {
+  height:170px;
+  flex-basis:35px;
+}
+.cali-records .cali-front {
+  width:170px;
+  transform:rotateY(-65deg);
+}
+.cali-records .cali-sleeve[aria-pressed="true"] {
+  flex-basis:182px;
+}
+.cali-records .cali-sleeve[aria-pressed="true"] .cali-front {
+  transform:rotateY(-8deg);
+}
+.cali-shelf-captions {
+  min-height:44px;
+  padding-top:12px;
+  font-size:12px;
+  color:var(--muted-foreground);
+}
+@media(min-resolution:192dpi) {
+  :root {
+    --border-hairline:.5px;
+  }
+}
+@media(max-width:1050px) {
+  .cali-toc {
+    position:static;
+    width:auto;
+    border-bottom:1px solid var(--border);
+    padding-bottom:16px;
+    margin-bottom:24px;
+  }
+}
+@media(max-width:639px) {
+  .cali-shell {
+    padding:36px 24px 0;
+    border:0;
+  }
+  .cali-hero {
+    grid-template-columns:minmax(0,1fr) 128px;
+    gap:20px;
+  }
+  .cali-portrait {
+    width:128px;
+    height:128px;
+  }
+  .cali-portrait-monogram {
+    font-size:64px;
+  }
+  .cali-introduction p {
+    font-size:13px;
+    margin-top:14px;
+  }
+  .nav-cards {
+    margin-top:32px;
+  }
+  .cali-section {
+    margin-top:32px;
+  }
+  .blog-row {
+    gap:10px;
+  }
+  .blog-row-title {
+    font-size:14px;
+  }
+  .blog-row-leader {
+    min-width:8px;
+  }
+  .blog-row-date {
+    font-size:11px;
+  }
+  .cali-article-heading h1 {
+    font-size:23px;
+  }
+  .cali-article-cover {
+    max-height:260px;
+  }
+  .dock {
+    gap:0;
+  }
+  .dock-rule {
+    margin:0 2px;
+  }
+  .dock-item {
+    width:42px;
+    height:44px;
+  }
+  .cali-footer {
+    margin-top:40px;
+  }
+  .cali-colophon {
+    gap:12px;
+    font-size:11px;
+  }
+}
+@media(max-width:359px) {
+  .cali-shell {
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .cali-hero {
+    grid-template-columns:minmax(0,1fr) 100px;
+    gap:12px;
+  }
+  .cali-portrait {
+    width:100px;
+    height:100px;
+  }
+  .nav-cards {
+    margin-left:-20px;
+    margin-right:-20px;
+  }
+  .dock-item {
+    width:39px;
+  }
+  .cali-preferences-panel {
+    width:260px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .cali-shell * {
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
+/* Keep media placeholders usable when an image host fails. */
+.cali-portrait img,
+.dock-avatar img,
+.print-thumb img,
+.cali-front img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:var(--paper);
+}
+.dock-avatar,
+.print-thumb {
+  position:relative;
+}
+.cali-collection-list {
+  padding-left:1.25rem;
+  color:var(--gray-11);
+}
+.cali-collection-list li {
+  margin:10px 0;
+}
+.cali-collection-list a {
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.cali-collection-list span {
+  color:var(--muted-foreground);
+}
+.cali-shelf,
+.cali-sleeve {
+  scroll-margin:8px;
+}
+.cali-sleeve:focus-visible {
+  outline-offset:-2px;
+}
+.cali-toc {
+  max-height:calc(100vh - 150px);
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+.cali-preferences {
+  position:static;
+}
+.cali-preferences-panel {
+  left:50%;
+  right:auto;
+  bottom:calc(100% + 12px);
+  transform:translateX(-50%);
+  width:min(300px, calc(100vw - 32px));
+  max-height:calc(100vh - 120px);
+  max-height:min(65dvh, calc(100dvh - 120px));
+  overscroll-behavior:contain;
+}
+.cali-introduction,
+.cali-article-column,
+.cali-footer>div,
+.section-tag {
+  min-width:0;
+}
+.cali-introduction,
+.cali-page-heading,
+.cali-article-heading,
+.cali-footer,
+.cali-preferences-panel,
+.cali-shelf-captions,
+.cali-front,
+.cali-collection-list,
+.cali-toc,
+.nc-label,
+.nc-sub,
+.section-tag-label {
+  overflow-wrap:anywhere;
+}
+.cali-pixel-mark,
+.section-tag-index,
+.section-tag-hatch {
+  flex-shrink:0;
+}
+.cali-section-heading>a {
+  flex-shrink:0;
+}
+.cali-preferences-panel nav a {
+  padding:6px 0;
+}
+.cali-search {
+  font-size:16px;
+}
+.cali-prose .protected input,
+.cali-prose .subscribe input {
+  max-width:100%;
+  min-height:44px;
+  padding:8px 12px;
+  color:var(--foreground);
+  background:var(--gray-2);
+  border:1px solid var(--border);
+  border-radius:6px;
+  font:inherit;
+}
+.cali-prose .protected button,
+.cali-prose .subscribe button {
+  min-height:44px;
+  padding:8px 16px;
+  color:var(--background);
+  background:var(--foreground);
+  border:1px solid var(--border);
+  border-radius:6px;
+  font:inherit;
+}
+@media(max-width:1050px) {
+  .cali-toc { max-height:none; }
+}
+@media(max-width:639px) {
+  .nc-sub { white-space:normal; }
+  .cali-prose .protected input,
+  .cali-prose .subscribe input {
+    width:100%;
+    margin-bottom:8px;
+  }
+}
+.cali-podcast-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 20px;
+  margin-top:20px;
+  font-size:13px;
+}
+.cali-prose>svg,
+.cali-prose figure>svg {
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+.cali-preferences[open] .dock-label {
+  opacity:0;
+}
+@media(max-width:359px) {
+  .cali-portrait-monogram { font-size:52px; }
+}
+</style>{% endblock %}
+{% block script %}<script>
+(() => {
+  "use strict";
+
+  const menu = document.querySelector(".cali-mobile-nav");
+  if (menu) {
+    const summary = menu.querySelector("summary");
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false;
+        summary.focus();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
+    document.addEventListener("focusin", (event) => {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
+  }
+
+  document.querySelectorAll("[data-cali-image]").forEach((image) => {
+    const hideFailedImage = () => { image.hidden = true; };
+    image.addEventListener("error", hideFailedImage);
+    // Cached failures can occur before this script runs.
+    if (image.complete && image.naturalWidth === 0) hideFailedImage();
+  });
+
+  document.querySelectorAll("[data-collection]").forEach((collection) => {
+    const shelf = collection.querySelector(".cali-shelf");
+    const captionGroup = collection.querySelector(".cali-shelf-captions");
+    const fallback = collection.querySelector(".cali-collection-list");
+    const buttons = [...collection.querySelectorAll(".cali-sleeve")];
+    const captions = [...collection.querySelectorAll(".cali-shelf-captions p")];
+    if (!shelf || !captionGroup || !fallback || !buttons.length || buttons.length !== captions.length) return;
+
+    function select(index, reveal = false) {
+      buttons.forEach((button, i) => {
+        button.setAttribute("aria-pressed", String(i === index));
+        button.tabIndex = i === index ? 0 : -1;
+      });
+      captions.forEach((caption, i) => { caption.hidden = i !== index; });
+      if (reveal) {
+        // Scroll only the shelf. Do not move the page when switching a cover.
+        const frame = shelf.getBoundingClientRect();
+        const target = buttons[index].getBoundingClientRect();
+        const offset = target.left < frame.left ? target.left - frame.left : Math.max(0, target.right - frame.right);
+        if (offset) shelf.scrollBy({left: offset, behavior: "auto"});
+      }
+    }
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => select(index));
+      button.addEventListener("keydown", (event) => {
+        let next;
+        if (event.key === "ArrowRight") next = (index + 1) % buttons.length;
+        else if (event.key === "ArrowLeft") next = (index + buttons.length - 1) % buttons.length;
+        else if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = buttons.length - 1;
+        else return;
+        event.preventDefault();
+        select(next, true);
+        buttons[next].focus({preventScroll: true});
+      });
+      button.disabled = false;
+    });
+    select(0);
+    shelf.hidden = false;
+    captionGroup.hidden = false;
+    fallback.hidden = true;
+  });
+
+  const content = document.querySelector(".cali-prose");
+  const toc = document.querySelector(".cali-toc");
+  if (!content || !toc) return;
+  const nav = toc.querySelector("nav");
+  const details = toc.querySelector("details");
+  let headings = [];
+  let links = [];
+  let headingLabels = [];
+  let scheduled = false;
+
+  function updateActive() {
+    scheduled = false;
+    if (!headings.length) return;
+    let active = 0;
+    headings.forEach((heading, index) => {
+      if (heading.getBoundingClientRect().top <= 120) active = index;
+    });
+    links.forEach((link, index) => {
+      if (index === active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
+  function scheduleActive() {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(updateActive);
+  }
+
+  function rebuild() {
+    // Index only content that Typlog has rendered for the current visitor.
+    const next = [...content.querySelectorAll("h2, h3")].filter((heading) => heading.textContent.trim());
+    // Player timers and embeds can change without changing the article outline.
+    if (next.length === headings.length && next.every((heading, index) => heading === headings[index] && heading.textContent === headingLabels[index])) return;
+    headings = next;
+    headingLabels = headings.map((heading) => heading.textContent);
+    nav.replaceChildren();
+    links = [];
+    toc.hidden = headings.length < 2;
+    if (toc.hidden) return;
+    headings.forEach((heading, index) => {
+      if (!heading.id || document.getElementById(heading.id) !== heading) {
+        let candidate = `cali-section-${index + 1}`;
+        while (document.getElementById(candidate)) candidate += "-x";
+        heading.id = candidate;
+      }
+      const link = document.createElement("a");
+      link.href = `#${encodeURIComponent(heading.id)}`;
+      link.textContent = heading.textContent;
+      link.dataset.depth = heading.tagName.slice(1);
+      nav.append(link);
+      links.push(link);
+    });
+    scheduleActive();
+  }
+
+  details.open = !window.matchMedia("(max-width: 1050px)").matches;
+  rebuild();
+  window.addEventListener("scroll", scheduleActive, {passive: true});
+  window.addEventListener("resize", scheduleActive, {passive: true});
+  // A protected article may be rendered after the visitor signs in.
+  if ("MutationObserver" in window) {
+    new MutationObserver(rebuild).observe(content, {childList: true, subtree: true, characterData: true});
+  }
+})();
+</script>{% endblock %}
+{% block body %}
+<div class="cali-shell">
+  {{ header() }}
+  <main id="cali-main" class="cali-container cali-detail" tabindex="-1">
+    <a class="cali-back" href="{{ linkify(site.list_url) }}">← {{ labels.archive }}</a>
+    <div class="cali-article-layout">
+      {% if config.show_toc %}<aside class="cali-toc" hidden><details open><summary>{{ labels.toc }}</summary><nav aria-label="{{ labels.toc }}"></nav></details></aside>{% endif %}
+      <div class="cali-article-column">
+        <article class="h-entry cali-article" itemscope itemtype="https://schema.org/Article">
+          <header class="cali-article-heading">
+            {% if config.show_cover and page.cover and page.cover.src and page.visibility|default('public') == 'public' %}<img data-cali-image class="cali-article-cover u-photo" src="{{ page.cover.src|thumbnail('l') }}" alt="" width="{{ page.cover.width }}" height="{{ page.cover.height }}" fetchpriority="high">{% endif %}
+
+            <h1 class="p-name" itemprop="headline">{{ page.title }}</h1>
+            {% if page.subtitle %}<p class="p-summary">{{ page.subtitle }}</p>{% endif %}
+            <div class="cali-meta">{% if page.published_at %}<time class="dt-published" datetime="{{ page.published_at|xmldatetime }}" itemprop="datePublished">{{ page.published_at.strftime('%Y / %m / %d') }}</time>{% endif %}{% if page.type == 'audio' and page.duration %}<span>{{ page.duration }}</span>{% endif %}</div>
+            {% if page.tags %}<div class="cali-tags">{% for tag in page.tags %}<a class="p-category" href="{{ linkify(tag.url) }}">{{ tag.title }}</a>{% endfor %}</div>{% endif %}
+          </header>
+          <div class="e-content js-content cali-prose" itemprop="articleBody">
+            {{ render_subject_content(site, page) }}
+          </div>
+          {{ render_subject_authors(site, page) }}
+        </article>
+        {% if page.type != 'page' %}{{ render_subject_license(site, page) }}{% endif %}
+        <div class="cali-native-share">{% include "_snippets/subject_share.j2" %}</div>
+        <div class="cali-native-foot">{% include "_snippets/subject_foot.j2" %}</div>
+      </div>
+    </div>
+  </main>
+  {{ footer() }}
+</div>
+{% endblock %}

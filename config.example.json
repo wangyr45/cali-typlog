@@ -1,0 +1,13 @@
+{
+  "intro": ["在这里填写第一段介绍。", "在这里填写第二段介绍。"],
+  "portrait": "",
+  "recent_count": 10,
+  "recent_title": "近期作品",
+  "nav_cards": null,
+  "records_title": "循环播放中",
+  "records": [],
+  "books_title": "珍藏书架",
+  "books": [],
+  "show_toc": true,
+  "show_cover": true
+}

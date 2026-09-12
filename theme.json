@@ -1,0 +1,17 @@
+{
+  "name": "cali-typlog",
+  "name#zh": "Cali · Typlog",
+  "author": "wangyr45",
+  "repo": "wangyr45/cali-typlog",
+  "version": "0.3.2",
+  "templates": [
+    "home.j2",
+    "list.j2",
+    "item.j2"
+  ],
+  "tags": [
+    "blog",
+    "podcast"
+  ],
+  "images": []
+}
