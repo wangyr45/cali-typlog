@@ -32,6 +32,8 @@ browser, with an ordinary image fallback.
 
 The compact project rows in `src/theme.css` are adapted from the same upstream
 MIT source. Project names and store links were supplied by the site owner. The
-Shigu icon references its public Chrome Web Store image. DockPic and portus use
-text initials until the owner supplies public icons. Product marks remain the
+Shigu icon references its public Chrome Web Store image. The hero portrait,
+DockPic icon, portus icon, support QR and backup WeChat QR were supplied by the
+site owner for publication in this theme. EXIF and text metadata were removed;
+pixel data and color profiles were preserved. Product marks remain the
 property of their owners. No original-author project catalog is included.

@@ -3,7 +3,7 @@
     "在这里填写第一段介绍。",
     "在这里填写第二段介绍。"
   ],
-  "portrait": "",
+  "portrait": "asset:hero-portrait.png",
   "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。",
   "projects": [
     {
@@ -18,7 +18,7 @@
       "platform": "macOS · App Store",
       "description": "一款可爱、好用的 macOS 图床应用。",
       "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394",
-      "icon": ""
+      "icon": "asset:dockpic.png"
     },
     {
       "title": "portus",
@@ -26,7 +26,7 @@
       "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。",
       "notice": "美区等地区上架，中国大陆区暂未上架。",
       "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583",
-      "icon": ""
+      "icon": "asset:portus.png"
     }
   ],
   "recent_count": 10,
@@ -36,5 +36,7 @@
   "books_title": "珍藏书架",
   "books": [],
   "show_toc": true,
-  "show_cover": true
+  "show_cover": true,
+  "support_qr": "asset:support.png",
+  "wechat_qr": "asset:wechat-backup.png"
 }

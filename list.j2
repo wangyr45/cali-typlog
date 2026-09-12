@@ -1,12 +1,13 @@
 {% from "macros.j2" import render_social_icons %}
 {% set zh = (site.primary_lang|default('en')).startswith('zh') %}
-{% set defaults = {"intro": ["喜欢阅读，保持好奇。在这里记录读书、生活与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": ""}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": ""}], "records": [], "books": [], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "", "show_toc": true, "show_cover": true} %}
+{% set defaults = {"intro": ["喜欢阅读，保持好奇。在这里记录读书、生活与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "asset:hero-portrait.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [], "books": [], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png"} %}
+{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.7.0/", true) %}
 {% set supplied = query.config('cali-typlog') %}
 {% set supplied = supplied if supplied is mapping else {} %}
 {% set config = namespace(intro=defaults.intro, portrait=defaults.portrait,
   recent_count=defaults.recent_count, recent_title=defaults.recent_title,
   records=defaults.records, books=defaults.books, projects=defaults.projects,
-  projects_intro=defaults.projects_intro,
+  projects_intro=defaults.projects_intro, support_qr=defaults.support_qr, wechat_qr=defaults.wechat_qr,
   records_title=defaults.records_title, books_title=defaults.books_title,
   show_toc=defaults.show_toc, show_cover=defaults.show_cover) %}
 {% if supplied.intro is string %}
@@ -15,6 +16,8 @@
   {% set config.intro = supplied.intro|select('string')|list %}
 {% endif %}
 {% if supplied.portrait is string %}{% set config.portrait = supplied.portrait %}{% endif %}
+{% if supplied.support_qr is string %}{% set config.support_qr = supplied.support_qr %}{% endif %}
+{% if supplied.wechat_qr is string %}{% set config.wechat_qr = supplied.wechat_qr %}{% endif %}
 {% if supplied.recent_count is number and supplied.recent_count == supplied.recent_count and supplied.recent_count is not sameas true and supplied.recent_count is not sameas false %}
   {% set config.recent_count = ([30, [1, supplied.recent_count]|max]|min)|int %}
 {% endif %}
@@ -62,8 +65,14 @@
     {%- endif -%}
   {%- endif -%}
 {%- endmacro %}
-{% set portrait_url = public_url(config.portrait)|trim %}
+{% macro image_url(value) -%}
+  {%- if value in ['asset:hero-portrait.png', 'asset:dockpic.png', 'asset:portus.png', 'asset:wechat-backup.png', 'asset:support.png'] -%}
+    {{- asset_base.rstrip('/') ~ '/assets/' ~ value[6:] -}}
+  {%- else -%}{{- public_url(value) -}}{%- endif -%}
+{%- endmacro %}
+{% set portrait_url = image_url(config.portrait)|trim %}
 {% set portrait_url = portrait_url or (site.logo.src if site.logo else '') %}
+{% set dock_portrait_url = site.logo.src if site.logo else '' %}
 {% set project_entries = namespace(items=[]) %}
 {% for item in config.projects %}
   {% if item.title is string and item.title|trim and public_url(item.url)|trim %}
@@ -158,7 +167,7 @@
 <span class="dock-glass" aria-hidden="true">
 </span>
 <a class="dock-item" data-cali-home-link href="{{ linkify('/') }}" aria-label="{{ labels.home }}"{% if not page %} aria-current="page"{% endif %}>
-<span class="dock-avatar"><span aria-hidden="true">{{ site.name[:1] }}</span>{% if portrait_url %}<img data-cali-image src="{{ portrait_url|thumbnail('ss') }}" alt="">{% endif %}</span>
+<span class="dock-avatar"><span aria-hidden="true">{{ site.name[:1] }}</span>{% if dock_portrait_url %}<img data-cali-image src="{{ dock_portrait_url|thumbnail('ss') }}" alt="">{% endif %}</span>
 <span class="dock-label">{{ labels.home }}</span>
 </a>
 <span class="dock-rule" aria-hidden="true">
@@ -187,20 +196,42 @@
 {% endmacro %}
 
 
+{% macro qr_card(url, title, note) %}
+<a class="cali-qr-card" data-cali-qr data-qr-title="{{ title }}" href="{{ url }}" target="_blank" rel="noopener noreferrer">
+  <span class="cali-qr-thumb"><img src="{{ url }}" alt="{{ title }}二维码" width="132" height="132" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+  <span class="cali-qr-title">{{ title }} <span aria-hidden="true">↗</span></span>
+  <span class="cali-qr-note">{{ note }}</span>
+</a>
+{% endmacro %}
+
 {% macro footer() %}
+{% set support = image_url(config.support_qr)|trim %}
+{% set wechat = image_url(config.wechat_qr)|trim %}
 <footer class="cali-footer">
-<div>
-<h2>{{ '关注' if zh else 'Follow' }}</h2>
-<nav class="cali-social">{{ render_social_icons(site) }}<a href="{{ linkify('/feed.xml') }}">RSS ↗</a>
+<div class="cali-contact">
+<h2>{{ '联系' if zh else 'Contact' }}</h2>
+<nav class="cali-social" aria-label="{{ '联系' if zh else 'Contact' }}">{{ render_social_icons(site) }}<a href="{{ linkify('/feed.xml') }}" title="RSS">RSS <span aria-hidden="true">↗</span></a>
 </nav>
 </div>
-<div>
-<h2>{{ '索引' if zh else 'Index' }}</h2>
-<nav>
-<a href="{{ linkify('/') }}">{{ labels.home }}</a>{% if config.projects %}<a data-cali-projects-link href="{{ projects_url }}">{{ labels.projects }}</a>{% endif %}{% for nav in site.primary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}{% for nav in site.secondary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}</nav>
+{% if support or wechat %}
+<div class="cali-support">
+<h2>{{ '支持与订阅' if zh else 'Support and follow' }}</h2>
+<div class="cali-qr-grid">
+{% if support %}{{ qr_card(support, '打赏支持' if zh else 'Support my work', '随心支持，感谢阅读' if zh else 'Thank you for reading') }}{% endif %}
+{% if wechat %}{{ qr_card(wechat, '微信公众号（备份）' if zh else 'WeChat backup account', '扫码关注 · 点击放大' if zh else 'Scan to follow · Enlarge') }}{% endif %}
 </div>
-<p class="cali-colophon"><span>© {{ site.name }}</span><span class="cali-colophon-links"><span>Powered by <a href="https://typlog.com/">Typlog</a></span><span class="cali-credit">{{ '设计致敬' if zh else 'Design credit' }} <a href="https://github.com/CaliCastle/cali.so" target="_blank" rel="noopener noreferrer">Cali Castle ↗</a></span></span></p>
+</div>
+{% endif %}
+<p class="cali-colophon"><span>© {{ site.name }}</span><span class="cali-colophon-links"><span class="cali-credit">{{ '设计致敬' if zh else 'Design credit' }} <a href="https://github.com/CaliCastle/cali.so" target="_blank" rel="noopener noreferrer">Cali Castle ↗</a></span><span>Powered by <a href="https://typlog.com/">Typlog</a></span></span></p>
 </footer>
+{% if support or wechat %}
+<dialog class="cali-qr-dialog" aria-labelledby="cali-qr-heading">
+  <div class="cali-qr-dialog-heading"><h2 id="cali-qr-heading"></h2><form method="dialog"><button type="submit" aria-label="{{ '关闭' if zh else 'Close' }}">×</button></form></div>
+  <img data-qr-full alt="" width="340" height="340" referrerpolicy="no-referrer">
+  <p>{{ '使用微信扫一扫，或长按保存图片。' if zh else 'Scan with WeChat or save the image.' }}</p>
+  <a data-qr-original target="_blank" rel="noopener noreferrer">{{ '打开原图 ↗' if zh else 'Open original ↗' }}</a>
+</dialog>
+{% endif %}
 {% endmacro %}
 
 
@@ -2008,6 +2039,85 @@ body {
 .cali-skip-projects { display:none; }
 .cali-shell:has(#projects:target) .cali-skip-main { display:none; }
 .cali-shell:has(#projects:target) .cali-skip-projects { display:block; }
+
+/* Content landmarks accept focus without drawing a frame around the page. */
+.cali-shell #projects:focus,
+.cali-shell #projects:focus-visible,
+.cali-shell #cali-main:focus,
+.cali-shell #cali-main:focus-visible { outline:none; }
+.dock-secondary .dock-item { position:relative; }
+.dock[data-tips-ready] .dock-label { display:none; }
+.cali-floating-tip {
+  position:fixed; z-index:100; width:max-content;
+  max-width:min(280px,calc(100vw - 20px)); padding:5px 10px;
+  border-radius:6px; background:var(--foreground); color:var(--background);
+  font:12px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  text-align:center; overflow-wrap:anywhere; pointer-events:none;
+  box-shadow:0 2px 8px #00000010;
+}
+.cali-floating-tip[hidden] { display:none; }
+.cali-footer { grid-template-columns:minmax(110px,.85fr) minmax(0,1.65fr); gap:28px; }
+.cali-footer .cali-social { gap:0; align-items:stretch; padding-left:12px; }
+.cali-social a {
+  position:relative; display:flex; align-items:center; gap:7px; min-height:36px;
+  width:fit-content; max-width:100%; padding:5px 0 5px 12px;
+  font-size:12px; color:var(--muted-foreground); line-height:1.5;
+}
+.cali-social a::before { content:""; position:absolute; left:0; top:0; bottom:0; width:8px; border-left:1px solid var(--border); }
+.cali-social a:last-child::before { bottom:50%; }
+.cali-social a::after { content:""; position:absolute; width:8px; left:0; top:50%; border-top:1px solid var(--border); }
+.cali-social a>svg,.cali-social a>.icon { flex:none; width:14px; height:14px; }
+.contact-label { overflow-wrap:anywhere; }
+.contact-arrow { flex:none; opacity:.45; transition:transform 150ms ease,opacity 150ms ease; }
+.contact-preview {
+  position:absolute; bottom:calc(100% + 8px); left:0; z-index:12;
+  display:flex; flex-direction:column; gap:5px; width:220px;
+  max-width:calc(100vw - 64px); padding:16px;
+  border:1px solid var(--border); border-radius:10px;
+  background:var(--background); box-shadow:var(--shadow-medium);
+  opacity:0; visibility:hidden; transform:translateY(3px);
+  transition:opacity 150ms ease,transform 150ms ease,visibility 150ms;
+}
+.contact-preview::after { content:""; position:absolute; inset:auto 0 -12px; height:12px; }
+.contact-preview strong { color:var(--foreground); font-size:14px; font-weight:500; }
+.contact-preview>span { font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
+.cali-social a:focus-visible:not(.contact-dismissed) .contact-preview { opacity:1; visibility:visible; transform:none; }
+.cali-qr-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.cali-qr-card { display:flex; flex-direction:column; gap:7px; min-width:0; font-size:12px; }
+.cali-qr-thumb { display:block; width:100%; max-width:140px; aspect-ratio:1; padding:5px; border:1px solid var(--border); border-radius:10px; background:#fff; transition:transform 180ms ease,border-color 180ms ease; }
+.cali-qr-thumb img { display:block; width:100%; height:100%; object-fit:contain; border-radius:5px; }
+.cali-qr-title { line-height:1.5; color:var(--foreground); }
+.cali-qr-title>span { color:var(--muted-foreground); font-size:11px; }
+.cali-qr-note { color:var(--muted-foreground); font-size:11px; line-height:1.6; }
+.cali-colophon { padding-top:4px; }
+.cali-qr-dialog {
+  width:min(390px,calc(100vw - 32px)); max-height:calc(100dvh - 32px);
+  margin:auto; padding:20px; border:1px solid var(--border); border-radius:16px;
+  background:var(--background); color:var(--foreground); box-shadow:var(--shadow-medium);
+  font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.cali-qr-dialog::backdrop { background:#0008; backdrop-filter:blur(5px); }
+.cali-qr-dialog-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; }
+.cali-qr-dialog-heading h2 { font-size:15px; font-weight:500; margin:0; }
+.cali-qr-dialog-heading button { width:36px; height:36px; border:1px solid var(--border); background:var(--gray-2); color:var(--foreground); border-radius:50%; font-size:22px; cursor:pointer; }
+.cali-qr-dialog>img { display:block; width:100%; height:auto; max-height:55dvh; object-fit:contain; background:#fff; border-radius:9px; }
+.cali-qr-dialog>p { margin:16px 0 8px; color:var(--muted-foreground); font-size:12px; }
+.cali-qr-dialog>a { display:inline-block; padding-block:6px; font-size:12px; }
+@media(hover:hover) and (pointer:fine) {
+  .cali-social a:hover:not(.contact-dismissed) .contact-preview { opacity:1; visibility:visible; transform:none; }
+  .cali-social a:hover .contact-arrow { opacity:1; transform:translate(1px,-1px); }
+  .cali-qr-card:hover .cali-qr-thumb { transform:translateY(-2px); border-color:var(--muted-foreground); }
+}
+@media(max-width:639px) {
+  .cali-footer { grid-template-columns:1fr; gap:28px; padding-inline:8px; }
+  .cali-qr-grid { max-width:330px; gap:24px; }
+  .cali-qr-thumb { max-width:144px; }
+  .cali-footer .cali-social a { min-height:40px; }
+  .cali-colophon { padding-top:0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .contact-preview,.contact-arrow,.cali-qr-thumb { transition:none; }
+}
 </style>{% endblock %}
 {% block script %}<script>
 (() => {
@@ -2470,6 +2580,115 @@ body {
     const target = active ? projects : main;
     if (target) target.focus({preventScroll: true});
   });
+})();
+(() => {
+  "use strict";
+
+  const dock = document.querySelector(".dock");
+  if (dock) {
+    const tip = document.createElement("span");
+    tip.className = "cali-floating-tip";
+    tip.id = "cali-dock-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.hidden = true;
+    document.body.append(tip);
+    let active;
+    let previousDescription;
+
+    function hide() {
+      if (active) {
+        if (previousDescription) active.setAttribute("aria-describedby", previousDescription);
+        else active.removeAttribute("aria-describedby");
+      }
+      active = null;
+      tip.hidden = true;
+    }
+
+    function show(item) {
+      const label = item.querySelector(".dock-label")?.textContent.trim();
+      if (!label) return;
+      hide();
+      active = item;
+      previousDescription = item.getAttribute("aria-describedby");
+      tip.textContent = label;
+      tip.hidden = false;
+      const box = item.getBoundingClientRect();
+      const width = tip.getBoundingClientRect().width;
+      const height = tip.getBoundingClientRect().height;
+      tip.style.left = `${Math.max(10, Math.min(box.left + box.width / 2 - width / 2, window.innerWidth - width - 10))}px`;
+      tip.style.top = `${Math.max(8, box.top - height - 12)}px`;
+      item.setAttribute("aria-describedby", [previousDescription, tip.id].filter(Boolean).join(" "));
+    }
+
+    dock.querySelectorAll(".dock-item").forEach((item) => {
+      item.addEventListener("pointerenter", (event) => { if (event.pointerType !== "touch") show(item); });
+      item.addEventListener("pointerleave", () => { if (document.activeElement !== item) hide(); });
+      item.addEventListener("focus", () => show(item));
+      item.addEventListener("blur", hide);
+      item.addEventListener("click", hide);
+      item.removeAttribute("title");
+    });
+    dock.dataset.tipsReady = "true";
+    window.addEventListener("resize", hide);
+    window.addEventListener("scroll", hide, {capture: true, passive: true});
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") hide(); });
+  }
+
+  document.querySelectorAll(".cali-social a").forEach((link) => {
+    const label = link.getAttribute("title") || link.getAttribute("aria-label") || link.textContent.trim();
+    if (!label) return;
+    const icon = link.querySelector("svg, .icon");
+    const name = document.createElement("span");
+    name.className = "contact-label";
+    name.textContent = label === "Twitter" ? "X / Twitter" : label;
+    const arrow = document.createElement("span");
+    arrow.className = "contact-arrow";
+    arrow.textContent = "↗";
+    arrow.setAttribute("aria-hidden", "true");
+    link.replaceChildren(...(icon ? [icon] : []), name, arrow);
+    link.removeAttribute("title");
+    const preview = document.createElement("span");
+    preview.className = "contact-preview";
+    preview.setAttribute("aria-hidden", "true");
+    const heading = document.createElement("strong");
+    heading.textContent = name.textContent;
+    const address = document.createElement("span");
+    try {
+      const url = new URL(link.href, window.location.href);
+      // Show only the destination, never query tokens from a saved link.
+      address.textContent = url.protocol === "mailto:" ? url.pathname : url.hostname + (url.pathname === "/" ? "" : url.pathname);
+    } catch { address.textContent = name.textContent; }
+    preview.append(heading, address);
+    link.append(preview);
+    link.addEventListener("pointerenter", () => link.classList.remove("contact-dismissed"));
+    link.addEventListener("focus", () => link.classList.remove("contact-dismissed"));
+    link.addEventListener("keydown", (event) => { if (event.key === "Escape") link.classList.add("contact-dismissed"); });
+  });
+
+  const dialog = document.querySelector(".cali-qr-dialog");
+  if (!dialog || typeof dialog.showModal !== "function") return;
+  const image = dialog.querySelector("[data-qr-full]");
+  const title = dialog.querySelector("h2");
+  const original = dialog.querySelector("[data-qr-original]");
+  let opener;
+  document.querySelectorAll("[data-cali-qr]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      image.src = link.href;
+      image.alt = link.dataset.qrTitle;
+      title.textContent = link.dataset.qrTitle;
+      original.href = link.href;
+      try { dialog.showModal(); } catch { return; }
+      opener = link;
+      event.preventDefault();
+    });
+  });
+  dialog.addEventListener("click", (event) => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+  });
+  dialog.addEventListener("close", () => { if (opener) opener.focus({preventScroll: true}); });
 })();
 </script>{% endblock %}
 {% block body %}
