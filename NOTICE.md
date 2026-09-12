@@ -18,3 +18,10 @@ The preview references the site's public logo on its existing Typlog image host.
 Article bodies and optional collection samples are explicitly local fixtures.
 The port does not include Sanity, Clerk, analytics, billing, subscriber exports,
 API credentials, or private content.
+
+Platform icons are from Simple Icons (CC0 1.0), revision
+`b054428646591252023b9599defb56f6e0b32f10`:
+https://github.com/simple-icons/simple-icons
+https://creativecommons.org/publicdomain/zero/1.0/
+Brand names and marks remain the property of their respective owners.
+The original design source is https://github.com/CaliCastle/cali.so.
