@@ -19,9 +19,14 @@ Article bodies and optional collection samples are explicitly local fixtures.
 The port does not include Sanity, Clerk, analytics, billing, subscriber exports,
 API credentials, or private content.
 
-Platform icons are from Simple Icons (CC0 1.0), revision
+Platform icons, including WeChat, are from Simple Icons (CC0 1.0), revision
 `b054428646591252023b9599defb56f6e0b32f10`:
 https://github.com/simple-icons/simple-icons
 https://creativecommons.org/publicdomain/zero/1.0/
 Brand names and marks remain the property of their respective owners.
 The original design source is https://github.com/CaliCastle/cali.so.
+
+The halftone portrait enhancement follows the original MIT-licensed portrait
+rendering approach. It processes the site's own public image in the visitor's
+browser, with an ordinary image fallback. The three editorial navigation posters
+are original vector artwork for this adaptation.

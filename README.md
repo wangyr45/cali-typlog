@@ -3,13 +3,16 @@
 A Typlog v3 theme based on the current cali.so design. See [NOTICE.md](NOTICE.md)
 and [LICENSE](LICENSE) for attribution.
 
+Version 0.5.0 is a prerelease. Automated checks pass; browser visual review and
+the live subscription-dialog check are pending. Version 0.4.0 remains stable.
+
 ## Install
 
-This repository places all required theme files at its root. Version 0.4.0 uses
+This repository places all required theme files at its root. Version 0.5.0 uses
 three self-contained templates: home.j2, list.j2, and item.j2.
 
 Typlog PRO users can open Settings → Themes & Design → Change and enter
-`wangyr45/cali-typlog@0.4.0` in the theme picker. The Git tag must match the version in
+`wangyr45/cali-typlog@0.5.0` in the theme picker. The Git tag must match the version in
 theme.json. See the [official installation guide](https://typlog.com/changelog/use-own-theme).
 
 Keep a copy of the previous theme and injected styles. Use a real Typlog preview
@@ -19,7 +22,10 @@ before activation. Local fixture tests cannot prove service behavior.
 ## Content
 
 - The home page shows the ten most recent articles and episodes.
-- The circular color portrait uses the site logo.
+- The hero displays the site logo as a feathered halftone portrait, with a
+  grayscale image fallback. The dock keeps the circular color avatar.
+- The larger site title, soft spectrum motto, and native subscription link
+  provide a clearer home introduction.
 - Home navigation cards always use the first three primary links. Legacy
   `nav_cards` overrides are ignored.
 - Same-site Moments links show up to three public photo thumbnails, with no
@@ -28,7 +34,9 @@ before activation. Local fixture tests cannot prove service behavior.
 - The dock contains Home, Archive, the configured About entry, and secondary links.
 - Secondary links keep their order and new-tab settings. Long rows can scroll.
   Zhihu, Xiaohongshu, X/Twitter, Bilibili, YouTube, Telegram, GitHub, Weibo, and
-  Instagram use built-in platform icons.
+  Instagram use built-in platform icons. Official WeChat account links on
+  `mp.weixin.qq.com` use the WeChat icon.
+- Archive, Newsletter, and YINREAD links have distinct vector poster artwork.
 - The footer credits [Cali Castle](https://github.com/CaliCastle/cali.so).
 - Public article thumbnails use the cover set in the post editor. Protected
   article covers are not emitted by the theme.
