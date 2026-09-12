@@ -1,20 +1,23 @@
 {% from "macros.j2" import render_social_icons %}
 {% set zh = (site.primary_lang|default('en')).startswith('zh') %}
-{% set defaults = {"intro": ["喜欢阅读，保持好奇。在这里记录读书、生活与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "asset:hero-portrait.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [], "books": [], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png"} %}
-{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.7.0/", true) %}
+{% set defaults = {"intro": ["喜欢阅读，保持好奇。在这里记录读书、生活与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "asset:hero-portrait.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [{"title": "After Hours", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/after-hours/1499378108", "cover": "asset:record-1499378108.jpg", "width": 600, "height": 600, "spine_color": "#352a18", "spine_ink": "#faf9f6"}, {"title": "Ah Yeah", "author": "EXID", "url": "https://music.apple.com/cn/album/ah-yeah/982223883", "cover": "asset:record-982223883.jpg", "width": 600, "height": 600, "spine_color": "#f1eff0", "spine_ink": "#252523"}, {"title": "Full Moon - EP", "author": "EXID", "url": "https://music.apple.com/cn/album/full-moon-ep/1305881083", "cover": "asset:record-1305881083.jpg", "width": 600, "height": 600, "spine_color": "#3b6381", "spine_ink": "#faf9f6"}, {"title": "HEART MAID", "author": "SUNMI", "url": "https://music.apple.com/cn/album/heart-maid/1848070290", "cover": "asset:record-1848070290.jpg", "width": 600, "height": 600, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "Starboy", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/starboy/1440871397", "cover": "asset:record-1440871397.jpg", "width": 600, "height": 600, "spine_color": "#c0042c", "spine_ink": "#faf9f6"}, {"title": "WE", "author": "EXID", "url": "https://music.apple.com/cn/album/we/1463174475", "cover": "asset:record-1463174475.jpg", "width": 600, "height": 600, "spine_color": "#e8372d", "spine_ink": "#faf9f6"}, {"title": "Street", "author": "EXID", "url": "https://music.apple.com/cn/album/street/1118367147", "cover": "asset:record-1118367147.jpg", "width": 600, "height": 600, "spine_color": "#f75f85", "spine_ink": "#faf9f6"}, {"title": "范特西", "author": "周杰伦", "url": "https://music.apple.com/cn/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206", "cover": "asset:record-535739206.jpg", "width": 600, "height": 600, "spine_color": "#ac1a1d", "spine_ink": "#faf9f6"}, {"title": "Inner Child", "author": "Shanice", "url": "https://music.apple.com/cn/album/inner-child/1444166430", "cover": "asset:record-1444166430.jpg", "width": 600, "height": 600, "spine_color": "#211b1d", "spine_ink": "#faf9f6"}, {"title": "我肯定在几百年前就说过爱你", "author": "告五人", "url": "https://music.apple.com/cn/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804", "cover": "asset:record-1546062804.jpg", "width": 600, "height": 600, "spine_color": "#b3b3b1", "spine_ink": "#252523"}, {"title": "新的心跳", "author": "邓紫棋", "url": "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923", "cover": "asset:record-1053567923.jpg", "width": 600, "height": 600, "spine_color": "#1a0f1e", "spine_ink": "#faf9f6"}], "books": [{"title": "Wild Thing", "author": "Sue Prideaux", "url": "https://book.douban.com/subject/37071291/", "cover": "asset:book-37071291.jpg", "width": 449, "height": 690, "spine_color": "#1c1a21", "spine_ink": "#faf9f6"}, {"title": "清代地方政府", "author": "瞿同祖", "url": "https://book.douban.com/subject/35713871/", "cover": "asset:book-35713871.jpg", "width": 1080, "height": 1552, "spine_color": "#0f1922", "spine_ink": "#faf9f6"}, {"title": "互联网思想十讲", "author": "段永朝", "url": "https://book.douban.com/subject/26253507/", "cover": "asset:book-26253507.jpg", "width": 353, "height": 500, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "资治通鉴", "author": "[宋]司马光", "url": "https://book.douban.com/subject/6790302/", "cover": "asset:book-6790302.jpg", "width": 720, "height": 1028, "spine_color": "#f3bf20", "spine_ink": "#252523"}, {"title": "中国的奋斗", "author": "[美]徐中约", "url": "https://book.douban.com/subject/36526876/", "cover": "asset:book-36526876.jpg", "width": 748, "height": 1020, "spine_color": "#fffde4", "spine_ink": "#252523"}, {"title": "醉古堂剑扫", "author": "（明）陆绍珩 等撰", "url": "https://book.douban.com/subject/1105448/", "cover": "asset:book-1105448.jpg", "width": 600, "height": 982, "spine_color": "#ece4aa", "spine_ink": "#252523"}, {"title": "孙犁全集（1-11卷）", "author": "孙犁", "url": "https://book.douban.com/subject/1084028/", "cover": "asset:book-1084028.jpg", "width": 600, "height": 885, "spine_color": "#87424d", "spine_ink": "#faf9f6"}], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png", "contact_cards": {}, "portrait_dark": "asset:hero-portrait-dark.png"} %}
+{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.0/", true) %}
+{% set bundled_images = ["asset:hero-portrait.png", "asset:hero-portrait-dark.png", "asset:dockpic.png", "asset:portus.png", "asset:wechat-backup.png", "asset:support.png", "asset:record-1499378108.jpg", "asset:record-982223883.jpg", "asset:record-1305881083.jpg", "asset:record-1848070290.jpg", "asset:record-1440871397.jpg", "asset:record-1463174475.jpg", "asset:record-1118367147.jpg", "asset:record-535739206.jpg", "asset:record-1444166430.jpg", "asset:record-1546062804.jpg", "asset:record-1053567923.jpg", "asset:book-37071291.jpg", "asset:book-35713871.jpg", "asset:book-26253507.jpg", "asset:book-6790302.jpg", "asset:book-36526876.jpg", "asset:book-1105448.jpg", "asset:book-1084028.jpg"] %}
 {% set supplied = query.config('cali-typlog') %}
 {% set supplied = supplied if supplied is mapping else {} %}
-{% set config = namespace(intro=defaults.intro, portrait=defaults.portrait,
+{% set config = namespace(intro=defaults.intro, portrait=defaults.portrait, portrait_dark=defaults.portrait_dark|default(''),
   recent_count=defaults.recent_count, recent_title=defaults.recent_title,
   records=defaults.records, books=defaults.books, projects=defaults.projects,
-  projects_intro=defaults.projects_intro, support_qr=defaults.support_qr, wechat_qr=defaults.wechat_qr,
+  contact_cards=defaults.contact_cards|default({}), projects_intro=defaults.projects_intro, support_qr=defaults.support_qr, wechat_qr=defaults.wechat_qr,
   records_title=defaults.records_title, books_title=defaults.books_title,
   show_toc=defaults.show_toc, show_cover=defaults.show_cover) %}
+{% if supplied.contact_cards is mapping %}{% set config.contact_cards = supplied.contact_cards %}{% endif %}
 {% if supplied.intro is string %}
   {% set config.intro = supplied.intro.splitlines() %}
 {% elif supplied.intro is defined and supplied.intro is sequence and supplied.intro is not mapping %}
   {% set config.intro = supplied.intro|select('string')|list %}
 {% endif %}
+{% if supplied.portrait_dark is string %}{% set config.portrait_dark = supplied.portrait_dark %}{% endif %}
 {% if supplied.portrait is string %}{% set config.portrait = supplied.portrait %}{% endif %}
 {% if supplied.support_qr is string %}{% set config.support_qr = supplied.support_qr %}{% endif %}
 {% if supplied.wechat_qr is string %}{% set config.wechat_qr = supplied.wechat_qr %}{% endif %}
@@ -66,12 +69,13 @@
   {%- endif -%}
 {%- endmacro %}
 {% macro image_url(value) -%}
-  {%- if value in ['asset:hero-portrait.png', 'asset:dockpic.png', 'asset:portus.png', 'asset:wechat-backup.png', 'asset:support.png'] -%}
+  {%- if value in bundled_images -%}
     {{- asset_base.rstrip('/') ~ '/assets/' ~ value[6:] -}}
   {%- else -%}{{- public_url(value) -}}{%- endif -%}
 {%- endmacro %}
 {% set portrait_url = image_url(config.portrait)|trim %}
 {% set portrait_url = portrait_url or (site.logo.src if site.logo else '') %}
+{% set portrait_dark_url = image_url(config.portrait_dark)|trim or portrait_url %}
 {% set dock_portrait_url = site.logo.src if site.logo else '' %}
 {% set project_entries = namespace(items=[]) %}
 {% for item in config.projects %}
@@ -112,7 +116,7 @@
 {% macro platform(url) -%}
   {%- set host = link_host(url)|trim -%}
   {%- set result = namespace(name='link') -%}
-  {%- for domain, name in {'zhihu.com':'zhihu', 'xiaohongshu.com':'xiaohongshu', 'xhslink.com':'xiaohongshu', 'x.com':'x', 'twitter.com':'x', 'bilibili.com':'bilibili', 'b23.tv':'bilibili', 'youtube.com':'youtube', 'youtu.be':'youtube', 't.me':'telegram', 'telegram.me':'telegram', 'telegram.org':'telegram', 'github.com':'github', 'weibo.com':'sinaweibo', 'weibo.cn':'sinaweibo', 'instagram.com':'instagram'}.items() -%}
+  {%- for domain, name in {'zhihu.com':'zhihu', 'xiaohongshu.com':'xiaohongshu', 'xhslink.com':'xiaohongshu', 'x.com':'x', 'twitter.com':'x', 'bilibili.com':'bilibili', 'b23.tv':'bilibili', 'youtube.com':'youtube', 'youtu.be':'youtube', 't.me':'telegram', 'telegram.me':'telegram', 'telegram.org':'telegram', 'github.com':'github', 'weibo.com':'sinaweibo', 'weibo.cn':'sinaweibo', 'instagram.com':'instagram', 'xiaoyuzhoufm.com':'xiaoyuzhou', 'taiyin.podcast.xyz':'xiaoyuzhou'}.items() -%}
     {%- if host == domain or host.endswith('.' ~ domain) -%}{%- set result.name = name -%}{%- endif -%}
   {%- endfor -%}
   {%- if host == 'mp.weixin.qq.com' -%}{%- set result.name = 'wechat' -%}{%- endif -%}
@@ -122,7 +126,8 @@
 {% macro platform_icon(name) %}
 {% if name == 'link' %}{{ icon(5) }}{% else %}
 <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-{% if name == 'zhihu' %}<path d="M5.721 0C2.251 0 0 2.25 0 5.719V18.28C0 21.751 2.252 24 5.721 24h12.56C21.751 24 24 21.75 24 18.281V5.72C24 2.249 21.75 0 18.281 0zm1.964 4.078c-.271.73-.5 1.434-.68 2.11h4.587c.545-.006.445 1.168.445 1.171H9.384a58.104 58.104 0 01-.112 3.797h2.712c.388.023.393 1.251.393 1.266H9.183a9.223 9.223 0 01-.408 2.102l.757-.604c.452.456 1.512 1.712 1.906 2.177.473.681.063 2.081.063 2.081l-2.794-3.382c-.653 2.518-1.845 3.607-1.845 3.607-.523.468-1.58.82-2.64.516 2.218-1.73 3.44-3.917 3.667-6.497H4.491c0-.015.197-1.243.806-1.266h2.71c.024-.32.086-3.254.086-3.797H6.598c-.136.406-.158.447-.268.753-.594 1.095-1.603 1.122-1.907 1.155.906-1.821 1.416-3.6 1.591-4.064.425-1.124 1.671-1.125 1.671-1.125zM13.078 6h6.377v11.33h-2.573l-2.184 1.373-.401-1.373h-1.219zm1.313 1.219v8.86h.623l.263.937 1.455-.938h1.456v-8.86z"/>
+{% if name == 'xiaoyuzhou' %}<circle cx="12" cy="12" r="7.1" opacity=".3"/><ellipse cx="12" cy="12" rx="12" ry="3.25" transform="rotate(-43 12 12)" fill="none" stroke="currentColor" stroke-width="1.6"/>
+{% elif name == 'zhihu' %}<path d="M5.721 0C2.251 0 0 2.25 0 5.719V18.28C0 21.751 2.252 24 5.721 24h12.56C21.751 24 24 21.75 24 18.281V5.72C24 2.249 21.75 0 18.281 0zm1.964 4.078c-.271.73-.5 1.434-.68 2.11h4.587c.545-.006.445 1.168.445 1.171H9.384a58.104 58.104 0 01-.112 3.797h2.712c.388.023.393 1.251.393 1.266H9.183a9.223 9.223 0 01-.408 2.102l.757-.604c.452.456 1.512 1.712 1.906 2.177.473.681.063 2.081.063 2.081l-2.794-3.382c-.653 2.518-1.845 3.607-1.845 3.607-.523.468-1.58.82-2.64.516 2.218-1.73 3.44-3.917 3.667-6.497H4.491c0-.015.197-1.243.806-1.266h2.71c.024-.32.086-3.254.086-3.797H6.598c-.136.406-.158.447-.268.753-.594 1.095-1.603 1.122-1.907 1.155.906-1.821 1.416-3.6 1.591-4.064.425-1.124 1.671-1.125 1.671-1.125zM13.078 6h6.377v11.33h-2.573l-2.184 1.373-.401-1.373h-1.219zm1.313 1.219v8.86h.623l.263.937 1.455-.938h1.456v-8.86z"/>
 {% elif name == 'xiaohongshu' %}<path d="M22.405 9.879c.002.016.01.02.07.019h.725a.797.797 0 0 0 .78-.972.794.794 0 0 0-.884-.618.795.795 0 0 0-.692.794c0 .101-.002.666.001.777zm-11.509 4.808c-.203.001-1.353.004-1.685.003a2.528 2.528 0 0 1-.766-.126.025.025 0 0 0-.03.014L7.7 16.127a.025.025 0 0 0 .01.032c.111.06.336.124.495.124.66.01 1.32.002 1.981 0 .01 0 .02-.006.023-.015l.712-1.545a.025.025 0 0 0-.024-.036zM.477 9.91c-.071 0-.076.002-.076.01a.834.834 0 0 0-.01.08c-.027.397-.038.495-.234 3.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681 1.523.787 1.74.008.015.011.02.017.02.008 0 .033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029 0-.033-.03-.034zm7.203 3.757a1.427 1.427 0 0 1-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443 0 0 0-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153 1.964.233 2.946.05.4.186 1.085.487 1.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126 0 0 1-.116-.178l1.178-2.625a.025.025 0 0 0-.023-.035l-1.318-.003a.148.148 0 0 1-.135-.21l.876-1.954a.025.025 0 0 0-.023-.035h-1.56c-.01 0-.02.006-.024.015l-.926 2.068c-.085.169-.314.634-.399.938a.534.534 0 0 0-.02.191.46.46 0 0 0 .23.378.981.981 0 0 0 .46.119h.59c.041 0-.688 1.482-.834 1.972a.53.53 0 0 0-.023.172.465.465 0 0 0 .23.398c.15.092.342.12.475.12l1.66-.001c.01 0 .02-.006.023-.015l.575-1.28a.025.025 0 0 0-.024-.035zm-6.93-4.937H3.1a.032.032 0 0 0-.034.033c0 1.048-.01 2.795-.01 6.829 0 .288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465 1.064.555 1.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33 0-4.66-.007-6.991a.032.032 0 0 0-.032-.032zm11.784 6.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08 0 .075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064 0-.075-.006-.075.073v1.445c0 .083-.006.077.08.077h.854c.075 0 .07-.004.07.07v4.624c0 .095.008.084-.085.084-.37 0-1.11-.002-1.304 0-.048.001-.06.03-.06.03l-.697 1.519s-.014.025-.008.036c.006.01.013.008.058.008 1.748.003 3.495.002 5.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0 .013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303 0-.072-.006-.071.07-.07l.733-.003c.041 0 .081.002.12.015.093.025.16.107.165.204.006.431.002 1.153.001 1.153zm2.67.244a1.953 1.953 0 0 0-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823 1.823 0 0 0-.153-.53 1.533 1.533 0 0 0-.677-.71 2.167 2.167 0 0 0-1-.258c-.153-.003-.567 0-.72 0-.07 0-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016 0-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0 .09-.004.082.082.082h.913c.082 0 .072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068 0-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082 0 .076-.006.076.079v3.225c0 .088-.007.081.082.081h1.43c.09 0 .082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098 0 .191.02.28.061a.46.46 0 0 1 .274.407c.008.395.003.79.003 1.185 0 .259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57 1.303a.045.045 0 0 0 .04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03 2.03 0 0 0 .408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38 0 .078-.029-.641-.724-.998z"/>
 {% elif name == 'wechat' %}<path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
 {% elif name == 'x' %}<path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/>
@@ -152,7 +157,10 @@
 
 
 {% macro header() %}
-{% set dock = namespace(about=none) %}
+{% set dock = namespace(about=none, secondary=[]) %}
+{% for nav in site.secondary_links|default([], true) %}
+  {% if platform(nav.url)|trim != 'wechat' %}{% set dock.secondary = dock.secondary + [nav] %}{% endif %}
+{% endfor %}
 {% for nav in site.primary_links|default([], true) %}
   {% set title = nav.title|trim|lower %}
   {% set path = nav.url.split('?')[0].split('#')[0].rstrip('/') %}
@@ -160,7 +168,7 @@
   {% if base_url and path.startswith(base_url.rstrip('/') + '/') %}{% set path = path[base_url.rstrip('/')|length:] %}{% endif %}
   {% if not dock.about and (title in ['关于', '关于我', '关于我们', 'about', 'about me', 'about us'] or path in ['/me', '/about']) %}{% set dock.about = nav %}{% endif %}
 {% endfor %}
-<noscript><style>.cali-theme-control,.cali-search,.cali-preferences .js-subscribe,.cali-intro-subscribe{display:none!important}</style></noscript>
+<noscript><style>.cali-appearance,.cali-search,.cali-preferences .js-subscribe,.cali-intro-subscribe{display:none!important}</style></noscript>
 <a class="cali-skip cali-skip-main" href="#cali-main">{{ labels.skip }}</a>
 {% if not page and config.projects %}<a class="cali-skip cali-skip-projects" href="#projects">{{ labels.skip }}</a>{% endif %}
 <nav class="dock" aria-label="{{ labels.menu }}">
@@ -174,33 +182,41 @@
 </span>
 {{ dock_link({'url': linkify(site.list_url), 'title': labels.archive, 'blank': false}, 0) }}
 {% if config.projects %}<a class="dock-item" data-cali-projects-link href="{{ projects_url }}" aria-label="{{ labels.projects }}" title="{{ labels.projects }}">{{ icon(6) }}<span class="dock-label">{{ labels.projects }}</span></a>{% endif %}
-{% if dock.about %}{{ dock_link(dock.about, 3) }}{% endif %}
-{% if site.secondary_links %}
+{% if dock.secondary %}
 <div class="dock-secondary" role="group" aria-label="{{ '次要链接（可横向滑动）' if zh else 'Secondary links (scroll horizontally)' }}">
-{% for nav in site.secondary_links %}{{ dock_link(nav, 5) }}{% endfor %}
+{% for nav in dock.secondary %}{{ dock_link(nav, 5) }}{% endfor %}
 </div>
 {% endif %}
+<a class="dock-item" data-platform="xiaoyuzhou" href="https://taiyin.podcast.xyz" target="_blank" rel="noopener noreferrer" aria-label="{{ '播客名片' if zh else 'Podcast card' }}" title="{{ '播客名片' if zh else 'Podcast card' }}">{{ platform_icon('xiaoyuzhou') }}<span class="dock-label">{{ '播客名片' if zh else 'Podcast card' }}</span></a>
+{% if dock.about %}{{ dock_link(dock.about, 3) }}{% endif %}
 <span class="dock-rule" aria-hidden="true">
 </span>
 <details class="cali-mobile-nav cali-preferences">
 <summary class="dock-item" aria-label="{{ labels.menu }}">{{ icon(4) }}<span class="dock-label">{{ labels.menu }}</span>
 </summary>
 <div class="cali-preferences-panel">
-<p>{{ labels.menu }}</p>
-{% if config.projects %}<a data-cali-projects-link href="{{ projects_url }}">{{ labels.projects }} ↗</a>{% endif %}
-<label class="cali-theme-control" for="js-theme-toggle">{{ labels.dark }}<input type="checkbox" id="js-theme-toggle" aria-label="{{ labels.dark }}">
-</label>{% if features.algolia %}<input class="js-search cali-search" type="search" aria-label="{{ labels.search }}" placeholder="{{ labels.search }}…" autocomplete="off">{% endif %}{% if features.subscriber %}<button class="js-subscribe cali-button" type="button">{{ labels.subscribe }} ↗</button>{% endif %}{% if site.primary_links %}<nav aria-label="{{ '主要链接' if zh else 'Primary links' }}">{% for nav in site.primary_links %}{{ nav_link(nav) }}{% endfor %}</nav>{% endif %}{% if site.secondary_links %}<nav aria-label="{{ '次要链接' if zh else 'Secondary links' }}">{% for nav in site.secondary_links %}{{ nav_link(nav) }}{% endfor %}</nav>{% endif %}
+<div class="cali-preferences-heading"><span>{{ labels.menu }}</span><span aria-hidden="true">{{ icon(4) }}</span></div>
+<div class="cali-appearance">
+<label class="cali-theme-control" for="js-theme-toggle">{{ labels.dark }}<input type="checkbox" id="js-theme-toggle" aria-label="{{ labels.dark }}"></label>
+<div class="cali-appearance-options" hidden>
+<span>{{ '外观' if zh else 'Appearance' }}</span>
+<div class="cali-theme-segments" role="group" aria-label="{{ '外观' if zh else 'Appearance' }}">
+<button type="button" data-cali-appearance="light" aria-label="{{ '浅色' if zh else 'Light' }}" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>{{ '浅色' if zh else 'Light' }}</button>
+<button type="button" data-cali-appearance="system" aria-label="{{ '跟随系统' if zh else 'System' }}" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v4m-4 0h8"/></svg>{{ '跟随系统' if zh else 'System' }}</button>
+<button type="button" data-cali-appearance="dark" aria-label="{{ '深色' if zh else 'Dark' }}" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>{{ '深色' if zh else 'Dark' }}</button>
+</div></div></div>
+{% if features.algolia %}<input class="js-search cali-search" type="search" aria-label="{{ labels.search }}" placeholder="{{ labels.search }}…" autocomplete="off">{% endif %}
+
 </div>
 </details>
 </nav>
 {% endmacro %}
 
 
-{% macro qr_card(url, title, note) %}
+{% macro qr_card(url, title, label='') %}
 <a class="cali-qr-card" data-cali-qr data-qr-title="{{ title }}" href="{{ url }}" target="_blank" rel="noopener noreferrer">
-  <span class="cali-qr-thumb"><img src="{{ url }}" alt="{{ title }}二维码" width="132" height="132" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
-  <span class="cali-qr-title">{{ title }} <span aria-hidden="true">↗</span></span>
-  <span class="cali-qr-note">{{ note }}</span>
+  <span class="cali-qr-thumb"><img src="{{ url }}" alt="{{ title }}二维码" width="112" height="112" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+  <span class="cali-qr-title">{{ label or title }}</span>
 </a>
 {% endmacro %}
 
@@ -208,18 +224,19 @@
 {% set support = image_url(config.support_qr)|trim %}
 {% set wechat = image_url(config.wechat_qr)|trim %}
 <footer class="cali-footer">
-<div class="cali-contact">
+<div class="cali-contact" id="contact">
 <h2>{{ '联系' if zh else 'Contact' }}</h2>
-<nav class="cali-social" aria-label="{{ '联系' if zh else 'Contact' }}">{{ render_social_icons(site) }}<a href="{{ linkify('/feed.xml') }}" title="RSS">RSS <span aria-hidden="true">↗</span></a>
+<nav class="cali-social" data-site-name="{{ site.name }}" data-site-avatar="{{ dock_portrait_url }}" data-site-bio="{{ site.summary|default('') }}" data-contact-cards="{{ config.contact_cards|tojson|forceescape }}" aria-label="{{ '联系' if zh else 'Contact' }}">{{ render_social_icons(site) }}<a href="{{ linkify('/feed.xml') }}" title="RSS">RSS <span aria-hidden="true">↗</span></a>
 </nav>
 </div>
 {% if support or wechat %}
 <div class="cali-support">
 <h2>{{ '支持与订阅' if zh else 'Support and follow' }}</h2>
 <div class="cali-qr-grid">
-{% if support %}{{ qr_card(support, '打赏支持' if zh else 'Support my work', '随心支持，感谢阅读' if zh else 'Thank you for reading') }}{% endif %}
-{% if wechat %}{{ qr_card(wechat, '微信公众号（备份）' if zh else 'WeChat backup account', '扫码关注 · 点击放大' if zh else 'Scan to follow · Enlarge') }}{% endif %}
+{% if support %}{{ qr_card(support, '打赏支持' if zh else 'Support my work') }}{% endif %}
+{% if wechat %}{{ qr_card(wechat, '微信公众号（备份）' if zh else 'WeChat backup account', '公众号（备份）' if zh else 'WeChat backup') }}{% endif %}
 </div>
+<p class="cali-qr-hint">{{ '点击放大 · 微信扫码' if zh else 'Click to enlarge · Scan with WeChat' }}</p>
 </div>
 {% endif %}
 <p class="cali-colophon"><span>© {{ site.name }}</span><span class="cali-colophon-links"><span class="cali-credit">{{ '设计致敬' if zh else 'Design credit' }} <a href="https://github.com/CaliCastle/cali.so" target="_blank" rel="noopener noreferrer">Cali Castle ↗</a></span><span>Powered by <a href="https://typlog.com/">Typlog</a></span></span></p>
@@ -260,21 +277,51 @@
   {% endif %}
 {% endfor %}
 {% if entries.items %}
-<section class="cali-section">
+<section class="cali-section" id="{{ kind }}">
   {{ tag(number, title) }}
-  <div class="cali-collection" data-collection="{{ kind }}">
-    <div class="cali-shelf cali-{{ kind }}" hidden role="group" aria-label="{{ title }}">
+  <div class="cali-collection room-shelf {{ 'vinyl-room' if kind == 'records' else 'bookshelf-room' }}" data-collection="{{ kind }}">
+    <div class="{{ 'vinyl-viewport' if kind == 'records' else 'bookshelf-viewport' }}" data-shelf-viewport hidden>
+    <ul class="{{ 'vinyl-shelf' if kind == 'records' else 'shelf3' }}" aria-label="{{ title }}">
       {% for item in entries.items %}
-      <button type="button" class="cali-sleeve" disabled aria-pressed="{{ 'true' if loop.first else 'false' }}" aria-label="{{ item.title }}">
-        <span class="cali-spine">{{ item.title }}</span>
-        <span class="cali-front">
-          {% set cover = public_url(item.cover)|trim %}
-          <span>{{ item.title }}</span>
-          {% if cover %}<img data-cali-image src="{{ cover }}" alt="" loading="lazy">{% endif %}
+      {% set tone = item.spine_color if item.spine_color is string else '' %}
+      {% set ink = item.spine_ink if item.spine_ink is string else '' %}
+      {% set hex = namespace(tone=true, ink=true) %}
+      {% for c in tone|lower %}{% if c not in '#0123456789abcdef' %}{% set hex.tone = false %}{% endif %}{% endfor %}
+      {% for c in ink|lower %}{% if c not in '#0123456789abcdef' %}{% set hex.ink = false %}{% endif %}{% endfor %}
+      {% set ratio = item.width / item.height if item.width is number and item.height is number and item.width > 0 and item.height > 0 and item.width < 100000 and item.height < 100000 else 0.71 %}
+      {% set cover_width = ([210, [100, ratio * 210]|max]|min)|round(2) %}
+      {% set spine = ([38, [18, item.spine]|max]|min) if item.spine is number else 24 %}
+      {% set cover = image_url(item.cover)|trim %}
+      <li class="{{ 'vinyl' if kind == 'records' else 'book3-frame' }}" data-cover-width="{{ cover_width }}" data-spine="{{ spine }}" style="{% if tone|length == 7 and tone.startswith('#') and hex.tone %}--book-spine:{{ tone }};--vinyl-spine-color:{{ tone }};{% endif %}{% if ink|length == 7 and ink.startswith('#') and hex.ink %}--book-ink:{{ ink }};--vinyl-spine-ink:{{ ink }};{% endif %}">
+      {% if kind == 'books' %}<span class="book3-contact-shadow" aria-hidden="true"></span>{% endif %}
+      <button type="button" class="{{ 'vinyl-trigger' if kind == 'records' else 'book3' }}" data-shelf-select disabled aria-pressed="false" aria-label="{{ item.title }}" aria-posinset="{{ loop.index }}" aria-setsize="{{ entries.items|length }}">
+      {% if kind == 'records' %}
+        {% for corner in ['top-left','top-right','bottom-right','bottom-left'] %}<span class="vinyl-hit-corner" data-corner="{{ corner }}" aria-hidden="true"></span>{% endfor %}
+        <span class="vinyl-contact-shadow" aria-hidden="true"></span>
+        <span class="vinyl-object">
+          <span class="vinyl-sleeve">
+            <span class="vinyl-sleeve-type"><span class="vinyl-sleeve-album">{{ item.title }}</span>{% if item.author is string %}<span class="vinyl-sleeve-artist">{{ item.author }}</span>{% endif %}</span>
+            {% if cover %}<img class="vinyl-art" data-cali-image src="{{ cover }}" alt="" loading="lazy" decoding="async" draggable="false">{% endif %}
+            <span class="vinyl-creases" aria-hidden="true"></span><span class="vinyl-paper" aria-hidden="true"></span>
+          </span>
+          <span class="vinyl-spine vinyl-spine-left" aria-hidden="true"><span>{{ item.title }}</span></span>
+          <span class="vinyl-spine vinyl-spine-right" aria-hidden="true"><span>{{ item.title }}</span></span>
         </span>
+      {% else %}
+        <span class="book3-inner" style="width:{{ cover_width }}px">
+          <span class="book3-cover" style="transform:translateZ({{ spine }}px)">
+            <span class="book3-cover-blank"><b>{{ item.title }}</b>{% if item.author is string %}{{ item.author }}{% endif %}</span>
+            {% if cover %}<img data-cali-image src="{{ cover }}" alt="" loading="lazy" decoding="async" draggable="false">{% endif %}
+          </span>
+          <span class="book3-spine" style="width:{{ spine }}px"><span class="book3-spine-title">{{ item.title }}</span>{% if item.author is string %}<span class="book3-spine-author">{{ item.author }}</span>{% endif %}</span>
+        </span>
+      {% endif %}
       </button>
+      </li>
       {% endfor %}
+    </ul>
     </div>
+    <span class="room-shelf-plank" data-shelf-plank hidden aria-hidden="true"></span>
     <div class="cali-shelf-captions" hidden aria-live="polite" aria-atomic="true">
       {% for item in entries.items %}
       <p{% if not loop.first %} hidden{% endif %}>
@@ -1473,92 +1520,6 @@ body {
 .cali-skip:focus {
   top:10px;
 }
-.cali-shelf {
-  display:flex;
-  align-items:end;
-  overflow-x:auto;
-  overflow-y:hidden;
-  padding:15px 8px 18px;
-  perspective:1000px;
-  isolation:isolate;
-  border-bottom:1px solid var(--border);
-}
-.cali-sleeve {
-  position:relative;
-  flex:0 0 30px;
-  height:200px;
-  border:0;
-  padding:0;
-  background:transparent;
-  color:var(--foreground);
-  transition:flex-basis .45s var(--ease-spring);
-  text-align:left;
-}
-.cali-spine {
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  writing-mode:vertical-rl;
-  padding:12px 6px;
-  border:1px solid var(--border);
-  background:var(--paper);
-  box-shadow:inset -3px 0 4px #00000010;
-  font-size:12px;
-  overflow:hidden;
-}
-.cali-front {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  background:var(--paper);
-  border:1px solid var(--border);
-  transform-origin:left;
-  transform:rotateY(-88deg);
-  backface-visibility:hidden;
-  transition:transform .45s var(--ease-spring);
-  width:142px;
-  box-shadow:3px 3px 6px #00000012;
-}
-.cali-front img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.cali-front>span {
-  padding:20px;
-  font-size:22px;
-  font-family:serif;
-}
-.cali-sleeve[aria-pressed="true"] {
-  flex-basis:156px;
-}
-.cali-sleeve[aria-pressed="true"] .cali-front {
-  transform:rotateY(-12deg);
-}
-.cali-records .cali-sleeve {
-  height:170px;
-  flex-basis:35px;
-}
-.cali-records .cali-front {
-  width:170px;
-  transform:rotateY(-65deg);
-}
-.cali-records .cali-sleeve[aria-pressed="true"] {
-  flex-basis:182px;
-}
-.cali-records .cali-sleeve[aria-pressed="true"] .cali-front {
-  transform:rotateY(-8deg);
-}
-.cali-shelf-captions {
-  min-height:44px;
-  padding-top:12px;
-  font-size:12px;
-  color:var(--muted-foreground);
-}
 @media(min-resolution:192dpi) {
   :root {
     --border-hairline:.5px;
@@ -2107,26 +2068,12 @@ body {
 .cali-social a>svg,.cali-social a>.icon { flex:none; width:14px; height:14px; }
 .contact-label { overflow-wrap:anywhere; }
 .contact-arrow { flex:none; opacity:.45; transition:transform 150ms ease,opacity 150ms ease; }
-.contact-preview {
-  position:absolute; bottom:calc(100% + 8px); left:0; z-index:12;
-  display:flex; flex-direction:column; gap:5px; width:220px;
-  max-width:calc(100vw - 64px); padding:16px;
-  border:1px solid var(--border); border-radius:10px;
-  background:var(--background); box-shadow:var(--shadow-medium);
-  opacity:0; visibility:hidden; transform:translateY(3px);
-  transition:opacity 150ms ease,transform 150ms ease,visibility 150ms;
-}
-.contact-preview::after { content:""; position:absolute; inset:auto 0 -12px; height:12px; }
-.contact-preview strong { color:var(--foreground); font-size:14px; font-weight:500; }
-.contact-preview>span { font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
-.cali-social a:focus-visible:not(.contact-dismissed) .contact-preview { opacity:1; visibility:visible; transform:none; }
 .cali-qr-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
 .cali-qr-card { display:flex; flex-direction:column; gap:7px; min-width:0; font-size:12px; }
 .cali-qr-thumb { display:block; width:100%; max-width:140px; aspect-ratio:1; padding:5px; border:1px solid var(--border); border-radius:10px; background:#fff; transition:transform 180ms ease,border-color 180ms ease; }
 .cali-qr-thumb img { display:block; width:100%; height:100%; object-fit:contain; border-radius:5px; }
 .cali-qr-title { line-height:1.5; color:var(--foreground); }
 .cali-qr-title>span { color:var(--muted-foreground); font-size:11px; }
-.cali-qr-note { color:var(--muted-foreground); font-size:11px; line-height:1.6; }
 .cali-colophon { padding-top:4px; }
 .cali-qr-dialog {
   width:min(390px,calc(100vw - 32px)); max-height:calc(100dvh - 32px);
@@ -2142,9 +2089,8 @@ body {
 .cali-qr-dialog>p { margin:16px 0 8px; color:var(--muted-foreground); font-size:12px; }
 .cali-qr-dialog>a { display:inline-block; padding-block:6px; font-size:12px; }
 @media(hover:hover) and (pointer:fine) {
-  .cali-social a:hover:not(.contact-dismissed) .contact-preview { opacity:1; visibility:visible; transform:none; }
   .cali-social a:hover .contact-arrow { opacity:1; transform:translate(1px,-1px); }
-  .cali-qr-card:hover .cali-qr-thumb { transform:translateY(-2px); border-color:var(--muted-foreground); }
+  .cali-qr-card:hover .cali-qr-title { color:var(--foreground); }
 }
 @media(max-width:639px) {
   .cali-footer { grid-template-columns:1fr; gap:28px; padding-inline:8px; }
@@ -2154,8 +2100,763 @@ body {
   .cali-colophon { padding-top:0; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .contact-preview,.contact-arrow,.cali-qr-thumb { transition:none; }
+  .contact-arrow,.cali-qr-thumb { transition:none; }
 }
+
+/* Contact cards share the site's paper, type, and restrained depth. */
+.cali-contact-card {
+  position:fixed; z-index:90; width:320px; max-width:calc(100vw - 24px);
+  max-height:calc(100dvh - 24px); overflow:auto; padding:0 20px;
+  border:1px solid var(--border); border-radius:8px;
+  background:var(--background); color:var(--foreground);
+  box-shadow:0 12px 36px #00000012,0 2px 5px #00000008;
+  font:13px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  animation:contact-card-in 160ms ease-out;
+}
+.cali-contact-card[hidden] { display:none; }
+.contact-card-masthead { display:flex; justify-content:space-between; align-items:center; height:42px; border-bottom:1px solid var(--border); color:var(--muted-foreground); }
+.contact-card-service { font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+.contact-card-edition { font:12px/1.4 ui-monospace,monospace; }
+.contact-card-head { display:flex; align-items:center; gap:11px; margin-top:20px; }
+.contact-card-avatar { position:relative; flex:none; width:42px; height:42px; display:grid; place-items:center; border-radius:50%; overflow:hidden; background:var(--gray-2); font-size:20px; }
+.contact-card-avatar img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.contact-card-names { display:flex; flex-direction:column; min-width:0; gap:1px; flex:1; }
+.contact-card-name { font-size:16px; font-weight:550; line-height:1.4; overflow-wrap:anywhere; }
+.contact-card-handle { font:11px/1.6 ui-monospace,monospace; color:var(--muted-foreground); overflow-wrap:anywhere; }
+.contact-card-glyph { flex:none; width:22px; height:22px; font-size:22px; color:var(--muted-foreground); }
+.contact-card-bio { margin:18px 0 20px; font-size:14px; line-height:1.85; white-space:pre-line; overflow-wrap:anywhere; }
+.contact-card-foot { display:flex; flex-direction:column; gap:3px; padding:13px 0 15px; border-top:1px solid var(--border); color:var(--muted-foreground); font-size:11px; }
+.contact-card-destination { font:10px/1.6 ui-monospace,monospace; opacity:.75; overflow-wrap:anywhere; }
+.contact-card-stats { display:flex; gap:18px; padding-bottom:16px; font-size:11px; color:var(--muted-foreground); }
+.contact-card-stats>span { display:flex; gap:6px; flex-wrap:wrap; }
+.contact-card-stats strong { color:var(--foreground); font:12px/1.6 ui-monospace,monospace; }
+.cali-contact-card[data-service="github"] .contact-card-masthead { height:58px; background:radial-gradient(var(--border) .8px,transparent .8px) right center/6px 6px; }
+.cali-contact-card[data-service="github"] .contact-card-edition { font-size:21px; background:var(--background); padding:0 8px; }
+.cali-contact-card[data-service="telegram"] .contact-card-masthead { border-bottom-style:dashed; }
+.cali-contact-card[data-service="telegram"] .contact-card-edition { transform:rotate(-12deg); }
+.cali-contact-card[data-service="wechat"] .contact-card-avatar { border-radius:12px; }
+.cali-contact-card[data-service="rss"] .contact-card-bio { font-family:Georgia,"Songti SC",serif; font-size:18px; }
+.cali-social a[data-card-open] { color:var(--foreground); }
+@keyframes contact-card-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+
+/* Equal columns balance the QR pair with the contact column. */
+.cali-footer { grid-template-columns:minmax(130px,1fr) minmax(0,1.5fr); gap:40px; }
+.cali-support { width:100%; max-width:304px; justify-self:start; }
+.cali-support h2 { margin-bottom:20px; }
+.cali-qr-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; padding:0; border:0; }
+.cali-qr-card { align-items:center; gap:9px; text-align:center; padding:0; }
+.cali-qr-card+.cali-qr-card { border:0; }
+.cali-qr-thumb { width:112px; max-width:100%; padding:0; border:0; border-radius:5px; aspect-ratio:1; transition:none; }
+.cali-qr-thumb img { border-radius:5px; }
+.cali-qr-title { margin:0; font-size:12px; font-weight:400; line-height:1.6; color:var(--muted-foreground); }
+.cali-support .cali-qr-hint { margin:16px 0 0; font-size:10px; color:var(--muted-foreground); line-height:1.6; text-align:center; }
+@media(max-width:639px) {
+  .cali-footer { grid-template-columns:minmax(0,1fr) minmax(112px,1fr); column-gap:20px; row-gap:28px; align-items:start; }
+  .cali-footer h2 { margin-bottom:20px; }
+  .cali-footer .cali-social { padding-left:0; }
+  .cali-footer .cali-social a { gap:5px; }
+  .cali-footer .cali-social svg { width:14px; height:14px; }
+  .cali-support { justify-self:stretch; max-width:none; text-align:center; }
+  .cali-qr-grid { grid-template-columns:minmax(0,1fr); max-width:none; gap:20px; }
+  .cali-qr-thumb { max-width:112px; }
+  .cali-qr-card { padding:0; gap:7px; }
+  .cali-support .cali-qr-hint { margin-top:14px; }
+  .cali-colophon { padding-top:12px; }
+  .dock { gap:2px; padding-inline:10px; }
+  .dock-secondary { max-width:144px; }
+  .dock-item { width:38px; min-width:38px; }
+}
+@media(prefers-reduced-motion:reduce) { .cali-contact-card { animation:none; } }
+
+@media(max-width:359px) {
+  .dock-item { width:32px; min-width:32px; }
+  .dock-secondary { min-width:32px; max-width:96px; }
+  .dock-item>svg { width:22px; height:22px; }
+}
+
+/* Compact preferences delegate appearance changes to the native control. */
+.cali-preferences-panel {
+  width:min(324px,calc(100vw - 32px)); padding:18px; border-radius:20px;
+  box-shadow:0 12px 36px #00000012,0 2px 6px #00000006;
+  scrollbar-width:thin; text-align:left;
+}
+.cali-preferences[open] .cali-preferences-panel { animation:cali-preferences-in 140ms ease-out; }
+.cali-preferences-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; font-size:13px; font-weight:500; }
+.cali-preferences-heading svg { width:16px; height:16px; color:var(--muted-foreground); }
+.cali-appearance-options { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; color:var(--muted-foreground); }
+.cali-theme-control[hidden],.cali-appearance-options[hidden] { display:none; }
+.cali-theme-segments { display:flex; padding:4px; gap:3px; border-radius:24px; background:var(--gray-2); }
+.cali-theme-segments button { display:flex; align-items:center; justify-content:center; gap:6px; min-height:38px; padding:0 12px; border:0; border-radius:20px; background:transparent; color:var(--muted-foreground); font:inherit; cursor:pointer; }
+.cali-theme-segments button[aria-pressed="true"] { background:var(--foreground); color:var(--background); }
+.cali-theme-segments svg { width:17px; height:17px; }
+.cali-preferences-panel nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; margin:0; padding:0; border:0; }
+.cali-preferences-panel nav a { display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:40px; padding:8px 10px; border-radius:9px; font-size:12px; line-height:1.5; background:var(--gray-2); }
+.cali-preferences-panel nav a:hover { background:var(--gray-3); }
+.cali-preferences-panel .cali-search { border-radius:10px; margin:14px 0 0; }
+@keyframes cali-preferences-in { from { opacity:0; translate:0 4px; } to { opacity:1; translate:0 0; } }
+@media(prefers-reduced-motion:reduce) { .cali-preferences[open] .cali-preferences-panel { animation:none; } }
+
+
+/* Each appearance has its own portrait field; the dock keeps the site avatar. */
+.cali-portrait[data-portrait-theme="dark"] { display:none; }
+.dark-theme .cali-portrait[data-portrait-theme="light"] { display:none; }
+.dark-theme .cali-portrait[data-portrait-theme="dark"] { display:block; }
+.cali-appearance-options { gap:8px; }
+.cali-appearance-options>span { flex:none; }
+.cali-theme-segments { min-width:0; flex:1; }
+.cali-theme-segments button { flex:1; flex-direction:column; gap:4px; padding:8px 4px; min-height:54px; white-space:nowrap; font-size:11px; }
+/* Adapted from CaliCastle/cali.so dev, MIT; see NOTICE.md. */
+.room-shelf {
+  --room-shelf-shadow-rgb: 27 22 17;
+  --room-shelf-wood-front-bottom: oklch(0.61 0.065 64);
+  --room-shelf-wood-front-top: oklch(0.79 0.05 74);
+  --room-shelf-wood-grain: rgb(71 42 17 / 0.08);
+  --room-shelf-wood-top-back: oklch(0.77 0.045 75);
+  --room-shelf-wood-top-front: oklch(0.84 0.04 78);
+
+  position: relative;
+}
+
+.dark-theme .room-shelf {
+  --room-shelf-shadow-rgb: 0 0 0;
+  --room-shelf-wood-front-bottom: oklch(0.29 0.035 49);
+  --room-shelf-wood-front-top: oklch(0.43 0.04 59);
+  --room-shelf-wood-grain: rgb(0 0 0 / 0.15);
+  --room-shelf-wood-top-back: oklch(0.38 0.035 56);
+  --room-shelf-wood-top-front: oklch(0.47 0.035 62);
+}
+
+
+.room-shelf-plank {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 12px;
+  border-radius: 1px 1px 2px 2px;
+  background:
+    radial-gradient(ellipse 22% 38% at 12% 22%, transparent 0 92%, var(--room-shelf-wood-grain) 93% 95%, transparent 96%),
+    radial-gradient(ellipse 32% 42% at 67% 70%, transparent 0 93%, var(--room-shelf-wood-grain) 94% 96%, transparent 97%),
+    linear-gradient(92deg, transparent 0 8%, var(--room-shelf-wood-grain) 14%, transparent 22% 54%, var(--room-shelf-wood-grain) 61%, transparent 72%),
+    linear-gradient(180deg, var(--room-shelf-wood-front-top), var(--room-shelf-wood-front-bottom));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.28),
+    inset 0 -1px 0 rgb(51 28 10 / 0.2),
+    1px 3px 3px -2px rgb(var(--room-shelf-shadow-rgb) / 0.24),
+    3px 10px 16px -8px rgb(var(--room-shelf-shadow-rgb) / 0.34),
+    6px 24px 34px -18px rgb(var(--room-shelf-shadow-rgb) / 0.28);
+}
+
+.room-shelf-plank::before,
+.room-shelf-plank::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.room-shelf-plank::before {
+  top: -6px;
+  height: 6px;
+  clip-path: polygon(0.8% 0, 99.2% 0, 100% 100%, 0 100%);
+  background:
+    radial-gradient(ellipse 28% 70% at 23% 45%, transparent 0 90%, var(--room-shelf-wood-grain) 91% 93%, transparent 94%),
+    linear-gradient(91deg, transparent 0 16%, var(--room-shelf-wood-grain) 25%, transparent 34% 67%, var(--room-shelf-wood-grain) 75%, transparent 83%),
+    linear-gradient(180deg, var(--room-shelf-wood-top-front), var(--room-shelf-wood-top-back));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.32),
+    inset 0 -1px 0 rgb(52 29 11 / 0.18);
+}
+
+.room-shelf-plank::after {
+  bottom: -2px;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(180deg, rgb(var(--room-shelf-shadow-rgb) / 0.24), rgb(var(--room-shelf-shadow-rgb) / 0.08));
+}
+
+.dark-theme .room-shelf-plank {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    inset 0 -1px 0 rgb(0 0 0 / 0.48),
+    1px 3px 3px -2px rgb(var(--room-shelf-shadow-rgb) / 0.45),
+    3px 10px 16px -8px rgb(var(--room-shelf-shadow-rgb) / 0.62),
+    6px 24px 34px -18px rgb(var(--room-shelf-shadow-rgb) / 0.5);
+}
+
+.dark-theme .room-shelf-plank::before {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    inset 0 -1px 0 rgb(0 0 0 / 0.4);
+}
+
+
+.vinyl-room {
+  --vinyl-depth: 3px;
+  --vinyl-motion-duration: 330ms;
+  --vinyl-shadow-rgb: var(--room-shelf-shadow-rgb);
+
+  left: 50%;
+  width: min(37.5rem, calc(100vw - 2rem));
+  isolation: isolate;
+  transform: translateX(-50%);
+}
+
+.vinyl-annotation {
+  z-index: 2;
+}
+
+.vinyl-viewport {
+  position: relative;
+  z-index: 2;
+  overflow: clip;
+  cursor: grab;
+}
+
+.vinyl-room[data-vinyl-interaction='panning'] .vinyl-viewport {
+  cursor: grabbing;
+}
+
+.vinyl-shelf {
+  --vinyl-spread: 48%;
+
+  display: grid;
+  place-items: end center;
+  margin: 0;
+  padding: 1rem 0 4px;
+  list-style: none;
+  overflow: visible;
+  isolation: isolate;
+  perspective: 900px;
+  perspective-origin: center bottom;
+}
+
+.vinyl {
+  position: relative;
+  grid-area: 1 / 1;
+  width: clamp(7.25rem, 27vw, 9.5rem);
+  z-index: var(--vinyl-stack-order);
+  pointer-events: none;
+}
+
+.vinyl-trigger {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: default;
+  pointer-events: none;
+  touch-action: manipulation;
+  transform: translateX(calc(var(--vinyl-offset) * var(--vinyl-spread)))
+    translateY(calc(var(--vinyl-rest-offset) * 1px))
+    translateZ(calc(var(--vinyl-forward) * 1px))
+    rotateZ(calc(var(--vinyl-rest-tilt) * 1deg))
+    rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * -1deg))
+    scale(var(--vinyl-scale));
+  transform-origin: var(--vinyl-origin-x) bottom;
+  transform-style: preserve-3d;
+  transition: transform var(--vinyl-motion-duration) var(--ease-spring);
+  will-change: transform;
+}
+
+/* Pointer ownership follows the rendered sleeve quadrilateral, not each
+   transformed button's axis-aligned bounding box. The viewport routes hover,
+   drag, wheel, and click through the same selection model. */
+
+.vinyl-hit-corner {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.vinyl-hit-corner[data-corner='top-left'] {
+  top: 0;
+  left: 0;
+}
+
+.vinyl-hit-corner[data-corner='top-right'] {
+  top: 0;
+  right: 0;
+}
+
+.vinyl-hit-corner[data-corner='bottom-right'] {
+  right: 0;
+  bottom: 0;
+}
+
+.vinyl-hit-corner[data-corner='bottom-left'] {
+  bottom: 0;
+  left: 0;
+}
+
+.vinyl-object {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  transform: translate(0, 0);
+  transform-style: preserve-3d;
+  transition: transform var(--vinyl-motion-duration) var(--ease-spring);
+}
+
+.vinyl-contact-shadow {
+  position: absolute;
+  z-index: 0;
+  top: calc(100% - 5px);
+  right: 8%;
+  left: 8%;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(var(--vinyl-shadow-rgb) / 0.4) 0%,
+    rgb(var(--vinyl-shadow-rgb) / 0.18) 46%,
+    transparent 84%
+  );
+  opacity: var(--vinyl-contact-opacity);
+  pointer-events: none;
+  transform: translateZ(-1px)
+    rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * 1deg))
+    rotateX(62deg)
+    scaleX(var(--vinyl-contact-scale));
+  transform-origin: center;
+  transition:
+    transform var(--vinyl-motion-duration) var(--ease-spring),
+    opacity var(--vinyl-motion-duration) var(--ease-spring);
+}
+
+.vinyl-room[data-vinyl-interaction='panning'] .vinyl-trigger,
+.vinyl-room[data-vinyl-interaction='panning'] .vinyl-object,
+.vinyl-room[data-vinyl-interaction='panning'] .vinyl-contact-shadow,
+.vinyl-room[data-vinyl-interaction='instant'] .vinyl-trigger,
+.vinyl-room[data-vinyl-interaction='instant'] .vinyl-object,
+.vinyl-room[data-vinyl-interaction='instant'] .vinyl-contact-shadow {
+  transition: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-object {
+    transform: translateX(calc(var(--vinyl-direction) * 2px)) translateY(-4px);
+  }
+
+  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-contact-shadow {
+    opacity: calc(var(--vinyl-contact-opacity) * 0.55);
+    transform: translateZ(-1px)
+      rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * 1deg))
+      rotateX(62deg)
+      scaleX(calc(var(--vinyl-contact-scale) * 1.08));
+  }
+}
+
+.vinyl-trigger:focus-visible {
+  border-radius: 2px;
+  outline: 1px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+.vinyl-sleeve {
+  position: relative;
+  z-index: 2;
+  display: block;
+  aspect-ratio: 1;
+  background: var(--paper);
+  box-shadow:
+    0 0 0 var(--border-hairline) rgb(0 0 0 / 0.09),
+    1px 2px 3px -1px rgb(var(--vinyl-shadow-rgb) / 0.2),
+    4px 9px 16px -9px rgb(var(--vinyl-shadow-rgb) / 0.3);
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(var(--vinyl-depth));
+}
+
+.vinyl-sleeve::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  background: linear-gradient(118deg, rgb(255 255 255 / 0.12), transparent 28% 70%, rgb(25 16 9 / 0.11));
+  pointer-events: none;
+}
+
+/* Real 3D side faces: the cover sits forward and these planes bridge
+   the depth. The face revealed by each inward turn becomes the sleeve spine. */
+.vinyl-spine {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--vinyl-depth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--vinyl-spine-ink, oklch(0.28 0.012 95));
+  background: var(--vinyl-spine-color, var(--paper));
+  box-shadow:
+    inset 1px 0 rgb(255 255 255 / 0.16),
+    inset -1px 0 rgb(0 0 0 / 0.18);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.vinyl-spine > span {
+  max-height: calc(100% - 10px);
+  overflow: hidden;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 4px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.vinyl-spine-left {
+  background:
+    linear-gradient(to right, rgb(255 255 255 / 0.16), transparent 45%, rgb(0 0 0 / 0.16)),
+    var(--vinyl-spine-color, var(--paper));
+  transform: rotateY(-90deg);
+  transform-origin: left center;
+}
+
+.vinyl-spine-right {
+  right: 0;
+  left: auto;
+  background:
+    linear-gradient(to right, rgb(0 0 0 / 0.24), transparent 55%, rgb(255 255 255 / 0.08)),
+    var(--vinyl-spine-color, var(--paper));
+  transform: rotateY(90deg);
+  transform-origin: right center;
+}
+
+.vinyl-spine-right > span {
+  transform: rotate(180deg);
+}
+
+.vinyl-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* seeded crease streaks (inline background) + paper grain overlay */
+.vinyl-creases {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background-image: var(--vinyl-crease-image);
+  background-position: var(--vinyl-crease-position);
+  background-repeat: no-repeat;
+  background-size: var(--vinyl-crease-size);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.vinyl-paper {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at var(--vinyl-wear-x) var(--vinyl-wear-y), rgb(70 42 20 / 0.24) 0 0.5px, rgb(70 42 20 / 0.08) 1px 4%, transparent 9%),
+    linear-gradient(118deg, rgb(255 255 255 / 0.15), transparent 24% 72%, rgb(30 18 10 / 0.12)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='108' height='108'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.52 0 0 0 0 0.46 0.06 0.06 0.06 0 -0.03'/%3E%3C/filter%3E%3Crect width='108' height='108' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-position:
+    center,
+    center,
+    var(--vinyl-paper-x) var(--vinyl-paper-y);
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size:
+    100% 100%,
+    100% 100%,
+    var(--vinyl-paper-size) var(--vinyl-paper-size);
+  box-shadow:
+    inset 1px 1px 0 rgb(255 255 255 / 0.22),
+    inset -1px -1px 0 rgb(45 27 13 / 0.14);
+  mix-blend-mode: soft-light;
+  opacity: var(--vinyl-wear-opacity);
+  pointer-events: none;
+}
+
+.vinyl-sleeve-raster {
+  position: absolute;
+  inset: -4px;
+  font-size: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  word-break: break-all;
+  color: color-mix(in oklab, var(--paper-ink) 42%, transparent);
+  user-select: none;
+}
+
+.vinyl-sleeve-type {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  background: linear-gradient(to top, color-mix(in oklab, var(--paper) 88%, transparent) 45%, transparent);
+}
+
+.vinyl-sleeve-album {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  color: oklch(0.28 0.012 95);
+}
+
+.vinyl-sleeve-artist {
+  margin-top: 2px;
+  font-size: 0.6875rem;
+  color: var(--paper-ink);
+}
+
+@media (max-width: 30rem) {
+  .vinyl-shelf {
+    --vinyl-spread: 40%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vinyl-trigger,
+  .vinyl-sleeve,
+  .vinyl-object,
+  .vinyl-contact-shadow {
+    transition: none;
+  }
+
+  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-object {
+    transform: none;
+  }
+
+  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-contact-shadow {
+    opacity: var(--vinyl-contact-opacity);
+    transform: translateZ(-1px)
+      rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * 1deg))
+      rotateX(62deg)
+      scaleX(var(--vinyl-contact-scale));
+  }
+}
+
+/* ── Bookshelf: 3D accordion (components/bookshelf.tsx) ───────────── */
+
+.bookshelf-viewport {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 216px;
+  overflow: clip;
+}
+
+.shelf3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  width: var(--bookshelf-layout-width);
+  height: 216px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: scale(var(--bookshelf-scale));
+  transform-origin: left bottom;
+}
+
+.book3-frame {
+  position: relative;
+  height: 210px;
+  flex-shrink: 0;
+}
+
+.book3-contact-shadow {
+  position: absolute;
+  z-index: 0;
+  bottom: -3px;
+  left: 0;
+  width: var(--book-contact-width);
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(var(--room-shelf-shadow-rgb) / 0.38) 0%,
+    rgb(var(--room-shelf-shadow-rgb) / 0.16) 48%,
+    transparent 84%
+  );
+  opacity: 0.9;
+  pointer-events: none;
+  transform: scaleX(var(--book-contact-scale));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.book3 {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-decoration: none;
+  perspective: 1200px;
+  cursor: default;
+  touch-action: manipulation;
+  transition: transform 180ms var(--ease-swift);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .book3[data-hover] {
+    transform: translateY(-5px);
+  }
+}
+
+/* The visual spine stays tightly packed, while its nonvisual hit area meets
+   the 44px touch target. Shelf click capture resolves overlaps by proximity. */
+.book3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: max(100%, calc(44px / var(--bookshelf-scale)));
+  transform: translateX(-50%);
+}
+
+.book3:focus-visible {
+  border-radius: 2px;
+  outline: 1px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.book3-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 148px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.book3-cover {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 2px 4px 4px 2px;
+  box-shadow:
+    0 0 0 var(--border-hairline) rgb(0 0 0 / 0.09),
+    1px 2px 3px -1px rgb(var(--room-shelf-shadow-rgb) / 0.2),
+    4px 9px 16px -9px rgb(var(--room-shelf-shadow-rgb) / 0.3);
+  user-select: none;
+}
+
+.book3-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.book3-cover-blank {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  background: var(--paper);
+  font-size: 0.75rem;
+  color: var(--paper-ink);
+}
+
+.book3-cover-blank b {
+  font-weight: var(--font-weight-semibold);
+  color: oklch(0.28 0.012 95);
+}
+
+.book3-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: rotateY(-90deg);
+  transform-origin: left center;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.625rem 0;
+  color: var(--book-ink, var(--paper-ink));
+  background:
+    linear-gradient(to right, rgb(0 0 0 / 0.12), transparent 35%, rgb(255 255 255 / 0.12) 75%, rgb(0 0 0 / 0.08)),
+    var(--book-spine, var(--paper));
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
+  border-radius: 2px;
+}
+
+.book3-spine-title {
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-medium);
+  color: inherit;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.book3-spine-author {
+  flex: none;
+  font-size: 0.5rem;
+  color: inherit;
+  opacity: 0.72;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book3 {
+    transition: none;
+  }
+
+  .book3[data-hover] {
+    transform: none;
+  }
+}
+
+
+.room-shelf { --focus-ring:var(--foreground); --font-weight-semibold:600; --ease-spring:cubic-bezier(.34,1.56,.64,1); margin-top:36px; }
+.room-shelf.vinyl-room { margin-top:16px; }
+.room-shelf [hidden] { display:none!important; }
+.room-shelf img { user-select:none; -webkit-user-drag:none; }
+.vinyl-trigger,.vinyl-contact-shadow { transition:none; }
+.vinyl-viewport { touch-action:pan-y; user-select:none; }
+.vinyl-art,.book3-cover img { position:absolute; inset:0; }
+.book3-cover { background:var(--paper); }
+.book3-spine-title { writing-mode:vertical-rl; text-orientation:mixed; font-size:calc(.625rem / var(--bookshelf-scale, 1)); }
+.book3-spine-author { max-height:48px; overflow:hidden; font-size:calc(.5rem / var(--bookshelf-scale, 1)); }
+.cali-shelf-captions { position:relative; z-index:2; min-height:40px; padding:12px 8px 0; text-align:center; font-size:14px; line-height:1.6; color:var(--muted-foreground); }
+.cali-shelf-captions p { margin:0; }
+.cali-shelf-captions p>span { display:none; }
+.cali-shelf-captions a:hover { color:var(--foreground); }
+.book3,.book3-inner,.book3-frame { transform-style:preserve-3d; }
+@media(max-width:639px) { .room-shelf { margin-top:28px; } .room-shelf.vinyl-room { margin-top:12px; } .cali-shelf-captions { font-size:12px; } }
 </style>{% endblock %}
 {% block script %}<script>
 (() => {
@@ -2183,50 +2884,6 @@ body {
     image.addEventListener("error", hideFailedImage);
     // Cached failures can occur before this script runs.
     if (image.complete && image.naturalWidth === 0) hideFailedImage();
-  });
-
-  document.querySelectorAll("[data-collection]").forEach((collection) => {
-    const shelf = collection.querySelector(".cali-shelf");
-    const captionGroup = collection.querySelector(".cali-shelf-captions");
-    const fallback = collection.querySelector(".cali-collection-list");
-    const buttons = [...collection.querySelectorAll(".cali-sleeve")];
-    const captions = [...collection.querySelectorAll(".cali-shelf-captions p")];
-    if (!shelf || !captionGroup || !fallback || !buttons.length || buttons.length !== captions.length) return;
-
-    function select(index, reveal = false) {
-      buttons.forEach((button, i) => {
-        button.setAttribute("aria-pressed", String(i === index));
-        button.tabIndex = i === index ? 0 : -1;
-      });
-      captions.forEach((caption, i) => { caption.hidden = i !== index; });
-      if (reveal) {
-        // Scroll only the shelf. Do not move the page when switching a cover.
-        const frame = shelf.getBoundingClientRect();
-        const target = buttons[index].getBoundingClientRect();
-        const offset = target.left < frame.left ? target.left - frame.left : Math.max(0, target.right - frame.right);
-        if (offset) shelf.scrollBy({left: offset, behavior: "auto"});
-      }
-    }
-
-    buttons.forEach((button, index) => {
-      button.addEventListener("click", () => select(index));
-      button.addEventListener("keydown", (event) => {
-        let next;
-        if (event.key === "ArrowRight") next = (index + 1) % buttons.length;
-        else if (event.key === "ArrowLeft") next = (index + buttons.length - 1) % buttons.length;
-        else if (event.key === "Home") next = 0;
-        else if (event.key === "End") next = buttons.length - 1;
-        else return;
-        event.preventDefault();
-        select(next, true);
-        buttons[next].focus({preventScroll: true});
-      });
-      button.disabled = false;
-    });
-    select(0);
-    shelf.hidden = false;
-    captionGroup.hidden = false;
-    fallback.hidden = true;
   });
 
   const content = document.querySelector(".cali-prose");
@@ -2293,6 +2950,335 @@ body {
   if ("MutationObserver" in window) {
     new MutationObserver(rebuild).observe(content, {childList: true, subtree: true, characterData: true});
   }
+})();
+/* Geometry and gestures adapted from CaliCastle/cali.so dev (MIT). */
+(() => {
+  "use strict";
+  const clamp = (n, low, high) => Math.min(high, Math.max(low, n));
+  const hash = text => { let h = 0; for (const c of text) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); };
+  const easeBook = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
+  // Evaluate the original CSS spring curve without rounding a dragged position.
+  function easeRecord(t) {
+    const point = (u,a,b) => 3*(1-u)*(1-u)*u*a + 3*(1-u)*u*u*b + u*u*u;
+    let lo=0, hi=1;
+    for (let i=0;i<16;i++) { const u=(lo+hi)/2; if (point(u,.34,.64)<t) lo=u; else hi=u; }
+    return point((lo+hi)/2,1.56,1);
+  }
+  function recordPose(index, position, total, seed=0) {
+    const offset=index-position, distance=Math.abs(offset), active=Math.max(0,1-distance), resting=Math.min(distance,1);
+    // Keep artwork readable; overlap supplies depth without a narrow side view.
+    const angle=Math.min(28,10*Math.min(distance,1)+distance*4);
+    return {offset,direction:Math.sign(offset),angle,forward:active*4,
+      scale:Math.max(.92,1-distance*.012+active*.04),origin:50-clamp(offset,-1,1)*50,
+      restOffset:((seed>>>5)%3)*.55*resting,restTilt:((seed%9)-4)*.085*resting,
+      order:Math.max(1,Math.round((total-distance)*100)+(index===Math.round(position)?1:0)),
+      contactOpacity:Math.max(.16,.34-distance*.035),contactScale:Math.max(.38,Math.cos(angle*Math.PI/180))*(.96+active*.04)};
+  }
+  function bookTilt(index, selected, title) {
+    if (index===selected) return 0;
+    const distance=Math.abs(index-selected), magnitude=.65+(hash(title)%90)/100;
+    return clamp((index<selected?-1:1)*(magnitude*Math.max(.7,1-.04*distance)+Math.max(0,1.85-.26*distance)),-3.4,3.4);
+  }
+  function bookPose(progress, tilt, spine, width) {
+    const closed=1-clamp(progress,0,1), rotateY=90*closed, lean=tilt*closed;
+    const y=rotateY*Math.PI/180,z=lean*Math.PI/180,projected=[];
+    for (const face of [{depth:0,xs:[0,spine]},{depth:spine,xs:[0,width]}]) {
+      for (const x of face.xs) for (const h of [0,210]) projected.push((x*Math.cos(y)+face.depth*Math.sin(y))*Math.cos(z)-(h-105)*Math.sin(z));
+    }
+    const left=Math.min(...projected);
+    return {rotateY,tilt:lean,width:Math.max(...projected)-left,offsetX:-left};
+  }
+  function bookLayout(books,progress,tilts) {
+    let base=0, projected=0;
+    return books.map((book,i)=>{
+      const pose=bookPose(progress[i],tilts[i],book.spine,book.width);
+      const frameX=projected-base,left=projected;
+      base+=book.spine+1;projected+=pose.width+1;
+      return {...pose,frameX,left,right:left+pose.width};
+    });
+  }
+  function inside(point,corners) {
+    let direction=0;
+    for (let i=0;i<corners.length;i++) {
+      const a=corners[i],b=corners[(i+1)%corners.length];
+      const cross=(b.x-a.x)*(point.y-a.y)-(b.y-a.y)*(point.x-a.x);
+      if (Math.abs(cross)<.01) continue;
+      if (direction && direction!==Math.sign(cross)) return false;
+      direction=Math.sign(cross);
+    }
+    return !!direction;
+  }
+  if (typeof module!=="undefined" && module.exports) { module.exports={recordPose,bookTilt,bookPose,bookLayout,inside,easeBook,easeRecord}; return; }
+  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+  document.querySelectorAll("[data-collection]").forEach(collection=>{
+    const viewport=collection.querySelector("[data-shelf-viewport]"),plank=collection.querySelector("[data-shelf-plank]");
+    const fallback=collection.querySelector(".cali-collection-list"),captions=collection.querySelector(".cali-shelf-captions");
+    const controls=[...collection.querySelectorAll("[data-shelf-select]")],notes=[...collection.querySelectorAll(".cali-shelf-captions p")];
+    if (!viewport||!plank||!fallback||!captions||!controls.length||controls.length!==notes.length) return;
+    const frames=controls.map(b=>b.parentElement),isRecord=collection.dataset.collection==="records";
+    const shelf=viewport.querySelector("ul"),count=controls.length;
+    let active=isRecord?Math.floor(count/2):0,raf=0;
+    let position=active,progress=controls.map((_,i)=>i===active?1:0),tilts=controls.map((b,i)=>bookTilt(i,active,b.getAttribute("aria-label")));
+    let session=null,wheelTimer=0,suppressUntil=0,hover=-1,lastPoint=null,dragFrame=0,dragPosition=position;
+    const books=frames.map((f,i)=>({spine:Number(f.dataset.spine)||24,width:Number(f.dataset.coverWidth)||148,title:controls[i].getAttribute("aria-label")}));
+    let bounds=[],scale=1;
+    const seeds=controls.map(b=>hash(b.getAttribute("aria-label")));
+    const corners=controls.map(b=>[...b.querySelectorAll(".vinyl-hit-corner")]);
+    const inners=controls.map(b=>b.querySelector(".book3-inner"));
+    const shadows=frames.map(f=>f.querySelector(isRecord?".vinyl-contact-shadow":".book3-contact-shadow"));
+    const prepared=new Map();
+    function prepare(index) {
+      if (prepared.has(index)) return prepared.get(index);
+      const image=controls[index].querySelector("img");
+      if (!image) return Promise.resolve();
+      image.loading="eager";
+      const promise=new Promise(resolve=>{
+        const finish=()=>{image.removeEventListener("load",finish);image.removeEventListener("error",finish);resolve();};
+        if (image.complete) finish(); else {image.addEventListener("load",finish);image.addEventListener("error",finish);}
+      }).then(()=>image.naturalWidth&&image.decode?image.decode().catch(()=>{}):undefined);
+      prepared.set(index,promise);return promise;
+    }
+    function selectState(index) {
+      active=index;
+      controls.forEach((b,i)=>{
+        const selected=i===active;
+        b.setAttribute("aria-pressed",String(selected));b.tabIndex=selected?0:-1;
+        b.toggleAttribute(isRecord?"data-active":"data-open",selected);
+      });
+      notes.forEach((n,i)=>{n.hidden=i!==active;});
+    }
+    function clearHover() {
+      if (hover>=0) controls[hover].removeAttribute(isRecord?"data-pointer-owned":"data-hover");
+      hover=-1;
+    }
+    function setHover(index) {
+      if (index===active) index=-1;
+      if (hover===index) return;
+      clearHover();hover=index;
+      if (hover>=0) controls[hover].setAttribute(isRecord?"data-pointer-owned":"data-hover","");
+    }
+    function paintRecords(value) {
+      position=value;
+      controls.forEach((button,i)=>{
+        const p=recordPose(i,value,count,seeds[i]);
+        const spread=window.innerWidth<=480?40:48;
+        frames[i].style.zIndex=String(p.order);
+        button.style.transformOrigin=`${p.origin}% bottom`;
+        button.style.transform=`translateX(${p.offset*spread}%) translateY(${p.restOffset}px) translateZ(${p.forward}px) rotateZ(${p.restTilt}deg) rotateY(${-p.direction*p.angle}deg) scale(${p.scale})`;
+        button.style.setProperty("--vinyl-direction",p.direction);
+        shadows[i].style.opacity=String(p.contactOpacity);
+        shadows[i].style.transform=`translateZ(-1px) rotateY(${p.direction*p.angle}deg) rotateX(62deg) scaleX(${p.contactScale})`;
+      });
+    }
+    function paintBooks(p,t) {
+      progress=p;tilts=t;bounds=bookLayout(books,p,t);
+      bounds.forEach((pose,i)=>{
+        frames[i].style.zIndex=p[i]>.01?"2":"1";
+        frames[i].style.transform=`translateX(${pose.frameX}px)`;
+        inners[i].style.transform=`translateX(${pose.offsetX}px) rotate(${pose.tilt}deg) rotateY(${pose.rotateY}deg)`;
+        shadows[i].style.transform=`scaleX(${pose.width/books[i].width})`;
+      });
+      if (lastPoint) setHover(bookOwner(lastPoint));
+    }
+    function cancelMotion() { if (raf) cancelAnimationFrame(raf);raf=0; }
+    function settle(index, instant=false) {
+      index=clamp(index,0,count-1);cancelMotion();clearHover();selectState(index);
+      const toProgress=controls.map((_,i)=>i===index?1:0),toTilts=books.map((b,i)=>bookTilt(i,index,b.title));
+      const finish=()=>{
+        if(isRecord) paintRecords(index);else paintBooks(toProgress,toTilts);
+        raf=0;collection.dataset.vinylInteraction="idle";
+      };
+      if(instant||reduced.matches||(isRecord?Math.abs(position-index)<.0001:progress.every((v,i)=>Math.abs(v-toProgress[i])<.0001))){finish();return;}
+      const from=position,fromProgress=progress.slice(),fromTilts=tilts.slice(),started=performance.now();
+      collection.dataset.vinylInteraction="settling";
+      const tick=now=>{
+        const t=Math.min(1,(now-started)/(isRecord?330:650));
+        if(isRecord) paintRecords(from+(index-from)*easeRecord(t));
+        else {const e=easeBook(t);paintBooks(fromProgress.map((v,i)=>v+(toProgress[i]-v)*e),fromTilts.map((v,i)=>v+(toTilts[i]-v)*e));}
+        if(t<1)raf=requestAnimationFrame(tick);else finish();
+      };
+      raf=requestAnimationFrame(tick);
+    }
+    function choose(index,instant=false) {
+      // Artwork loading must not delay a gesture or keyboard response.
+      prepare(index);
+      settle(index,instant);
+    }
+
+    function recordOwner(point) {
+      const order=controls.map((_,i)=>i).sort((a,b)=>Math.abs(a-position)-Math.abs(b-position)||b-a);
+      for(const i of order) {
+        const quad=corners[i].map(c=>{const r=c.getBoundingClientRect();return {x:r.left,y:r.top};});
+        if(inside(point,quad))return i;
+      }
+      return -1;
+    }
+    function bookOwner(point) {
+      const r=shelf.getBoundingClientRect(),x=(point.x-r.left)/scale;
+      if(point.y<r.top||point.y>r.bottom||x<-22/scale||x>(bounds.at(-1)?.right||0)+22/scale) return -1;
+      let nearest=-1,distance=Infinity;
+      bounds.forEach((b,i)=>{const d=x<b.left?b.left-x:x>b.right?x-b.right:0;if(d<distance){distance=d;nearest=i;}});
+      return nearest;
+    }
+    function reveal() {
+      selectState(active);controls.forEach(b=>{b.disabled=false;});
+      viewport.hidden=false;plank.hidden=false;captions.hidden=false;fallback.hidden=true;
+    }
+    function resize() {
+      if(isRecord){paintRecords(position);return;}
+      let maximum=0;
+      controls.forEach((_,selected)=>{
+        const poses=bookLayout(books,controls.map((__,i)=>i===selected?1:0),books.map((b,i)=>bookTilt(i,selected,b.title)));
+        maximum=Math.max(maximum,poses.at(-1).right);
+      });
+      const targetHeight=clamp(window.innerWidth*.3,140,170);
+      scale=Math.min(targetHeight/210,viewport.clientWidth/maximum);
+      viewport.style.height=`${216*scale}px`;
+      shelf.style.setProperty("--bookshelf-layout-width",`${maximum}px`);
+      shelf.style.setProperty("--bookshelf-scale",scale);
+      paintBooks(progress,tilts);
+    }
+    controls.forEach((button,index)=>{
+      button.addEventListener("click",event=>{if(event.detail===0)choose(index,true);});
+      button.addEventListener("keydown",event=>{
+        let next;if(event.key==="ArrowRight")next=(active+1)%count;else if(event.key==="ArrowLeft")next=(active-1+count)%count;else if(event.key==="Home")next=0;else if(event.key==="End")next=count-1;else return;
+        event.preventDefault();choose(next,true);controls[next].focus({preventScroll:true});
+      });
+      if(isRecord){
+        const seed=seeds[index];
+        const title=button.getAttribute("aria-label"),creaseImages=[],creasePositions=[],creaseSizes=[];
+        for(let i=0;i<(seed>>>3)%3;i++){
+          const crease=hash(`${title}:${i}`),x=6+hash(`horizontal:${i}:${title}`)%85,y=6+hash(`${title}:vertical:${i}`)%85;
+          creaseImages.push(`linear-gradient(${22+crease%137}deg, transparent 47%, rgb(0 0 0 / .08) 49%, rgb(255 255 255 / .14) 50%, transparent 52%)`);
+          creasePositions.push(`${x}% ${y}%`);creaseSizes.push(`${34+((crease>>>5)%31)}% ${22+((crease>>>11)%23)}%`);
+        }
+        frames[index].style.setProperty("--vinyl-crease-image",creaseImages.join(", ")||"none");
+        frames[index].style.setProperty("--vinyl-crease-position",creasePositions.join(", ")||"0 0");
+        frames[index].style.setProperty("--vinyl-crease-size",creaseSizes.join(", ")||"0 0");
+        frames[index].style.setProperty("--vinyl-paper-size",`${84+((seed>>>20)%3)*12}px`);
+        frames[index].style.setProperty("--vinyl-paper-x",`${(seed>>>8)%108}px`);
+        frames[index].style.setProperty("--vinyl-paper-y",`${(seed>>>16)%192}px`);
+        frames[index].style.setProperty("--vinyl-wear-x",(seed&1)?"92%":"8%");
+        frames[index].style.setProperty("--vinyl-wear-y",(seed&2)?"90%":"10%");
+        frames[index].style.setProperty("--vinyl-wear-opacity",.13+((seed>>>10)%5)*.01);
+      } else {
+        frames[index].style.width=`${books[index].spine}px`;
+        shadows[index].style.width=`${books[index].width}px`;
+      }
+    });
+    viewport.addEventListener("click",event=>{
+      if(!event.detail)return;
+      event.preventDefault();event.stopPropagation();
+      if(performance.now()<suppressUntil)return;
+      const point={x:event.clientX,y:event.clientY};
+      const index=isRecord?recordOwner(point):bookOwner(point);
+      if(index>=0)choose(index);
+    });
+    viewport.addEventListener("pointermove",event=>{
+      const point={x:event.clientX,y:event.clientY};
+      if(!session){
+        if(event.pointerType!=="touch"){lastPoint=point;setHover(isRecord?(raf?-1:recordOwner(point)):bookOwner(point));}
+        return;
+      }
+      if(session.id!==event.pointerId)return;
+      const dx=event.clientX-session.x,dy=event.clientY-session.y;
+      if(session.intent==="pending"){
+        if(Math.max(Math.abs(dx),Math.abs(dy))<7)return;
+        session.intent=Math.abs(dy)>Math.abs(dx)?"vertical":"horizontal";
+        if(session.intent==="horizontal"){cancelMotion();clearHover();collection.dataset.vinylInteraction="panning";}
+      }
+      if(session.intent!=="horizontal")return;
+      event.preventDefault();dragPosition=clamp(session.start-dx/session.step,0,count-1);
+      if(!dragFrame)dragFrame=requestAnimationFrame(()=>{dragFrame=0;paintRecords(dragPosition);});
+    });
+    viewport.addEventListener("pointerleave",()=>{lastPoint=null;clearHover();});
+    if(isRecord){
+      viewport.addEventListener("pointerdown",event=>{
+        if(!event.isPrimary||event.button!==0)return;
+        cancelMotion();clearTimeout(wheelTimer);wheelTimer=0;
+        const step=Math.max(44,controls[active].offsetWidth*(window.innerWidth<=480?.4:.48));
+        session={id:event.pointerId,x:event.clientX,y:event.clientY,start:position,step,intent:"pending"};
+        try{viewport.setPointerCapture(event.pointerId);}catch{}
+        if(event.pointerType==="mouse")event.preventDefault();
+      });
+      const finishPointer=event=>{
+        if(!session||session.id!==event.pointerId)return;
+        const horizontal=session.intent==="horizontal";session=null;
+        if(viewport.hasPointerCapture(event.pointerId))viewport.releasePointerCapture(event.pointerId);
+        if(dragFrame){cancelAnimationFrame(dragFrame);dragFrame=0;paintRecords(dragPosition);}
+        if(horizontal){suppressUntil=performance.now()+500;settle(Math.round(position));}
+        else if(Math.abs(position-active)>.001)settle(active);
+      };
+      for(const type of ["pointerup","pointercancel","lostpointercapture"])viewport.addEventListener(type,finishPointer);
+      viewport.addEventListener("wheel",event=>{
+        if(Math.abs(event.deltaX)<=Math.abs(event.deltaY)||Math.abs(event.deltaX)<.5)return;
+        event.preventDefault();cancelMotion();clearHover();clearTimeout(wheelTimer);
+        const unit=event.deltaMode===1?16:event.deltaMode===2?viewport.clientWidth:1;
+        const step=Math.max(44,controls[active].offsetWidth*(window.innerWidth<=480?.4:.48));
+        collection.dataset.vinylInteraction="panning";
+        paintRecords(clamp(position+event.deltaX*unit/step,0,count-1));
+        wheelTimer=setTimeout(()=>{wheelTimer=0;settle(Math.round(position));},140);
+      },{passive:false});
+    }
+    reveal();resize();
+    new ResizeObserver(resize).observe(viewport);
+    const preloader=new IntersectionObserver(entries=>{
+      if(entries.some(e=>e.isIntersecting)){controls.forEach((_,i)=>prepare(i));preloader.disconnect();}
+    },{rootMargin:"320px 0px"});
+    preloader.observe(viewport);
+    reduced.addEventListener("change",()=>{if(reduced.matches)settle(active,true);});
+    window.addEventListener("pagehide",()=>{cancelMotion();clearTimeout(wheelTimer);if(dragFrame)cancelAnimationFrame(dragFrame);dragFrame=0;session=null;settle(active,true);});
+  });
+})();
+(() => {
+  "use strict";
+  const options = document.querySelector(".cali-appearance-options");
+  const toggle = document.querySelector("#js-theme-toggle");
+  if (!options || !toggle) return;
+  const buttons = options.querySelectorAll("[data-cali-appearance]");
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  const key = "cali-appearance";
+  const valid = value => ["light", "system", "dark"].includes(value);
+  let mode = "system", applying = false;
+  // Match Typlog's per-tab lifetime without writing its native storage keys.
+  try {
+    const saved = window.sessionStorage.getItem(key);
+    if (valid(saved)) mode = saved;
+    else if (window.sessionStorage.getItem("dark-theme")) mode = "dark";
+  } catch {}
+  const save = () => { try { window.sessionStorage.setItem(key, mode); } catch {} };
+  function sync() {
+    buttons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.caliAppearance === mode)));
+  }
+  function apply() {
+    const desired = mode === "system" ? media.matches : mode === "dark";
+    if (root.classList.contains("dark-theme") !== desired) {
+      applying = true;
+      try {
+        // Native events also update Typlog embeds and its checkbox state.
+        toggle.checked = !desired;
+        toggle.click();
+      } finally { applying = false; }
+    }
+    sync();
+  }
+  buttons.forEach(button => button.addEventListener("click", () => {
+    if (!valid(button.dataset.caliAppearance)) return;
+    mode = button.dataset.caliAppearance;
+    save();apply();
+  }));
+  toggle.addEventListener("change", () => {
+    if (applying) return;
+    mode = toggle.checked ? "dark" : "light";
+    save();sync();
+  });
+  media.addEventListener("change", () => { if (mode === "system") apply(); });
+  new MutationObserver(apply).observe(root, {attributes:true, attributeFilter:["class"]});
+  save();apply();
+  const label = toggle.closest("label");
+  if (label) label.hidden = true;
+  options.hidden = false;
 })();
 (() => {
   "use strict";
@@ -2439,7 +3425,8 @@ body {
     }
 
     function sample(width, height) {
-      const cell = width < 200 ? 2 : 3;
+      const darkPortrait = portrait.dataset?.portraitTheme === "dark";
+      const cell = !darkPortrait && width < 200 ? 2 : 3;
       const columns = Math.ceil(width / cell);
       const rows = Math.ceil(height / cell);
       const buffer = document.createElement("canvas");
@@ -2459,7 +3446,7 @@ body {
         const offset = index * 4;
         const alpha = pixels[offset + 3] / 255;
         const luminance = (0.2126 * pixels[offset] + 0.7152 * pixels[offset + 1] + 0.0722 * pixels[offset + 2]) / 255;
-        tones[index] = luminance * alpha + (1 - alpha);
+        tones[index] = luminance * alpha + (darkPortrait ? 0 : 1 - alpha);
       }
       const sorted = Float32Array.from(tones).sort();
       const low = sorted[Math.floor(sorted.length * 0.05)];
@@ -2470,10 +3457,10 @@ body {
         for (let column = 0; column < columns; column += 1) {
           const value = tones[row * columns + column];
           const luminance = high - low < 0.05 ? value : Math.min(1, Math.max(0, (value - low) / range));
-          const tone = luminance > 0.93 ? 0 : Math.pow(1 - luminance, 0.95);
+          const tone = darkPortrait ? luminance : (luminance > 0.93 ? 0 : Math.pow(1 - luminance, 0.95));
           const x = (column + 0.5) * cell;
           const y = (row + 0.5) * cell;
-          const edge = Math.max(0, Math.min(1, x / (width * 0.1), (width - x) / (width * 0.1), (height - y) / (height * 0.1)));
+          const edge = Math.max(0, Math.min(1, darkPortrait ? y / (height * 0.1) : 1, x / (width * 0.1), (width - x) / (width * 0.1), (height - y) / (height * 0.1)));
           const radius = tone * edge * cell * 0.52;
           if (radius >= 0.3) dots.push({x, y, radius});
         }
@@ -2672,37 +3659,6 @@ body {
     document.addEventListener("keydown", (event) => { if (event.key === "Escape") hide(); });
   }
 
-  document.querySelectorAll(".cali-social a").forEach((link) => {
-    const label = link.getAttribute("title") || link.getAttribute("aria-label") || link.textContent.trim();
-    if (!label) return;
-    const icon = link.querySelector("svg, .icon");
-    const name = document.createElement("span");
-    name.className = "contact-label";
-    name.textContent = label === "Twitter" ? "X / Twitter" : label;
-    const arrow = document.createElement("span");
-    arrow.className = "contact-arrow";
-    arrow.textContent = "↗";
-    arrow.setAttribute("aria-hidden", "true");
-    link.replaceChildren(...(icon ? [icon] : []), name, arrow);
-    link.removeAttribute("title");
-    const preview = document.createElement("span");
-    preview.className = "contact-preview";
-    preview.setAttribute("aria-hidden", "true");
-    const heading = document.createElement("strong");
-    heading.textContent = name.textContent;
-    const address = document.createElement("span");
-    try {
-      const url = new URL(link.href, window.location.href);
-      // Show only the destination, never query tokens from a saved link.
-      address.textContent = url.protocol === "mailto:" ? url.pathname : url.hostname + (url.pathname === "/" ? "" : url.pathname);
-    } catch { address.textContent = name.textContent; }
-    preview.append(heading, address);
-    link.append(preview);
-    link.addEventListener("pointerenter", () => link.classList.remove("contact-dismissed"));
-    link.addEventListener("focus", () => link.classList.remove("contact-dismissed"));
-    link.addEventListener("keydown", (event) => { if (event.key === "Escape") link.classList.add("contact-dismissed"); });
-  });
-
   const dialog = document.querySelector(".cali-qr-dialog");
   if (!dialog || typeof dialog.showModal !== "function") return;
   const image = dialog.querySelector("[data-qr-full]");
@@ -2728,6 +3684,168 @@ body {
   });
   dialog.addEventListener("close", () => { if (opener) opener.focus({preventScroll: true}); });
 })();
+(() => {
+  "use strict";
+  const nav = document.querySelector(".cali-social");
+  if (!nav) return;
+  const zh = document.documentElement.lang.startsWith("zh");
+  const words = (cn, en) => zh ? cn : en;
+  const services = {
+    x: ["X / Twitter", words("想法与日常", "Thoughts and everyday life")],
+    telegram: ["Telegram", words("保持联系，继续交流", "Keep the conversation going")],
+    github: ["GitHub", words("代码与创造", "Code and creations")],
+    zhihu: ["知乎", words("在问题中交换思考", "Ideas through questions")],
+    xiaohongshu: ["小红书", words("生活的片刻与发现", "Everyday discoveries")],
+    bilibili: ["B站", words("用影像分享故事", "Stories in video")],
+    youtube: ["YouTube", words("影像与表达", "Videos and stories")],
+    wechat: ["微信公众号", words("让文字保持连接", "Stay connected through words")],
+    instagram: ["Instagram", words("记录值得记住的片刻", "Moments worth remembering")],
+    sinaweibo: ["微博", words("分享此刻的想法", "Share a thought")],
+    rss: ["RSS", words("在你喜欢的阅读器里订阅更新", "Follow in your favorite feed reader")],
+    email: ["Email", words("写一封信，让交流慢下来", "Start a conversation by email")],
+  };
+  function classify(url) {
+    if (url.protocol === "mailto:") return "email";
+    if (/\/(feed|rss)(\.xml)?\/?$/.test(url.pathname)) return "rss";
+    const domains = {"x.com":"x", "twitter.com":"x", "t.me":"telegram", "telegram.me":"telegram", "github.com":"github", "zhihu.com":"zhihu", "xiaohongshu.com":"xiaohongshu", "xhslink.com":"xiaohongshu", "bilibili.com":"bilibili", "b23.tv":"bilibili", "youtube.com":"youtube", "youtu.be":"youtube", "mp.weixin.qq.com":"wechat", "instagram.com":"instagram", "weibo.com":"sinaweibo", "weibo.cn":"sinaweibo"};
+    const domain = Object.keys(domains).find((host) => url.hostname === host || (host !== "mp.weixin.qq.com" && url.hostname.endsWith(`.${host}`)));
+    return domain ? domains[domain] : "link";
+  }
+  function cleanURL(value) {
+    try {
+      if (!value || /[\s\\]/.test(value)) return "";
+      const url = new URL(value, window.location.href);
+      return ["https:","http:"].includes(url.protocol) && !url.username && !url.password ? url.href : "";
+    } catch { return ""; }
+  }
+  const text = (value, limit = 300) => typeof value === "string" ? value.trim().slice(0, limit) : "";
+  let settings = {};
+  try {
+    const parsed = JSON.parse(nav.dataset.contactCards || "{}");
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) settings = parsed;
+  } catch { /* A malformed optional card must not disable the links. */ }
+
+  // Reuse configured secondary social links without duplicating native links.
+  const existing = new Set([...nav.querySelectorAll("a")].map((a) => a.href.replace(/\/$/, "")));
+  document.querySelectorAll(".dock-secondary .dock-item[data-platform]").forEach((item) => {
+    if (item.dataset.platform === "wechat" || !services[item.dataset.platform] || existing.has(item.href.replace(/\/$/, ""))) return;
+    const link = document.createElement("a");
+    link.href = item.href;
+    link.title = item.getAttribute("aria-label") || services[item.dataset.platform][0];
+    if (item.target) link.target = item.target;
+    link.rel = "noopener noreferrer";
+    const icon = item.querySelector("svg");
+    if (icon) link.append(icon.cloneNode(true));
+    nav.append(link);
+    existing.add(item.href.replace(/\/$/, ""));
+  });
+
+  const popup = document.createElement("aside");
+  popup.className = "cali-contact-card";
+  popup.id = "cali-contact-card";
+  popup.setAttribute("role", "tooltip");
+  popup.hidden = true;
+  document.body.append(popup);
+  let active, openTimer, closeTimer, previousDescription;
+  const stopTimers = () => { clearTimeout(openTimer); clearTimeout(closeTimer); };
+  function close() {
+    stopTimers();
+    popup.hidden = true;
+    if (active) {
+      if (previousDescription) active.setAttribute("aria-describedby", previousDescription);
+      else active.removeAttribute("aria-describedby");
+      active.removeAttribute("data-card-open");
+    }
+    active = null;
+  }
+  function node(tag, className, content) {
+    const element = document.createElement(tag);
+    element.className = className;
+    if (content) element.textContent = content;
+    return element;
+  }
+  function show(link, url, service, label, icon) {
+    close();
+    active = link;
+    const supplied = settings[url.href] || settings[service];
+    const data = supplied && typeof supplied === "object" && !Array.isArray(supplied) ? supplied : {};
+    const identity = text(data.name, 80) || nav.dataset.siteName || label;
+    let handle = url.protocol === "mailto:" ? url.pathname : url.hostname + (url.pathname === "/" ? "" : url.pathname);
+    if (["x","telegram","github","instagram"].includes(service) && /^\/[\w.-]+\/?$/.test(url.pathname)) handle = "@" + url.pathname.replaceAll("/", "");
+    popup.dataset.service = service;
+    const masthead = node("div", "contact-card-masthead");
+    masthead.append(node("span", "contact-card-service", label), node("span", "contact-card-edition", service === "github" ? "</>" : "↗"));
+    const head = node("div", "contact-card-head");
+    const avatar = node("span", "contact-card-avatar", identity.slice(0,1));
+    const imageURL = cleanURL(text(data.avatar, 2000) || nav.dataset.siteAvatar);
+    if (imageURL) {
+      const image = document.createElement("img");
+      image.src = imageURL; image.alt = ""; image.referrerPolicy = "no-referrer";
+      image.addEventListener("error", () => image.remove());
+      avatar.append(image);
+    }
+    const names = node("div", "contact-card-names");
+    names.append(node("strong", "contact-card-name", identity), node("span", "contact-card-handle", handle));
+    head.append(avatar, names);
+    if (icon) { const glyph = icon.cloneNode(true); glyph.classList.add("contact-card-glyph"); head.append(glyph); }
+    const bio = node("p", "contact-card-bio", text(data.bio) || nav.dataset.siteBio || services[service]?.[1] || label);
+    const foot = node("div", "contact-card-foot");
+    foot.append(node("span", "", services[service]?.[1] || label), node("span", "contact-card-destination", url.protocol === "mailto:" ? "EMAIL" : url.hostname.replace(/^www\./,"")));
+    popup.replaceChildren(masthead, head, bio);
+    // Optional numbers are owner-supplied snapshots, never synthetic counters.
+    if (Array.isArray(data.stats)) {
+      const stats = node("div", "contact-card-stats");
+      data.stats.slice(0,3).forEach((stat) => {
+        if (!stat || !text(stat.label,40) || !text(stat.value,40)) return;
+        const item = node("span", ""); item.append(node("strong", "", text(stat.value,40)), node("span", "", text(stat.label,40))); stats.append(item);
+      });
+      if (stats.childElementCount) popup.append(stats);
+    }
+    popup.append(foot);
+    popup.hidden = false;
+    const bounds = link.getBoundingClientRect();
+    const box = popup.getBoundingClientRect();
+    popup.style.left = `${Math.max(12, Math.min(bounds.left - 18, window.innerWidth - box.width - 12))}px`;
+    const above = bounds.top - box.height - 10;
+    popup.style.top = `${Math.max(12, Math.min(above >= 12 ? above : bounds.bottom + 10, window.innerHeight - box.height - 12))}px`;
+    previousDescription = link.getAttribute("aria-describedby");
+    link.setAttribute("aria-describedby", [previousDescription, popup.id].filter(Boolean).join(" "));
+    link.setAttribute("data-card-open", "");
+  }
+  const delayClose = () => { clearTimeout(openTimer); closeTimer = setTimeout(close, 140); };
+  popup.addEventListener("pointerenter", () => clearTimeout(closeTimer));
+  popup.addEventListener("pointerleave", delayClose);
+  nav.querySelectorAll("a").forEach((link) => {
+    let url;
+    try { url = new URL(link.href, window.location.href); } catch { return; }
+    if (!["http:","https:","mailto:"].includes(url.protocol) || url.username || url.password) return;
+    const service = classify(url);
+    if (service === "wechat") { link.remove(); return; }
+    const label = services[service]?.[0] || link.getAttribute("title") || link.getAttribute("aria-label") || link.textContent.trim();
+    const icon = link.querySelector("svg, .icon");
+    const name = node("span", "contact-label", label);
+    const arrow = node("span", "contact-arrow", "↗"); arrow.setAttribute("aria-hidden", "true");
+    link.replaceChildren(...(icon ? [icon] : []), name, arrow);
+    link.removeAttribute("title");
+    link.setAttribute("aria-label", label);
+    let touch = false;
+    link.addEventListener("pointerdown", (event) => { touch = event.pointerType === "touch"; if (touch) close(); });
+    link.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "touch") return;
+      touch = false; stopTimers();
+      openTimer = setTimeout(() => show(link,url,service,label,icon), 100);
+    });
+    link.addEventListener("pointerleave", delayClose);
+    link.addEventListener("focus", () => {
+      if (!touch) window.requestAnimationFrame(() => { if (document.activeElement === link) show(link,url,service,label,icon); });
+    });
+    link.addEventListener("blur", close);
+    link.addEventListener("click", close);
+  });
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
+  window.addEventListener("scroll", close, {passive:true,capture:true});
+  window.addEventListener("resize", close);
+})();
 </script>{% endblock %}
 {% block body %}
 <div class="cali-shell">
@@ -2743,13 +3861,15 @@ body {
         {% for paragraph in config.intro %}{% if paragraph|trim %}<p>{{ paragraph }}</p>{% endif %}{% endfor %}
         {% if features.subscriber %}<p class="cali-intro-subscribe">{{ '如果这些文字与你有所共鸣，欢迎' if zh else 'If these words resonate with you, ' }}<button type="button" class="js-subscribe cali-subscribe-link">{{ labels.subscribe }} <span aria-hidden="true">↗</span></button>{{ '。' if zh else '.' }}</p>{% endif %}
       </div>
-      <div class="cali-portrait" aria-label="{{ site.name }}">
+      {% for mode, address in [('light', portrait_url), ('dark', portrait_dark_url)] %}
+      <div class="cali-portrait" data-portrait-theme="{{ mode }}" aria-label="{{ site.name }}">
         <span class="cali-portrait-monogram" aria-hidden="true">{{ site.name[:1] }}</span>
-        {% if portrait_url %}
-          <img data-cali-image src="{{ portrait_url }}" alt="{{ site.name }}" width="240" height="240" fetchpriority="high">
+        {% if address %}
+          <img data-cali-image src="{{ address }}" alt="{{ site.name }}" width="240" height="240" fetchpriority="{{ 'high' if mode == 'light' else 'low' }}">
           <canvas data-cali-portrait width="480" height="480" hidden aria-hidden="true"></canvas>
         {% endif %}
       </div>
+      {% endfor %}
     </section>
 
     {% set cards = namespace(items=(site.primary_links|default([], true))[:3]) %}
@@ -2786,7 +3906,7 @@ body {
       </div>
       {{ writing_list(subjects) }}
     </section>
-    {{ shelf(config.records, 'records', 2, config.records_title or ('循环播放中' if zh else 'On rotation')) }}
+    {{ shelf(config.records, 'records', 2, config.records_title or ('常听的唱片' if zh else 'On rotation')) }}
     {{ shelf(config.books, 'books', 2+(1 if config.records else 0), config.books_title or ('珍藏书架' if zh else 'Books I love')) }}
     </div>
   </main>

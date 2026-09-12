@@ -38,5 +38,7 @@
   "show_toc": true,
   "show_cover": true,
   "support_qr": "asset:support.png",
-  "wechat_qr": "asset:wechat-backup.png"
+  "wechat_qr": "asset:wechat-backup.png",
+  "contact_cards": {},
+  "portrait_dark": "asset:hero-portrait-dark.png"
 }
