@@ -4,6 +4,31 @@
     "在这里填写第二段介绍。"
   ],
   "portrait": "",
+  "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。",
+  "projects": [
+    {
+      "title": "识古",
+      "platform": "Chrome 插件",
+      "description": "让古文更易读，支持翻译、解析与笔记摘录。",
+      "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph",
+      "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"
+    },
+    {
+      "title": "DockPic",
+      "platform": "macOS · App Store",
+      "description": "一款可爱、好用的 macOS 图床应用。",
+      "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394",
+      "icon": ""
+    },
+    {
+      "title": "portus",
+      "platform": "iOS · App Store",
+      "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。",
+      "notice": "美区等地区上架，中国大陆区暂未上架。",
+      "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583",
+      "icon": ""
+    }
+  ],
   "recent_count": 10,
   "recent_title": "近期作品",
   "records_title": "循环播放中",

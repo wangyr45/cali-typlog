@@ -28,5 +28,10 @@ The original design source is https://github.com/CaliCastle/cali.so.
 
 The halftone portrait enhancement follows the original MIT-licensed portrait
 rendering approach. It processes the site's own public image in the visitor's
-browser, with an ordinary image fallback. The three editorial navigation posters
-are original vector artwork for this adaptation.
+browser, with an ordinary image fallback.
+
+The compact project rows in `src/theme.css` are adapted from the same upstream
+MIT source. Project names and store links were supplied by the site owner. The
+Shigu icon references its public Chrome Web Store image. DockPic and portus use
+text initials until the owner supplies public icons. Product marks remain the
+property of their owners. No original-author project catalog is included.

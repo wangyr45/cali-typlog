@@ -1,11 +1,12 @@
 {% from "macros.j2" import render_social_icons %}
 {% set zh = (site.primary_lang|default('en')).startswith('zh') %}
-{% set defaults = {"intro": ["喜欢阅读，保持好奇。在这里记录读书、生活与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "", "records": [], "books": [], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "", "show_toc": true, "show_cover": true} %}
+{% set defaults = {"intro": ["喜欢阅读，保持好奇。在这里记录读书、生活与日常思考。", "比起更新频率，我更在意写下的内容。愿这些文字，成为继续思考的起点。"], "portrait": "", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": ""}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": ""}], "records": [], "books": [], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "", "show_toc": true, "show_cover": true} %}
 {% set supplied = query.config('cali-typlog') %}
 {% set supplied = supplied if supplied is mapping else {} %}
 {% set config = namespace(intro=defaults.intro, portrait=defaults.portrait,
   recent_count=defaults.recent_count, recent_title=defaults.recent_title,
-  records=defaults.records, books=defaults.books,
+  records=defaults.records, books=defaults.books, projects=defaults.projects,
+  projects_intro=defaults.projects_intro,
   records_title=defaults.records_title, books_title=defaults.books_title,
   show_toc=defaults.show_toc, show_cover=defaults.show_cover) %}
 {% if supplied.intro is string %}
@@ -20,6 +21,10 @@
 {% if supplied.recent_title is string %}{% set config.recent_title = supplied.recent_title %}{% endif %}
 {% if supplied.records_title is string %}{% set config.records_title = supplied.records_title %}{% endif %}
 {% if supplied.books_title is string %}{% set config.books_title = supplied.books_title %}{% endif %}
+{% if supplied.projects_intro is string %}{% set config.projects_intro = supplied.projects_intro %}{% endif %}
+{% if supplied.projects is defined and supplied.projects is sequence and supplied.projects is not string and supplied.projects is not mapping %}
+  {% set config.projects = supplied.projects|select('mapping')|list %}
+{% endif %}
 {% if supplied.records is defined and supplied.records is sequence and supplied.records is not string and supplied.records is not mapping %}
   {% set config.records = supplied.records|select('mapping')|list %}
 {% endif %}
@@ -59,13 +64,21 @@
 {%- endmacro %}
 {% set portrait_url = public_url(config.portrait)|trim %}
 {% set portrait_url = portrait_url or (site.logo.src if site.logo else '') %}
+{% set project_entries = namespace(items=[]) %}
+{% for item in config.projects %}
+  {% if item.title is string and item.title|trim and public_url(item.url)|trim %}
+    {% set project_entries.items = project_entries.items + [item] %}
+  {% endif %}
+{% endfor %}
+{% set config.projects = project_entries.items %}
+{% set projects_url = linkify('/') ~ '#projects' %}
 
-{% set labels = {'home': '首页' if zh else 'Home', 'archive': '文章归档' if zh else 'Archive', 'recent': '写作' if zh else 'Recent writing', 'subscribe': '订阅更新' if zh else 'Subscribe', 'search': '搜索文章' if zh else 'Search articles', 'topics': '阅读主题' if zh else 'Topics', 'empty': '暂时没有文章。' if zh else 'No articles yet.', 'menu': '导航与偏好' if zh else 'Navigation and preferences', 'toc': '本文目录' if zh else 'On this page', 'skip': '跳至正文' if zh else 'Skip to content', 'previous': '上一页' if zh else 'Previous', 'next': '下一页' if zh else 'Next', 'dark': '深色模式' if zh else 'Dark mode', 'protected': '受保护文章' if zh else 'Protected article'} %}
+{% set labels = {'home': '首页' if zh else 'Home', 'projects': '项目' if zh else 'Projects', 'archive': '文章归档' if zh else 'Archive', 'recent': '写作' if zh else 'Recent writing', 'subscribe': '订阅更新' if zh else 'Subscribe', 'search': '搜索文章' if zh else 'Search articles', 'topics': '阅读主题' if zh else 'Topics', 'empty': '暂时没有文章。' if zh else 'No articles yet.', 'menu': '导航与偏好' if zh else 'Navigation and preferences', 'toc': '本文目录' if zh else 'On this page', 'skip': '跳至正文' if zh else 'Skip to content', 'previous': '上一页' if zh else 'Previous', 'next': '下一页' if zh else 'Next', 'dark': '深色模式' if zh else 'Dark mode', 'protected': '受保护文章' if zh else 'Protected article'} %}
 
 {% macro icon(index) %}<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{% if index == 0 %}<rect x="5" y="3" width="14" height="18" rx="2"/>
 <path d="M8 8h8M8 12h8M8 16h5"/>{% elif index == 1 %}<rect x="3" y="5" width="18" height="14" rx="2"/>
 <path d="m3 6 9 7 9-7"/>{% elif index == 2 %}<path d="M4 5h6a3 3 0 0 1 3 3v13a4 4 0 0 0-4-3H4ZM20 5h-4a3 3 0 0 0-3 3v13a4 4 0 0 1 4-3h3Z"/>{% elif index == 3 %}<circle cx="12" cy="8" r="4"/>
-<path d="M5 21v-2a7 7 0 0 1 14 0v2"/>{% elif index == 5 %}<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>{% else %}<path d="M4 7h16M4 17h16"/>
+<path d="M5 21v-2a7 7 0 0 1 14 0v2"/>{% elif index == 6 %}<path d="m14 4 6 6M3 17 16 4l4 4L7 21H3v-4Z"/><path d="m4 4 3-1 3 3-3 3-3-3V4Zm10 11 6 6 2-2-6-6M6 6l2 2"/>{% elif index == 5 %}<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>{% else %}<path d="M4 7h16M4 17h16"/>
 <circle cx="9" cy="7" r="2" fill="var(--background)"/>
 <circle cx="15" cy="17" r="2" fill="var(--background)"/>{% endif %}</svg>{% endmacro %}
 
@@ -139,17 +152,19 @@
   {% if not dock.about and (title in ['关于', '关于我', '关于我们', 'about', 'about me', 'about us'] or path in ['/me', '/about']) %}{% set dock.about = nav %}{% endif %}
 {% endfor %}
 <noscript><style>.cali-theme-control,.cali-search,.cali-preferences .js-subscribe,.cali-intro-subscribe{display:none!important}</style></noscript>
-<a class="cali-skip" href="#cali-main">{{ labels.skip }}</a>
+<a class="cali-skip cali-skip-main" href="#cali-main">{{ labels.skip }}</a>
+{% if not page and config.projects %}<a class="cali-skip cali-skip-projects" href="#projects">{{ labels.skip }}</a>{% endif %}
 <nav class="dock" aria-label="{{ labels.menu }}">
 <span class="dock-glass" aria-hidden="true">
 </span>
-<a class="dock-item" href="{{ linkify('/') }}" aria-label="{{ labels.home }}"{% if not page %} aria-current="page"{% endif %}>
+<a class="dock-item" data-cali-home-link href="{{ linkify('/') }}" aria-label="{{ labels.home }}"{% if not page %} aria-current="page"{% endif %}>
 <span class="dock-avatar"><span aria-hidden="true">{{ site.name[:1] }}</span>{% if portrait_url %}<img data-cali-image src="{{ portrait_url|thumbnail('ss') }}" alt="">{% endif %}</span>
 <span class="dock-label">{{ labels.home }}</span>
 </a>
 <span class="dock-rule" aria-hidden="true">
 </span>
 {{ dock_link({'url': linkify(site.list_url), 'title': labels.archive, 'blank': false}, 0) }}
+{% if config.projects %}<a class="dock-item" data-cali-projects-link href="{{ projects_url }}" aria-label="{{ labels.projects }}" title="{{ labels.projects }}">{{ icon(6) }}<span class="dock-label">{{ labels.projects }}</span></a>{% endif %}
 {% if dock.about %}{{ dock_link(dock.about, 3) }}{% endif %}
 {% if site.secondary_links %}
 <div class="dock-secondary" role="group" aria-label="{{ '次要链接（可横向滑动）' if zh else 'Secondary links (scroll horizontally)' }}">
@@ -163,6 +178,7 @@
 </summary>
 <div class="cali-preferences-panel">
 <p>{{ labels.menu }}</p>
+{% if config.projects %}<a data-cali-projects-link href="{{ projects_url }}">{{ labels.projects }} ↗</a>{% endif %}
 <label class="cali-theme-control" for="js-theme-toggle">{{ labels.dark }}<input type="checkbox" id="js-theme-toggle" aria-label="{{ labels.dark }}">
 </label>{% if features.algolia %}<input class="js-search cali-search" type="search" aria-label="{{ labels.search }}" placeholder="{{ labels.search }}…" autocomplete="off">{% endif %}{% if features.subscriber %}<button class="js-subscribe cali-button" type="button">{{ labels.subscribe }} ↗</button>{% endif %}{% if site.primary_links %}<nav aria-label="{{ '主要链接' if zh else 'Primary links' }}">{% for nav in site.primary_links %}{{ nav_link(nav) }}{% endfor %}</nav>{% endif %}{% if site.secondary_links %}<nav aria-label="{{ '次要链接' if zh else 'Secondary links' }}">{% for nav in site.secondary_links %}{{ nav_link(nav) }}{% endfor %}</nav>{% endif %}
 </div>
@@ -181,7 +197,7 @@
 <div>
 <h2>{{ '索引' if zh else 'Index' }}</h2>
 <nav>
-<a href="{{ linkify('/') }}">{{ labels.home }}</a>{% for nav in site.primary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}{% for nav in site.secondary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}</nav>
+<a href="{{ linkify('/') }}">{{ labels.home }}</a>{% if config.projects %}<a data-cali-projects-link href="{{ projects_url }}">{{ labels.projects }}</a>{% endif %}{% for nav in site.primary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}{% for nav in site.secondary_links|default([], true) %}{{ nav_link(nav) }}{% endfor %}</nav>
 </div>
 <p class="cali-colophon"><span>© {{ site.name }}</span><span class="cali-colophon-links"><span>Powered by <a href="https://typlog.com/">Typlog</a></span><span class="cali-credit">{{ '设计致敬' if zh else 'Design credit' }} <a href="https://github.com/CaliCastle/cali.so" target="_blank" rel="noopener noreferrer">Cali Castle ↗</a></span></span></p>
 </footer>
@@ -196,7 +212,7 @@
 </span>
 <span class="print-pile-sheet">
 </span>
-<span class="print-thumb"><span class="print-lines"></span>{% if subject.cover and subject.cover.src and subject.visibility|default('public') == 'public' %}<img data-cali-image src="{{ subject.cover.src|thumbnail('s') }}" alt="" width="64" height="44" loading="lazy" decoding="async">{% endif %}</span>
+<span class="print-thumb"><span class="print-lines"></span>{% if subject.cover and subject.cover.src and subject.visibility|default('public') == 'public' %}<img data-cali-image data-cali-cover src="{{ subject.cover.src|thumbnail('s') }}" alt="" width="64" height="44" loading="lazy" decoding="async">{% endif %}</span>
 </span>
 <{{ heading }} class="blog-row-title">{{ subject.title }}{% if subject.visibility|default('public') != 'public' %}<span class="cali-sr-only"> · {{ labels.protected }}</span>{% endif %}</{{ heading }}>
 <span class="blog-row-leader" aria-hidden="true">
@@ -1792,25 +1808,16 @@ body {
 }
 .cali-portrait canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
 .cali-portrait-monogram { border-radius:0; background:transparent; }
-.nc-editorial { height:110px; margin-bottom:12px; }
-.nc-poster { display:block; width:88px; height:106px; transform:rotate(-4deg); transition:transform 240ms cubic-bezier(.22,1,.36,1); }
-.nc-poster svg { display:block; width:100%; height:100%; filter:drop-shadow(0 2px 2px #0000001c); }
-.nc-poster-newsletter { transform:rotate(3deg); }
-.nc-poster-yinread { transform:rotate(-2deg); }
 @media(hover:hover) and (pointer:fine) {
-  .nav-card:hover .nc-poster { transform:translateY(-4px) rotate(0deg); }
   .cali-subscribe-link:hover { border-color:var(--foreground); }
   .cali-credit a:hover { text-decoration:underline; }
 }
 @media(max-width:639px) {
   .cali-introduction h1 { font-size:24px; }
   .cali-introduction p { font-size:14px; }
-  .nc-editorial { height:96px; margin-bottom:10px; }
-  .nc-poster { width:76px; height:92px; }
   .cali-colophon { font-size:11px; }
   .cali-colophon-links { gap:6px 14px; }
 }
-@media(prefers-reduced-motion:reduce) { .nav-card:hover .nc-poster { transform:none; } }
 @media(forced-colors:active) {
   .cali-motto span { background:none; color:CanvasText; }
   .cali-subscribe-link { border-color:ButtonText; }
@@ -1818,6 +1825,190 @@ body {
 
 .cali-portrait-ready>img { opacity:0; }
 .cali-portrait-ready .cali-portrait-monogram { visibility:hidden; }
+
+/* Projects keep the compact list proportions of cali.so. */
+.project-row {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 9rem) minmax(0, 1fr);
+  align-items: start;
+  gap: 0.25rem 1rem;
+  min-height: 4.75rem;
+  padding-block: 0.875rem;
+  font-size: 0.875rem;
+}
+
+.page-introduction {
+  color: var(--gray-10, var(--foreground));
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.project-row:focus-visible {
+  border-radius: 2px;
+  outline: 1px solid var(--focus-ring, var(--signal));
+  outline-offset: 3px;
+}
+
+.project-icon-frame {
+  position: relative;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  isolation: isolate;
+}
+
+.project-icon-frame::before {
+  position: absolute;
+  inset: 0;
+  color: var(--foreground);
+  background:
+    linear-gradient(currentColor, currentColor) left top / 7px var(--border-hairline) no-repeat,
+    linear-gradient(currentColor, currentColor) left top / var(--border-hairline) 7px no-repeat,
+    linear-gradient(currentColor, currentColor) right top / 7px var(--border-hairline) no-repeat,
+    linear-gradient(currentColor, currentColor) right top / var(--border-hairline) 7px no-repeat,
+    linear-gradient(currentColor, currentColor) left bottom / 7px var(--border-hairline) no-repeat,
+    linear-gradient(currentColor, currentColor) left bottom / var(--border-hairline) 7px no-repeat,
+    linear-gradient(currentColor, currentColor) right bottom / 7px var(--border-hairline) no-repeat,
+    linear-gradient(currentColor, currentColor) right bottom / var(--border-hairline) 7px no-repeat;
+  content: '';
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity 150ms ease,
+    transform 300ms var(--ease-spring);
+}
+
+.project-icon {
+  position: relative;
+  z-index: 1;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: 0 0 0 var(--border-hairline) color-mix(in oklab, var(--foreground) 10%, transparent);
+  transition: transform 300ms var(--ease-spring);
+}
+
+.project-identity {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+  line-height: 1.4;
+}
+
+.project-name {
+  max-width: 100%;
+  color: var(--gray-11, var(--foreground));
+  text-wrap: balance;
+}
+
+.project-domain {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 150ms ease;
+}
+
+.project-description {
+  min-width: 0;
+  color: var(--gray-8, var(--muted-foreground));
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-row:hover .project-icon-frame::before {
+    opacity: 0.34;
+    transform: scale(1);
+  }
+
+  .project-row:hover .project-icon {
+    transform: translateY(-1px);
+  }
+
+  .project-row:hover .project-domain {
+    color: var(--foreground);
+  }
+}
+
+.project-row:focus-visible .external-label .external-mark {
+  opacity: 0.6;
+  transition: none;
+}
+
+@media (max-width: 39.99rem) {
+  .project-row {
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    align-items: start;
+    row-gap: 0.375rem;
+    min-height: 0;
+    padding-block: 1rem;
+  }
+
+  .project-icon-frame {
+    grid-row: 1 / span 2;
+  }
+
+  .project-identity,
+  .project-description {
+    grid-column: 2;
+  }
+
+  .project-domain {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-icon-frame::before,
+  .project-icon,
+  .project-domain {
+    transition: none;
+  }
+
+  .project-row:hover .project-icon {
+    transform: none;
+  }
+
+  .project-row:hover .project-icon-frame::before {
+    transform: none;
+  }
+}
+
+
+.cali-projects-view { display:none; scroll-margin-top:48px; }
+.cali-projects-view:target { display:block; }
+.cali-projects-view:target ~ .cali-home-view { display:none; }
+.cali-projects-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; }
+.cali-projects-heading h1 { font:400 12px/1.5 ui-monospace,monospace; letter-spacing:.08em; color:var(--muted-foreground); }
+.cali-projects-heading h1::before { content:'// '; opacity:.6; }
+.cali-projects-heading p { max-width:440px; margin-top:16px; color:var(--gray-11); font-size:14px; line-height:1.7; text-wrap:balance; }
+.cali-projects-heading .cali-pixel-mark { margin-top:4px; }
+.cali-project-list { list-style:none; padding:0; margin:40px 0 0; border-bottom:var(--border-hairline) solid var(--border); }
+.project-name { font-weight:500; }
+.project-domain { font-size:12px; color:var(--muted-foreground); }
+.project-description { color:var(--muted-foreground); }
+.project-notice { display:block; margin-top:8px; font-size:12px; line-height:1.6; color:var(--gray-11); }
+.project-external { font-size:12px; color:var(--muted-foreground); }
+.project-icon-frame>img { position:absolute; top:4px; left:4px; }
+.project-monogram { display:grid; place-items:center; background:var(--gray-3); color:var(--foreground); font:500 21px/1 ui-serif,serif; }
+.cali-projects-back { margin-top:28px!important; font-size:12px; color:var(--muted-foreground); }
+.cali-projects-back a { display:inline-block; padding-block:10px; }
+@media(max-width:639px) {
+  .cali-projects-view { padding-inline:8px; }
+  .project-row { column-gap:14px; }
+}
+
+.cali-skip-projects { display:none; }
+.cali-shell:has(#projects:target) .cali-skip-main { display:none; }
+.cali-shell:has(#projects:target) .cali-skip-projects { display:block; }
 </style>{% endblock %}
 {% block script %}<script>
 (() => {
@@ -1962,13 +2153,26 @@ body {
   const requests = new Map();
   const limit = 1024 * 1024;
 
-  function albumURL(href) {
+  function previewURL(href, kind, listPath) {
     try {
       const url = new URL(href, window.location.href);
       const here = new URL(window.location.href);
       const host = (value) => value.hostname.replace(/^www\./, "");
       if (!/^https?:$/.test(url.protocol) || url.username || url.password || host(url) !== host(here) || url.port !== here.port) return null;
-      if (!/^\/moments(?:\/[0-9]+)*\/?$/.test(url.pathname)) return null;
+      if (kind === "album") {
+        if (!/^\/moments(?:\/[0-9]+)*\/?$/.test(url.pathname)) return null;
+      } else {
+        if (url.search || url.hash || /[?#\\]/.test(href) || /(?:^|\/)(?:\.|%2e){1,2}(?:\/|$)/i.test(href)) return null;
+        const segments = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+        if (segments.some((segment) => /[/\\%?#]/.test(segment) || segment === "." || segment === "..")) return null;
+        if (segments.some((segment) => /^(?:admin|api|settings|login|logout|moments)$|^_/i.test(segment))) return null;
+        const withoutTrailingSlash = (value) => value.replace(/\/$/, "");
+        const archive = typeof listPath === "string" && /^\/(?!\/)[^?#\\]*$/.test(listPath) && withoutTrailingSlash(url.pathname) === withoutTrailingSlash(listPath);
+        const tag = /^\/tags\/[^/]+\/?$/.test(url.pathname);
+        if (!archive && !tag) return null;
+        // Fetch the canonical path directly because redirects stay disabled.
+        url.pathname = archive ? listPath : `${withoutTrailingSlash(url.pathname)}/`;
+      }
       // Use the current origin, including when a saved link uses its www alias.
       return new URL(url.pathname, here.origin).href;
     } catch {
@@ -1977,8 +2181,8 @@ body {
   }
 
   async function readPage(response) {
-    if (!response.ok || !response.headers.get("content-type")?.includes("text/html")) throw new Error("Album unavailable");
-    if (Number(response.headers.get("content-length")) > limit) throw new Error("Album too large");
+    if (!response.ok || !response.headers.get("content-type")?.includes("text/html")) throw new Error("Collection unavailable");
+    if (Number(response.headers.get("content-length")) > limit) throw new Error("Collection too large");
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let size = 0;
@@ -1988,7 +2192,7 @@ body {
         const {done, value} = await reader.read();
         if (done) break;
         size += value.byteLength;
-        if (size > limit) throw new Error("Album too large");
+        if (size > limit) throw new Error("Collection too large");
         html += decoder.decode(value, {stream: true});
       }
       return html + decoder.decode();
@@ -1997,7 +2201,7 @@ body {
     }
   }
 
-  async function photos(url) {
+  async function photos(url, kind) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 6000);
     try {
@@ -2009,12 +2213,13 @@ body {
       const template = document.createElement("template");
       template.innerHTML = html;
       const result = [];
-      for (const image of template.content.querySelectorAll(".moment-photos img")) {
+      const selector = kind === "album" ? ".moment-photos img" : "img[data-cali-cover]";
+      for (const image of template.content.querySelectorAll(selector)) {
         const raw = image.getAttribute("src");
         if (!raw) continue;
         let src;
         try { src = new URL(raw, url); } catch { continue; }
-        // Typlog hosts public album images here. Do not copy tracking URLs or private paths.
+        // Only copy Typlog uploads from public cover or album image markers.
         if (src.protocol !== "https:" || src.hostname !== "i.typlog.com" || src.username || src.password || src.port) continue;
         src.search = "?x-oss-process=style/ss";
         src.hash = "";
@@ -2029,11 +2234,14 @@ body {
     }
   }
 
-  document.querySelectorAll("[data-cali-album]").forEach(async (card) => {
-    const url = albumURL(card.getAttribute("href"));
+  document.querySelectorAll("[data-cali-album], [data-cali-collection]").forEach(async (card) => {
+    const collection = card.getAttribute("data-cali-collection");
+    const kind = collection === null ? "album" : "articles";
+    const url = previewURL(collection === null ? card.getAttribute("href") : collection, kind, card.getAttribute("data-cali-list-path"));
     if (!url) return;
-    if (!requests.has(url)) requests.set(url, photos(url));
-    const sources = await requests.get(url);
+    const key = `${kind}:${url}`;
+    if (!requests.has(key)) requests.set(key, photos(url, kind));
+    const sources = await requests.get(key);
     const frames = card.querySelectorAll(".nc-polaroid");
     sources.forEach((src, index) => {
       const frame = frames[index];
@@ -2200,6 +2408,68 @@ body {
     source.addEventListener("error", retainFallback, {once: true});
     source.addEventListener("load", start, {once: true});
     if (source.complete) start();
+  });
+})();
+(() => {
+  "use strict";
+
+  const projects = document.getElementById("projects");
+  if (!projects || !projects.classList.contains("cali-projects-view")) return;
+
+  const main = document.getElementById("cali-main");
+  const menu = document.querySelector(".cali-preferences");
+  const homeLinks = document.querySelectorAll("[data-cali-home-link]");
+  const projectLinks = document.querySelectorAll("[data-cali-projects-link]");
+  const homeTitle = document.title;
+  const projectTitle = projects.dataset.pageTitle || homeTitle;
+
+  function isProjects() {
+    try {
+      return decodeURIComponent(window.location.hash.slice(1)) === "projects";
+    } catch {
+      return false;
+    }
+  }
+
+  function setCurrent(links, current) {
+    links.forEach((link) => {
+      if (current) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
+  function updatePage(active) {
+    document.title = active ? projectTitle : homeTitle;
+    setCurrent(homeLinks, !active);
+    setCurrent(projectLinks, active);
+  }
+
+  let active = isProjects();
+  updatePage(active);
+
+  document.addEventListener("click", (event) => {
+    if (!active || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest?.("a.cali-skip, a[data-cali-projects-link]");
+    if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+    if (link.matches(".cali-skip")) {
+      // A skip link must not replace the fragment that selects this view.
+      event.preventDefault();
+      if (menu) menu.open = false;
+      projects.focus({preventScroll: false});
+    } else if (menu?.open) {
+      menu.open = false;
+    }
+  });
+
+  window.addEventListener("hashchange", () => {
+    const next = isProjects();
+    if (next === active) return;
+    active = next;
+    updatePage(active);
+    if (menu) menu.open = false;
+    // Preserve the browser's fragment scroll and history restoration.
+    const target = active ? projects : main;
+    if (target) target.focus({preventScroll: true});
   });
 })();
 </script>{% endblock %}
