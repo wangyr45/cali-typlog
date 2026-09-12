@@ -44,7 +44,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory preview
 ```
 
 The build produces three templates with inline CSS/JavaScript, five bundled images, and
-`dist/cali-typlog-0.8.0.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
+`dist/cali-typlog-0.8.1.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
 images through its theme static URL. Keep the assets directory in the release. Edit source files under `src/` and run the build; do not edit the
 generated root templates. The `/settings-demo/` preview exercises runtime settings without rebuilding.
 The `/components/` preview demonstrates optional
@@ -156,3 +156,12 @@ layout, drag and keyboard selection, and reduced-motion support. Dark mode uses
 a separate halftone portrait. Appearance offers Light, System, and Dark, with
 per-tab persistence and native Typlog theme integration. Duplicate links have
 been removed from preferences.
+
+## Version 0.8.1
+
+Restores Explore below search, using the native primary link order and targets.
+The podcast shortcut now precedes secondary links. Recommended books includes
+19 owner-selected editions, refined serif spine text, and horizontal browsing
+when the shelf exceeds the available width. Full titles remain in the captions.
+The contact and QR sections align with the footer edges; the redundant scan
+hint is removed while image enlargement remains available.

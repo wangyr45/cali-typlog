@@ -71,3 +71,20 @@ covered by the theme source code MIT license. No audio or book text is included.
 The owner supplied `hero-portrait-dark.png` for the dark-mode portrait.
 The packaged PNG has no EXIF or text metadata. Image pixels are unchanged. Separate
 light/dark tone mapping follows the original halftone portrait component.
+
+## Additional recommended books
+
+The following covers come from the owner-selected Douban editions. Artwork remains attributed to its respective publisher and rights holders.
+
+- [金枝](https://book.douban.com/subject/34855029/) — book-34855029.jpg
+- [以利为利](https://book.douban.com/subject/10587755/) — book-10587755.jpg
+- [历史三调](https://book.douban.com/subject/26427101/) — book-26427101.jpg
+- [大问题（第十版）](https://book.douban.com/subject/30176572/) — book-30176572.jpg
+- [史蒂夫·乔布斯传](https://book.douban.com/subject/6798611/) — book-6798611.jpg
+- [亮剑](https://book.douban.com/subject/1088022/) — book-1088022.jpg
+- [黑客与画家](https://book.douban.com/subject/6021440/) — book-6021440.jpg
+- [世界观 (第3版)](https://book.douban.com/subject/35181762/) — book-35181762.jpg
+- [权力的毛细管作用](https://book.douban.com/subject/26581737/) — book-26581737.jpg
+- [明代国家权力结构及运行机制](https://book.douban.com/subject/36594961/) — book-36594961.jpg
+- [可能性的艺术](https://book.douban.com/subject/35819419/) — book-35819419.jpg
+- [柳如是别传（全三册）](https://book.douban.com/subject/1034470/) — book-1034470.jpg
