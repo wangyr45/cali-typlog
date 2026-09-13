@@ -174,3 +174,12 @@ hint is removed while image enlargement remains available.
 - Update the introduction and retain 16 recommended books.
 - Add staggered destination entrances. Keyboard navigation, restored pages, and reduced motion skip animations.
 - Add an inline WeChat QR card and a native subscription button below search.
+
+## Version 0.8.3
+
+- Group design credit beside copyright.
+- Use one coordinated route entrance and prevent repeated current navigation.
+- Add the podcast biography link and a blue podcast card.
+- Refine compact platform cards and the email envelope.
+- Add a public GitHub contribution snapshot and a 14-day new article badge.
+- Refine the dark portrait with darker clothing and a soft outward edge fade.
