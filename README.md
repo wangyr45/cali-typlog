@@ -165,3 +165,12 @@ The podcast shortcut now precedes secondary links. Recommended books includes
 when the shelf exceeds the available width. Full titles remain in the captions.
 The contact and QR sections align with the footer edges; the redundant scan
 hint is removed while image enlargement remains available.
+
+
+## Version 0.8.2
+
+- Add article focus emphasis and a denser frosted dock.
+- Add an email envelope and a blue Zhihu card, including inline introduction links.
+- Update the introduction and retain 16 recommended books.
+- Add staggered destination entrances. Keyboard navigation, restored pages, and reduced motion skip animations.
+- Add an inline WeChat QR card and a native subscription button below search.

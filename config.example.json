@@ -40,5 +40,7 @@
   "support_qr": "asset:support.png",
   "wechat_qr": "asset:wechat-backup.png",
   "contact_cards": {},
-  "portrait_dark": "asset:hero-portrait-dark.png"
+  "portrait_dark": "asset:hero-portrait-dark.png",
+  "email": "hello@example.com",
+  "zhihu_url": "https://www.zhihu.com/people/example"
 }
