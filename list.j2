@@ -1,8 +1,8 @@
 {% from "macros.j2" import render_social_icons %}
 {% set zh = (site.primary_lang|default('en')).startswith('zh') %}
-{% set defaults = {"intro": ["我是太隐，喜欢阅读，爱好广泛。学生时代曾混迹天涯、猫扑，也在起点、逐浪写过小说。2016 年，创办“太隐”独立博客。2024 年开通 [微信公众号]。2025 年，开通播客 “[太隐观复]”。2026 年，受邀入驻 [知乎]。另外，近期开发了 App，详见[项目页面]。"], "portrait": "asset:hero-portrait.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [{"title": "After Hours", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/after-hours/1499378108", "cover": "asset:record-1499378108.jpg", "width": 600, "height": 600, "spine_color": "#352a18", "spine_ink": "#faf9f6"}, {"title": "Ah Yeah", "author": "EXID", "url": "https://music.apple.com/cn/album/ah-yeah/982223883", "cover": "asset:record-982223883.jpg", "width": 600, "height": 600, "spine_color": "#f1eff0", "spine_ink": "#252523"}, {"title": "Full Moon - EP", "author": "EXID", "url": "https://music.apple.com/cn/album/full-moon-ep/1305881083", "cover": "asset:record-1305881083.jpg", "width": 600, "height": 600, "spine_color": "#3b6381", "spine_ink": "#faf9f6"}, {"title": "HEART MAID", "author": "SUNMI", "url": "https://music.apple.com/cn/album/heart-maid/1848070290", "cover": "asset:record-1848070290.jpg", "width": 600, "height": 600, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "Starboy", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/starboy/1440871397", "cover": "asset:record-1440871397.jpg", "width": 600, "height": 600, "spine_color": "#c0042c", "spine_ink": "#faf9f6"}, {"title": "WE", "author": "EXID", "url": "https://music.apple.com/cn/album/we/1463174475", "cover": "asset:record-1463174475.jpg", "width": 600, "height": 600, "spine_color": "#e8372d", "spine_ink": "#faf9f6"}, {"title": "Street", "author": "EXID", "url": "https://music.apple.com/cn/album/street/1118367147", "cover": "asset:record-1118367147.jpg", "width": 600, "height": 600, "spine_color": "#f75f85", "spine_ink": "#faf9f6"}, {"title": "范特西", "author": "周杰伦", "url": "https://music.apple.com/cn/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206", "cover": "asset:record-535739206.jpg", "width": 600, "height": 600, "spine_color": "#ac1a1d", "spine_ink": "#faf9f6"}, {"title": "Inner Child", "author": "Shanice", "url": "https://music.apple.com/cn/album/inner-child/1444166430", "cover": "asset:record-1444166430.jpg", "width": 600, "height": 600, "spine_color": "#211b1d", "spine_ink": "#faf9f6"}, {"title": "我肯定在几百年前就说过爱你", "author": "告五人", "url": "https://music.apple.com/cn/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804", "cover": "asset:record-1546062804.jpg", "width": 600, "height": 600, "spine_color": "#b3b3b1", "spine_ink": "#252523"}, {"title": "新的心跳", "author": "邓紫棋", "url": "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923", "cover": "asset:record-1053567923.jpg", "width": 600, "height": 600, "spine_color": "#1a0f1e", "spine_ink": "#faf9f6"}], "books": [{"title": "Wild Thing", "author": "Sue Prideaux", "url": "https://book.douban.com/subject/37071291/", "cover": "asset:book-37071291.jpg", "width": 449, "height": 690, "spine_color": "#1c1a21", "spine_ink": "#faf9f6"}, {"title": "清代地方政府", "author": "瞿同祖", "url": "https://book.douban.com/subject/35713871/", "cover": "asset:book-35713871.jpg", "width": 1080, "height": 1552, "spine_color": "#0f1922", "spine_ink": "#faf9f6"}, {"title": "互联网思想十讲", "author": "段永朝", "url": "https://book.douban.com/subject/26253507/", "cover": "asset:book-26253507.jpg", "width": 353, "height": 500, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "资治通鉴", "author": "[宋]司马光", "url": "https://book.douban.com/subject/6790302/", "cover": "asset:book-6790302.jpg", "width": 720, "height": 1028, "spine_color": "#f3bf20", "spine_ink": "#252523"}, {"title": "中国的奋斗", "author": "[美]徐中约", "url": "https://book.douban.com/subject/36526876/", "cover": "asset:book-36526876.jpg", "width": 748, "height": 1020, "spine_color": "#fffde4", "spine_ink": "#252523"}, {"title": "醉古堂剑扫", "author": "（明）陆绍珩 等撰", "url": "https://book.douban.com/subject/1105448/", "cover": "asset:book-1105448.jpg", "width": 600, "height": 982, "spine_color": "#ece4aa", "spine_ink": "#252523"}, {"title": "孙犁全集（1-11卷）", "author": "孙犁", "url": "https://book.douban.com/subject/1084028/", "cover": "asset:book-1084028.jpg", "width": 600, "height": 885, "spine_color": "#87424d", "spine_ink": "#faf9f6", "spine_title": "孙犁全集"}, {"title": "以利为利", "author": "周飞舟", "url": "https://book.douban.com/subject/10587755/", "cover": "asset:book-10587755.jpg", "width": 354, "height": 500, "spine_color": "#fcfef3", "spine_ink": "#252523"}, {"title": "历史三调", "author": "[美]柯文", "url": "https://book.douban.com/subject/26427101/", "cover": "asset:book-26427101.jpg", "width": 462, "height": 699, "spine_color": "#b7091f", "spine_ink": "#faf9f6"}, {"title": "大问题（第十版）", "author": "[美] 罗伯特·所罗门 / 凯思林·希金斯", "url": "https://book.douban.com/subject/30176572/", "cover": "asset:book-30176572.jpg", "width": 553, "height": 807, "spine_color": "#e1e0e3", "spine_ink": "#252523", "spine_title": "大问题"}, {"title": "黑客与画家", "author": "[美] Paul Graham", "url": "https://book.douban.com/subject/6021440/", "cover": "asset:book-6021440.jpg", "width": 421, "height": 591, "spine_color": "#e7d4d5", "spine_ink": "#252523"}, {"title": "世界观 (第3版)", "author": "[美] 理查德·德威特", "url": "https://book.douban.com/subject/35181762/", "cover": "asset:book-35181762.jpg", "width": 1080, "height": 1451, "spine_color": "#5a4183", "spine_ink": "#faf9f6", "spine_title": "世界观"}, {"title": "权力的毛细管作用", "author": "王汎森", "url": "https://book.douban.com/subject/26581737/", "cover": "asset:book-26581737.jpg", "width": 632, "height": 901, "spine_color": "#e6d8cb", "spine_ink": "#252523"}, {"title": "明代国家权力结构及运行机制", "author": "方志远", "url": "https://book.douban.com/subject/36594961/", "cover": "asset:book-36594961.jpg", "width": 1080, "height": 1523, "spine_color": "#ffffff", "spine_ink": "#252523", "spine_title": "明代国家权力结构"}, {"title": "可能性的艺术", "author": "刘瑜", "url": "https://book.douban.com/subject/35819419/", "cover": "asset:book-35819419.jpg", "width": 1080, "height": 1630, "spine_color": "#cbcac8", "spine_ink": "#252523"}, {"title": "柳如是别传（全三册）", "author": "陈寅恪", "url": "https://book.douban.com/subject/1034470/", "cover": "asset:book-1034470.jpg", "width": 300, "height": 457, "spine_color": "#8f7150", "spine_ink": "#faf9f6", "spine_title": "柳如是别传"}], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "推荐书籍", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png", "contact_cards": {"zhihu": {"name": "太隐", "bio": "独立博客作者 · 阅读与日常思考\n2026 年受邀入驻知乎。"}, "email": {"website": "https://wangyurui.com/"}, "github": {"login": "wangyr45", "calendar": [{"date": "2026-05-03", "level": 0}, {"date": "2026-05-04", "level": 0}, {"date": "2026-05-05", "level": 0}, {"date": "2026-05-06", "level": 0}, {"date": "2026-05-07", "level": 0}, {"date": "2026-05-08", "level": 0}, {"date": "2026-05-09", "level": 0}, {"date": "2026-05-10", "level": 0}, {"date": "2026-05-11", "level": 0}, {"date": "2026-05-12", "level": 0}, {"date": "2026-05-13", "level": 0}, {"date": "2026-05-14", "level": 0}, {"date": "2026-05-15", "level": 0}, {"date": "2026-05-16", "level": 0}, {"date": "2026-05-17", "level": 0}, {"date": "2026-05-18", "level": 0}, {"date": "2026-05-19", "level": 0}, {"date": "2026-05-20", "level": 0}, {"date": "2026-05-21", "level": 0}, {"date": "2026-05-22", "level": 0}, {"date": "2026-05-23", "level": 0}, {"date": "2026-05-24", "level": 0}, {"date": "2026-05-25", "level": 0}, {"date": "2026-05-26", "level": 0}, {"date": "2026-05-27", "level": 0}, {"date": "2026-05-28", "level": 0}, {"date": "2026-05-29", "level": 0}, {"date": "2026-05-30", "level": 0}, {"date": "2026-05-31", "level": 0}, {"date": "2026-06-01", "level": 0}, {"date": "2026-06-02", "level": 0}, {"date": "2026-06-03", "level": 0}, {"date": "2026-06-04", "level": 0}, {"date": "2026-06-05", "level": 0}, {"date": "2026-06-06", "level": 4}, {"date": "2026-06-07", "level": 0}, {"date": "2026-06-08", "level": 0}, {"date": "2026-06-09", "level": 0}, {"date": "2026-06-10", "level": 0}, {"date": "2026-06-11", "level": 0}, {"date": "2026-06-12", "level": 0}, {"date": "2026-06-13", "level": 0}, {"date": "2026-06-14", "level": 0}, {"date": "2026-06-15", "level": 0}, {"date": "2026-06-16", "level": 0}, {"date": "2026-06-17", "level": 0}, {"date": "2026-06-18", "level": 0}, {"date": "2026-06-19", "level": 0}, {"date": "2026-06-20", "level": 0}, {"date": "2026-06-21", "level": 0}, {"date": "2026-06-22", "level": 0}, {"date": "2026-06-23", "level": 0}, {"date": "2026-06-24", "level": 0}, {"date": "2026-06-25", "level": 0}, {"date": "2026-06-26", "level": 0}, {"date": "2026-06-27", "level": 0}, {"date": "2026-06-28", "level": 0}, {"date": "2026-06-29", "level": 0}, {"date": "2026-06-30", "level": 0}, {"date": "2026-07-01", "level": 0}, {"date": "2026-07-02", "level": 0}, {"date": "2026-07-03", "level": 0}, {"date": "2026-07-04", "level": 0}, {"date": "2026-07-05", "level": 0}, {"date": "2026-07-06", "level": 0}, {"date": "2026-07-07", "level": 0}, {"date": "2026-07-08", "level": 0}, {"date": "2026-07-09", "level": 0}, {"date": "2026-07-10", "level": 0}, {"date": "2026-07-11", "level": 0}, {"date": "2026-07-12", "level": 0}, {"date": "2026-07-13", "level": 0}, {"date": "2026-07-14", "level": 0}, {"date": "2026-07-15", "level": 0}, {"date": "2026-07-16", "level": 0}, {"date": "2026-07-17", "level": 0}, {"date": "2026-07-18", "level": 0}, {"date": "2026-07-19", "level": 0}, {"date": "2026-07-20", "level": 0}, {"date": "2026-07-21", "level": 0}, {"date": "2026-07-22", "level": 0}, {"date": "2026-07-23", "level": 0}, {"date": "2026-07-24", "level": 0}, {"date": "2026-07-25", "level": 0}, {"date": "2026-07-26", "level": 0}, {"date": "2026-07-27", "level": 0}, {"date": "2026-07-28", "level": 0}, {"date": "2026-07-29", "level": 0}, {"date": "2026-07-30", "level": 0}, {"date": "2026-07-31", "level": 0}, {"date": "2026-08-01", "level": 0}, {"date": "2026-08-02", "level": 0}, {"date": "2026-08-03", "level": 0}, {"date": "2026-08-04", "level": 0}, {"date": "2026-08-05", "level": 0}, {"date": "2026-08-06", "level": 0}, {"date": "2026-08-07", "level": 0}, {"date": "2026-08-08", "level": 4}, {"date": "2026-08-09", "level": 0}, {"date": "2026-08-10", "level": 0}, {"date": "2026-08-11", "level": 0}, {"date": "2026-08-12", "level": 0}, {"date": "2026-08-13", "level": 0}, {"date": "2026-08-14", "level": 0}, {"date": "2026-08-15", "level": 0}, {"date": "2026-08-16", "level": 0}, {"date": "2026-08-17", "level": 0}, {"date": "2026-08-18", "level": 0}, {"date": "2026-08-19", "level": 0}, {"date": "2026-08-20", "level": 0}, {"date": "2026-08-21", "level": 0}, {"date": "2026-08-22", "level": 0}, {"date": "2026-08-23", "level": 0}, {"date": "2026-08-24", "level": 0}, {"date": "2026-08-25", "level": 0}, {"date": "2026-08-26", "level": 0}, {"date": "2026-08-27", "level": 0}, {"date": "2026-08-28", "level": 0}, {"date": "2026-08-29", "level": 0}, {"date": "2026-08-30", "level": 0}, {"date": "2026-08-31", "level": 0}, {"date": "2026-09-01", "level": 0}, {"date": "2026-09-02", "level": 0}, {"date": "2026-09-03", "level": 0}, {"date": "2026-09-04", "level": 0}, {"date": "2026-09-05", "level": 0}, {"date": "2026-09-06", "level": 0}, {"date": "2026-09-07", "level": 0}, {"date": "2026-09-08", "level": 0}, {"date": "2026-09-09", "level": 0}, {"date": "2026-09-10", "level": 0}, {"date": "2026-09-11", "level": 0}, {"date": "2026-09-12", "level": 4}, {"date": "2026-09-13", "level": 4}], "updated": "2026-09-13"}}, "portrait_dark": "asset:hero-portrait-night.png", "email": "pkm.tyne@gmail.com", "zhihu_url": "https://www.zhihu.com/people/vibkba"} %}
-{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.3/", true) %}
-{% set bundled_images = ["asset:hero-portrait.png", "asset:hero-portrait-night.png", "asset:dockpic.png", "asset:portus.png", "asset:wechat-backup.png", "asset:support.png", "asset:record-1499378108.jpg", "asset:record-982223883.jpg", "asset:record-1305881083.jpg", "asset:record-1848070290.jpg", "asset:record-1440871397.jpg", "asset:record-1463174475.jpg", "asset:record-1118367147.jpg", "asset:record-535739206.jpg", "asset:record-1444166430.jpg", "asset:record-1546062804.jpg", "asset:record-1053567923.jpg", "asset:book-37071291.jpg", "asset:book-35713871.jpg", "asset:book-26253507.jpg", "asset:book-6790302.jpg", "asset:book-36526876.jpg", "asset:book-1105448.jpg", "asset:book-1084028.jpg", "asset:book-34855029.jpg", "asset:book-10587755.jpg", "asset:book-26427101.jpg", "asset:book-30176572.jpg", "asset:book-6798611.jpg", "asset:book-1088022.jpg", "asset:book-6021440.jpg", "asset:book-35181762.jpg", "asset:book-26581737.jpg", "asset:book-36594961.jpg", "asset:book-35819419.jpg", "asset:book-1034470.jpg"] %}
+{% set defaults = {"intro": ["我是太隐，喜欢阅读，爱好广泛。学生时代曾混迹天涯、猫扑，也在起点、逐浪写过小说。2016 年，创办“太隐”独立博客。2024 年开通 [微信公众号]。2025 年，开通播客 “[太隐观复]”。2026 年，受邀入驻 [知乎]。另外，近期开发了 App，详见[项目页面]。"], "portrait": "asset:hero-portrait-web.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [{"title": "After Hours", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/after-hours/1499378108", "cover": "asset:record-1499378108.jpg", "width": 600, "height": 600, "spine_color": "#352a18", "spine_ink": "#faf9f6"}, {"title": "Ah Yeah", "author": "EXID", "url": "https://music.apple.com/cn/album/ah-yeah/982223883", "cover": "asset:record-982223883.jpg", "width": 600, "height": 600, "spine_color": "#f1eff0", "spine_ink": "#252523"}, {"title": "Full Moon - EP", "author": "EXID", "url": "https://music.apple.com/cn/album/full-moon-ep/1305881083", "cover": "asset:record-1305881083.jpg", "width": 600, "height": 600, "spine_color": "#3b6381", "spine_ink": "#faf9f6"}, {"title": "HEART MAID", "author": "SUNMI", "url": "https://music.apple.com/cn/album/heart-maid/1848070290", "cover": "asset:record-1848070290.jpg", "width": 600, "height": 600, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "Starboy", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/starboy/1440871397", "cover": "asset:record-1440871397.jpg", "width": 600, "height": 600, "spine_color": "#c0042c", "spine_ink": "#faf9f6"}, {"title": "WE", "author": "EXID", "url": "https://music.apple.com/cn/album/we/1463174475", "cover": "asset:record-1463174475.jpg", "width": 600, "height": 600, "spine_color": "#e8372d", "spine_ink": "#faf9f6"}, {"title": "Street", "author": "EXID", "url": "https://music.apple.com/cn/album/street/1118367147", "cover": "asset:record-1118367147.jpg", "width": 600, "height": 600, "spine_color": "#f75f85", "spine_ink": "#faf9f6"}, {"title": "范特西", "author": "周杰伦", "url": "https://music.apple.com/cn/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206", "cover": "asset:record-535739206.jpg", "width": 600, "height": 600, "spine_color": "#ac1a1d", "spine_ink": "#faf9f6"}, {"title": "Inner Child", "author": "Shanice", "url": "https://music.apple.com/cn/album/inner-child/1444166430", "cover": "asset:record-1444166430.jpg", "width": 600, "height": 600, "spine_color": "#211b1d", "spine_ink": "#faf9f6"}, {"title": "我肯定在几百年前就说过爱你", "author": "告五人", "url": "https://music.apple.com/cn/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804", "cover": "asset:record-1546062804.jpg", "width": 600, "height": 600, "spine_color": "#b3b3b1", "spine_ink": "#252523"}, {"title": "新的心跳", "author": "邓紫棋", "url": "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923", "cover": "asset:record-1053567923.jpg", "width": 600, "height": 600, "spine_color": "#1a0f1e", "spine_ink": "#faf9f6"}], "books": [{"title": "Wild Thing", "author": "Sue Prideaux", "url": "https://book.douban.com/subject/37071291/", "cover": "asset:book-37071291.jpg", "width": 449, "height": 690, "spine_color": "#1c1a21", "spine_ink": "#faf9f6"}, {"title": "清代地方政府", "author": "瞿同祖", "url": "https://book.douban.com/subject/35713871/", "cover": "asset:book-35713871.jpg", "width": 1080, "height": 1552, "spine_color": "#0f1922", "spine_ink": "#faf9f6"}, {"title": "互联网思想十讲", "author": "段永朝", "url": "https://book.douban.com/subject/26253507/", "cover": "asset:book-26253507.jpg", "width": 353, "height": 500, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "资治通鉴", "author": "[宋]司马光", "url": "https://book.douban.com/subject/6790302/", "cover": "asset:book-6790302.jpg", "width": 720, "height": 1028, "spine_color": "#f3bf20", "spine_ink": "#252523"}, {"title": "中国的奋斗", "author": "[美]徐中约", "url": "https://book.douban.com/subject/36526876/", "cover": "asset:book-36526876.jpg", "width": 748, "height": 1020, "spine_color": "#fffde4", "spine_ink": "#252523"}, {"title": "醉古堂剑扫", "author": "（明）陆绍珩 等撰", "url": "https://book.douban.com/subject/1105448/", "cover": "asset:book-1105448.jpg", "width": 600, "height": 982, "spine_color": "#ece4aa", "spine_ink": "#252523"}, {"title": "孙犁全集（1-11卷）", "author": "孙犁", "url": "https://book.douban.com/subject/1084028/", "cover": "asset:book-1084028.jpg", "width": 600, "height": 885, "spine_color": "#87424d", "spine_ink": "#faf9f6", "spine_title": "孙犁全集"}, {"title": "以利为利", "author": "周飞舟", "url": "https://book.douban.com/subject/10587755/", "cover": "asset:book-10587755.jpg", "width": 354, "height": 500, "spine_color": "#fcfef3", "spine_ink": "#252523"}, {"title": "历史三调", "author": "[美]柯文", "url": "https://book.douban.com/subject/26427101/", "cover": "asset:book-26427101.jpg", "width": 462, "height": 699, "spine_color": "#b7091f", "spine_ink": "#faf9f6"}, {"title": "大问题（第十版）", "author": "[美] 罗伯特·所罗门 / 凯思林·希金斯", "url": "https://book.douban.com/subject/30176572/", "cover": "asset:book-30176572.jpg", "width": 553, "height": 807, "spine_color": "#e1e0e3", "spine_ink": "#252523", "spine_title": "大问题"}, {"title": "黑客与画家", "author": "[美] Paul Graham", "url": "https://book.douban.com/subject/6021440/", "cover": "asset:book-6021440.jpg", "width": 421, "height": 591, "spine_color": "#e7d4d5", "spine_ink": "#252523"}, {"title": "世界观 (第3版)", "author": "[美] 理查德·德威特", "url": "https://book.douban.com/subject/35181762/", "cover": "asset:book-35181762.jpg", "width": 1080, "height": 1451, "spine_color": "#5a4183", "spine_ink": "#faf9f6", "spine_title": "世界观"}, {"title": "权力的毛细管作用", "author": "王汎森", "url": "https://book.douban.com/subject/26581737/", "cover": "asset:book-26581737.jpg", "width": 632, "height": 901, "spine_color": "#e6d8cb", "spine_ink": "#252523"}, {"title": "明代国家权力结构及运行机制", "author": "方志远", "url": "https://book.douban.com/subject/36594961/", "cover": "asset:book-36594961.jpg", "width": 1080, "height": 1523, "spine_color": "#ffffff", "spine_ink": "#252523", "spine_title": "明代国家权力结构"}, {"title": "可能性的艺术", "author": "刘瑜", "url": "https://book.douban.com/subject/35819419/", "cover": "asset:book-35819419.jpg", "width": 1080, "height": 1630, "spine_color": "#cbcac8", "spine_ink": "#252523"}, {"title": "柳如是别传（全三册）", "author": "陈寅恪", "url": "https://book.douban.com/subject/1034470/", "cover": "asset:book-1034470.jpg", "width": 300, "height": 457, "spine_color": "#8f7150", "spine_ink": "#faf9f6", "spine_title": "柳如是别传"}], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "推荐书籍", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png", "contact_cards": {"zhihu": {"name": "太隐", "bio": "独立博客作者 · 阅读与日常思考\n2026 年受邀入驻知乎。"}, "email": {"website": "https://wangyurui.com/"}, "github": {"login": "wangyr45", "calendar": [{"date": "2026-05-03", "level": 0}, {"date": "2026-05-04", "level": 0}, {"date": "2026-05-05", "level": 0}, {"date": "2026-05-06", "level": 0}, {"date": "2026-05-07", "level": 0}, {"date": "2026-05-08", "level": 0}, {"date": "2026-05-09", "level": 0}, {"date": "2026-05-10", "level": 0}, {"date": "2026-05-11", "level": 0}, {"date": "2026-05-12", "level": 0}, {"date": "2026-05-13", "level": 0}, {"date": "2026-05-14", "level": 0}, {"date": "2026-05-15", "level": 0}, {"date": "2026-05-16", "level": 0}, {"date": "2026-05-17", "level": 0}, {"date": "2026-05-18", "level": 0}, {"date": "2026-05-19", "level": 0}, {"date": "2026-05-20", "level": 0}, {"date": "2026-05-21", "level": 0}, {"date": "2026-05-22", "level": 0}, {"date": "2026-05-23", "level": 0}, {"date": "2026-05-24", "level": 0}, {"date": "2026-05-25", "level": 0}, {"date": "2026-05-26", "level": 0}, {"date": "2026-05-27", "level": 0}, {"date": "2026-05-28", "level": 0}, {"date": "2026-05-29", "level": 0}, {"date": "2026-05-30", "level": 0}, {"date": "2026-05-31", "level": 0}, {"date": "2026-06-01", "level": 0}, {"date": "2026-06-02", "level": 0}, {"date": "2026-06-03", "level": 0}, {"date": "2026-06-04", "level": 0}, {"date": "2026-06-05", "level": 0}, {"date": "2026-06-06", "level": 4}, {"date": "2026-06-07", "level": 0}, {"date": "2026-06-08", "level": 0}, {"date": "2026-06-09", "level": 0}, {"date": "2026-06-10", "level": 0}, {"date": "2026-06-11", "level": 0}, {"date": "2026-06-12", "level": 0}, {"date": "2026-06-13", "level": 0}, {"date": "2026-06-14", "level": 0}, {"date": "2026-06-15", "level": 0}, {"date": "2026-06-16", "level": 0}, {"date": "2026-06-17", "level": 0}, {"date": "2026-06-18", "level": 0}, {"date": "2026-06-19", "level": 0}, {"date": "2026-06-20", "level": 0}, {"date": "2026-06-21", "level": 0}, {"date": "2026-06-22", "level": 0}, {"date": "2026-06-23", "level": 0}, {"date": "2026-06-24", "level": 0}, {"date": "2026-06-25", "level": 0}, {"date": "2026-06-26", "level": 0}, {"date": "2026-06-27", "level": 0}, {"date": "2026-06-28", "level": 0}, {"date": "2026-06-29", "level": 0}, {"date": "2026-06-30", "level": 0}, {"date": "2026-07-01", "level": 0}, {"date": "2026-07-02", "level": 0}, {"date": "2026-07-03", "level": 0}, {"date": "2026-07-04", "level": 0}, {"date": "2026-07-05", "level": 0}, {"date": "2026-07-06", "level": 0}, {"date": "2026-07-07", "level": 0}, {"date": "2026-07-08", "level": 0}, {"date": "2026-07-09", "level": 0}, {"date": "2026-07-10", "level": 0}, {"date": "2026-07-11", "level": 0}, {"date": "2026-07-12", "level": 0}, {"date": "2026-07-13", "level": 0}, {"date": "2026-07-14", "level": 0}, {"date": "2026-07-15", "level": 0}, {"date": "2026-07-16", "level": 0}, {"date": "2026-07-17", "level": 0}, {"date": "2026-07-18", "level": 0}, {"date": "2026-07-19", "level": 0}, {"date": "2026-07-20", "level": 0}, {"date": "2026-07-21", "level": 0}, {"date": "2026-07-22", "level": 0}, {"date": "2026-07-23", "level": 0}, {"date": "2026-07-24", "level": 0}, {"date": "2026-07-25", "level": 0}, {"date": "2026-07-26", "level": 0}, {"date": "2026-07-27", "level": 0}, {"date": "2026-07-28", "level": 0}, {"date": "2026-07-29", "level": 0}, {"date": "2026-07-30", "level": 0}, {"date": "2026-07-31", "level": 0}, {"date": "2026-08-01", "level": 0}, {"date": "2026-08-02", "level": 0}, {"date": "2026-08-03", "level": 0}, {"date": "2026-08-04", "level": 0}, {"date": "2026-08-05", "level": 0}, {"date": "2026-08-06", "level": 0}, {"date": "2026-08-07", "level": 0}, {"date": "2026-08-08", "level": 4}, {"date": "2026-08-09", "level": 0}, {"date": "2026-08-10", "level": 0}, {"date": "2026-08-11", "level": 0}, {"date": "2026-08-12", "level": 0}, {"date": "2026-08-13", "level": 0}, {"date": "2026-08-14", "level": 0}, {"date": "2026-08-15", "level": 0}, {"date": "2026-08-16", "level": 0}, {"date": "2026-08-17", "level": 0}, {"date": "2026-08-18", "level": 0}, {"date": "2026-08-19", "level": 0}, {"date": "2026-08-20", "level": 0}, {"date": "2026-08-21", "level": 0}, {"date": "2026-08-22", "level": 0}, {"date": "2026-08-23", "level": 0}, {"date": "2026-08-24", "level": 0}, {"date": "2026-08-25", "level": 0}, {"date": "2026-08-26", "level": 0}, {"date": "2026-08-27", "level": 0}, {"date": "2026-08-28", "level": 0}, {"date": "2026-08-29", "level": 0}, {"date": "2026-08-30", "level": 0}, {"date": "2026-08-31", "level": 0}, {"date": "2026-09-01", "level": 0}, {"date": "2026-09-02", "level": 0}, {"date": "2026-09-03", "level": 0}, {"date": "2026-09-04", "level": 0}, {"date": "2026-09-05", "level": 0}, {"date": "2026-09-06", "level": 0}, {"date": "2026-09-07", "level": 0}, {"date": "2026-09-08", "level": 0}, {"date": "2026-09-09", "level": 0}, {"date": "2026-09-10", "level": 0}, {"date": "2026-09-11", "level": 0}, {"date": "2026-09-12", "level": 4}, {"date": "2026-09-13", "level": 4}], "updated": "2026-09-13"}, "podcast": {"name": "太隐观复", "handle": "太隐的播客 · 始于 2025", "bio": "把阅读与日常思考，慢慢说给你听。"}}, "portrait_dark": "asset:hero-portrait-night-web.png", "email": "pkm.tyne@gmail.com", "zhihu_url": "https://www.zhihu.com/people/vibkba"} %}
+{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.4/", true) %}
+{% set bundled_images = ["asset:hero-portrait-web.png", "asset:hero-portrait-night-web.png", "asset:dockpic.png", "asset:portus.png", "asset:wechat-backup.png", "asset:support.png", "asset:record-1499378108.jpg", "asset:record-982223883.jpg", "asset:record-1305881083.jpg", "asset:record-1848070290.jpg", "asset:record-1440871397.jpg", "asset:record-1463174475.jpg", "asset:record-1118367147.jpg", "asset:record-535739206.jpg", "asset:record-1444166430.jpg", "asset:record-1546062804.jpg", "asset:record-1053567923.jpg", "asset:book-37071291.jpg", "asset:book-35713871.jpg", "asset:book-26253507.jpg", "asset:book-6790302.jpg", "asset:book-36526876.jpg", "asset:book-1105448.jpg", "asset:book-1084028.jpg", "asset:book-34855029.jpg", "asset:book-10587755.jpg", "asset:book-26427101.jpg", "asset:book-30176572.jpg", "asset:book-6798611.jpg", "asset:book-1088022.jpg", "asset:book-6021440.jpg", "asset:book-35181762.jpg", "asset:book-26581737.jpg", "asset:book-36594961.jpg", "asset:book-35819419.jpg", "asset:book-1034470.jpg"] %}
 {% set supplied = query.config('cali-typlog') %}
 {% set supplied = supplied if supplied is mapping else {} %}
 {% set config = namespace(intro=defaults.intro, portrait=defaults.portrait, portrait_dark=defaults.portrait_dark|default(''),
@@ -236,8 +236,10 @@
 {% endmacro %}
 
 {% macro podcast_phrase(phrase) -%}
-{%- for part in phrase.split('[太隐观复]') -%}
-{%- if not loop.first -%}<a class="cali-inline-contact" data-cali-contact="podcast" href="https://taiyin.podcast.xyz/" target="_blank" rel="noopener noreferrer">{{ platform_icon('xiaoyuzhou') }}太隐观复<span aria-hidden="true">↗</span></a>{%- endif -%}{{- part -}}
+{%- set quoted = '“[太隐观复]”' in phrase -%}
+{%- for part in phrase.replace('“[太隐观复]”', '[太隐观复]').split('[太隐观复]') -%}
+{%- set tail = part.lstrip('。，、；：！？）”') if not loop.first else part -%}
+{%- if not loop.first -%}<span class="cali-inline-unit">{% if quoted %}“{% endif %}<a class="cali-inline-contact" data-cali-contact="podcast" href="https://taiyin.podcast.xyz/" target="_blank" rel="noopener noreferrer">{{ platform_icon('xiaoyuzhou') }}太隐观复<span aria-hidden="true">↗</span></a>{% if quoted %}”{% endif %}{{ part[:part|length-tail|length] }}</span>{%- endif -%}{{- tail -}}
 {%- endfor -%}
 {%- endmacro %}
 
@@ -245,8 +247,9 @@
 {%- for part in phrase.split('[微信公众号]') -%}
   {%- if not loop.first -%}
     {%- set qr = image_url(config.wechat_qr)|trim -%}
-    {%- if qr -%}<a class="cali-inline-contact cali-inline-wechat" data-cali-contact="wechat" data-cali-qr data-qr-title="微信公众号 · {{ site.name }}" href="{{ qr }}" target="_blank" rel="noopener noreferrer">{{ platform_icon('wechat') }}微信公众号“{{ site.name }}”</a>{%- else -%}微信公众号“{{ site.name }}”{%- endif -%}
-  {%- endif -%}{{- podcast_phrase(part) -}}
+    <span class="cali-inline-unit">{%- if qr -%}<a class="cali-inline-contact cali-inline-wechat" data-cali-contact="wechat" data-cali-qr data-qr-title="微信公众号 · {{ site.name }}" href="{{ qr }}" target="_blank" rel="noopener noreferrer">{{ platform_icon('wechat') }}微信公众号“{{ site.name }}”</a>{%- else -%}微信公众号“{{ site.name }}”{%- endif -%}
+  {% if part[:1] in '。，、；：！？）”' %}{{ part[:1] }}{% endif %}</span>
+  {%- endif -%}{{- podcast_phrase(part[1:] if not loop.first and part[:1] in '。，、；：！？）”' else part) -}}
 {%- endfor -%}
 {%- endmacro %}
 
@@ -979,6 +982,8 @@
   --shadow-3:0 2px 4px #0000000a;
   --ease-spring:cubic-bezier(.22,1,.36,1);
   --ease-swift:cubic-bezier(.2,.8,.2,1);
+  --motion-enter:180ms;
+  --motion-exit:100ms;
   --z-nav:40;
 }
 .dark-theme {
@@ -1053,8 +1058,8 @@ body {
 }
 .cali-hero {
   display:grid;
-  grid-template-columns:minmax(0,1fr) 240px;
-  gap:32px;
+  grid-template-columns:minmax(0,1fr) 200px;
+  gap:24px;
 }
 .cali-introduction h1 {
   font-size:28px;
@@ -1080,8 +1085,8 @@ body {
 .cali-portrait {
   border-radius:0;
   position:relative;
-  width:240px;
-  height:240px;
+  width:200px;
+  height:200px;
   align-self:start;
   overflow:hidden;
 }
@@ -2121,7 +2126,7 @@ body {
   background:var(--background); color:var(--foreground);
   box-shadow:0 12px 36px #00000012,0 2px 5px #00000008;
   font:13px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  animation:contact-card-in 160ms ease-out;
+  animation:contact-profile-in var(--motion-enter) var(--ease-spring);
 }
 .cali-contact-card[hidden] { display:none; }
 .contact-card-masthead { display:flex; justify-content:space-between; align-items:center; height:42px; border-bottom:1px solid var(--border); color:var(--muted-foreground); }
@@ -2147,13 +2152,13 @@ body {
 .cali-contact-card[data-service="wechat"] .contact-card-avatar { border-radius:12px; }
 .cali-contact-card[data-service="rss"] .contact-card-bio { font-family:Georgia,"Songti SC",serif; font-size:18px; }
 .cali-social a[data-card-open] { color:var(--foreground); }
-@keyframes contact-card-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+
 
 /* Align contact links and the QR pair to the footer edges. */
 .cali-footer { grid-template-columns:minmax(0,1fr) 248px; column-gap:40px; row-gap:32px; padding-inline:0; align-items:start; }
 .cali-footer h2 { margin-bottom:20px; }
 .cali-footer .cali-social { padding-left:0; }
-.cali-footer .cali-social a { padding-left:0; }
+.cali-footer .cali-social a { padding-left:0; min-height:44px; font-size:13px; }
 .cali-footer .cali-social a::before,.cali-footer .cali-social a::after { display:none; }
 .cali-support { width:248px; max-width:100%; justify-self:end; }
 .cali-support h2 { margin-bottom:20px; }
@@ -2176,13 +2181,14 @@ body {
   .cali-colophon { padding-top:12px; }
   .dock { gap:2px; padding-inline:10px; }
   .dock-secondary { max-width:144px; }
-  .dock-item { width:38px; min-width:38px; }
+  .dock-item { width:44px; min-width:44px; }
 }
 @media(prefers-reduced-motion:reduce) { .cali-contact-card { animation:none; } }
 
 @media(max-width:359px) {
-  .dock-item { width:32px; min-width:32px; }
-  .dock-secondary { min-width:32px; max-width:96px; }
+  .dock-item { width:40px; min-width:40px; }
+  .dock-secondary { min-width:40px; max-width:80px; }
+  .dock { gap:0; padding-inline:6px; }
   .dock-item>svg { width:22px; height:22px; }
 }
 
@@ -2191,9 +2197,11 @@ body {
   width:min(324px,calc(100vw - 32px)); padding:18px; border-radius:20px;
   box-shadow:0 12px 36px #00000012,0 2px 6px #00000006;
   scrollbar-width:thin; text-align:left;
+  background:linear-gradient(var(--background) 30%,transparent) center top/100% 24px local,linear-gradient(transparent,var(--background) 70%) center bottom/100% 24px local,linear-gradient(var(--border),transparent) center top/100% 10px scroll,linear-gradient(transparent,var(--border)) center bottom/100% 10px scroll;
+  background-repeat:no-repeat; background-color:var(--background);
 }
 .cali-preferences[open] .cali-preferences-panel { animation:cali-preferences-in 140ms ease-out; }
-.cali-preferences-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; font-size:13px; font-weight:500; }
+.cali-preferences-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; font-size:13px; font-weight:500; }
 .cali-preferences-heading svg { width:16px; height:16px; color:var(--muted-foreground); }
 .cali-appearance-options { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; color:var(--muted-foreground); }
 .cali-theme-control[hidden],.cali-appearance-options[hidden] { display:none; }
@@ -2204,7 +2212,7 @@ body {
 .cali-preferences-panel nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:0; padding:0; border:0; }
 .cali-preferences-panel nav a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-width:0; min-height:44px; padding:9px 10px; border-radius:10px; font-size:12px; line-height:1.5; text-decoration:none; background:var(--gray-2); }
 .cali-preferences-panel nav a:hover { background:var(--gray-3); }
-.cali-preferences-panel .cali-explore { margin-top:18px; }
+.cali-preferences-panel .cali-explore { margin-top:14px; }
 .cali-preferences-panel .cali-explore h2 { margin:0 0 10px; font-size:12px; line-height:1.5; font-weight:400; color:var(--muted-foreground); }
 .cali-explore-label { min-width:0; overflow-wrap:anywhere; }
 .cali-explore-arrow { flex:none; color:var(--muted-foreground); font-size:14px; }
@@ -2220,7 +2228,7 @@ body {
 .cali-appearance-options { gap:8px; }
 .cali-appearance-options>span { flex:none; }
 .cali-theme-segments { min-width:0; flex:1; }
-.cali-theme-segments button { flex:1; flex-direction:column; gap:4px; padding:8px 4px; min-height:54px; white-space:nowrap; font-size:11px; }
+.cali-theme-segments button { flex:1; flex-direction:column; gap:4px; padding:8px 4px; min-height:46px; white-space:nowrap; font-size:11px; }
 
 /* Quiet emphasis keeps the hovered article in context. */
 .blog-row { transition:opacity 160ms ease; }
@@ -2290,7 +2298,9 @@ body {
 @media (hover:hover) and (pointer:fine) { .cali-menu-subscribe:hover { background:var(--gray-3,var(--muted)); } }
 .cali-menu-subscribe:active { transform:scale(.985); }
 @media (prefers-reduced-motion:reduce) { .cali-menu-subscribe { transition:none; } }
-.cali-introduction p a { display:inline-block; white-space:nowrap; }
+.cali-inline-unit { display:inline-block; white-space:nowrap; }
+.cali-introduction p a { display:inline; white-space:normal; box-decoration-break:clone; }
+.cali-introduction p a:is(.cali-inline-contact,[data-cali-projects-link]) { display:inline-block; white-space:nowrap; }
 .cali-contact-card[data-service="zhihu"] .contact-card-masthead { margin-inline:-20px; padding-inline:20px; background:linear-gradient(115deg,#1672e3,#1461c4); color:#fff; border:0; }
 .dark-theme .cali-contact-card[data-service="zhihu"] .contact-card-masthead { background:linear-gradient(115deg,#21579b,#224774); color:#e9f3ff; }
 
@@ -2338,25 +2348,6 @@ body {
 .dark-theme .cali-contact-card[data-service="podcast"] .contact-card-foot { color:#a3c5d5; }
 
 
-/* Compact profile cards share a single scale and motion rhythm. */
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) {
-  width:248px; padding-inline:16px; border-radius:12px;
-  box-shadow:0 8px 24px #00000012,0 1px 3px #00000008;
-  animation:contact-profile-in 180ms cubic-bezier(.22,1,.36,1);
-}
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-masthead {
-  height:32px; margin-inline:-16px; padding-inline:16px;
-}
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-head { margin-top:12px; gap:9px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-avatar { width:32px; height:32px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-name { font-size:14px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-handle { font-size:10px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-bio { margin:12px 0; font-size:12px; line-height:1.7; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-foot { padding-block:9px 10px; font-size:10px; }
-.cali-contact-card[data-service="zhihu"] .contact-card-edition { font-size:18px; }
-.cali-contact-card[data-service="wechat"] .contact-wechat-qr { width:128px; height:128px; margin:14px auto; border-radius:5px; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave { height:36px; margin:4px 12px 10px; gap:4px; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave span { max-height:30px; width:3px; }
 @keyframes contact-profile-in { from { opacity:0; transform:translateY(4px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
 @keyframes contact-link-wiggle {
   0%,100% { transform:rotate(0); }
@@ -2373,15 +2364,10 @@ body {
 
 .cali-introduction .cali-inline-contact > svg { display:none; }
 .cali-introduction .cali-subscribe-link { display:inline-block; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) { width:220px; padding-inline:14px; border-radius:10px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-masthead { margin-inline:-14px; padding-inline:14px; height:30px; }
 .contact-card-masthead .contact-brand-icon { display:block; width:18px; height:18px; flex:none; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-head { margin-top:10px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-bio { margin:10px 0; font-size:11px; line-height:1.65; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-foot { padding-block:8px; }
-.cali-contact-card[data-service="wechat"] .contact-wechat-qr { width:112px; height:112px; margin:12px auto; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave { height:26px; margin:2px 8px 8px; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave span { max-height:24px; }
+.cali-contact-card[data-service="wechat"] .contact-wechat-qr { width:112px; height:112px; margin:12px auto; border-radius:5px; }
+.cali-contact-card[data-service="podcast"] .contact-podcast-wave { height:26px; margin:2px 8px 8px; gap:4px; }
+.cali-contact-card[data-service="podcast"] .contact-podcast-wave span { max-height:24px; width:3px; }
 
 /* Platform accents remain quiet until a contact is hovered or focused. */
 .cali-social a { --contact-accent:var(--foreground); transition:color 160ms ease; }
@@ -2399,8 +2385,8 @@ body {
 .cali-contact-card:not([data-service="email"]) .contact-card-head { margin-top:10px; }
 .cali-contact-card:not([data-service="email"]) .contact-card-avatar { width:32px; height:32px; }
 .cali-contact-card:not([data-service="email"]) .contact-card-name { font-size:14px; }
-.cali-contact-card:not([data-service="email"]) .contact-card-bio { font-size:11px; margin:10px 0; line-height:1.65; }
-.cali-contact-card:not([data-service="email"]) .contact-card-foot { padding-block:9px; font-size:10px; }
+.cali-contact-card:not([data-service="email"]) .contact-card-bio { font-size:12px; margin:10px 0; line-height:1.65; }
+.cali-contact-card:not([data-service="email"]) .contact-card-foot { padding-block:9px; font-size:11px; }
 .cali-contact-card[data-service="telegram"] .contact-card-masthead { background:#229ed9; color:white; border:0; }
 .cali-contact-card[data-service="x"] .contact-card-masthead { background:#202020; color:white; border:0; }
 .cali-contact-card[data-service="rss"] .contact-card-masthead { background:#c87525; color:white; border:0; }
@@ -2416,7 +2402,7 @@ body {
 .contact-contributions [data-level="3"] { background:#30a14e; }
 .contact-contributions [data-level="4"] { background:#216e39; }
 .dark-theme .contact-contributions [data-level="0"] { background:#29312d; }
-.contact-calendar-note { margin:10px 0; font:9px/1.5 ui-monospace,monospace; color:var(--muted-foreground); }
+.contact-calendar-note { margin:10px 0; font:10px/1.5 ui-monospace,monospace; color:var(--muted-foreground); }
 .cali-contact-card[data-service="github"] .contact-card-foot { flex-direction:row; justify-content:space-between; }
 @media(hover:hover) and(pointer:fine) and(prefers-reduced-motion:no-preference) { .cali-social a:hover>svg { animation:contact-link-wiggle 320ms ease-out; } }
 
@@ -2426,671 +2412,6 @@ body {
 @media(forced-colors:active) { .cali-new-badge { color:CanvasText; border-color:CanvasText; } }
 
 .cali-title-ending { white-space:nowrap; }
-/* Adapted from CaliCastle/cali.so dev, MIT; see NOTICE.md. */
-.room-shelf {
-  --room-shelf-shadow-rgb: 27 22 17;
-  --room-shelf-wood-front-bottom: oklch(0.61 0.065 64);
-  --room-shelf-wood-front-top: oklch(0.79 0.05 74);
-  --room-shelf-wood-grain: rgb(71 42 17 / 0.08);
-  --room-shelf-wood-top-back: oklch(0.77 0.045 75);
-  --room-shelf-wood-top-front: oklch(0.84 0.04 78);
-
-  position: relative;
-}
-
-.dark-theme .room-shelf {
-  --room-shelf-shadow-rgb: 0 0 0;
-  --room-shelf-wood-front-bottom: oklch(0.29 0.035 49);
-  --room-shelf-wood-front-top: oklch(0.43 0.04 59);
-  --room-shelf-wood-grain: rgb(0 0 0 / 0.15);
-  --room-shelf-wood-top-back: oklch(0.38 0.035 56);
-  --room-shelf-wood-top-front: oklch(0.47 0.035 62);
-}
-
-
-.room-shelf-plank {
-  display: block;
-  position: relative;
-  z-index: 1;
-  height: 12px;
-  border-radius: 1px 1px 2px 2px;
-  background:
-    radial-gradient(ellipse 22% 38% at 12% 22%, transparent 0 92%, var(--room-shelf-wood-grain) 93% 95%, transparent 96%),
-    radial-gradient(ellipse 32% 42% at 67% 70%, transparent 0 93%, var(--room-shelf-wood-grain) 94% 96%, transparent 97%),
-    linear-gradient(92deg, transparent 0 8%, var(--room-shelf-wood-grain) 14%, transparent 22% 54%, var(--room-shelf-wood-grain) 61%, transparent 72%),
-    linear-gradient(180deg, var(--room-shelf-wood-front-top), var(--room-shelf-wood-front-bottom));
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.28),
-    inset 0 -1px 0 rgb(51 28 10 / 0.2),
-    1px 3px 3px -2px rgb(var(--room-shelf-shadow-rgb) / 0.24),
-    3px 10px 16px -8px rgb(var(--room-shelf-shadow-rgb) / 0.34),
-    6px 24px 34px -18px rgb(var(--room-shelf-shadow-rgb) / 0.28);
-}
-
-.room-shelf-plank::before,
-.room-shelf-plank::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.room-shelf-plank::before {
-  top: -6px;
-  height: 6px;
-  clip-path: polygon(0.8% 0, 99.2% 0, 100% 100%, 0 100%);
-  background:
-    radial-gradient(ellipse 28% 70% at 23% 45%, transparent 0 90%, var(--room-shelf-wood-grain) 91% 93%, transparent 94%),
-    linear-gradient(91deg, transparent 0 16%, var(--room-shelf-wood-grain) 25%, transparent 34% 67%, var(--room-shelf-wood-grain) 75%, transparent 83%),
-    linear-gradient(180deg, var(--room-shelf-wood-top-front), var(--room-shelf-wood-top-back));
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.32),
-    inset 0 -1px 0 rgb(52 29 11 / 0.18);
-}
-
-.room-shelf-plank::after {
-  bottom: -2px;
-  height: 2px;
-  border-radius: 0 0 2px 2px;
-  background: linear-gradient(180deg, rgb(var(--room-shelf-shadow-rgb) / 0.24), rgb(var(--room-shelf-shadow-rgb) / 0.08));
-}
-
-.dark-theme .room-shelf-plank {
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.1),
-    inset 0 -1px 0 rgb(0 0 0 / 0.48),
-    1px 3px 3px -2px rgb(var(--room-shelf-shadow-rgb) / 0.45),
-    3px 10px 16px -8px rgb(var(--room-shelf-shadow-rgb) / 0.62),
-    6px 24px 34px -18px rgb(var(--room-shelf-shadow-rgb) / 0.5);
-}
-
-.dark-theme .room-shelf-plank::before {
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.1),
-    inset 0 -1px 0 rgb(0 0 0 / 0.4);
-}
-
-
-.vinyl-room {
-  --vinyl-depth: 3px;
-  --vinyl-motion-duration: 330ms;
-  --vinyl-shadow-rgb: var(--room-shelf-shadow-rgb);
-
-  left: 50%;
-  width: min(37.5rem, calc(100vw - 2rem));
-  isolation: isolate;
-  transform: translateX(-50%);
-}
-
-.vinyl-annotation {
-  z-index: 2;
-}
-
-.vinyl-viewport {
-  position: relative;
-  z-index: 2;
-  overflow: clip;
-  cursor: grab;
-}
-
-.vinyl-room[data-vinyl-interaction='panning'] .vinyl-viewport {
-  cursor: grabbing;
-}
-
-.vinyl-shelf {
-  --vinyl-spread: 48%;
-
-  display: grid;
-  place-items: end center;
-  margin: 0;
-  padding: 1rem 0 4px;
-  list-style: none;
-  overflow: visible;
-  isolation: isolate;
-  perspective: 900px;
-  perspective-origin: center bottom;
-}
-
-.vinyl {
-  position: relative;
-  grid-area: 1 / 1;
-  width: clamp(7.25rem, 27vw, 9.5rem);
-  z-index: var(--vinyl-stack-order);
-  pointer-events: none;
-}
-
-.vinyl-trigger {
-  display: block;
-  position: relative;
-  width: 100%;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  color: inherit;
-  background: transparent;
-  cursor: default;
-  pointer-events: none;
-  touch-action: manipulation;
-  transform: translateX(calc(var(--vinyl-offset) * var(--vinyl-spread)))
-    translateY(calc(var(--vinyl-rest-offset) * 1px))
-    translateZ(calc(var(--vinyl-forward) * 1px))
-    rotateZ(calc(var(--vinyl-rest-tilt) * 1deg))
-    rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * -1deg))
-    scale(var(--vinyl-scale));
-  transform-origin: var(--vinyl-origin-x) bottom;
-  transform-style: preserve-3d;
-  transition: transform var(--vinyl-motion-duration) var(--ease-spring);
-  will-change: transform;
-}
-
-/* Pointer ownership follows the rendered sleeve quadrilateral, not each
-   transformed button's axis-aligned bounding box. The viewport routes hover,
-   drag, wheel, and click through the same selection model. */
-
-.vinyl-hit-corner {
-  position: absolute;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-}
-
-.vinyl-hit-corner[data-corner='top-left'] {
-  top: 0;
-  left: 0;
-}
-
-.vinyl-hit-corner[data-corner='top-right'] {
-  top: 0;
-  right: 0;
-}
-
-.vinyl-hit-corner[data-corner='bottom-right'] {
-  right: 0;
-  bottom: 0;
-}
-
-.vinyl-hit-corner[data-corner='bottom-left'] {
-  bottom: 0;
-  left: 0;
-}
-
-.vinyl-object {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  transform: translate(0, 0);
-  transform-style: preserve-3d;
-  transition: transform var(--vinyl-motion-duration) var(--ease-spring);
-}
-
-.vinyl-contact-shadow {
-  position: absolute;
-  z-index: 0;
-  top: calc(100% - 5px);
-  right: 8%;
-  left: 8%;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgb(var(--vinyl-shadow-rgb) / 0.4) 0%,
-    rgb(var(--vinyl-shadow-rgb) / 0.18) 46%,
-    transparent 84%
-  );
-  opacity: var(--vinyl-contact-opacity);
-  pointer-events: none;
-  transform: translateZ(-1px)
-    rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * 1deg))
-    rotateX(62deg)
-    scaleX(var(--vinyl-contact-scale));
-  transform-origin: center;
-  transition:
-    transform var(--vinyl-motion-duration) var(--ease-spring),
-    opacity var(--vinyl-motion-duration) var(--ease-spring);
-}
-
-.vinyl-room[data-vinyl-interaction='panning'] .vinyl-trigger,
-.vinyl-room[data-vinyl-interaction='panning'] .vinyl-object,
-.vinyl-room[data-vinyl-interaction='panning'] .vinyl-contact-shadow,
-.vinyl-room[data-vinyl-interaction='instant'] .vinyl-trigger,
-.vinyl-room[data-vinyl-interaction='instant'] .vinyl-object,
-.vinyl-room[data-vinyl-interaction='instant'] .vinyl-contact-shadow {
-  transition: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-object {
-    transform: translateX(calc(var(--vinyl-direction) * 2px)) translateY(-4px);
-  }
-
-  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-contact-shadow {
-    opacity: calc(var(--vinyl-contact-opacity) * 0.55);
-    transform: translateZ(-1px)
-      rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * 1deg))
-      rotateX(62deg)
-      scaleX(calc(var(--vinyl-contact-scale) * 1.08));
-  }
-}
-
-.vinyl-trigger:focus-visible {
-  border-radius: 2px;
-  outline: 1px solid var(--focus-ring);
-  outline-offset: 4px;
-}
-
-.vinyl-sleeve {
-  position: relative;
-  z-index: 2;
-  display: block;
-  aspect-ratio: 1;
-  background: var(--paper);
-  box-shadow:
-    0 0 0 var(--border-hairline) rgb(0 0 0 / 0.09),
-    1px 2px 3px -1px rgb(var(--vinyl-shadow-rgb) / 0.2),
-    4px 9px 16px -9px rgb(var(--vinyl-shadow-rgb) / 0.3);
-  overflow: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(var(--vinyl-depth));
-}
-
-.vinyl-sleeve::after {
-  content: '';
-  position: absolute;
-  z-index: 4;
-  inset: 0;
-  background: linear-gradient(118deg, rgb(255 255 255 / 0.12), transparent 28% 70%, rgb(25 16 9 / 0.11));
-  pointer-events: none;
-}
-
-/* Real 3D side faces: the cover sits forward and these planes bridge
-   the depth. The face revealed by each inward turn becomes the sleeve spine. */
-.vinyl-spine {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: var(--vinyl-depth);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: var(--vinyl-spine-ink, oklch(0.28 0.012 95));
-  background: var(--vinyl-spine-color, var(--paper));
-  box-shadow:
-    inset 1px 0 rgb(255 255 255 / 0.16),
-    inset -1px 0 rgb(0 0 0 / 0.18);
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-.vinyl-spine > span {
-  max-height: calc(100% - 10px);
-  overflow: hidden;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 4px;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-}
-
-.vinyl-spine-left {
-  background:
-    linear-gradient(to right, rgb(255 255 255 / 0.16), transparent 45%, rgb(0 0 0 / 0.16)),
-    var(--vinyl-spine-color, var(--paper));
-  transform: rotateY(-90deg);
-  transform-origin: left center;
-}
-
-.vinyl-spine-right {
-  right: 0;
-  left: auto;
-  background:
-    linear-gradient(to right, rgb(0 0 0 / 0.24), transparent 55%, rgb(255 255 255 / 0.08)),
-    var(--vinyl-spine-color, var(--paper));
-  transform: rotateY(90deg);
-  transform-origin: right center;
-}
-
-.vinyl-spine-right > span {
-  transform: rotate(180deg);
-}
-
-.vinyl-art {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* seeded crease streaks (inline background) + paper grain overlay */
-.vinyl-creases {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  background-image: var(--vinyl-crease-image);
-  background-position: var(--vinyl-crease-position);
-  background-repeat: no-repeat;
-  background-size: var(--vinyl-crease-size);
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-.vinyl-paper {
-  position: absolute;
-  z-index: 3;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at var(--vinyl-wear-x) var(--vinyl-wear-y), rgb(70 42 20 / 0.24) 0 0.5px, rgb(70 42 20 / 0.08) 1px 4%, transparent 9%),
-    linear-gradient(118deg, rgb(255 255 255 / 0.15), transparent 24% 72%, rgb(30 18 10 / 0.12)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='108' height='108'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.52 0 0 0 0 0.46 0.06 0.06 0.06 0 -0.03'/%3E%3C/filter%3E%3Crect width='108' height='108' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-position:
-    center,
-    center,
-    var(--vinyl-paper-x) var(--vinyl-paper-y);
-  background-repeat: no-repeat, no-repeat, repeat;
-  background-size:
-    100% 100%,
-    100% 100%,
-    var(--vinyl-paper-size) var(--vinyl-paper-size);
-  box-shadow:
-    inset 1px 1px 0 rgb(255 255 255 / 0.22),
-    inset -1px -1px 0 rgb(45 27 13 / 0.14);
-  mix-blend-mode: soft-light;
-  opacity: var(--vinyl-wear-opacity);
-  pointer-events: none;
-}
-
-.vinyl-sleeve-raster {
-  position: absolute;
-  inset: -4px;
-  font-size: 8px;
-  line-height: 1.4;
-  letter-spacing: 0.06em;
-  word-break: break-all;
-  color: color-mix(in oklab, var(--paper-ink) 42%, transparent);
-  user-select: none;
-}
-
-.vinyl-sleeve-type {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.5rem;
-  background: linear-gradient(to top, color-mix(in oklab, var(--paper) 88%, transparent) 45%, transparent);
-}
-
-.vinyl-sleeve-album {
-  font-size: 0.75rem;
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.2;
-  color: oklch(0.28 0.012 95);
-}
-
-.vinyl-sleeve-artist {
-  margin-top: 2px;
-  font-size: 0.6875rem;
-  color: var(--paper-ink);
-}
-
-@media (max-width: 30rem) {
-  .vinyl-shelf {
-    --vinyl-spread: 40%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vinyl-trigger,
-  .vinyl-sleeve,
-  .vinyl-object,
-  .vinyl-contact-shadow {
-    transition: none;
-  }
-
-  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-object {
-    transform: none;
-  }
-
-  .vinyl-trigger:not([data-active])[data-pointer-owned] .vinyl-contact-shadow {
-    opacity: var(--vinyl-contact-opacity);
-    transform: translateZ(-1px)
-      rotateY(calc(var(--vinyl-direction) * var(--vinyl-inward-angle) * 1deg))
-      rotateX(62deg)
-      scaleX(var(--vinyl-contact-scale));
-  }
-}
-
-/* ── Bookshelf: 3D accordion (components/bookshelf.tsx) ───────────── */
-
-.bookshelf-viewport {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 216px;
-  overflow: clip;
-}
-
-.shelf3 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: flex-end;
-  gap: 1px;
-  width: var(--bookshelf-layout-width);
-  height: 216px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transform: scale(var(--bookshelf-scale));
-  transform-origin: left bottom;
-}
-
-.bookshelf-viewport { overflow-x:auto; overflow-y:hidden; scrollbar-width:thin; overscroll-behavior-x:contain; }
-.bookshelf-track { position:relative; height:100%; min-width:100%; overflow:clip; }
-.bookshelf-hint { display:none; }
-.bookshelf-room[data-books-overflow] .bookshelf-hint { display:block; margin:10px 0 0; text-align:center; font-size:11px; line-height:1.5; color:var(--muted-foreground); }
-
-.book3-frame {
-  position: relative;
-  height: 210px;
-  flex-shrink: 0;
-}
-
-.book3-contact-shadow {
-  position: absolute;
-  z-index: 0;
-  bottom: -3px;
-  left: 0;
-  width: var(--book-contact-width);
-  height: 9px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgb(var(--room-shelf-shadow-rgb) / 0.38) 0%,
-    rgb(var(--room-shelf-shadow-rgb) / 0.16) 48%,
-    transparent 84%
-  );
-  opacity: 0.9;
-  pointer-events: none;
-  transform: scaleX(var(--book-contact-scale));
-  transform-origin: left center;
-  will-change: transform;
-}
-
-.book3 {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  color: inherit;
-  background: transparent;
-  text-decoration: none;
-  perspective: 1200px;
-  cursor: default;
-  touch-action: manipulation;
-  transition: transform 180ms var(--ease-swift);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .book3[data-hover] {
-    transform: translateY(-5px);
-  }
-}
-
-/* The visual spine stays tightly packed, while its nonvisual hit area meets
-   the 44px touch target. Shelf click capture resolves overlaps by proximity. */
-.book3::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: max(100%, calc(44px / var(--bookshelf-scale)));
-  transform: translateX(-50%);
-}
-
-.book3:focus-visible {
-  border-radius: 2px;
-  outline: 1px solid var(--focus-ring);
-  outline-offset: 3px;
-}
-
-.book3-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 148px;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform-origin: left center;
-  will-change: transform;
-}
-
-.book3-cover {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  overflow: hidden;
-  border-radius: 2px 4px 4px 2px;
-  box-shadow:
-    0 0 0 var(--border-hairline) rgb(0 0 0 / 0.09),
-    1px 2px 3px -1px rgb(var(--room-shelf-shadow-rgb) / 0.2),
-    4px 9px 16px -9px rgb(var(--room-shelf-shadow-rgb) / 0.3);
-  user-select: none;
-}
-
-.book3-cover img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-.book3-cover-blank {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  height: 100%;
-  padding: 1rem 0.75rem;
-  background: var(--paper);
-  font-size: 0.75rem;
-  color: var(--paper-ink);
-}
-
-.book3-cover-blank b {
-  font-weight: var(--font-weight-semibold);
-  color: oklch(0.28 0.012 95);
-}
-
-.book3-spine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  transform: rotateY(-90deg);
-  transform-origin: left center;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.625rem 0;
-  color: var(--book-ink, var(--paper-ink));
-  background:
-    linear-gradient(to right, rgb(0 0 0 / 0.12), transparent 35%, rgb(255 255 255 / 0.12) 75%, rgb(0 0 0 / 0.08)),
-    var(--book-spine, var(--paper));
-  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
-  border-radius: 2px;
-}
-
-.book3-spine-title {
-  min-height: 0;
-  flex: 1;
-  overflow: hidden;
-  font-family: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", Georgia, serif;
-  font-size: calc(11px / var(--bookshelf-scale, 1));
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.065em;
-  color: inherit;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  text-overflow: ellipsis;
-}
-
-.book3-spine-author {
-  flex: none;
-  font-family: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", Georgia, serif;
-  font-size: calc(8px / var(--bookshelf-scale, 1));
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.045em;
-  color: inherit;
-  opacity: 0.8;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .book3 {
-    transition: none;
-  }
-
-  .book3[data-hover] {
-    transform: none;
-  }
-}
-
-
-.room-shelf { --focus-ring:var(--foreground); --font-weight-semibold:600; --ease-spring:cubic-bezier(.34,1.56,.64,1); margin-top:36px; }
-.room-shelf.vinyl-room { margin-top:16px; }
-.room-shelf [hidden] { display:none!important; }
-.room-shelf img { user-select:none; -webkit-user-drag:none; }
-.vinyl-trigger,.vinyl-contact-shadow { transition:none; }
-.vinyl-viewport { touch-action:pan-y; user-select:none; }
-.vinyl-art,.book3-cover img { position:absolute; inset:0; }
-.book3-cover { background:var(--paper); }
-.book3-spine-author { max-height:48px; overflow:hidden; text-overflow:ellipsis; }
-.cali-shelf-captions { position:relative; z-index:2; min-height:40px; padding:12px 8px 0; text-align:center; font-size:14px; line-height:1.6; color:var(--muted-foreground); }
-.cali-shelf-captions p { margin:0; }
-.cali-shelf-captions p>span { display:none; }
-.cali-shelf-captions a:hover { color:var(--foreground); }
-.book3,.book3-inner,.book3-frame { transform-style:preserve-3d; }
-@media(max-width:639px) { .room-shelf { margin-top:28px; } .room-shelf.vinyl-room { margin-top:12px; } .cali-shelf-captions { font-size:12px; } }
 </style>{% endblock %}
 {% block script %}<script>
 (() => {
@@ -3099,17 +2420,32 @@ body {
   const menu = document.querySelector(".cali-mobile-nav");
   if (menu) {
     const summary = menu.querySelector("summary");
+    const panel = menu.querySelector(".cali-preferences-panel");
+    let closing;
+    function closeMenu(instant = false) {
+      if (!menu.open) return;
+      if (instant && closing) { closing.cancel(); closing = null; menu.open = false; return; }
+      if (closing) return;
+      if (instant || !panel?.animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { menu.open = false; return; }
+      closing = panel.animate([{opacity:1,translate:"0 0"},{opacity:0,translate:"0 3px"}], {duration:100,easing:"ease-out"});
+      closing.finished.then(() => { menu.open = false; closing = null; }).catch(() => { closing = null; });
+    }
+    summary.addEventListener("click", event => {
+      if (!menu.open) return;
+      event.preventDefault();
+      closeMenu(event.detail === 0);
+    });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && menu.open) {
-        menu.open = false;
+        closeMenu(true);
         summary.focus();
       }
     });
     document.addEventListener("click", (event) => {
-      if (menu.open && (!menu.contains(event.target) || event.target.closest?.(".js-subscribe"))) menu.open = false;
+      if (menu.open && (!menu.contains(event.target) || event.target.closest?.(".js-subscribe"))) closeMenu();
     });
     document.addEventListener("focusin", (event) => {
-      if (menu.open && !menu.contains(event.target)) menu.open = false;
+      if (menu.open && !menu.contains(event.target)) closeMenu();
     });
   }
 
@@ -3185,294 +2521,6 @@ body {
     new MutationObserver(rebuild).observe(content, {childList: true, subtree: true, characterData: true});
   }
 })();
-/* Geometry and gestures adapted from CaliCastle/cali.so dev (MIT). */
-(() => {
-  "use strict";
-  const clamp = (n, low, high) => Math.min(high, Math.max(low, n));
-  const hash = text => { let h = 0; for (const c of text) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); };
-  const easeBook = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
-  // Evaluate the original CSS spring curve without rounding a dragged position.
-  function easeRecord(t) {
-    const point = (u,a,b) => 3*(1-u)*(1-u)*u*a + 3*(1-u)*u*u*b + u*u*u;
-    let lo=0, hi=1;
-    for (let i=0;i<16;i++) { const u=(lo+hi)/2; if (point(u,.34,.64)<t) lo=u; else hi=u; }
-    return point((lo+hi)/2,1.56,1);
-  }
-  function recordPose(index, position, total, seed=0) {
-    const offset=index-position, distance=Math.abs(offset), active=Math.max(0,1-distance), resting=Math.min(distance,1);
-    // Keep artwork readable; overlap supplies depth without a narrow side view.
-    const angle=Math.min(28,10*Math.min(distance,1)+distance*4);
-    return {offset,direction:Math.sign(offset),angle,forward:active*4,
-      scale:Math.max(.92,1-distance*.012+active*.04),origin:50-clamp(offset,-1,1)*50,
-      restOffset:((seed>>>5)%3)*.55*resting,restTilt:((seed%9)-4)*.085*resting,
-      order:Math.max(1,Math.round((total-distance)*100)+(index===Math.round(position)?1:0)),
-      contactOpacity:Math.max(.16,.34-distance*.035),contactScale:Math.max(.38,Math.cos(angle*Math.PI/180))*(.96+active*.04)};
-  }
-  function bookTilt(index, selected, title) {
-    if (index===selected) return 0;
-    const distance=Math.abs(index-selected), magnitude=.65+(hash(title)%90)/100;
-    return clamp((index<selected?-1:1)*(magnitude*Math.max(.7,1-.04*distance)+Math.max(0,1.85-.26*distance)),-3.4,3.4);
-  }
-  function bookPose(progress, tilt, spine, width) {
-    const closed=1-clamp(progress,0,1), rotateY=90*closed, lean=tilt*closed;
-    const y=rotateY*Math.PI/180,z=lean*Math.PI/180,projected=[];
-    for (const face of [{depth:0,xs:[0,spine]},{depth:spine,xs:[0,width]}]) {
-      for (const x of face.xs) for (const h of [0,210]) projected.push((x*Math.cos(y)+face.depth*Math.sin(y))*Math.cos(z)-(h-105)*Math.sin(z));
-    }
-    const left=Math.min(...projected);
-    return {rotateY,tilt:lean,width:Math.max(...projected)-left,offsetX:-left};
-  }
-  function bookLayout(books,progress,tilts) {
-    let base=0, projected=0;
-    return books.map((book,i)=>{
-      const pose=bookPose(progress[i],tilts[i],book.spine,book.width);
-      const frameX=projected-base,left=projected;
-      base+=book.spine+1;projected+=pose.width+1;
-      return {...pose,frameX,left,right:left+pose.width};
-    });
-  }
-  function inside(point,corners) {
-    let direction=0;
-    for (let i=0;i<corners.length;i++) {
-      const a=corners[i],b=corners[(i+1)%corners.length];
-      const cross=(b.x-a.x)*(point.y-a.y)-(b.y-a.y)*(point.x-a.x);
-      if (Math.abs(cross)<.01) continue;
-      if (direction && direction!==Math.sign(cross)) return false;
-      direction=Math.sign(cross);
-    }
-    return !!direction;
-  }
-  function bookScrollPosition(bound,scale,width,scroll) {
-    const left=bound.left*scale,right=bound.right*scale;
-    return Math.max(0,left<scroll?left:right>scroll+width?right-width:scroll);
-  }
-  if (typeof module!=="undefined" && module.exports) { module.exports={recordPose,bookTilt,bookPose,bookLayout,bookScrollPosition,inside,easeBook,easeRecord}; return; }
-  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
-  document.querySelectorAll("[data-collection]").forEach(collection=>{
-    const viewport=collection.querySelector("[data-shelf-viewport]"),plank=collection.querySelector("[data-shelf-plank]");
-    const fallback=collection.querySelector(".cali-collection-list"),captions=collection.querySelector(".cali-shelf-captions");
-    const controls=[...collection.querySelectorAll("[data-shelf-select]")],notes=[...collection.querySelectorAll(".cali-shelf-captions p")];
-    if (!viewport||!plank||!fallback||!captions||!controls.length||controls.length!==notes.length) return;
-    const frames=controls.map(b=>b.parentElement),isRecord=collection.dataset.collection==="records";
-    const shelf=viewport.querySelector("ul"),count=controls.length;
-    const track=viewport.querySelector(".bookshelf-track");
-    let active=isRecord?Math.floor(count/2):0,raf=0;
-    let position=active,progress=controls.map((_,i)=>i===active?1:0),tilts=controls.map((b,i)=>bookTilt(i,active,b.getAttribute("aria-label")));
-    let session=null,wheelTimer=0,suppressUntil=0,hover=-1,lastPoint=null,dragFrame=0,dragPosition=position;
-    const books=frames.map((f,i)=>({spine:Number(f.dataset.spine)||24,width:Number(f.dataset.coverWidth)||148,title:controls[i].getAttribute("aria-label")}));
-    let bounds=[],scale=1;
-    const seeds=controls.map(b=>hash(b.getAttribute("aria-label")));
-    const corners=controls.map(b=>[...b.querySelectorAll(".vinyl-hit-corner")]);
-    const inners=controls.map(b=>b.querySelector(".book3-inner"));
-    const shadows=frames.map(f=>f.querySelector(isRecord?".vinyl-contact-shadow":".book3-contact-shadow"));
-    const prepared=new Map();
-    function prepare(index) {
-      if (prepared.has(index)) return prepared.get(index);
-      const image=controls[index].querySelector("img");
-      if (!image) return Promise.resolve();
-      image.loading="eager";
-      const promise=new Promise(resolve=>{
-        const finish=()=>{image.removeEventListener("load",finish);image.removeEventListener("error",finish);resolve();};
-        if (image.complete) finish(); else {image.addEventListener("load",finish);image.addEventListener("error",finish);}
-      }).then(()=>image.naturalWidth&&image.decode?image.decode().catch(()=>{}):undefined);
-      prepared.set(index,promise);return promise;
-    }
-    function selectState(index) {
-      active=index;
-      controls.forEach((b,i)=>{
-        const selected=i===active;
-        b.setAttribute("aria-pressed",String(selected));b.tabIndex=selected?0:-1;
-        b.toggleAttribute(isRecord?"data-active":"data-open",selected);
-      });
-      notes.forEach((n,i)=>{n.hidden=i!==active;});
-    }
-    function clearHover() {
-      if (hover>=0) controls[hover].removeAttribute(isRecord?"data-pointer-owned":"data-hover");
-      hover=-1;
-    }
-    function setHover(index) {
-      if (index===active) index=-1;
-      if (hover===index) return;
-      clearHover();hover=index;
-      if (hover>=0) controls[hover].setAttribute(isRecord?"data-pointer-owned":"data-hover","");
-    }
-    function paintRecords(value) {
-      position=value;
-      controls.forEach((button,i)=>{
-        const p=recordPose(i,value,count,seeds[i]);
-        const spread=window.innerWidth<=480?40:48;
-        frames[i].style.zIndex=String(p.order);
-        button.style.transformOrigin=`${p.origin}% bottom`;
-        button.style.transform=`translateX(${p.offset*spread}%) translateY(${p.restOffset}px) translateZ(${p.forward}px) rotateZ(${p.restTilt}deg) rotateY(${-p.direction*p.angle}deg) scale(${p.scale})`;
-        button.style.setProperty("--vinyl-direction",p.direction);
-        shadows[i].style.opacity=String(p.contactOpacity);
-        shadows[i].style.transform=`translateZ(-1px) rotateY(${p.direction*p.angle}deg) rotateX(62deg) scaleX(${p.contactScale})`;
-      });
-    }
-    function paintBooks(p,t) {
-      progress=p;tilts=t;bounds=bookLayout(books,p,t);
-      bounds.forEach((pose,i)=>{
-        frames[i].style.zIndex=p[i]>.01?"2":"1";
-        frames[i].style.transform=`translateX(${pose.frameX}px)`;
-        inners[i].style.transform=`translateX(${pose.offsetX}px) rotate(${pose.tilt}deg) rotateY(${pose.rotateY}deg)`;
-        shadows[i].style.transform=`scaleX(${pose.width/books[i].width})`;
-      });
-      if (lastPoint) setHover(bookOwner(lastPoint));
-    }
-    function cancelMotion() { if (raf) cancelAnimationFrame(raf);raf=0; }
-    function settle(index, instant=false) {
-      index=clamp(index,0,count-1);cancelMotion();clearHover();selectState(index);
-      const toProgress=controls.map((_,i)=>i===index?1:0),toTilts=books.map((b,i)=>bookTilt(i,index,b.title));
-      const finish=()=>{
-        if(isRecord) paintRecords(index);else paintBooks(toProgress,toTilts);
-        if(track) viewport.scrollLeft=bookScrollPosition(bounds[index],scale,viewport.clientWidth,viewport.scrollLeft);
-        raf=0;collection.dataset.vinylInteraction="idle";
-      };
-      if(instant||reduced.matches||(isRecord?Math.abs(position-index)<.0001:progress.every((v,i)=>Math.abs(v-toProgress[i])<.0001))){finish();return;}
-      const from=position,fromProgress=progress.slice(),fromTilts=tilts.slice(),started=performance.now();
-      collection.dataset.vinylInteraction="settling";
-      const tick=now=>{
-        const t=Math.min(1,(now-started)/(isRecord?330:650));
-        if(isRecord) paintRecords(from+(index-from)*easeRecord(t));
-        else {const e=easeBook(t);paintBooks(fromProgress.map((v,i)=>v+(toProgress[i]-v)*e),fromTilts.map((v,i)=>v+(toTilts[i]-v)*e));}
-        if(t<1)raf=requestAnimationFrame(tick);else finish();
-      };
-      raf=requestAnimationFrame(tick);
-    }
-    function choose(index,instant=false) {
-      // Artwork loading must not delay a gesture or keyboard response.
-      prepare(index);
-      settle(index,instant);
-    }
-
-    function recordOwner(point) {
-      const order=controls.map((_,i)=>i).sort((a,b)=>Math.abs(a-position)-Math.abs(b-position)||b-a);
-      for(const i of order) {
-        const quad=corners[i].map(c=>{const r=c.getBoundingClientRect();return {x:r.left,y:r.top};});
-        if(inside(point,quad))return i;
-      }
-      return -1;
-    }
-    function bookOwner(point) {
-      const r=shelf.getBoundingClientRect(),x=(point.x-r.left)/scale;
-      if(point.y<r.top||point.y>r.bottom||x<-22/scale||x>(bounds.at(-1)?.right||0)+22/scale) return -1;
-      let nearest=-1,distance=Infinity;
-      bounds.forEach((b,i)=>{const d=x<b.left?b.left-x:x>b.right?x-b.right:0;if(d<distance){distance=d;nearest=i;}});
-      return nearest;
-    }
-    function reveal() {
-      selectState(active);controls.forEach(b=>{b.disabled=false;});
-      viewport.hidden=false;plank.hidden=false;captions.hidden=false;fallback.hidden=true;
-    }
-    function resize() {
-      if(isRecord){paintRecords(position);return;}
-      let maximum=0;
-      controls.forEach((_,selected)=>{
-        const poses=bookLayout(books,controls.map((__,i)=>i===selected?1:0),books.map((b,i)=>bookTilt(i,selected,b.title)));
-        maximum=Math.max(maximum,poses.at(-1).right);
-      });
-      const targetHeight=clamp(window.innerWidth*.3,140,170);
-      scale=targetHeight/210;
-      collection.toggleAttribute("data-books-overflow",maximum*scale>viewport.clientWidth+1);
-      viewport.style.height=`${216*scale}px`;
-      if(track) track.style.width=`${maximum*scale}px`;
-      shelf.style.setProperty("--bookshelf-layout-width",`${maximum}px`);
-      shelf.style.setProperty("--bookshelf-scale",scale);
-      paintBooks(progress,tilts);
-      if(track) viewport.scrollLeft=bookScrollPosition(bounds[active],scale,viewport.clientWidth,viewport.scrollLeft);
-    }
-    controls.forEach((button,index)=>{
-      button.addEventListener("click",event=>{if(event.detail===0)choose(index,true);});
-      button.addEventListener("keydown",event=>{
-        let next;if(event.key==="ArrowRight")next=(active+1)%count;else if(event.key==="ArrowLeft")next=(active-1+count)%count;else if(event.key==="Home")next=0;else if(event.key==="End")next=count-1;else return;
-        event.preventDefault();choose(next,true);controls[next].focus({preventScroll:true});
-      });
-      if(isRecord){
-        const seed=seeds[index];
-        const title=button.getAttribute("aria-label"),creaseImages=[],creasePositions=[],creaseSizes=[];
-        for(let i=0;i<(seed>>>3)%3;i++){
-          const crease=hash(`${title}:${i}`),x=6+hash(`horizontal:${i}:${title}`)%85,y=6+hash(`${title}:vertical:${i}`)%85;
-          creaseImages.push(`linear-gradient(${22+crease%137}deg, transparent 47%, rgb(0 0 0 / .08) 49%, rgb(255 255 255 / .14) 50%, transparent 52%)`);
-          creasePositions.push(`${x}% ${y}%`);creaseSizes.push(`${34+((crease>>>5)%31)}% ${22+((crease>>>11)%23)}%`);
-        }
-        frames[index].style.setProperty("--vinyl-crease-image",creaseImages.join(", ")||"none");
-        frames[index].style.setProperty("--vinyl-crease-position",creasePositions.join(", ")||"0 0");
-        frames[index].style.setProperty("--vinyl-crease-size",creaseSizes.join(", ")||"0 0");
-        frames[index].style.setProperty("--vinyl-paper-size",`${84+((seed>>>20)%3)*12}px`);
-        frames[index].style.setProperty("--vinyl-paper-x",`${(seed>>>8)%108}px`);
-        frames[index].style.setProperty("--vinyl-paper-y",`${(seed>>>16)%192}px`);
-        frames[index].style.setProperty("--vinyl-wear-x",(seed&1)?"92%":"8%");
-        frames[index].style.setProperty("--vinyl-wear-y",(seed&2)?"90%":"10%");
-        frames[index].style.setProperty("--vinyl-wear-opacity",.13+((seed>>>10)%5)*.01);
-      } else {
-        frames[index].style.width=`${books[index].spine}px`;
-        shadows[index].style.width=`${books[index].width}px`;
-      }
-    });
-    viewport.addEventListener("click",event=>{
-      if(!event.detail)return;
-      event.preventDefault();event.stopPropagation();
-      if(performance.now()<suppressUntil)return;
-      const point={x:event.clientX,y:event.clientY};
-      const index=isRecord?recordOwner(point):bookOwner(point);
-      if(index>=0)choose(index);
-    });
-    viewport.addEventListener("pointermove",event=>{
-      const point={x:event.clientX,y:event.clientY};
-      if(!session){
-        if(event.pointerType!=="touch"){lastPoint=point;setHover(isRecord?(raf?-1:recordOwner(point)):bookOwner(point));}
-        return;
-      }
-      if(session.id!==event.pointerId)return;
-      const dx=event.clientX-session.x,dy=event.clientY-session.y;
-      if(session.intent==="pending"){
-        if(Math.max(Math.abs(dx),Math.abs(dy))<7)return;
-        session.intent=Math.abs(dy)>Math.abs(dx)?"vertical":"horizontal";
-        if(session.intent==="horizontal"){cancelMotion();clearHover();collection.dataset.vinylInteraction="panning";}
-      }
-      if(session.intent!=="horizontal")return;
-      event.preventDefault();dragPosition=clamp(session.start-dx/session.step,0,count-1);
-      if(!dragFrame)dragFrame=requestAnimationFrame(()=>{dragFrame=0;paintRecords(dragPosition);});
-    });
-    viewport.addEventListener("pointerleave",()=>{lastPoint=null;clearHover();});
-    if(isRecord){
-      viewport.addEventListener("pointerdown",event=>{
-        if(!event.isPrimary||event.button!==0)return;
-        cancelMotion();clearTimeout(wheelTimer);wheelTimer=0;
-        const step=Math.max(44,controls[active].offsetWidth*(window.innerWidth<=480?.4:.48));
-        session={id:event.pointerId,x:event.clientX,y:event.clientY,start:position,step,intent:"pending"};
-        try{viewport.setPointerCapture(event.pointerId);}catch{}
-        if(event.pointerType==="mouse")event.preventDefault();
-      });
-      const finishPointer=event=>{
-        if(!session||session.id!==event.pointerId)return;
-        const horizontal=session.intent==="horizontal";session=null;
-        if(viewport.hasPointerCapture(event.pointerId))viewport.releasePointerCapture(event.pointerId);
-        if(dragFrame){cancelAnimationFrame(dragFrame);dragFrame=0;paintRecords(dragPosition);}
-        if(horizontal){suppressUntil=performance.now()+500;settle(Math.round(position));}
-        else if(Math.abs(position-active)>.001)settle(active);
-      };
-      for(const type of ["pointerup","pointercancel","lostpointercapture"])viewport.addEventListener(type,finishPointer);
-      viewport.addEventListener("wheel",event=>{
-        if(Math.abs(event.deltaX)<=Math.abs(event.deltaY)||Math.abs(event.deltaX)<.5)return;
-        event.preventDefault();cancelMotion();clearHover();clearTimeout(wheelTimer);
-        const unit=event.deltaMode===1?16:event.deltaMode===2?viewport.clientWidth:1;
-        const step=Math.max(44,controls[active].offsetWidth*(window.innerWidth<=480?.4:.48));
-        collection.dataset.vinylInteraction="panning";
-        paintRecords(clamp(position+event.deltaX*unit/step,0,count-1));
-        wheelTimer=setTimeout(()=>{wheelTimer=0;settle(Math.round(position));},140);
-      },{passive:false});
-    }
-    reveal();resize();
-    new ResizeObserver(resize).observe(viewport);
-    const preloader=new IntersectionObserver(entries=>{
-      if(entries.some(e=>e.isIntersecting)){controls.forEach((_,i)=>prepare(i));preloader.disconnect();}
-    },{rootMargin:"320px 0px"});
-    preloader.observe(viewport);
-    reduced.addEventListener("change",()=>{if(reduced.matches)settle(active,true);});
-    window.addEventListener("pagehide",()=>{cancelMotion();clearTimeout(wheelTimer);if(dragFrame)cancelAnimationFrame(dragFrame);dragFrame=0;session=null;settle(active,true);});
-  });
-})();
 (() => {
   "use strict";
   const options = document.querySelector(".cali-appearance-options");
@@ -3522,335 +2570,6 @@ body {
   const label = toggle.closest("label");
   if (label) label.hidden = true;
   options.hidden = false;
-})();
-(() => {
-  "use strict";
-
-  const requests = new Map();
-  const limit = 1024 * 1024;
-
-  function previewURL(href, kind, listPath) {
-    try {
-      const url = new URL(href, window.location.href);
-      const here = new URL(window.location.href);
-      const host = (value) => value.hostname.replace(/^www\./, "");
-      if (!/^https?:$/.test(url.protocol) || url.username || url.password || host(url) !== host(here) || url.port !== here.port) return null;
-      if (kind === "album") {
-        if (!/^\/moments(?:\/[0-9]+)*\/?$/.test(url.pathname)) return null;
-      } else {
-        if (url.search || url.hash || /[?#\\]/.test(href) || /(?:^|\/)(?:\.|%2e){1,2}(?:\/|$)/i.test(href)) return null;
-        const segments = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
-        if (segments.some((segment) => /[/\\%?#]/.test(segment) || segment === "." || segment === "..")) return null;
-        if (segments.some((segment) => /^(?:admin|api|settings|login|logout|moments)$|^_/i.test(segment))) return null;
-        const withoutTrailingSlash = (value) => value.replace(/\/$/, "");
-        const archive = typeof listPath === "string" && /^\/(?!\/)[^?#\\]*$/.test(listPath) && withoutTrailingSlash(url.pathname) === withoutTrailingSlash(listPath);
-        const tag = /^\/tags\/[^/]+\/?$/.test(url.pathname);
-        if (!archive && !tag) return null;
-        // Fetch the canonical path directly because redirects stay disabled.
-        url.pathname = archive ? listPath : `${withoutTrailingSlash(url.pathname)}/`;
-      }
-      // Use the current origin, including when a saved link uses its www alias.
-      return new URL(url.pathname, here.origin).href;
-    } catch {
-      return null;
-    }
-  }
-
-  async function readPage(response) {
-    if (!response.ok || !response.headers.get("content-type")?.includes("text/html")) throw new Error("Collection unavailable");
-    if (Number(response.headers.get("content-length")) > limit) throw new Error("Collection too large");
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let size = 0;
-    let html = "";
-    try {
-      while (true) {
-        const {done, value} = await reader.read();
-        if (done) break;
-        size += value.byteLength;
-        if (size > limit) throw new Error("Collection too large");
-        html += decoder.decode(value, {stream: true});
-      }
-      return html + decoder.decode();
-    } finally {
-      await reader.cancel();
-    }
-  }
-
-  async function photos(url, kind) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 6000);
-    try {
-      const response = await fetch(url, {
-        credentials: "omit", mode: "same-origin", redirect: "error", signal: controller.signal,
-      });
-      const html = await readPage(response);
-      // Template contents stay inert. Never insert remote markup or scripts.
-      const template = document.createElement("template");
-      template.innerHTML = html;
-      const result = [];
-      const selector = kind === "album" ? ".moment-photos img" : "img[data-cali-cover]";
-      for (const image of template.content.querySelectorAll(selector)) {
-        const raw = image.getAttribute("src");
-        if (!raw) continue;
-        let src;
-        try { src = new URL(raw, url); } catch { continue; }
-        // Only copy Typlog uploads from public cover or album image markers.
-        if (src.protocol !== "https:" || src.hostname !== "i.typlog.com" || src.username || src.password || src.port) continue;
-        src.search = "?x-oss-process=style/ss";
-        src.hash = "";
-        if (!result.includes(src.href)) result.push(src.href);
-        if (result.length === 3) break;
-      }
-      return result;
-    } catch {
-      return [];
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  document.querySelectorAll("[data-cali-album], [data-cali-collection]").forEach(async (card) => {
-    const collection = card.getAttribute("data-cali-collection");
-    const kind = collection === null ? "album" : "articles";
-    const url = previewURL(collection === null ? card.getAttribute("href") : collection, kind, card.getAttribute("data-cali-list-path"));
-    if (!url) return;
-    const key = `${kind}:${url}`;
-    if (!requests.has(key)) requests.set(key, photos(url, kind));
-    const sources = await requests.get(key);
-    const frames = card.querySelectorAll(".nc-polaroid");
-    sources.forEach((src, index) => {
-      const frame = frames[index];
-      if (!frame) return;
-      const image = document.createElement("img");
-      image.alt = "";
-      image.width = 36;
-      image.height = 30;
-      image.decoding = "async";
-      image.referrerPolicy = "no-referrer";
-      image.hidden = true;
-      image.addEventListener("load", () => { image.hidden = false; frame.classList.add("nc-polaroid-loaded"); });
-      image.addEventListener("error", () => { image.remove(); frame.classList.remove("nc-polaroid-loaded"); });
-      frame.append(image);
-      image.src = src;
-    });
-  });
-})();
-(() => {
-  "use strict";
-
-  if (typeof window.Image !== "function") return;
-
-  document.querySelectorAll(".cali-portrait").forEach((portrait) => {
-    const source = portrait.querySelector("img[data-cali-image]");
-    const canvas = portrait.querySelector("canvas[data-cali-portrait]");
-    if (!source || !canvas) return;
-
-    let context;
-    try { context = canvas.getContext("2d"); } catch { return; }
-    if (!context) return;
-
-    let image;
-    let started = false;
-    let failed = false;
-    let resizeObserver;
-    let themeObserver;
-    let field;
-    const root = document.documentElement;
-
-    function retainFallback() {
-      failed = true;
-      canvas.hidden = true;
-      portrait.classList.remove("cali-portrait-ready");
-      if (resizeObserver) resizeObserver.disconnect();
-      if (themeObserver) themeObserver.disconnect();
-      window.removeEventListener("resize", paint);
-    }
-
-    function sample(width, height) {
-      const darkPortrait = portrait.dataset?.portraitTheme === "dark";
-      const cell = width < 200 ? 2 : 3;
-      const columns = Math.ceil(width / cell);
-      const rows = Math.ceil(height / cell);
-      const buffer = document.createElement("canvas");
-      buffer.width = columns;
-      buffer.height = rows;
-      const sampleContext = buffer.getContext("2d", {willReadFrequently: true});
-      if (!sampleContext) throw new Error("Canvas sampling is unavailable");
-
-      const scale = Math.max(columns / image.naturalWidth, rows / image.naturalHeight);
-      const drawWidth = image.naturalWidth * scale;
-      const drawHeight = image.naturalHeight * scale;
-      sampleContext.drawImage(image, (columns - drawWidth) / 2, (rows - drawHeight) / 2, drawWidth, drawHeight);
-      // A CDN can refuse pixel access even when the normal image displays.
-      const pixels = sampleContext.getImageData(0, 0, columns, rows).data;
-      // Remove only near-white background connected to the image boundary.
-      // Enclosed highlights, clothing, and facial details stay in the portrait.
-      const background = new Uint8Array(columns * rows);
-      if (darkPortrait) {
-        const queue = [];
-        const visit = index => {
-          if (background[index]) return;
-          const at = index * 4;
-          const low = Math.min(pixels[at], pixels[at + 1], pixels[at + 2]);
-          const high = Math.max(pixels[at], pixels[at + 1], pixels[at + 2]);
-          if (low < 225 || high - low > 18) return;
-          background[index] = 1;
-          queue.push(index);
-        };
-        for (let x = 0; x < columns; x++) { visit(x); visit((rows - 1) * columns + x); }
-        for (let y = 0; y < rows; y++) { visit(y * columns); visit(y * columns + columns - 1); }
-        for (let i = 0; i < queue.length; i++) {
-          const index = queue[i], x = index % columns, y = Math.floor(index / columns);
-          if (x) visit(index - 1);
-          if (x + 1 < columns) visit(index + 1);
-          if (y) visit(index - columns);
-          if (y + 1 < rows) visit(index + columns);
-        }
-      }
-      const tones = new Float32Array(columns * rows);
-      for (let index = 0; index < tones.length; index += 1) {
-        const offset = index * 4;
-        const alpha = pixels[offset + 3] / 255;
-        const luminance = (0.2126 * pixels[offset] + 0.7152 * pixels[offset + 1] + 0.0722 * pixels[offset + 2]) / 255;
-        tones[index] = background[index] ? 0 : luminance * alpha + (darkPortrait ? 0 : 1 - alpha);
-      }
-      const sorted = Float32Array.from(tones).sort();
-      const low = sorted[Math.floor(sorted.length * 0.05)];
-      const high = sorted[Math.floor(sorted.length * 0.95)];
-      const range = Math.max(0.05, high - low);
-      const dots = [];
-      for (let row = 0; row < rows; row += 1) {
-        for (let column = 0; column < columns; column += 1) {
-          const value = tones[row * columns + column];
-          const luminance = high - low < 0.05 ? value : Math.min(1, Math.max(0, (value - low) / range));
-          let softness = 0;
-          let tone = darkPortrait ? Math.pow(luminance, 0.7) : (luminance > 0.93 ? 0 : Math.pow(1 - luminance, 0.95));
-          if (darkPortrait) {
-            const offset = (row * columns + column) * 4;
-            // Reduce the supplied portrait's blue fabric without dimming warm skin.
-            const blue = Math.max(0, Math.min(1, (pixels[offset + 2] - pixels[offset] - 12) / 35));
-            tone *= 1 - blue * 0.6;
-            // Feather against the silhouette, rather than only the image rectangle.
-            const feather = Math.max(3, Math.round(width * 0.055 / cell));
-            let distance = feather;
-            for (let dy = -feather; dy <= feather; dy++) {
-              for (let dx = -feather; dx <= feather; dx++) {
-                const xx = column + dx, yy = row + dy;
-                if (xx >= 0 && xx < columns && yy >= 0 && yy < rows && background[yy * columns + xx]) {
-                  distance = Math.min(distance, Math.max(Math.abs(dx), Math.abs(dy)));
-                }
-              }
-            }
-            const coverage = Math.min(1, distance / feather);
-            const smooth = coverage * coverage * (3 - 2 * coverage);
-            softness = 1 - smooth;
-            tone *= 0.45 + 0.55 * smooth;
-          }
-          const x = (column + 0.5) * cell;
-          const y = (row + 0.5) * cell;
-          const edge = Math.max(0, Math.min(1, darkPortrait ? y / (height * 0.1) : 1, x / (width * 0.1), (width - x) / (width * 0.1), (height - y) / (height * 0.1)));
-          const radius = tone * edge * cell * (darkPortrait ? 0.44 : 0.52);
-          if (radius >= (darkPortrait ? 0.18 : 0.3)) dots.push({x, y, radius, softness});
-        }
-      }
-      return {width, height, dots};
-    }
-
-    function paint() {
-      if (failed || !image) return;
-      try {
-        const bounds = portrait.getBoundingClientRect();
-        const width = Math.round(bounds.width);
-        const height = Math.round(bounds.height);
-        if (width < 8 || height < 8) return;
-        // Keep accidental oversized layouts from creating unbounded work.
-        if (width > 512 || height > 512) return retainFallback();
-        if (!field || field.width !== width || field.height !== height) field = sample(width, height);
-        if (!field.dots.length) return retainFallback();
-
-        const ratio = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-        canvas.width = Math.round(width * ratio);
-        canvas.height = Math.round(height * ratio);
-        context.setTransform(ratio, 0, 0, ratio, 0, 0);
-        context.clearRect(0, 0, width, height);
-        const dark = root.classList.contains("dark-theme") || root.classList.contains("dark");
-        context.fillStyle = dark ? "#f8f8f6" : "#262626";
-        // A single blurred edge pass softens the silhouette without blurring the face.
-        const softDots = field.dots.filter(dot => dot.softness > 0.2);
-        if (softDots.length) {
-          context.save?.();
-          context.filter = "blur(1px)";
-          context.globalAlpha = 0.22;
-          context.beginPath();
-          softDots.forEach(({x, y, radius}) => {
-            context.moveTo?.(x + radius, y);
-            context.arc(x, y, radius, 0, Math.PI * 2);
-          });
-          context.fill();
-          context.restore?.();
-          context.filter = "none";
-          context.globalAlpha = 1;
-        }
-        field.dots.forEach(({x, y, radius, softness}) => {
-          context.globalAlpha = 1 - softness * 0.85;
-          context.beginPath();
-          context.arc(x, y, radius, 0, Math.PI * 2);
-          context.fill();
-        });
-
-        context.globalAlpha = 1;
-
-        // CSS hides only the visible fallback; its alt text stays accessible.
-        canvas.hidden = false;
-        portrait.classList.add("cali-portrait-ready");
-      } catch {
-        retainFallback();
-      }
-    }
-
-    function start() {
-      if (started || failed) return;
-      if (!source.naturalWidth || !source.naturalHeight) return retainFallback();
-      started = true;
-      let address;
-      try {
-        const imageSource = source.currentSrc || source.src;
-        if (!imageSource) return retainFallback();
-        address = new URL(imageSource, document.baseURI);
-        if (!/^https?:$/.test(address.protocol) || address.username || address.password) return retainFallback();
-      } catch { return retainFallback(); }
-
-      // Use anonymous access and keep the ordinary image intact if CORS fails.
-      const candidate = new window.Image();
-      candidate.crossOrigin = "anonymous";
-      candidate.addEventListener("error", retainFallback, {once: true});
-      const ready = () => {
-        if (failed || image) return;
-        if (!candidate.naturalWidth || !candidate.naturalHeight) return retainFallback();
-        image = candidate;
-        paint();
-        if (failed) return;
-        if (typeof window.ResizeObserver === "function") {
-          resizeObserver = new window.ResizeObserver(paint);
-          resizeObserver.observe(portrait);
-        } else {
-          window.addEventListener("resize", paint, {passive: true});
-        }
-        if (typeof window.MutationObserver === "function") {
-          themeObserver = new window.MutationObserver(paint);
-          themeObserver.observe(root, {attributes: true, attributeFilter: ["class"]});
-        }
-      };
-      candidate.addEventListener("load", ready, {once: true});
-      candidate.src = address.href;
-      if (candidate.complete && candidate.naturalWidth > 0) ready();
-    }
-
-    source.addEventListener("error", retainFallback, {once: true});
-    source.addEventListener("load", start, {once: true});
-    if (source.complete) start();
-  });
 })();
 (() => {
   "use strict";
@@ -4058,11 +2777,16 @@ body {
   popup.setAttribute("role", "tooltip");
   popup.hidden = true;
   document.body.append(popup);
-  let active, openTimer, closeTimer, previousDescription;
+  let active, openTimer, closeTimer, previousDescription, departure;
   const stopTimers = () => { clearTimeout(openTimer); clearTimeout(closeTimer); };
-  function close() {
+  function close(animate = false) {
     stopTimers();
-    popup.hidden = true;
+    departure?.cancel();
+    if (animate && !popup.hidden && popup.animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const motion = popup.animate([{opacity:1,transform:"translateY(0)"},{opacity:0,transform:"translateY(3px)"}], {duration:100,easing:"ease-out"});
+      departure = motion;
+      motion.finished.then(() => { if (departure === motion) { popup.hidden = true; departure = null; } }).catch(() => {});
+    } else { departure = null; popup.hidden = true; }
     if (active) {
       if (previousDescription) active.setAttribute("aria-describedby", previousDescription);
       else active.removeAttribute("aria-describedby");
@@ -4117,8 +2841,8 @@ body {
     popup.append(foot);
     if (service === "podcast") {
       masthead.replaceChildren(node("span", "contact-card-service", words("播客名片", "PODCAST")), node("span", "contact-card-edition", "◉"));
-      names.replaceChildren(node("strong", "contact-card-name", "太隐观复"), node("span", "contact-card-handle", words("太隐的播客 · 始于 2025", "A podcast by Taiyin · Since 2025")));
-      bio.textContent = words("把阅读与日常思考，慢慢说给你听。", "Reading and everyday ideas, shared through voice.");
+      names.replaceChildren(node("strong", "contact-card-name", identity), node("span", "contact-card-handle", text(data.handle, 100) || handle));
+      bio.textContent = text(data.bio) || services.podcast[1];
       const wave = node("div", "contact-podcast-wave");
       wave.setAttribute("aria-hidden", "true");
       [12,22,15,30,40,25,17,34,46,28,18,36,24,14,28,38,20,12].forEach(height => {
@@ -4182,7 +2906,7 @@ body {
     link.setAttribute("aria-describedby", [previousDescription, popup.id].filter(Boolean).join(" "));
     link.setAttribute("data-card-open", "");
   }
-  const delayClose = () => { clearTimeout(openTimer); closeTimer = setTimeout(close, 140); };
+  const delayClose = () => { clearTimeout(openTimer); closeTimer = setTimeout(() => close(true), 100); };
   popup.addEventListener("pointerenter", () => clearTimeout(closeTimer));
   popup.addEventListener("pointerleave", delayClose);
   [...nav.querySelectorAll("a"), ...document.querySelectorAll("[data-cali-contact]")].forEach((link) => {
@@ -4224,14 +2948,20 @@ body {
     link.addEventListener("click", () => { returningFromQR = inlineWechat; close(); });
   });
   document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
-  window.addEventListener("scroll", close, {passive:true,capture:true});
-  window.addEventListener("resize", close);
+  window.addEventListener("scroll", () => close(), {passive:true,capture:true});
+  window.addEventListener("resize", () => close());
 })();
 (() => {
   "use strict";
   const main = document.getElementById("cali-main");
   if (!main) return;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  // A skipped native transition is normal during fast navigation.
+  for (const type of ["pageswap", "pagereveal"]) window.addEventListener(type, event => {
+    event.viewTransition?.ready.catch(error => {
+      if (error.name !== "AbortError") console.warn("Page transition unavailable", error);
+    });
+  });
   let pending = "", pendingAt = 0, entrance;
   const path = value => value.replace(/\/+$/, "") || "/";
   const projectView = url => url.hash === "#projects";

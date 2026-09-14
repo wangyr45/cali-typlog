@@ -1,8 +1,8 @@
 {% from "macros.j2" import render_social_icons %}
 {% set zh = (site.primary_lang|default('en')).startswith('zh') %}
-{% set defaults = {"intro": ["我是太隐，喜欢阅读，爱好广泛。学生时代曾混迹天涯、猫扑，也在起点、逐浪写过小说。2016 年，创办“太隐”独立博客。2024 年开通 [微信公众号]。2025 年，开通播客 “[太隐观复]”。2026 年，受邀入驻 [知乎]。另外，近期开发了 App，详见[项目页面]。"], "portrait": "asset:hero-portrait.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [{"title": "After Hours", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/after-hours/1499378108", "cover": "asset:record-1499378108.jpg", "width": 600, "height": 600, "spine_color": "#352a18", "spine_ink": "#faf9f6"}, {"title": "Ah Yeah", "author": "EXID", "url": "https://music.apple.com/cn/album/ah-yeah/982223883", "cover": "asset:record-982223883.jpg", "width": 600, "height": 600, "spine_color": "#f1eff0", "spine_ink": "#252523"}, {"title": "Full Moon - EP", "author": "EXID", "url": "https://music.apple.com/cn/album/full-moon-ep/1305881083", "cover": "asset:record-1305881083.jpg", "width": 600, "height": 600, "spine_color": "#3b6381", "spine_ink": "#faf9f6"}, {"title": "HEART MAID", "author": "SUNMI", "url": "https://music.apple.com/cn/album/heart-maid/1848070290", "cover": "asset:record-1848070290.jpg", "width": 600, "height": 600, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "Starboy", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/starboy/1440871397", "cover": "asset:record-1440871397.jpg", "width": 600, "height": 600, "spine_color": "#c0042c", "spine_ink": "#faf9f6"}, {"title": "WE", "author": "EXID", "url": "https://music.apple.com/cn/album/we/1463174475", "cover": "asset:record-1463174475.jpg", "width": 600, "height": 600, "spine_color": "#e8372d", "spine_ink": "#faf9f6"}, {"title": "Street", "author": "EXID", "url": "https://music.apple.com/cn/album/street/1118367147", "cover": "asset:record-1118367147.jpg", "width": 600, "height": 600, "spine_color": "#f75f85", "spine_ink": "#faf9f6"}, {"title": "范特西", "author": "周杰伦", "url": "https://music.apple.com/cn/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206", "cover": "asset:record-535739206.jpg", "width": 600, "height": 600, "spine_color": "#ac1a1d", "spine_ink": "#faf9f6"}, {"title": "Inner Child", "author": "Shanice", "url": "https://music.apple.com/cn/album/inner-child/1444166430", "cover": "asset:record-1444166430.jpg", "width": 600, "height": 600, "spine_color": "#211b1d", "spine_ink": "#faf9f6"}, {"title": "我肯定在几百年前就说过爱你", "author": "告五人", "url": "https://music.apple.com/cn/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804", "cover": "asset:record-1546062804.jpg", "width": 600, "height": 600, "spine_color": "#b3b3b1", "spine_ink": "#252523"}, {"title": "新的心跳", "author": "邓紫棋", "url": "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923", "cover": "asset:record-1053567923.jpg", "width": 600, "height": 600, "spine_color": "#1a0f1e", "spine_ink": "#faf9f6"}], "books": [{"title": "Wild Thing", "author": "Sue Prideaux", "url": "https://book.douban.com/subject/37071291/", "cover": "asset:book-37071291.jpg", "width": 449, "height": 690, "spine_color": "#1c1a21", "spine_ink": "#faf9f6"}, {"title": "清代地方政府", "author": "瞿同祖", "url": "https://book.douban.com/subject/35713871/", "cover": "asset:book-35713871.jpg", "width": 1080, "height": 1552, "spine_color": "#0f1922", "spine_ink": "#faf9f6"}, {"title": "互联网思想十讲", "author": "段永朝", "url": "https://book.douban.com/subject/26253507/", "cover": "asset:book-26253507.jpg", "width": 353, "height": 500, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "资治通鉴", "author": "[宋]司马光", "url": "https://book.douban.com/subject/6790302/", "cover": "asset:book-6790302.jpg", "width": 720, "height": 1028, "spine_color": "#f3bf20", "spine_ink": "#252523"}, {"title": "中国的奋斗", "author": "[美]徐中约", "url": "https://book.douban.com/subject/36526876/", "cover": "asset:book-36526876.jpg", "width": 748, "height": 1020, "spine_color": "#fffde4", "spine_ink": "#252523"}, {"title": "醉古堂剑扫", "author": "（明）陆绍珩 等撰", "url": "https://book.douban.com/subject/1105448/", "cover": "asset:book-1105448.jpg", "width": 600, "height": 982, "spine_color": "#ece4aa", "spine_ink": "#252523"}, {"title": "孙犁全集（1-11卷）", "author": "孙犁", "url": "https://book.douban.com/subject/1084028/", "cover": "asset:book-1084028.jpg", "width": 600, "height": 885, "spine_color": "#87424d", "spine_ink": "#faf9f6", "spine_title": "孙犁全集"}, {"title": "以利为利", "author": "周飞舟", "url": "https://book.douban.com/subject/10587755/", "cover": "asset:book-10587755.jpg", "width": 354, "height": 500, "spine_color": "#fcfef3", "spine_ink": "#252523"}, {"title": "历史三调", "author": "[美]柯文", "url": "https://book.douban.com/subject/26427101/", "cover": "asset:book-26427101.jpg", "width": 462, "height": 699, "spine_color": "#b7091f", "spine_ink": "#faf9f6"}, {"title": "大问题（第十版）", "author": "[美] 罗伯特·所罗门 / 凯思林·希金斯", "url": "https://book.douban.com/subject/30176572/", "cover": "asset:book-30176572.jpg", "width": 553, "height": 807, "spine_color": "#e1e0e3", "spine_ink": "#252523", "spine_title": "大问题"}, {"title": "黑客与画家", "author": "[美] Paul Graham", "url": "https://book.douban.com/subject/6021440/", "cover": "asset:book-6021440.jpg", "width": 421, "height": 591, "spine_color": "#e7d4d5", "spine_ink": "#252523"}, {"title": "世界观 (第3版)", "author": "[美] 理查德·德威特", "url": "https://book.douban.com/subject/35181762/", "cover": "asset:book-35181762.jpg", "width": 1080, "height": 1451, "spine_color": "#5a4183", "spine_ink": "#faf9f6", "spine_title": "世界观"}, {"title": "权力的毛细管作用", "author": "王汎森", "url": "https://book.douban.com/subject/26581737/", "cover": "asset:book-26581737.jpg", "width": 632, "height": 901, "spine_color": "#e6d8cb", "spine_ink": "#252523"}, {"title": "明代国家权力结构及运行机制", "author": "方志远", "url": "https://book.douban.com/subject/36594961/", "cover": "asset:book-36594961.jpg", "width": 1080, "height": 1523, "spine_color": "#ffffff", "spine_ink": "#252523", "spine_title": "明代国家权力结构"}, {"title": "可能性的艺术", "author": "刘瑜", "url": "https://book.douban.com/subject/35819419/", "cover": "asset:book-35819419.jpg", "width": 1080, "height": 1630, "spine_color": "#cbcac8", "spine_ink": "#252523"}, {"title": "柳如是别传（全三册）", "author": "陈寅恪", "url": "https://book.douban.com/subject/1034470/", "cover": "asset:book-1034470.jpg", "width": 300, "height": 457, "spine_color": "#8f7150", "spine_ink": "#faf9f6", "spine_title": "柳如是别传"}], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "推荐书籍", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png", "contact_cards": {"zhihu": {"name": "太隐", "bio": "独立博客作者 · 阅读与日常思考\n2026 年受邀入驻知乎。"}, "email": {"website": "https://wangyurui.com/"}, "github": {"login": "wangyr45", "calendar": [{"date": "2026-05-03", "level": 0}, {"date": "2026-05-04", "level": 0}, {"date": "2026-05-05", "level": 0}, {"date": "2026-05-06", "level": 0}, {"date": "2026-05-07", "level": 0}, {"date": "2026-05-08", "level": 0}, {"date": "2026-05-09", "level": 0}, {"date": "2026-05-10", "level": 0}, {"date": "2026-05-11", "level": 0}, {"date": "2026-05-12", "level": 0}, {"date": "2026-05-13", "level": 0}, {"date": "2026-05-14", "level": 0}, {"date": "2026-05-15", "level": 0}, {"date": "2026-05-16", "level": 0}, {"date": "2026-05-17", "level": 0}, {"date": "2026-05-18", "level": 0}, {"date": "2026-05-19", "level": 0}, {"date": "2026-05-20", "level": 0}, {"date": "2026-05-21", "level": 0}, {"date": "2026-05-22", "level": 0}, {"date": "2026-05-23", "level": 0}, {"date": "2026-05-24", "level": 0}, {"date": "2026-05-25", "level": 0}, {"date": "2026-05-26", "level": 0}, {"date": "2026-05-27", "level": 0}, {"date": "2026-05-28", "level": 0}, {"date": "2026-05-29", "level": 0}, {"date": "2026-05-30", "level": 0}, {"date": "2026-05-31", "level": 0}, {"date": "2026-06-01", "level": 0}, {"date": "2026-06-02", "level": 0}, {"date": "2026-06-03", "level": 0}, {"date": "2026-06-04", "level": 0}, {"date": "2026-06-05", "level": 0}, {"date": "2026-06-06", "level": 4}, {"date": "2026-06-07", "level": 0}, {"date": "2026-06-08", "level": 0}, {"date": "2026-06-09", "level": 0}, {"date": "2026-06-10", "level": 0}, {"date": "2026-06-11", "level": 0}, {"date": "2026-06-12", "level": 0}, {"date": "2026-06-13", "level": 0}, {"date": "2026-06-14", "level": 0}, {"date": "2026-06-15", "level": 0}, {"date": "2026-06-16", "level": 0}, {"date": "2026-06-17", "level": 0}, {"date": "2026-06-18", "level": 0}, {"date": "2026-06-19", "level": 0}, {"date": "2026-06-20", "level": 0}, {"date": "2026-06-21", "level": 0}, {"date": "2026-06-22", "level": 0}, {"date": "2026-06-23", "level": 0}, {"date": "2026-06-24", "level": 0}, {"date": "2026-06-25", "level": 0}, {"date": "2026-06-26", "level": 0}, {"date": "2026-06-27", "level": 0}, {"date": "2026-06-28", "level": 0}, {"date": "2026-06-29", "level": 0}, {"date": "2026-06-30", "level": 0}, {"date": "2026-07-01", "level": 0}, {"date": "2026-07-02", "level": 0}, {"date": "2026-07-03", "level": 0}, {"date": "2026-07-04", "level": 0}, {"date": "2026-07-05", "level": 0}, {"date": "2026-07-06", "level": 0}, {"date": "2026-07-07", "level": 0}, {"date": "2026-07-08", "level": 0}, {"date": "2026-07-09", "level": 0}, {"date": "2026-07-10", "level": 0}, {"date": "2026-07-11", "level": 0}, {"date": "2026-07-12", "level": 0}, {"date": "2026-07-13", "level": 0}, {"date": "2026-07-14", "level": 0}, {"date": "2026-07-15", "level": 0}, {"date": "2026-07-16", "level": 0}, {"date": "2026-07-17", "level": 0}, {"date": "2026-07-18", "level": 0}, {"date": "2026-07-19", "level": 0}, {"date": "2026-07-20", "level": 0}, {"date": "2026-07-21", "level": 0}, {"date": "2026-07-22", "level": 0}, {"date": "2026-07-23", "level": 0}, {"date": "2026-07-24", "level": 0}, {"date": "2026-07-25", "level": 0}, {"date": "2026-07-26", "level": 0}, {"date": "2026-07-27", "level": 0}, {"date": "2026-07-28", "level": 0}, {"date": "2026-07-29", "level": 0}, {"date": "2026-07-30", "level": 0}, {"date": "2026-07-31", "level": 0}, {"date": "2026-08-01", "level": 0}, {"date": "2026-08-02", "level": 0}, {"date": "2026-08-03", "level": 0}, {"date": "2026-08-04", "level": 0}, {"date": "2026-08-05", "level": 0}, {"date": "2026-08-06", "level": 0}, {"date": "2026-08-07", "level": 0}, {"date": "2026-08-08", "level": 4}, {"date": "2026-08-09", "level": 0}, {"date": "2026-08-10", "level": 0}, {"date": "2026-08-11", "level": 0}, {"date": "2026-08-12", "level": 0}, {"date": "2026-08-13", "level": 0}, {"date": "2026-08-14", "level": 0}, {"date": "2026-08-15", "level": 0}, {"date": "2026-08-16", "level": 0}, {"date": "2026-08-17", "level": 0}, {"date": "2026-08-18", "level": 0}, {"date": "2026-08-19", "level": 0}, {"date": "2026-08-20", "level": 0}, {"date": "2026-08-21", "level": 0}, {"date": "2026-08-22", "level": 0}, {"date": "2026-08-23", "level": 0}, {"date": "2026-08-24", "level": 0}, {"date": "2026-08-25", "level": 0}, {"date": "2026-08-26", "level": 0}, {"date": "2026-08-27", "level": 0}, {"date": "2026-08-28", "level": 0}, {"date": "2026-08-29", "level": 0}, {"date": "2026-08-30", "level": 0}, {"date": "2026-08-31", "level": 0}, {"date": "2026-09-01", "level": 0}, {"date": "2026-09-02", "level": 0}, {"date": "2026-09-03", "level": 0}, {"date": "2026-09-04", "level": 0}, {"date": "2026-09-05", "level": 0}, {"date": "2026-09-06", "level": 0}, {"date": "2026-09-07", "level": 0}, {"date": "2026-09-08", "level": 0}, {"date": "2026-09-09", "level": 0}, {"date": "2026-09-10", "level": 0}, {"date": "2026-09-11", "level": 0}, {"date": "2026-09-12", "level": 4}, {"date": "2026-09-13", "level": 4}], "updated": "2026-09-13"}}, "portrait_dark": "asset:hero-portrait-night.png", "email": "pkm.tyne@gmail.com", "zhihu_url": "https://www.zhihu.com/people/vibkba"} %}
-{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.3/", true) %}
-{% set bundled_images = ["asset:hero-portrait.png", "asset:hero-portrait-night.png", "asset:dockpic.png", "asset:portus.png", "asset:wechat-backup.png", "asset:support.png", "asset:record-1499378108.jpg", "asset:record-982223883.jpg", "asset:record-1305881083.jpg", "asset:record-1848070290.jpg", "asset:record-1440871397.jpg", "asset:record-1463174475.jpg", "asset:record-1118367147.jpg", "asset:record-535739206.jpg", "asset:record-1444166430.jpg", "asset:record-1546062804.jpg", "asset:record-1053567923.jpg", "asset:book-37071291.jpg", "asset:book-35713871.jpg", "asset:book-26253507.jpg", "asset:book-6790302.jpg", "asset:book-36526876.jpg", "asset:book-1105448.jpg", "asset:book-1084028.jpg", "asset:book-34855029.jpg", "asset:book-10587755.jpg", "asset:book-26427101.jpg", "asset:book-30176572.jpg", "asset:book-6798611.jpg", "asset:book-1088022.jpg", "asset:book-6021440.jpg", "asset:book-35181762.jpg", "asset:book-26581737.jpg", "asset:book-36594961.jpg", "asset:book-35819419.jpg", "asset:book-1034470.jpg"] %}
+{% set defaults = {"intro": ["我是太隐，喜欢阅读，爱好广泛。学生时代曾混迹天涯、猫扑，也在起点、逐浪写过小说。2016 年，创办“太隐”独立博客。2024 年开通 [微信公众号]。2025 年，开通播客 “[太隐观复]”。2026 年，受邀入驻 [知乎]。另外，近期开发了 App，详见[项目页面]。"], "portrait": "asset:hero-portrait-web.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [{"title": "After Hours", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/after-hours/1499378108", "cover": "asset:record-1499378108.jpg", "width": 600, "height": 600, "spine_color": "#352a18", "spine_ink": "#faf9f6"}, {"title": "Ah Yeah", "author": "EXID", "url": "https://music.apple.com/cn/album/ah-yeah/982223883", "cover": "asset:record-982223883.jpg", "width": 600, "height": 600, "spine_color": "#f1eff0", "spine_ink": "#252523"}, {"title": "Full Moon - EP", "author": "EXID", "url": "https://music.apple.com/cn/album/full-moon-ep/1305881083", "cover": "asset:record-1305881083.jpg", "width": 600, "height": 600, "spine_color": "#3b6381", "spine_ink": "#faf9f6"}, {"title": "HEART MAID", "author": "SUNMI", "url": "https://music.apple.com/cn/album/heart-maid/1848070290", "cover": "asset:record-1848070290.jpg", "width": 600, "height": 600, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "Starboy", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/starboy/1440871397", "cover": "asset:record-1440871397.jpg", "width": 600, "height": 600, "spine_color": "#c0042c", "spine_ink": "#faf9f6"}, {"title": "WE", "author": "EXID", "url": "https://music.apple.com/cn/album/we/1463174475", "cover": "asset:record-1463174475.jpg", "width": 600, "height": 600, "spine_color": "#e8372d", "spine_ink": "#faf9f6"}, {"title": "Street", "author": "EXID", "url": "https://music.apple.com/cn/album/street/1118367147", "cover": "asset:record-1118367147.jpg", "width": 600, "height": 600, "spine_color": "#f75f85", "spine_ink": "#faf9f6"}, {"title": "范特西", "author": "周杰伦", "url": "https://music.apple.com/cn/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206", "cover": "asset:record-535739206.jpg", "width": 600, "height": 600, "spine_color": "#ac1a1d", "spine_ink": "#faf9f6"}, {"title": "Inner Child", "author": "Shanice", "url": "https://music.apple.com/cn/album/inner-child/1444166430", "cover": "asset:record-1444166430.jpg", "width": 600, "height": 600, "spine_color": "#211b1d", "spine_ink": "#faf9f6"}, {"title": "我肯定在几百年前就说过爱你", "author": "告五人", "url": "https://music.apple.com/cn/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804", "cover": "asset:record-1546062804.jpg", "width": 600, "height": 600, "spine_color": "#b3b3b1", "spine_ink": "#252523"}, {"title": "新的心跳", "author": "邓紫棋", "url": "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923", "cover": "asset:record-1053567923.jpg", "width": 600, "height": 600, "spine_color": "#1a0f1e", "spine_ink": "#faf9f6"}], "books": [{"title": "Wild Thing", "author": "Sue Prideaux", "url": "https://book.douban.com/subject/37071291/", "cover": "asset:book-37071291.jpg", "width": 449, "height": 690, "spine_color": "#1c1a21", "spine_ink": "#faf9f6"}, {"title": "清代地方政府", "author": "瞿同祖", "url": "https://book.douban.com/subject/35713871/", "cover": "asset:book-35713871.jpg", "width": 1080, "height": 1552, "spine_color": "#0f1922", "spine_ink": "#faf9f6"}, {"title": "互联网思想十讲", "author": "段永朝", "url": "https://book.douban.com/subject/26253507/", "cover": "asset:book-26253507.jpg", "width": 353, "height": 500, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "资治通鉴", "author": "[宋]司马光", "url": "https://book.douban.com/subject/6790302/", "cover": "asset:book-6790302.jpg", "width": 720, "height": 1028, "spine_color": "#f3bf20", "spine_ink": "#252523"}, {"title": "中国的奋斗", "author": "[美]徐中约", "url": "https://book.douban.com/subject/36526876/", "cover": "asset:book-36526876.jpg", "width": 748, "height": 1020, "spine_color": "#fffde4", "spine_ink": "#252523"}, {"title": "醉古堂剑扫", "author": "（明）陆绍珩 等撰", "url": "https://book.douban.com/subject/1105448/", "cover": "asset:book-1105448.jpg", "width": 600, "height": 982, "spine_color": "#ece4aa", "spine_ink": "#252523"}, {"title": "孙犁全集（1-11卷）", "author": "孙犁", "url": "https://book.douban.com/subject/1084028/", "cover": "asset:book-1084028.jpg", "width": 600, "height": 885, "spine_color": "#87424d", "spine_ink": "#faf9f6", "spine_title": "孙犁全集"}, {"title": "以利为利", "author": "周飞舟", "url": "https://book.douban.com/subject/10587755/", "cover": "asset:book-10587755.jpg", "width": 354, "height": 500, "spine_color": "#fcfef3", "spine_ink": "#252523"}, {"title": "历史三调", "author": "[美]柯文", "url": "https://book.douban.com/subject/26427101/", "cover": "asset:book-26427101.jpg", "width": 462, "height": 699, "spine_color": "#b7091f", "spine_ink": "#faf9f6"}, {"title": "大问题（第十版）", "author": "[美] 罗伯特·所罗门 / 凯思林·希金斯", "url": "https://book.douban.com/subject/30176572/", "cover": "asset:book-30176572.jpg", "width": 553, "height": 807, "spine_color": "#e1e0e3", "spine_ink": "#252523", "spine_title": "大问题"}, {"title": "黑客与画家", "author": "[美] Paul Graham", "url": "https://book.douban.com/subject/6021440/", "cover": "asset:book-6021440.jpg", "width": 421, "height": 591, "spine_color": "#e7d4d5", "spine_ink": "#252523"}, {"title": "世界观 (第3版)", "author": "[美] 理查德·德威特", "url": "https://book.douban.com/subject/35181762/", "cover": "asset:book-35181762.jpg", "width": 1080, "height": 1451, "spine_color": "#5a4183", "spine_ink": "#faf9f6", "spine_title": "世界观"}, {"title": "权力的毛细管作用", "author": "王汎森", "url": "https://book.douban.com/subject/26581737/", "cover": "asset:book-26581737.jpg", "width": 632, "height": 901, "spine_color": "#e6d8cb", "spine_ink": "#252523"}, {"title": "明代国家权力结构及运行机制", "author": "方志远", "url": "https://book.douban.com/subject/36594961/", "cover": "asset:book-36594961.jpg", "width": 1080, "height": 1523, "spine_color": "#ffffff", "spine_ink": "#252523", "spine_title": "明代国家权力结构"}, {"title": "可能性的艺术", "author": "刘瑜", "url": "https://book.douban.com/subject/35819419/", "cover": "asset:book-35819419.jpg", "width": 1080, "height": 1630, "spine_color": "#cbcac8", "spine_ink": "#252523"}, {"title": "柳如是别传（全三册）", "author": "陈寅恪", "url": "https://book.douban.com/subject/1034470/", "cover": "asset:book-1034470.jpg", "width": 300, "height": 457, "spine_color": "#8f7150", "spine_ink": "#faf9f6", "spine_title": "柳如是别传"}], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "推荐书籍", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png", "contact_cards": {"zhihu": {"name": "太隐", "bio": "独立博客作者 · 阅读与日常思考\n2026 年受邀入驻知乎。"}, "email": {"website": "https://wangyurui.com/"}, "github": {"login": "wangyr45", "calendar": [{"date": "2026-05-03", "level": 0}, {"date": "2026-05-04", "level": 0}, {"date": "2026-05-05", "level": 0}, {"date": "2026-05-06", "level": 0}, {"date": "2026-05-07", "level": 0}, {"date": "2026-05-08", "level": 0}, {"date": "2026-05-09", "level": 0}, {"date": "2026-05-10", "level": 0}, {"date": "2026-05-11", "level": 0}, {"date": "2026-05-12", "level": 0}, {"date": "2026-05-13", "level": 0}, {"date": "2026-05-14", "level": 0}, {"date": "2026-05-15", "level": 0}, {"date": "2026-05-16", "level": 0}, {"date": "2026-05-17", "level": 0}, {"date": "2026-05-18", "level": 0}, {"date": "2026-05-19", "level": 0}, {"date": "2026-05-20", "level": 0}, {"date": "2026-05-21", "level": 0}, {"date": "2026-05-22", "level": 0}, {"date": "2026-05-23", "level": 0}, {"date": "2026-05-24", "level": 0}, {"date": "2026-05-25", "level": 0}, {"date": "2026-05-26", "level": 0}, {"date": "2026-05-27", "level": 0}, {"date": "2026-05-28", "level": 0}, {"date": "2026-05-29", "level": 0}, {"date": "2026-05-30", "level": 0}, {"date": "2026-05-31", "level": 0}, {"date": "2026-06-01", "level": 0}, {"date": "2026-06-02", "level": 0}, {"date": "2026-06-03", "level": 0}, {"date": "2026-06-04", "level": 0}, {"date": "2026-06-05", "level": 0}, {"date": "2026-06-06", "level": 4}, {"date": "2026-06-07", "level": 0}, {"date": "2026-06-08", "level": 0}, {"date": "2026-06-09", "level": 0}, {"date": "2026-06-10", "level": 0}, {"date": "2026-06-11", "level": 0}, {"date": "2026-06-12", "level": 0}, {"date": "2026-06-13", "level": 0}, {"date": "2026-06-14", "level": 0}, {"date": "2026-06-15", "level": 0}, {"date": "2026-06-16", "level": 0}, {"date": "2026-06-17", "level": 0}, {"date": "2026-06-18", "level": 0}, {"date": "2026-06-19", "level": 0}, {"date": "2026-06-20", "level": 0}, {"date": "2026-06-21", "level": 0}, {"date": "2026-06-22", "level": 0}, {"date": "2026-06-23", "level": 0}, {"date": "2026-06-24", "level": 0}, {"date": "2026-06-25", "level": 0}, {"date": "2026-06-26", "level": 0}, {"date": "2026-06-27", "level": 0}, {"date": "2026-06-28", "level": 0}, {"date": "2026-06-29", "level": 0}, {"date": "2026-06-30", "level": 0}, {"date": "2026-07-01", "level": 0}, {"date": "2026-07-02", "level": 0}, {"date": "2026-07-03", "level": 0}, {"date": "2026-07-04", "level": 0}, {"date": "2026-07-05", "level": 0}, {"date": "2026-07-06", "level": 0}, {"date": "2026-07-07", "level": 0}, {"date": "2026-07-08", "level": 0}, {"date": "2026-07-09", "level": 0}, {"date": "2026-07-10", "level": 0}, {"date": "2026-07-11", "level": 0}, {"date": "2026-07-12", "level": 0}, {"date": "2026-07-13", "level": 0}, {"date": "2026-07-14", "level": 0}, {"date": "2026-07-15", "level": 0}, {"date": "2026-07-16", "level": 0}, {"date": "2026-07-17", "level": 0}, {"date": "2026-07-18", "level": 0}, {"date": "2026-07-19", "level": 0}, {"date": "2026-07-20", "level": 0}, {"date": "2026-07-21", "level": 0}, {"date": "2026-07-22", "level": 0}, {"date": "2026-07-23", "level": 0}, {"date": "2026-07-24", "level": 0}, {"date": "2026-07-25", "level": 0}, {"date": "2026-07-26", "level": 0}, {"date": "2026-07-27", "level": 0}, {"date": "2026-07-28", "level": 0}, {"date": "2026-07-29", "level": 0}, {"date": "2026-07-30", "level": 0}, {"date": "2026-07-31", "level": 0}, {"date": "2026-08-01", "level": 0}, {"date": "2026-08-02", "level": 0}, {"date": "2026-08-03", "level": 0}, {"date": "2026-08-04", "level": 0}, {"date": "2026-08-05", "level": 0}, {"date": "2026-08-06", "level": 0}, {"date": "2026-08-07", "level": 0}, {"date": "2026-08-08", "level": 4}, {"date": "2026-08-09", "level": 0}, {"date": "2026-08-10", "level": 0}, {"date": "2026-08-11", "level": 0}, {"date": "2026-08-12", "level": 0}, {"date": "2026-08-13", "level": 0}, {"date": "2026-08-14", "level": 0}, {"date": "2026-08-15", "level": 0}, {"date": "2026-08-16", "level": 0}, {"date": "2026-08-17", "level": 0}, {"date": "2026-08-18", "level": 0}, {"date": "2026-08-19", "level": 0}, {"date": "2026-08-20", "level": 0}, {"date": "2026-08-21", "level": 0}, {"date": "2026-08-22", "level": 0}, {"date": "2026-08-23", "level": 0}, {"date": "2026-08-24", "level": 0}, {"date": "2026-08-25", "level": 0}, {"date": "2026-08-26", "level": 0}, {"date": "2026-08-27", "level": 0}, {"date": "2026-08-28", "level": 0}, {"date": "2026-08-29", "level": 0}, {"date": "2026-08-30", "level": 0}, {"date": "2026-08-31", "level": 0}, {"date": "2026-09-01", "level": 0}, {"date": "2026-09-02", "level": 0}, {"date": "2026-09-03", "level": 0}, {"date": "2026-09-04", "level": 0}, {"date": "2026-09-05", "level": 0}, {"date": "2026-09-06", "level": 0}, {"date": "2026-09-07", "level": 0}, {"date": "2026-09-08", "level": 0}, {"date": "2026-09-09", "level": 0}, {"date": "2026-09-10", "level": 0}, {"date": "2026-09-11", "level": 0}, {"date": "2026-09-12", "level": 4}, {"date": "2026-09-13", "level": 4}], "updated": "2026-09-13"}, "podcast": {"name": "太隐观复", "handle": "太隐的播客 · 始于 2025", "bio": "把阅读与日常思考，慢慢说给你听。"}}, "portrait_dark": "asset:hero-portrait-night-web.png", "email": "pkm.tyne@gmail.com", "zhihu_url": "https://www.zhihu.com/people/vibkba"} %}
+{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.4/", true) %}
+{% set bundled_images = ["asset:hero-portrait-web.png", "asset:hero-portrait-night-web.png", "asset:dockpic.png", "asset:portus.png", "asset:wechat-backup.png", "asset:support.png", "asset:record-1499378108.jpg", "asset:record-982223883.jpg", "asset:record-1305881083.jpg", "asset:record-1848070290.jpg", "asset:record-1440871397.jpg", "asset:record-1463174475.jpg", "asset:record-1118367147.jpg", "asset:record-535739206.jpg", "asset:record-1444166430.jpg", "asset:record-1546062804.jpg", "asset:record-1053567923.jpg", "asset:book-37071291.jpg", "asset:book-35713871.jpg", "asset:book-26253507.jpg", "asset:book-6790302.jpg", "asset:book-36526876.jpg", "asset:book-1105448.jpg", "asset:book-1084028.jpg", "asset:book-34855029.jpg", "asset:book-10587755.jpg", "asset:book-26427101.jpg", "asset:book-30176572.jpg", "asset:book-6798611.jpg", "asset:book-1088022.jpg", "asset:book-6021440.jpg", "asset:book-35181762.jpg", "asset:book-26581737.jpg", "asset:book-36594961.jpg", "asset:book-35819419.jpg", "asset:book-1034470.jpg"] %}
 {% set supplied = query.config('cali-typlog') %}
 {% set supplied = supplied if supplied is mapping else {} %}
 {% set config = namespace(intro=defaults.intro, portrait=defaults.portrait, portrait_dark=defaults.portrait_dark|default(''),
@@ -236,8 +236,10 @@
 {% endmacro %}
 
 {% macro podcast_phrase(phrase) -%}
-{%- for part in phrase.split('[太隐观复]') -%}
-{%- if not loop.first -%}<a class="cali-inline-contact" data-cali-contact="podcast" href="https://taiyin.podcast.xyz/" target="_blank" rel="noopener noreferrer">{{ platform_icon('xiaoyuzhou') }}太隐观复<span aria-hidden="true">↗</span></a>{%- endif -%}{{- part -}}
+{%- set quoted = '“[太隐观复]”' in phrase -%}
+{%- for part in phrase.replace('“[太隐观复]”', '[太隐观复]').split('[太隐观复]') -%}
+{%- set tail = part.lstrip('。，、；：！？）”') if not loop.first else part -%}
+{%- if not loop.first -%}<span class="cali-inline-unit">{% if quoted %}“{% endif %}<a class="cali-inline-contact" data-cali-contact="podcast" href="https://taiyin.podcast.xyz/" target="_blank" rel="noopener noreferrer">{{ platform_icon('xiaoyuzhou') }}太隐观复<span aria-hidden="true">↗</span></a>{% if quoted %}”{% endif %}{{ part[:part|length-tail|length] }}</span>{%- endif -%}{{- tail -}}
 {%- endfor -%}
 {%- endmacro %}
 
@@ -245,8 +247,9 @@
 {%- for part in phrase.split('[微信公众号]') -%}
   {%- if not loop.first -%}
     {%- set qr = image_url(config.wechat_qr)|trim -%}
-    {%- if qr -%}<a class="cali-inline-contact cali-inline-wechat" data-cali-contact="wechat" data-cali-qr data-qr-title="微信公众号 · {{ site.name }}" href="{{ qr }}" target="_blank" rel="noopener noreferrer">{{ platform_icon('wechat') }}微信公众号“{{ site.name }}”</a>{%- else -%}微信公众号“{{ site.name }}”{%- endif -%}
-  {%- endif -%}{{- podcast_phrase(part) -}}
+    <span class="cali-inline-unit">{%- if qr -%}<a class="cali-inline-contact cali-inline-wechat" data-cali-contact="wechat" data-cali-qr data-qr-title="微信公众号 · {{ site.name }}" href="{{ qr }}" target="_blank" rel="noopener noreferrer">{{ platform_icon('wechat') }}微信公众号“{{ site.name }}”</a>{%- else -%}微信公众号“{{ site.name }}”{%- endif -%}
+  {% if part[:1] in '。，、；：！？）”' %}{{ part[:1] }}{% endif %}</span>
+  {%- endif -%}{{- podcast_phrase(part[1:] if not loop.first and part[:1] in '。，、；：！？）”' else part) -}}
 {%- endfor -%}
 {%- endmacro %}
 
@@ -1017,6 +1020,8 @@
   --shadow-3:0 2px 4px #0000000a;
   --ease-spring:cubic-bezier(.22,1,.36,1);
   --ease-swift:cubic-bezier(.2,.8,.2,1);
+  --motion-enter:180ms;
+  --motion-exit:100ms;
   --z-nav:40;
 }
 .dark-theme {
@@ -1091,8 +1096,8 @@ body {
 }
 .cali-hero {
   display:grid;
-  grid-template-columns:minmax(0,1fr) 240px;
-  gap:32px;
+  grid-template-columns:minmax(0,1fr) 200px;
+  gap:24px;
 }
 .cali-introduction h1 {
   font-size:28px;
@@ -1118,8 +1123,8 @@ body {
 .cali-portrait {
   border-radius:0;
   position:relative;
-  width:240px;
-  height:240px;
+  width:200px;
+  height:200px;
   align-self:start;
   overflow:hidden;
 }
@@ -2159,7 +2164,7 @@ body {
   background:var(--background); color:var(--foreground);
   box-shadow:0 12px 36px #00000012,0 2px 5px #00000008;
   font:13px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  animation:contact-card-in 160ms ease-out;
+  animation:contact-profile-in var(--motion-enter) var(--ease-spring);
 }
 .cali-contact-card[hidden] { display:none; }
 .contact-card-masthead { display:flex; justify-content:space-between; align-items:center; height:42px; border-bottom:1px solid var(--border); color:var(--muted-foreground); }
@@ -2185,13 +2190,13 @@ body {
 .cali-contact-card[data-service="wechat"] .contact-card-avatar { border-radius:12px; }
 .cali-contact-card[data-service="rss"] .contact-card-bio { font-family:Georgia,"Songti SC",serif; font-size:18px; }
 .cali-social a[data-card-open] { color:var(--foreground); }
-@keyframes contact-card-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+
 
 /* Align contact links and the QR pair to the footer edges. */
 .cali-footer { grid-template-columns:minmax(0,1fr) 248px; column-gap:40px; row-gap:32px; padding-inline:0; align-items:start; }
 .cali-footer h2 { margin-bottom:20px; }
 .cali-footer .cali-social { padding-left:0; }
-.cali-footer .cali-social a { padding-left:0; }
+.cali-footer .cali-social a { padding-left:0; min-height:44px; font-size:13px; }
 .cali-footer .cali-social a::before,.cali-footer .cali-social a::after { display:none; }
 .cali-support { width:248px; max-width:100%; justify-self:end; }
 .cali-support h2 { margin-bottom:20px; }
@@ -2214,13 +2219,14 @@ body {
   .cali-colophon { padding-top:12px; }
   .dock { gap:2px; padding-inline:10px; }
   .dock-secondary { max-width:144px; }
-  .dock-item { width:38px; min-width:38px; }
+  .dock-item { width:44px; min-width:44px; }
 }
 @media(prefers-reduced-motion:reduce) { .cali-contact-card { animation:none; } }
 
 @media(max-width:359px) {
-  .dock-item { width:32px; min-width:32px; }
-  .dock-secondary { min-width:32px; max-width:96px; }
+  .dock-item { width:40px; min-width:40px; }
+  .dock-secondary { min-width:40px; max-width:80px; }
+  .dock { gap:0; padding-inline:6px; }
   .dock-item>svg { width:22px; height:22px; }
 }
 
@@ -2229,9 +2235,11 @@ body {
   width:min(324px,calc(100vw - 32px)); padding:18px; border-radius:20px;
   box-shadow:0 12px 36px #00000012,0 2px 6px #00000006;
   scrollbar-width:thin; text-align:left;
+  background:linear-gradient(var(--background) 30%,transparent) center top/100% 24px local,linear-gradient(transparent,var(--background) 70%) center bottom/100% 24px local,linear-gradient(var(--border),transparent) center top/100% 10px scroll,linear-gradient(transparent,var(--border)) center bottom/100% 10px scroll;
+  background-repeat:no-repeat; background-color:var(--background);
 }
 .cali-preferences[open] .cali-preferences-panel { animation:cali-preferences-in 140ms ease-out; }
-.cali-preferences-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; font-size:13px; font-weight:500; }
+.cali-preferences-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; font-size:13px; font-weight:500; }
 .cali-preferences-heading svg { width:16px; height:16px; color:var(--muted-foreground); }
 .cali-appearance-options { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; color:var(--muted-foreground); }
 .cali-theme-control[hidden],.cali-appearance-options[hidden] { display:none; }
@@ -2242,7 +2250,7 @@ body {
 .cali-preferences-panel nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:0; padding:0; border:0; }
 .cali-preferences-panel nav a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-width:0; min-height:44px; padding:9px 10px; border-radius:10px; font-size:12px; line-height:1.5; text-decoration:none; background:var(--gray-2); }
 .cali-preferences-panel nav a:hover { background:var(--gray-3); }
-.cali-preferences-panel .cali-explore { margin-top:18px; }
+.cali-preferences-panel .cali-explore { margin-top:14px; }
 .cali-preferences-panel .cali-explore h2 { margin:0 0 10px; font-size:12px; line-height:1.5; font-weight:400; color:var(--muted-foreground); }
 .cali-explore-label { min-width:0; overflow-wrap:anywhere; }
 .cali-explore-arrow { flex:none; color:var(--muted-foreground); font-size:14px; }
@@ -2258,7 +2266,7 @@ body {
 .cali-appearance-options { gap:8px; }
 .cali-appearance-options>span { flex:none; }
 .cali-theme-segments { min-width:0; flex:1; }
-.cali-theme-segments button { flex:1; flex-direction:column; gap:4px; padding:8px 4px; min-height:54px; white-space:nowrap; font-size:11px; }
+.cali-theme-segments button { flex:1; flex-direction:column; gap:4px; padding:8px 4px; min-height:46px; white-space:nowrap; font-size:11px; }
 
 /* Quiet emphasis keeps the hovered article in context. */
 .blog-row { transition:opacity 160ms ease; }
@@ -2328,7 +2336,9 @@ body {
 @media (hover:hover) and (pointer:fine) { .cali-menu-subscribe:hover { background:var(--gray-3,var(--muted)); } }
 .cali-menu-subscribe:active { transform:scale(.985); }
 @media (prefers-reduced-motion:reduce) { .cali-menu-subscribe { transition:none; } }
-.cali-introduction p a { display:inline-block; white-space:nowrap; }
+.cali-inline-unit { display:inline-block; white-space:nowrap; }
+.cali-introduction p a { display:inline; white-space:normal; box-decoration-break:clone; }
+.cali-introduction p a:is(.cali-inline-contact,[data-cali-projects-link]) { display:inline-block; white-space:nowrap; }
 .cali-contact-card[data-service="zhihu"] .contact-card-masthead { margin-inline:-20px; padding-inline:20px; background:linear-gradient(115deg,#1672e3,#1461c4); color:#fff; border:0; }
 .dark-theme .cali-contact-card[data-service="zhihu"] .contact-card-masthead { background:linear-gradient(115deg,#21579b,#224774); color:#e9f3ff; }
 
@@ -2376,25 +2386,6 @@ body {
 .dark-theme .cali-contact-card[data-service="podcast"] .contact-card-foot { color:#a3c5d5; }
 
 
-/* Compact profile cards share a single scale and motion rhythm. */
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) {
-  width:248px; padding-inline:16px; border-radius:12px;
-  box-shadow:0 8px 24px #00000012,0 1px 3px #00000008;
-  animation:contact-profile-in 180ms cubic-bezier(.22,1,.36,1);
-}
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-masthead {
-  height:32px; margin-inline:-16px; padding-inline:16px;
-}
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-head { margin-top:12px; gap:9px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-avatar { width:32px; height:32px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-name { font-size:14px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-handle { font-size:10px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-bio { margin:12px 0; font-size:12px; line-height:1.7; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-foot { padding-block:9px 10px; font-size:10px; }
-.cali-contact-card[data-service="zhihu"] .contact-card-edition { font-size:18px; }
-.cali-contact-card[data-service="wechat"] .contact-wechat-qr { width:128px; height:128px; margin:14px auto; border-radius:5px; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave { height:36px; margin:4px 12px 10px; gap:4px; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave span { max-height:30px; width:3px; }
 @keyframes contact-profile-in { from { opacity:0; transform:translateY(4px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
 @keyframes contact-link-wiggle {
   0%,100% { transform:rotate(0); }
@@ -2411,15 +2402,10 @@ body {
 
 .cali-introduction .cali-inline-contact > svg { display:none; }
 .cali-introduction .cali-subscribe-link { display:inline-block; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) { width:220px; padding-inline:14px; border-radius:10px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-masthead { margin-inline:-14px; padding-inline:14px; height:30px; }
 .contact-card-masthead .contact-brand-icon { display:block; width:18px; height:18px; flex:none; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-head { margin-top:10px; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-bio { margin:10px 0; font-size:11px; line-height:1.65; }
-.cali-contact-card:is([data-service="wechat"],[data-service="podcast"],[data-service="zhihu"]) .contact-card-foot { padding-block:8px; }
-.cali-contact-card[data-service="wechat"] .contact-wechat-qr { width:112px; height:112px; margin:12px auto; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave { height:26px; margin:2px 8px 8px; }
-.cali-contact-card[data-service="podcast"] .contact-podcast-wave span { max-height:24px; }
+.cali-contact-card[data-service="wechat"] .contact-wechat-qr { width:112px; height:112px; margin:12px auto; border-radius:5px; }
+.cali-contact-card[data-service="podcast"] .contact-podcast-wave { height:26px; margin:2px 8px 8px; gap:4px; }
+.cali-contact-card[data-service="podcast"] .contact-podcast-wave span { max-height:24px; width:3px; }
 
 /* Platform accents remain quiet until a contact is hovered or focused. */
 .cali-social a { --contact-accent:var(--foreground); transition:color 160ms ease; }
@@ -2437,8 +2423,8 @@ body {
 .cali-contact-card:not([data-service="email"]) .contact-card-head { margin-top:10px; }
 .cali-contact-card:not([data-service="email"]) .contact-card-avatar { width:32px; height:32px; }
 .cali-contact-card:not([data-service="email"]) .contact-card-name { font-size:14px; }
-.cali-contact-card:not([data-service="email"]) .contact-card-bio { font-size:11px; margin:10px 0; line-height:1.65; }
-.cali-contact-card:not([data-service="email"]) .contact-card-foot { padding-block:9px; font-size:10px; }
+.cali-contact-card:not([data-service="email"]) .contact-card-bio { font-size:12px; margin:10px 0; line-height:1.65; }
+.cali-contact-card:not([data-service="email"]) .contact-card-foot { padding-block:9px; font-size:11px; }
 .cali-contact-card[data-service="telegram"] .contact-card-masthead { background:#229ed9; color:white; border:0; }
 .cali-contact-card[data-service="x"] .contact-card-masthead { background:#202020; color:white; border:0; }
 .cali-contact-card[data-service="rss"] .contact-card-masthead { background:#c87525; color:white; border:0; }
@@ -2454,7 +2440,7 @@ body {
 .contact-contributions [data-level="3"] { background:#30a14e; }
 .contact-contributions [data-level="4"] { background:#216e39; }
 .dark-theme .contact-contributions [data-level="0"] { background:#29312d; }
-.contact-calendar-note { margin:10px 0; font:9px/1.5 ui-monospace,monospace; color:var(--muted-foreground); }
+.contact-calendar-note { margin:10px 0; font:10px/1.5 ui-monospace,monospace; color:var(--muted-foreground); }
 .cali-contact-card[data-service="github"] .contact-card-foot { flex-direction:row; justify-content:space-between; }
 @media(hover:hover) and(pointer:fine) and(prefers-reduced-motion:no-preference) { .cali-social a:hover>svg { animation:contact-link-wiggle 320ms ease-out; } }
 
@@ -3137,17 +3123,32 @@ body {
   const menu = document.querySelector(".cali-mobile-nav");
   if (menu) {
     const summary = menu.querySelector("summary");
+    const panel = menu.querySelector(".cali-preferences-panel");
+    let closing;
+    function closeMenu(instant = false) {
+      if (!menu.open) return;
+      if (instant && closing) { closing.cancel(); closing = null; menu.open = false; return; }
+      if (closing) return;
+      if (instant || !panel?.animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { menu.open = false; return; }
+      closing = panel.animate([{opacity:1,translate:"0 0"},{opacity:0,translate:"0 3px"}], {duration:100,easing:"ease-out"});
+      closing.finished.then(() => { menu.open = false; closing = null; }).catch(() => { closing = null; });
+    }
+    summary.addEventListener("click", event => {
+      if (!menu.open) return;
+      event.preventDefault();
+      closeMenu(event.detail === 0);
+    });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && menu.open) {
-        menu.open = false;
+        closeMenu(true);
         summary.focus();
       }
     });
     document.addEventListener("click", (event) => {
-      if (menu.open && (!menu.contains(event.target) || event.target.closest?.(".js-subscribe"))) menu.open = false;
+      if (menu.open && (!menu.contains(event.target) || event.target.closest?.(".js-subscribe"))) closeMenu();
     });
     document.addEventListener("focusin", (event) => {
-      if (menu.open && !menu.contains(event.target)) menu.open = false;
+      if (menu.open && !menu.contains(event.target)) closeMenu();
     });
   }
 
@@ -3355,7 +3356,7 @@ body {
         inners[i].style.transform=`translateX(${pose.offsetX}px) rotate(${pose.tilt}deg) rotateY(${pose.rotateY}deg)`;
         shadows[i].style.transform=`scaleX(${pose.width/books[i].width})`;
       });
-      if (lastPoint) setHover(bookOwner(lastPoint));
+      // Pointer movement updates hover; avoid layout reads after frame writes.
     }
     function cancelMotion() { if (raf) cancelAnimationFrame(raf);raf=0; }
     function settle(index, instant=false) {
@@ -3370,7 +3371,7 @@ body {
       const from=position,fromProgress=progress.slice(),fromTilts=tilts.slice(),started=performance.now();
       collection.dataset.vinylInteraction="settling";
       const tick=now=>{
-        const t=Math.min(1,(now-started)/(isRecord?330:650));
+        const t=Math.min(1,(now-started)/(isRecord?330:420));
         if(isRecord) paintRecords(from+(index-from)*easeRecord(t));
         else {const e=easeBook(t);paintBooks(fromProgress.map((v,i)=>v+(toProgress[i]-v)*e),fromTilts.map((v,i)=>v+(toTilts[i]-v)*e));}
         if(t<1)raf=requestAnimationFrame(tick);else finish();
@@ -3648,7 +3649,7 @@ body {
     }
   }
 
-  document.querySelectorAll("[data-cali-album], [data-cali-collection]").forEach(async (card) => {
+  async function loadCard(card) {
     const collection = card.getAttribute("data-cali-collection");
     const kind = collection === null ? "album" : "articles";
     const url = previewURL(collection === null ? card.getAttribute("href") : collection, kind, card.getAttribute("data-cali-list-path"));
@@ -3672,11 +3673,42 @@ body {
       frame.append(image);
       image.src = src;
     });
-  });
+  }
+  const cards = document.querySelectorAll("[data-cali-album], [data-cali-collection]");
+  if (typeof IntersectionObserver === "function") {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        loadCard(entry.target);
+      });
+    }, {rootMargin:"160px 0px"});
+    cards.forEach(card => observer.observe(card));
+  } else cards.forEach(loadCard);
 })();
 (() => {
   "use strict";
 
+  // Two passes give the same square-neighborhood distance in linear time.
+  function edgeDistances(background, columns, rows, limit) {
+    const result = Float32Array.from(background, value => value ? 0 : limit);
+    for (let y = 0; y < rows; y++) for (let x = 0; x < columns; x++) {
+      const i = y * columns + x;
+      if (x) result[i] = Math.min(result[i], result[i - 1] + 1);
+      if (y) for (let dx = -1; dx <= 1; dx++) {
+        if (x + dx >= 0 && x + dx < columns) result[i] = Math.min(result[i], result[i - columns + dx] + 1);
+      }
+    }
+    for (let y = rows - 1; y >= 0; y--) for (let x = columns - 1; x >= 0; x--) {
+      const i = y * columns + x;
+      if (x + 1 < columns) result[i] = Math.min(result[i], result[i + 1] + 1);
+      if (y + 1 < rows) for (let dx = -1; dx <= 1; dx++) {
+        if (x + dx >= 0 && x + dx < columns) result[i] = Math.min(result[i], result[i + columns + dx] + 1);
+      }
+    }
+    return result;
+  }
+  if (typeof module !== "undefined" && module.exports) { module.exports = {edgeDistances}; return; }
   if (typeof window.Image !== "function") return;
 
   document.querySelectorAll(".cali-portrait").forEach((portrait) => {
@@ -3746,6 +3778,8 @@ body {
           if (y + 1 < rows) visit(index + columns);
         }
       }
+      const feather = Math.max(3, Math.round(width * 0.055 / cell));
+      const distances = edgeDistances(background, columns, rows, feather);
       const tones = new Float32Array(columns * rows);
       for (let index = 0; index < tones.length; index += 1) {
         const offset = index * 4;
@@ -3769,17 +3803,7 @@ body {
             // Reduce the supplied portrait's blue fabric without dimming warm skin.
             const blue = Math.max(0, Math.min(1, (pixels[offset + 2] - pixels[offset] - 12) / 35));
             tone *= 1 - blue * 0.6;
-            // Feather against the silhouette, rather than only the image rectangle.
-            const feather = Math.max(3, Math.round(width * 0.055 / cell));
-            let distance = feather;
-            for (let dy = -feather; dy <= feather; dy++) {
-              for (let dx = -feather; dx <= feather; dx++) {
-                const xx = column + dx, yy = row + dy;
-                if (xx >= 0 && xx < columns && yy >= 0 && yy < rows && background[yy * columns + xx]) {
-                  distance = Math.min(distance, Math.max(Math.abs(dx), Math.abs(dy)));
-                }
-              }
-            }
+            const distance = distances[row * columns + column];
             const coverage = Math.min(1, distance / feather);
             const smooth = coverage * coverage * (3 - 2 * coverage);
             softness = 1 - smooth;
@@ -4096,11 +4120,16 @@ body {
   popup.setAttribute("role", "tooltip");
   popup.hidden = true;
   document.body.append(popup);
-  let active, openTimer, closeTimer, previousDescription;
+  let active, openTimer, closeTimer, previousDescription, departure;
   const stopTimers = () => { clearTimeout(openTimer); clearTimeout(closeTimer); };
-  function close() {
+  function close(animate = false) {
     stopTimers();
-    popup.hidden = true;
+    departure?.cancel();
+    if (animate && !popup.hidden && popup.animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const motion = popup.animate([{opacity:1,transform:"translateY(0)"},{opacity:0,transform:"translateY(3px)"}], {duration:100,easing:"ease-out"});
+      departure = motion;
+      motion.finished.then(() => { if (departure === motion) { popup.hidden = true; departure = null; } }).catch(() => {});
+    } else { departure = null; popup.hidden = true; }
     if (active) {
       if (previousDescription) active.setAttribute("aria-describedby", previousDescription);
       else active.removeAttribute("aria-describedby");
@@ -4155,8 +4184,8 @@ body {
     popup.append(foot);
     if (service === "podcast") {
       masthead.replaceChildren(node("span", "contact-card-service", words("播客名片", "PODCAST")), node("span", "contact-card-edition", "◉"));
-      names.replaceChildren(node("strong", "contact-card-name", "太隐观复"), node("span", "contact-card-handle", words("太隐的播客 · 始于 2025", "A podcast by Taiyin · Since 2025")));
-      bio.textContent = words("把阅读与日常思考，慢慢说给你听。", "Reading and everyday ideas, shared through voice.");
+      names.replaceChildren(node("strong", "contact-card-name", identity), node("span", "contact-card-handle", text(data.handle, 100) || handle));
+      bio.textContent = text(data.bio) || services.podcast[1];
       const wave = node("div", "contact-podcast-wave");
       wave.setAttribute("aria-hidden", "true");
       [12,22,15,30,40,25,17,34,46,28,18,36,24,14,28,38,20,12].forEach(height => {
@@ -4220,7 +4249,7 @@ body {
     link.setAttribute("aria-describedby", [previousDescription, popup.id].filter(Boolean).join(" "));
     link.setAttribute("data-card-open", "");
   }
-  const delayClose = () => { clearTimeout(openTimer); closeTimer = setTimeout(close, 140); };
+  const delayClose = () => { clearTimeout(openTimer); closeTimer = setTimeout(() => close(true), 100); };
   popup.addEventListener("pointerenter", () => clearTimeout(closeTimer));
   popup.addEventListener("pointerleave", delayClose);
   [...nav.querySelectorAll("a"), ...document.querySelectorAll("[data-cali-contact]")].forEach((link) => {
@@ -4262,14 +4291,20 @@ body {
     link.addEventListener("click", () => { returningFromQR = inlineWechat; close(); });
   });
   document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
-  window.addEventListener("scroll", close, {passive:true,capture:true});
-  window.addEventListener("resize", close);
+  window.addEventListener("scroll", () => close(), {passive:true,capture:true});
+  window.addEventListener("resize", () => close());
 })();
 (() => {
   "use strict";
   const main = document.getElementById("cali-main");
   if (!main) return;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  // A skipped native transition is normal during fast navigation.
+  for (const type of ["pageswap", "pagereveal"]) window.addEventListener(type, event => {
+    event.viewTransition?.ready.catch(error => {
+      if (error.name !== "AbortError") console.warn("Page transition unavailable", error);
+    });
+  });
   let pending = "", pendingAt = 0, entrance;
   const path = value => value.replace(/\/+$/, "") || "/";
   const projectView = url => url.hash === "#projects";
@@ -4372,7 +4407,7 @@ body {
       <div class="cali-portrait" data-portrait-theme="{{ mode }}" aria-label="{{ site.name }}">
         <span class="cali-portrait-monogram" aria-hidden="true">{{ site.name[:1] }}</span>
         {% if address %}
-          <img data-cali-image src="{{ address }}" alt="{{ site.name }}" width="240" height="240" fetchpriority="{{ 'high' if mode == 'light' else 'low' }}">
+          <img data-cali-image src="{{ address }}" alt="{{ site.name }}" width="240" height="240" loading="lazy" decoding="async" fetchpriority="{{ 'high' if mode == 'light' else 'low' }}">
           <canvas data-cali-portrait width="480" height="480" hidden aria-hidden="true"></canvas>
         {% endif %}
       </div>

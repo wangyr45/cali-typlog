@@ -4,7 +4,7 @@ A Typlog v3 theme port of the current [cali.so](https://cali.so/) design, based 
 upstream revision `a35dcf2` (September 2026). This replaces the earlier 2024-style
 port. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE) for attribution.
 
-The layout uses a 600 px column, dotted side rules, a 240 px halftone portrait,
+The layout uses a 600 px column, dotted side rules, a 200 px halftone portrait,
 three illustrated navigation cells, numbered section labels, the 10 most recent article
 rows, and a fixed glass dock. The reading page uses the same column, a paper
 cover frame, metadata rules, and an optional table of contents.
@@ -43,8 +43,8 @@ node --test tests/*.test.cjs
 python3 -m http.server 8765 --bind 127.0.0.1 --directory preview
 ```
 
-The build produces three templates with inline CSS/JavaScript, five bundled images, and
-`dist/cali-typlog-0.8.1.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
+The build produces three templates with inline CSS/JavaScript, bundled images, and
+`dist/cali-typlog-0.8.4.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
 images through its theme static URL. Keep the assets directory in the release. Edit source files under `src/` and run the build; do not edit the
 generated root templates. The `/settings-demo/` preview exercises runtime settings without rebuilding.
 The `/components/` preview demonstrates optional
@@ -183,3 +183,16 @@ hint is removed while image enlargement remains available.
 - Refine compact platform cards and the email envelope.
 - Add a public GitHub contribution snapshot and a 14-day new article badge.
 - Refine the dark portrait with darker clothing and a soft outward edge fade.
+
+## 0.8.4 local optimization
+
+Portrait assets are resized to 480 px. A two-pass distance map keeps the soft
+edge treatment without repeated neighborhood scans. List and article templates
+omit home-only portrait, collection preview, and shelf scripts and shelf styles.
+Collection previews load near the viewport.
+
+Contact cards and preferences have short exit transitions. Escape closes them
+immediately; reduced-motion preferences bypass the animation. Mobile dock
+targets are larger, and the preference panel has tighter spacing and scroll cues.
+Podcast card text can be set through `contact_cards.podcast` (`name`, `handle`,
+`bio`). This build does not change the separate article layout or publish itself.
