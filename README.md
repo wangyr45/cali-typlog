@@ -44,7 +44,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory preview
 ```
 
 The build produces three templates with inline CSS/JavaScript, bundled images, and
-`dist/cali-typlog-0.8.4.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
+`dist/cali-typlog-0.8.5.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
 images through its theme static URL. Keep the assets directory in the release. Edit source files under `src/` and run the build; do not edit the
 generated root templates. The `/settings-demo/` preview exercises runtime settings without rebuilding.
 The `/components/` preview demonstrates optional
@@ -196,3 +196,9 @@ immediately; reduced-motion preferences bypass the animation. Mobile dock
 targets are larger, and the preference panel has tighter spacing and scroll cues.
 Podcast card text can be set through `contact_cards.podcast` (`name`, `handle`,
 `bio`). This build does not change the separate article layout or publish itself.
+
+## Version 0.8.5
+
+Align the bundled night portrait with the daytime head size and position.
+Soften tonal contrast and fade silhouette dots into the background without a
+bright halo. Use consistent dot spacing on desktop and mobile.
