@@ -1,7 +1,7 @@
 {% from "macros.j2" import render_social_icons %}
 {% set zh = (site.primary_lang|default('en')).startswith('zh') %}
 {% set defaults = {"intro": ["我是太隐，喜欢阅读，爱好广泛。学生时代曾混迹天涯、猫扑，也在起点、逐浪写过小说。2016 年，创办“太隐”独立博客。2024 年开通 [微信公众号]。2025 年，开通播客 “[太隐观复]”。2026 年，受邀入驻 [知乎]。另外，近期开发了 App，详见[项目页面]。"], "portrait": "asset:hero-portrait-web.png", "projects_intro": "从阅读到记录，把日常里的小需求，慢慢做成好用的工具。", "projects": [{"title": "识古", "platform": "Chrome 插件", "description": "让古文更易读，支持翻译、解析与笔记摘录。", "url": "https://chromewebstore.google.com/detail/识古-古文翻译与文言文阅读助手/bplgmmnbplpajgpenahngicnjnenoaph", "icon": "https://lh3.googleusercontent.com/zPwPHwvyXi_bd31eJcdsI_0RAQA4wafN3o384u3b6_zzWuk6XRqIQnvkX9gTp6Ko674jv50i7RucOtbNugcNoI0-Ovw=s60"}, {"title": "DockPic", "platform": "macOS · App Store", "description": "一款可爱、好用的 macOS 图床应用。", "url": "https://apps.apple.com/us/app/dockpic-可爱-好用的图床应用/id6792192394", "icon": "asset:dockpic.png"}, {"title": "portus", "platform": "iOS · App Store", "description": "收下文字、链接与片刻灵感，送往常用的笔记工具。", "notice": "美区等地区上架，中国大陆区暂未上架。", "url": "https://apps.apple.com/us/app/portus-一键将灵感存入各大笔记软件/id6797192583", "icon": "asset:portus.png"}], "records": [{"title": "After Hours", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/after-hours/1499378108", "cover": "asset:record-1499378108.jpg", "width": 600, "height": 600, "spine_color": "#352a18", "spine_ink": "#faf9f6"}, {"title": "Ah Yeah", "author": "EXID", "url": "https://music.apple.com/cn/album/ah-yeah/982223883", "cover": "asset:record-982223883.jpg", "width": 600, "height": 600, "spine_color": "#f1eff0", "spine_ink": "#252523"}, {"title": "Full Moon - EP", "author": "EXID", "url": "https://music.apple.com/cn/album/full-moon-ep/1305881083", "cover": "asset:record-1305881083.jpg", "width": 600, "height": 600, "spine_color": "#3b6381", "spine_ink": "#faf9f6"}, {"title": "HEART MAID", "author": "SUNMI", "url": "https://music.apple.com/cn/album/heart-maid/1848070290", "cover": "asset:record-1848070290.jpg", "width": 600, "height": 600, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "Starboy", "author": "Abel Tesfaye", "url": "https://music.apple.com/cn/album/starboy/1440871397", "cover": "asset:record-1440871397.jpg", "width": 600, "height": 600, "spine_color": "#c0042c", "spine_ink": "#faf9f6"}, {"title": "WE", "author": "EXID", "url": "https://music.apple.com/cn/album/we/1463174475", "cover": "asset:record-1463174475.jpg", "width": 600, "height": 600, "spine_color": "#e8372d", "spine_ink": "#faf9f6"}, {"title": "Street", "author": "EXID", "url": "https://music.apple.com/cn/album/street/1118367147", "cover": "asset:record-1118367147.jpg", "width": 600, "height": 600, "spine_color": "#f75f85", "spine_ink": "#faf9f6"}, {"title": "范特西", "author": "周杰伦", "url": "https://music.apple.com/cn/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206", "cover": "asset:record-535739206.jpg", "width": 600, "height": 600, "spine_color": "#ac1a1d", "spine_ink": "#faf9f6"}, {"title": "Inner Child", "author": "Shanice", "url": "https://music.apple.com/cn/album/inner-child/1444166430", "cover": "asset:record-1444166430.jpg", "width": 600, "height": 600, "spine_color": "#211b1d", "spine_ink": "#faf9f6"}, {"title": "我肯定在几百年前就说过爱你", "author": "告五人", "url": "https://music.apple.com/cn/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804", "cover": "asset:record-1546062804.jpg", "width": 600, "height": 600, "spine_color": "#b3b3b1", "spine_ink": "#252523"}, {"title": "新的心跳", "author": "邓紫棋", "url": "https://music.apple.com/cn/album/%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3/1053567923", "cover": "asset:record-1053567923.jpg", "width": 600, "height": 600, "spine_color": "#1a0f1e", "spine_ink": "#faf9f6"}], "books": [{"title": "Wild Thing", "author": "Sue Prideaux", "url": "https://book.douban.com/subject/37071291/", "cover": "asset:book-37071291.jpg", "width": 449, "height": 690, "spine_color": "#1c1a21", "spine_ink": "#faf9f6"}, {"title": "清代地方政府", "author": "瞿同祖", "url": "https://book.douban.com/subject/35713871/", "cover": "asset:book-35713871.jpg", "width": 1080, "height": 1552, "spine_color": "#0f1922", "spine_ink": "#faf9f6"}, {"title": "互联网思想十讲", "author": "段永朝", "url": "https://book.douban.com/subject/26253507/", "cover": "asset:book-26253507.jpg", "width": 353, "height": 500, "spine_color": "#ffffff", "spine_ink": "#252523"}, {"title": "资治通鉴", "author": "[宋]司马光", "url": "https://book.douban.com/subject/6790302/", "cover": "asset:book-6790302.jpg", "width": 720, "height": 1028, "spine_color": "#f3bf20", "spine_ink": "#252523"}, {"title": "中国的奋斗", "author": "[美]徐中约", "url": "https://book.douban.com/subject/36526876/", "cover": "asset:book-36526876.jpg", "width": 748, "height": 1020, "spine_color": "#fffde4", "spine_ink": "#252523"}, {"title": "醉古堂剑扫", "author": "（明）陆绍珩 等撰", "url": "https://book.douban.com/subject/1105448/", "cover": "asset:book-1105448.jpg", "width": 600, "height": 982, "spine_color": "#ece4aa", "spine_ink": "#252523"}, {"title": "孙犁全集（1-11卷）", "author": "孙犁", "url": "https://book.douban.com/subject/1084028/", "cover": "asset:book-1084028.jpg", "width": 600, "height": 885, "spine_color": "#87424d", "spine_ink": "#faf9f6", "spine_title": "孙犁全集"}, {"title": "以利为利", "author": "周飞舟", "url": "https://book.douban.com/subject/10587755/", "cover": "asset:book-10587755.jpg", "width": 354, "height": 500, "spine_color": "#fcfef3", "spine_ink": "#252523"}, {"title": "历史三调", "author": "[美]柯文", "url": "https://book.douban.com/subject/26427101/", "cover": "asset:book-26427101.jpg", "width": 462, "height": 699, "spine_color": "#b7091f", "spine_ink": "#faf9f6"}, {"title": "大问题（第十版）", "author": "[美] 罗伯特·所罗门 / 凯思林·希金斯", "url": "https://book.douban.com/subject/30176572/", "cover": "asset:book-30176572.jpg", "width": 553, "height": 807, "spine_color": "#e1e0e3", "spine_ink": "#252523", "spine_title": "大问题"}, {"title": "黑客与画家", "author": "[美] Paul Graham", "url": "https://book.douban.com/subject/6021440/", "cover": "asset:book-6021440.jpg", "width": 421, "height": 591, "spine_color": "#e7d4d5", "spine_ink": "#252523"}, {"title": "世界观 (第3版)", "author": "[美] 理查德·德威特", "url": "https://book.douban.com/subject/35181762/", "cover": "asset:book-35181762.jpg", "width": 1080, "height": 1451, "spine_color": "#5a4183", "spine_ink": "#faf9f6", "spine_title": "世界观"}, {"title": "权力的毛细管作用", "author": "王汎森", "url": "https://book.douban.com/subject/26581737/", "cover": "asset:book-26581737.jpg", "width": 632, "height": 901, "spine_color": "#e6d8cb", "spine_ink": "#252523"}, {"title": "明代国家权力结构及运行机制", "author": "方志远", "url": "https://book.douban.com/subject/36594961/", "cover": "asset:book-36594961.jpg", "width": 1080, "height": 1523, "spine_color": "#ffffff", "spine_ink": "#252523", "spine_title": "明代国家权力结构"}, {"title": "可能性的艺术", "author": "刘瑜", "url": "https://book.douban.com/subject/35819419/", "cover": "asset:book-35819419.jpg", "width": 1080, "height": 1630, "spine_color": "#cbcac8", "spine_ink": "#252523"}, {"title": "柳如是别传（全三册）", "author": "陈寅恪", "url": "https://book.douban.com/subject/1034470/", "cover": "asset:book-1034470.jpg", "width": 300, "height": 457, "spine_color": "#8f7150", "spine_ink": "#faf9f6", "spine_title": "柳如是别传"}], "recent_count": 10, "recent_title": "", "records_title": "", "books_title": "推荐书籍", "show_toc": true, "show_cover": true, "support_qr": "asset:support.png", "wechat_qr": "asset:wechat-backup.png", "contact_cards": {"zhihu": {"name": "太隐", "bio": "独立博客作者 · 阅读与日常思考\n2026 年受邀入驻知乎。"}, "email": {"website": "https://wangyurui.com/"}, "github": {"login": "wangyr45", "calendar": [{"date": "2026-05-03", "level": 0}, {"date": "2026-05-04", "level": 0}, {"date": "2026-05-05", "level": 0}, {"date": "2026-05-06", "level": 0}, {"date": "2026-05-07", "level": 0}, {"date": "2026-05-08", "level": 0}, {"date": "2026-05-09", "level": 0}, {"date": "2026-05-10", "level": 0}, {"date": "2026-05-11", "level": 0}, {"date": "2026-05-12", "level": 0}, {"date": "2026-05-13", "level": 0}, {"date": "2026-05-14", "level": 0}, {"date": "2026-05-15", "level": 0}, {"date": "2026-05-16", "level": 0}, {"date": "2026-05-17", "level": 0}, {"date": "2026-05-18", "level": 0}, {"date": "2026-05-19", "level": 0}, {"date": "2026-05-20", "level": 0}, {"date": "2026-05-21", "level": 0}, {"date": "2026-05-22", "level": 0}, {"date": "2026-05-23", "level": 0}, {"date": "2026-05-24", "level": 0}, {"date": "2026-05-25", "level": 0}, {"date": "2026-05-26", "level": 0}, {"date": "2026-05-27", "level": 0}, {"date": "2026-05-28", "level": 0}, {"date": "2026-05-29", "level": 0}, {"date": "2026-05-30", "level": 0}, {"date": "2026-05-31", "level": 0}, {"date": "2026-06-01", "level": 0}, {"date": "2026-06-02", "level": 0}, {"date": "2026-06-03", "level": 0}, {"date": "2026-06-04", "level": 0}, {"date": "2026-06-05", "level": 0}, {"date": "2026-06-06", "level": 4}, {"date": "2026-06-07", "level": 0}, {"date": "2026-06-08", "level": 0}, {"date": "2026-06-09", "level": 0}, {"date": "2026-06-10", "level": 0}, {"date": "2026-06-11", "level": 0}, {"date": "2026-06-12", "level": 0}, {"date": "2026-06-13", "level": 0}, {"date": "2026-06-14", "level": 0}, {"date": "2026-06-15", "level": 0}, {"date": "2026-06-16", "level": 0}, {"date": "2026-06-17", "level": 0}, {"date": "2026-06-18", "level": 0}, {"date": "2026-06-19", "level": 0}, {"date": "2026-06-20", "level": 0}, {"date": "2026-06-21", "level": 0}, {"date": "2026-06-22", "level": 0}, {"date": "2026-06-23", "level": 0}, {"date": "2026-06-24", "level": 0}, {"date": "2026-06-25", "level": 0}, {"date": "2026-06-26", "level": 0}, {"date": "2026-06-27", "level": 0}, {"date": "2026-06-28", "level": 0}, {"date": "2026-06-29", "level": 0}, {"date": "2026-06-30", "level": 0}, {"date": "2026-07-01", "level": 0}, {"date": "2026-07-02", "level": 0}, {"date": "2026-07-03", "level": 0}, {"date": "2026-07-04", "level": 0}, {"date": "2026-07-05", "level": 0}, {"date": "2026-07-06", "level": 0}, {"date": "2026-07-07", "level": 0}, {"date": "2026-07-08", "level": 0}, {"date": "2026-07-09", "level": 0}, {"date": "2026-07-10", "level": 0}, {"date": "2026-07-11", "level": 0}, {"date": "2026-07-12", "level": 0}, {"date": "2026-07-13", "level": 0}, {"date": "2026-07-14", "level": 0}, {"date": "2026-07-15", "level": 0}, {"date": "2026-07-16", "level": 0}, {"date": "2026-07-17", "level": 0}, {"date": "2026-07-18", "level": 0}, {"date": "2026-07-19", "level": 0}, {"date": "2026-07-20", "level": 0}, {"date": "2026-07-21", "level": 0}, {"date": "2026-07-22", "level": 0}, {"date": "2026-07-23", "level": 0}, {"date": "2026-07-24", "level": 0}, {"date": "2026-07-25", "level": 0}, {"date": "2026-07-26", "level": 0}, {"date": "2026-07-27", "level": 0}, {"date": "2026-07-28", "level": 0}, {"date": "2026-07-29", "level": 0}, {"date": "2026-07-30", "level": 0}, {"date": "2026-07-31", "level": 0}, {"date": "2026-08-01", "level": 0}, {"date": "2026-08-02", "level": 0}, {"date": "2026-08-03", "level": 0}, {"date": "2026-08-04", "level": 0}, {"date": "2026-08-05", "level": 0}, {"date": "2026-08-06", "level": 0}, {"date": "2026-08-07", "level": 0}, {"date": "2026-08-08", "level": 4}, {"date": "2026-08-09", "level": 0}, {"date": "2026-08-10", "level": 0}, {"date": "2026-08-11", "level": 0}, {"date": "2026-08-12", "level": 0}, {"date": "2026-08-13", "level": 0}, {"date": "2026-08-14", "level": 0}, {"date": "2026-08-15", "level": 0}, {"date": "2026-08-16", "level": 0}, {"date": "2026-08-17", "level": 0}, {"date": "2026-08-18", "level": 0}, {"date": "2026-08-19", "level": 0}, {"date": "2026-08-20", "level": 0}, {"date": "2026-08-21", "level": 0}, {"date": "2026-08-22", "level": 0}, {"date": "2026-08-23", "level": 0}, {"date": "2026-08-24", "level": 0}, {"date": "2026-08-25", "level": 0}, {"date": "2026-08-26", "level": 0}, {"date": "2026-08-27", "level": 0}, {"date": "2026-08-28", "level": 0}, {"date": "2026-08-29", "level": 0}, {"date": "2026-08-30", "level": 0}, {"date": "2026-08-31", "level": 0}, {"date": "2026-09-01", "level": 0}, {"date": "2026-09-02", "level": 0}, {"date": "2026-09-03", "level": 0}, {"date": "2026-09-04", "level": 0}, {"date": "2026-09-05", "level": 0}, {"date": "2026-09-06", "level": 0}, {"date": "2026-09-07", "level": 0}, {"date": "2026-09-08", "level": 0}, {"date": "2026-09-09", "level": 0}, {"date": "2026-09-10", "level": 0}, {"date": "2026-09-11", "level": 0}, {"date": "2026-09-12", "level": 4}, {"date": "2026-09-13", "level": 4}], "updated": "2026-09-13"}, "podcast": {"name": "太隐观复", "handle": "太隐的播客 · 始于 2025", "bio": "把阅读与日常思考，慢慢说给你听。"}}, "portrait_dark": "asset:hero-portrait-night-web.png", "email": "pkm.tyne@gmail.com", "zhihu_url": "https://www.zhihu.com/people/vibkba"} %}
-{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.5/", true) %}
+{% set asset_base = static_url|default("https://cdn.jsdelivr.net/gh/wangyr45/cali-typlog@0.8.6/", true) %}
 {% set bundled_images = ["asset:hero-portrait-web.png", "asset:hero-portrait-night-web.png", "asset:dockpic.png", "asset:portus.png", "asset:wechat-backup.png", "asset:support.png", "asset:record-1499378108.jpg", "asset:record-982223883.jpg", "asset:record-1305881083.jpg", "asset:record-1848070290.jpg", "asset:record-1440871397.jpg", "asset:record-1463174475.jpg", "asset:record-1118367147.jpg", "asset:record-535739206.jpg", "asset:record-1444166430.jpg", "asset:record-1546062804.jpg", "asset:record-1053567923.jpg", "asset:book-37071291.jpg", "asset:book-35713871.jpg", "asset:book-26253507.jpg", "asset:book-6790302.jpg", "asset:book-36526876.jpg", "asset:book-1105448.jpg", "asset:book-1084028.jpg", "asset:book-34855029.jpg", "asset:book-10587755.jpg", "asset:book-26427101.jpg", "asset:book-30176572.jpg", "asset:book-6798611.jpg", "asset:book-1088022.jpg", "asset:book-6021440.jpg", "asset:book-35181762.jpg", "asset:book-26581737.jpg", "asset:book-36594961.jpg", "asset:book-35819419.jpg", "asset:book-1034470.jpg"] %}
 {% set supplied = query.config('cali-typlog') %}
 {% set supplied = supplied if supplied is mapping else {} %}
@@ -91,10 +91,20 @@
 
 {% set labels = {'home': '首页' if zh else 'Home', 'projects': '项目' if zh else 'Projects', 'archive': '文章归档' if zh else 'Archive', 'recent': '写作' if zh else 'Recent writing', 'subscribe': '订阅更新' if zh else 'Subscribe', 'search': '搜索文章' if zh else 'Search articles', 'topics': '阅读主题' if zh else 'Topics', 'empty': '暂时没有文章。' if zh else 'No articles yet.', 'menu': '导航与偏好' if zh else 'Navigation and preferences', 'toc': '本文目录' if zh else 'On this page', 'skip': '跳至正文' if zh else 'Skip to content', 'previous': '上一页' if zh else 'Previous', 'next': '下一页' if zh else 'Next', 'dark': '深色模式' if zh else 'Dark mode', 'protected': '受保护文章' if zh else 'Protected article'} %}
 
+{% set categories = [('Newsletter', '棱镜通讯'), ('YINREAD', '隐说'), ('Philosophy', '太隐哲思录'), ('Poetry', '浮生词话'), ('pieces', '望川文集'), ('history', '读史悟道')] %}
+{% set category = namespace(slug='', title='') %}
+{% if page and page.type == 'tag' %}
+  {% for slug, title in categories %}
+    {% if ('/tags/' ~ slug ~ '/') in (page.url|default('') ~ '/' ~ page.topic.url|default('')) %}
+      {% set category.slug = slug %}{% set category.title = title %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {% macro icon(index) %}<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{% if index == 0 %}<rect x="5" y="3" width="14" height="18" rx="2"/>
 <path d="M8 8h8M8 12h8M8 16h5"/>{% elif index == 1 %}<rect x="3" y="5" width="18" height="14" rx="2"/>
 <path d="m3 6 9 7 9-7"/>{% elif index == 2 %}<path d="M4 5h6a3 3 0 0 1 3 3v13a4 4 0 0 0-4-3H4ZM20 5h-4a3 3 0 0 0-3 3v13a4 4 0 0 1 4-3h3Z"/>{% elif index == 3 %}<circle cx="12" cy="8" r="4"/>
-<path d="M5 21v-2a7 7 0 0 1 14 0v2"/>{% elif index == 6 %}<path d="m14 4 6 6M3 17 16 4l4 4L7 21H3v-4Z"/><path d="m4 4 3-1 3 3-3 3-3-3V4Zm10 11 6 6 2-2-6-6M6 6l2 2"/>{% elif index == 5 %}<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>{% else %}<path d="M4 7h16M4 17h16"/>
+<path d="M5 21v-2a7 7 0 0 1 14 0v2"/>{% elif index == 6 %}<path d="m14 4 6 6M3 17 16 4l4 4L7 21H3v-4Z"/><path d="m4 4 3-1 3 3-3 3-3-3V4Zm10 11 6 6 2-2-6-6M6 6l2 2"/>{% elif index == 7 %}<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>{% elif index == 5 %}<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>{% else %}<path d="M4 7h16M4 17h16"/>
 <circle cx="9" cy="7" r="2" fill="var(--background)"/>
 <circle cx="15" cy="17" r="2" fill="var(--background)"/>{% endif %}</svg>{% endmacro %}
 
@@ -162,7 +172,7 @@
 {% macro header() %}
 {% set dock = namespace(about=none, secondary=[]) %}
 {% for nav in site.secondary_links|default([], true) %}
-  {% if platform(nav.url)|trim != 'wechat' %}{% set dock.secondary = dock.secondary + [nav] %}{% endif %}
+  {% if platform(nav.url)|trim not in ['wechat', 'zhihu', 'xiaoyuzhou'] %}{% set dock.secondary = dock.secondary + [nav] %}{% endif %}
 {% endfor %}
 {% for nav in site.primary_links|default([], true) %}
   {% set title = nav.title|trim|lower %}
@@ -185,8 +195,8 @@
 <span class="dock-rule" aria-hidden="true">
 </span>
 {{ dock_link({'url': linkify(site.list_url), 'title': labels.archive, 'blank': false}, 0) }}
+<a class="dock-item" data-cali-categories-link href="{{ linkify('/tags/' ~ (category.slug or 'Newsletter') ~ '/') }}" aria-label="{{ '分类' if zh else 'Categories' }}"{% if category.slug %} aria-current="page"{% endif %}>{{ icon(7) }}<span class="dock-label">{{ '分类' if zh else 'Categories' }}</span></a>
 {% if config.projects %}<a class="dock-item" data-cali-projects-link href="{{ projects_url }}" aria-label="{{ labels.projects }}" title="{{ labels.projects }}">{{ icon(6) }}<span class="dock-label">{{ labels.projects }}</span></a>{% endif %}
-<a class="dock-item" data-platform="xiaoyuzhou" href="https://taiyin.podcast.xyz" target="_blank" rel="noopener noreferrer" aria-label="{{ '播客名片' if zh else 'Podcast card' }}" title="{{ '播客名片' if zh else 'Podcast card' }}">{{ platform_icon('xiaoyuzhou') }}<span class="dock-label">{{ '播客名片' if zh else 'Podcast card' }}</span></a>
 {% if dock.secondary %}
 <div class="dock-secondary" role="group" aria-label="{{ '次要链接（可横向滑动）' if zh else 'Secondary links (scroll horizontally)' }}">
 {% for nav in dock.secondary %}{{ dock_link(nav, 5) }}{% endfor %}
@@ -271,6 +281,7 @@
 <div hidden aria-hidden="true">{% for brand in ['x','telegram','github','zhihu','xiaohongshu','bilibili','youtube','instagram','sinaweibo','rss','wechat','xiaoyuzhou'] %}<span data-cali-brand="{{ brand }}">{{ platform_icon(brand) }}</span>{% endfor %}</div>
 <div class="cali-contact" id="contact">
 <h2>{{ '联系' if zh else 'Contact' }}</h2>
+<div class="cali-secondary-source" hidden>{% for nav in site.secondary_links|default([], true) %}{% if public_url(nav.url)|trim and platform(nav.url)|trim != 'wechat' %}<a class="cali-secondary-link" data-platform="{{ platform(nav.url)|trim }}" href="{{ linkify(nav.url) }}" aria-label="{{ nav.title }}"{% if nav.blank %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ platform_icon(platform(nav.url)|trim) }}</a>{% endif %}{% endfor %}</div>
 <nav class="cali-social" data-site-url="{{ site.base_url }}" data-site-name="{{ site.name }}" data-site-avatar="{{ dock_portrait_url }}" data-site-bio="{{ site.summary|default('') }}" data-contact-cards="{{ config.contact_cards|tojson|forceescape }}" aria-label="{{ '联系' if zh else 'Contact' }}">{{ render_social_icons(site) }}<a href="{{ linkify('/feed.xml') }}" title="RSS">RSS <span aria-hidden="true">↗</span></a>
 {% set email = config.email|trim %}
 {% set email_check = namespace(valid=email and email.split('@')|length == 2 and '.' in email.split('@')[-1]) %}
@@ -405,7 +416,7 @@
 </svg>
 {% endmacro %}
 
-{% macro writing_list(subjects) %}
+{% macro writing_list(subjects, suffix='') %}
 {% set group = namespace(year=none, started=false) %}
 <div class="cali-writing-groups">
 {% for subject in subjects %}
@@ -413,8 +424,8 @@
   {% if not group.started or group.year != year %}
     {% if group.started %}</div></section>{% endif %}
     {% set group.year = year %}{% set group.started = true %}
-    <section class="cali-writing-year"{% if year %} aria-labelledby="writing-year-{{ year }}"{% endif %}>
-    {% if year %}{{ year_folio(year) }}<h2 id="writing-year-{{ year }}" class="cali-year-heading">{{ year }}</h2>{% endif %}
+    <section class="cali-writing-year"{% if year %} aria-labelledby="writing-year-{{ year }}{{ suffix }}"{% endif %}>
+    {% if year %}{{ year_folio(year) }}<h2 id="writing-year-{{ year }}{{ suffix }}" class="cali-year-heading">{{ year }}</h2>{% endif %}
     <div class="cali-list-grid">
   {% endif %}
   {{ card(subject, 'h3', true) }}
@@ -1357,15 +1368,12 @@ body {
   margin-top:12px;
   color:var(--muted-foreground);
 }
-.cali-pagination,.cali-years {
+.cali-pagination {
   display:flex;
   flex-wrap:wrap;
   gap:24px;
   margin-top:30px;
   font-size:13px;
-}
-.cali-years a[aria-current] {
-  text-decoration:underline;
 }
 .cali-pagination {
   justify-content:space-between;
@@ -2413,6 +2421,64 @@ body {
 @media(forced-colors:active) { .cali-new-badge { color:CanvasText; border-color:CanvasText; } }
 
 .cali-title-ending { white-space:nowrap; }
+
+/* Category browsing keeps navigation stable while the reading list changes. */
+.cali-category-tabs {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;padding:5px;border:1px solid var(--border);border-radius:14px;background:var(--gray-2);}
+.cali-category-tabs a {position:relative;display:flex;align-items:center;justify-content:center;min-height:48px;padding:8px 4px;border-radius:9px;font-size:13px;font-weight:450;white-space:nowrap;color:var(--muted-foreground);text-decoration:none;transition:background-color 160ms ease,color 160ms ease,box-shadow 160ms ease;}
+.cali-category-tabs a:hover {background:var(--muted);color:var(--foreground);}
+.cali-category-tabs a[aria-current="page"] {background:var(--background);color:var(--foreground);box-shadow:0 1px 3px #0000000d,inset 0 0 0 1px var(--border);}
+.cali-category-dot {position:absolute;bottom:5px;width:3px;height:3px;border-radius:50%;background:currentColor;opacity:0;}
+.cali-category-tabs a[aria-current="page"] .cali-category-dot {opacity:.65;}
+.cali-category-status {min-height:20px;margin:10px 0 20px;font-size:12px;color:var(--muted-foreground);}
+.cali-category-status a {color:inherit;text-underline-offset:4px;}
+[data-category-results],[data-archive-results] {overflow-anchor:none;}
+@media(max-width:640px) {
+  .cali-category-tabs {grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;}
+  .cali-category-tabs a {font-size:13px;min-height:46px;}
+  .cali-category-status {margin-bottom:12px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cali-category-tabs a,[data-category-results] {transition:none;}
+}
+
+.cali-category-more,.cali-category-rest>summary {display:block;margin:32px auto 0;padding:10px 24px;min-height:44px;border:1px solid var(--border);border-radius:999px;background:var(--background);color:var(--foreground);font:inherit;font-size:13px;cursor:pointer;text-align:center;list-style:none;}
+.cali-category-more[hidden] {display:none;}
+.cali-category-more:hover,.cali-category-rest>summary:hover {background:var(--muted);}
+.cali-category-more:disabled {opacity:.5;cursor:wait;}
+.cali-category-rest>summary::-webkit-details-marker {display:none;}
+.cali-category-rest[open]>.cali-writing-groups {margin-top:32px;}
+
+/* A compact year index stays above the archive instead of below its articles. */
+.cali-years {display:grid;grid-template-columns:repeat(auto-fit,minmax(42px,1fr));gap:4px;margin:0 0 32px;padding:6px;border:1px solid var(--border);border-radius:12px;background:var(--gray-2);}
+.cali-years a {position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;min-height:40px;border-radius:7px;color:var(--muted-foreground);font:400 12px/1.4 ui-monospace,monospace;font-variant-numeric:tabular-nums;transition:color 160ms ease,transform 180ms var(--ease-swift);}
+.cali-years a::before {content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--muted);opacity:0;transition:opacity 160ms ease;}
+.cali-years a[aria-current] {color:var(--background);font-weight:600;pointer-events:none;}
+.cali-years a[aria-current]::before {background:var(--foreground);opacity:1;}
+.cali-years a:focus-visible::before {opacity:1;}
+.cali-years a:active {transform:scale(.96);}
+@media(hover:hover) and (pointer:fine) {
+  .cali-years a:not([aria-current]):hover {transform:translateY(-1px);}
+  .cali-years a:hover::before {opacity:1;}
+}
+@media(max-width:640px) {
+  .cali-years {display:grid;grid-template-columns:repeat(auto-fit,minmax(48px,1fr));gap:3px;padding:5px;margin-bottom:28px;}
+  .cali-years a {min-height:44px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cali-years a,.cali-years a::before {transition:none;transform:none;}
+}
+
+.cali-archive-status {position:relative;height:0;z-index:1;color:var(--muted-foreground);font-size:12px;transform:translateY(-26px);}
+.cali-archive-status a {text-decoration:underline;text-underline-offset:3px;}
+[data-cali-archive] .cali-years a::before {transition:opacity 180ms ease,background-color 180ms ease;}
+@media(prefers-reduced-motion:reduce) {
+  [data-cali-archive] .cali-years a::before {transition:none;}
+}
+
+/* Crossfade only the reading surface; controls retain their position and contrast. */
+[data-category-results],[data-archive-results] {position:relative;isolation:isolate;}
+.cali-list-outgoing {position:absolute;inset:0;overflow:clip;pointer-events:none;user-select:none;}
+.cali-list-incoming {display:flow-root;}
 </style>{% endblock %}
 {% block script %}<script>
 (() => {
@@ -2756,7 +2822,7 @@ body {
 
   // Reuse configured secondary social links without duplicating native links.
   const existing = new Set([...nav.querySelectorAll("a")].map((a) => a.href.replace(/\/$/, "")));
-  document.querySelectorAll(".dock-secondary .dock-item[data-platform]").forEach((item) => {
+  document.querySelectorAll(".cali-secondary-source .cali-secondary-link[data-platform]").forEach((item) => {
     if (item.dataset.platform === "wechat" || !services[item.dataset.platform] || existing.has(item.href.replace(/\/$/, ""))) return;
     const link = document.createElement("a");
     link.href = item.href;
@@ -2954,6 +3020,223 @@ body {
 })();
 (() => {
   "use strict";
+  const categoryRoot = document.querySelector("[data-cali-categories]");
+  const root = categoryRoot || document.querySelector("[data-cali-archive]");
+  if (!root || !window.fetch || !window.AbortController) return;
+  const resultSelector = categoryRoot ? "[data-category-results]" : "[data-archive-results]";
+  const tabSelector = categoryRoot ? "[data-category]" : ".cali-years a";
+  const nav = root.querySelector(categoryRoot ? ".cali-category-tabs" : ".cali-years");
+  const tabs = [...root.querySelectorAll(tabSelector)];
+  const results = root.querySelector(resultSelector);
+  const status = root.querySelector(categoryRoot ? ".cali-category-status" : ".cali-archive-status");
+  if (!nav || !results || !status) return;
+  const dock = categoryRoot ? document.querySelector("[data-cali-categories-link]") : null;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const key = href => new URL(href, location.href).pathname.replace(/\/+$/, "");
+  const cache = new Map();
+  const initialURL = location.href;
+  let current = key(location.href), request, serial = 0, animations = [], outgoing;
+  const chinese = document.documentElement.lang.startsWith("zh");
+
+  // Import only inert article-list markup from the native Typlog list page.
+  function clean(source) {
+    const allowed = new Set(["DETAILS", "SUMMARY", "DIV", "SECTION", "HEADER", "NAV", "ARTICLE", "H2", "H3", "P", "A", "SPAN", "TIME", "IMG", "svg", "rect"]);
+    const attributes = new Set(["data-category-rest", "class", "id", "title", "aria-label", "aria-labelledby", "aria-hidden", "aria-current", "datetime", "hidden", "data-cali-new", "data-cali-image", "data-cali-cover", "width", "height", "alt", "loading", "decoding", "viewBox", "fill", "x", "y"]);
+    const fragment = document.createDocumentFragment();
+    for (const child of source.childNodes) {
+      if (child.nodeType === 3) { fragment.append(document.createTextNode(child.textContent)); continue; }
+      if (child.nodeType !== 1 || !allowed.has(child.tagName)) continue;
+      const copy = child.namespaceURI === "http://www.w3.org/2000/svg" ? document.createElementNS(child.namespaceURI, child.tagName) : document.createElement(child.tagName);
+      for (const attr of child.attributes) {
+        if (attributes.has(attr.name)) copy.setAttribute(attr.name, attr.value);
+        if ((attr.name === "href" && child.tagName === "A") || (attr.name === "src" && child.tagName === "IMG")) {
+          try {
+            const url = new URL(attr.value, location.href);
+            if (["http:", "https:"].includes(url.protocol)) copy.setAttribute(attr.name, url.href);
+          } catch { /* Invalid URLs do not become active links. */ }
+        }
+      }
+      copy.append(clean(child)); fragment.append(copy);
+    }
+    return fragment;
+  }
+  cache.set(current, {content: clean(results), title: document.title, active: key(tabs.find(tab => tab.hasAttribute("aria-current"))?.href || location.href)});
+  const more = categoryRoot ? root.querySelector("[data-category-more]") : null;
+  let pendingGroups = [];
+  function updateMore() {
+    const remaining = pendingGroups.reduce((sum, group) => sum + group.querySelectorAll("article").length, 0);
+    if (more) {
+      more.hidden = remaining === 0;
+      more.textContent = chinese ? `显示更多 · 还有 ${remaining} 篇` : `Show more · ${remaining} remaining`;
+    }
+    results.querySelectorAll(".cali-pagination,.cali-years").forEach(nav => { nav.hidden = remaining > 0; });
+  }
+  function preparePages() {
+    const rest = results.querySelector("[data-category-rest]");
+    pendingGroups = rest ? [...rest.querySelectorAll(".cali-writing-year")] : [];
+    rest?.remove();
+    updateMore();
+  }
+  function bindImages(scope) {
+    scope.querySelectorAll("img[data-cali-image]").forEach(img => {
+      const failed = () => { img.hidden = true; };
+      img.addEventListener("error", failed, {once: true});
+      if (img.complete && !img.naturalWidth) failed();
+    });
+  }
+  more?.addEventListener("click", () => {
+    const groups = results.querySelector(".cali-writing-groups");
+    let available = 20, first;
+    while (available && pendingGroups.length) {
+      const pending = pendingGroups[0];
+      const year = pending.querySelector(".cali-year-heading")?.textContent || "";
+      let target = [...groups.querySelectorAll(".cali-writing-year")].find(group => (group.querySelector(".cali-year-heading")?.textContent || "") === year);
+      if (!target) {
+        target = pending.cloneNode(false);
+        for (const child of pending.children) target.append(child.cloneNode(!child.classList.contains("cali-list-grid")));
+        groups.append(target);
+      }
+      const batch = [...pending.querySelectorAll("article")].slice(0, available);
+      for (const article of batch) {
+        first ||= article.querySelector(".blog-row");
+        target.querySelector(".cali-list-grid").append(article);
+        bindImages(article);
+      }
+      available -= batch.length;
+      if (!pending.querySelector("article")) pendingGroups.shift();
+    }
+    updateMore();
+    document.dispatchEvent(new Event("cali:content"));
+    first?.focus({preventScroll: true});
+  });
+  preparePages();
+  function stopMotion() {
+    animations.forEach(effect => effect.cancel());
+    animations = [];
+    outgoing?.remove(); outgoing = null;
+  }
+  function show(entry, link, push, id, instant) {
+    if (id !== serial) return;
+    const motion = !instant && !reduced.matches && results.animate;
+    const previous = results.querySelector(".cali-list-incoming");
+    const appearance = motion && previous ? getComputedStyle(previous) : null;
+    const opacity = appearance?.opacity || "1", transform = appearance?.transform || "none";
+    const footer = document.querySelector(".cali-footer");
+    const footerTop = motion ? footer?.getBoundingClientRect().top : null;
+    stopMotion();
+    // Move the existing nodes into a short-lived, inert visual layer. No duplicate IDs.
+    const oldLayer = motion ? document.createElement("div") : null;
+    if (oldLayer) {
+      oldLayer.className = "cali-list-outgoing";
+      oldLayer.setAttribute("aria-hidden", "true");
+      oldLayer.setAttribute("inert", "");
+      oldLayer.style.opacity = opacity;
+      oldLayer.style.transform = transform;
+      oldLayer.append(...(previous ? previous.childNodes : results.childNodes));
+      oldLayer.querySelectorAll("[id]").forEach(node => node.removeAttribute("id"));
+    }
+    const incoming = document.createElement("div");
+    incoming.className = "cali-list-incoming";
+    incoming.append(entry.content.cloneNode(true));
+    results.replaceChildren(incoming);
+    current = key(link.href);
+    if (push) history.pushState(null, "", link.href);
+    document.title = entry.title;
+    tabs.forEach(tab => {
+      if (key(tab.href) === entry.active) tab.setAttribute("aria-current", "page");
+      else tab.removeAttribute("aria-current");
+    });
+    if (dock) { dock.href = link.href; dock.setAttribute("aria-current", "page"); }
+    preparePages();
+    bindImages(incoming);
+    document.dispatchEvent(new Event("cali:content"));
+    if (!motion) return;
+    outgoing = oldLayer;
+    results.append(oldLayer);
+    const easing = getComputedStyle(document.documentElement).getPropertyValue("--ease-spring").trim() || "cubic-bezier(.23,1,.32,1)";
+    const exit = oldLayer.animate([{opacity: Number(opacity)}, {opacity: 0}], {duration: 120, easing, fill: "forwards"});
+    animations.push(exit, incoming.animate([
+      {opacity: .15, transform: "translateY(2px)"}, {opacity: 1, transform: "translateY(0)"}
+    ], {duration: 200, easing}));
+    exit.finished.then(() => {
+      oldLayer.remove();
+      if (outgoing === oldLayer) outgoing = null;
+    }).catch(() => {});
+    // Bridge nearby footer movement with a transform, without resizing every article frame.
+    if (footer && footerTop != null) {
+      const nextTop = footer.getBoundingClientRect().top;
+      const delta = footerTop - nextTop;
+      if (nextTop < window.innerHeight && Math.abs(delta) > 1) {
+        const visible = footerTop < window.innerHeight;
+        animations.push(footer.animate([
+          {opacity: visible ? 1 : .15, transform: `translateY(${visible ? Math.max(-24, Math.min(24, delta)) : 8}px)`},
+          {opacity: 1, transform: "translateY(0)"}
+        ], {duration: 200, easing}));
+      }
+    }
+  }
+  async function select(link, push = true, instant = false) {
+    const id = ++serial;
+    request?.abort();
+    request = new AbortController();
+    const controller = request;
+    root.classList.remove("is-loading");
+    status.replaceChildren();
+    if (more) more.disabled = false;
+    if (key(link.href) === current || (push && link.hasAttribute?.("aria-current"))) { results.removeAttribute("aria-busy"); return; }
+    results.setAttribute("aria-busy", "true");
+    if (more) more.disabled = true;
+    const loading = setTimeout(() => {
+      if (id !== serial) return;
+      root.classList.add("is-loading");
+      status.textContent = chinese ? "正在读取文章…" : "Loading articles…";
+    }, 400);
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    try {
+      let entry = cache.get(key(link.href));
+      if (!entry) {
+        const response = await fetch(link.href, {signal: controller.signal, credentials: "same-origin", headers: {Accept: "text/html"}});
+        if (!response.ok || new URL(response.url).origin !== location.origin) throw new Error("Category unavailable");
+        const html = await response.text();
+        if (html.length > 3000000) throw new Error("Category too large");
+        const parsed = new DOMParser().parseFromString(html, "text/html");
+        const source = parsed.querySelector(resultSelector);
+        const selected = parsed.querySelector(categoryRoot ? "[data-category][aria-current='page']" : ".cali-years a[aria-current='page']");
+        if (!source || !selected || key(selected.getAttribute("href")) !== key(link.href)) throw new Error("Invalid category");
+        entry = {content: clean(source), title: parsed.title, active: key(selected.getAttribute("href"))};
+        cache.set(key(link.href), entry);
+        if (cache.size > 12) cache.delete([...cache.keys()].find(value => value !== key(initialURL)));
+      }
+      if (id !== serial) return;
+      show(entry, link, push, id, instant);
+      if (id === serial) status.textContent = "";
+    } catch {
+      if (id !== serial) return;
+      if (!push) { location.reload(); return; }
+      const fallback = document.createElement("a");
+      fallback.href = link.href;
+      fallback.textContent = chinese ? "暂时无法读取，打开栏目页面 ↗" : "Unable to load. Open category ↗";
+      status.replaceChildren(fallback);
+    } finally {
+      clearTimeout(loading); clearTimeout(timeout);
+      if (id === serial) { if (more) more.disabled = false; root.classList.remove("is-loading"); results.removeAttribute("aria-busy"); }
+    }
+  }
+  nav.addEventListener("click", event => {
+    const link = event.target.closest(categoryRoot ? "a[data-category]" : ".cali-years a");
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    select(link, true, event.detail === 0);
+  });
+  window.addEventListener("popstate", () => {
+    const link = key(location.href) === key(initialURL) ? {href: initialURL} : tabs.find(tab => key(tab.href) === key(location.href));
+    if (link) select(link, false);
+  });
+  window.addEventListener("pagehide", () => { ++serial; request?.abort(); stopMotion(); });
+  window.addEventListener("pageshow", () => { if (more) more.disabled = false; root.classList.remove("is-loading"); results.removeAttribute("aria-busy"); status.replaceChildren(); });
+})();
+(() => {
+  "use strict";
   const main = document.getElementById("cali-main");
   if (!main) return;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -2979,6 +3262,7 @@ body {
     });
   }
   updateCurrent();
+  document.addEventListener("cali:content", updateCurrent);
   document.addEventListener("click", event => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
     const link = event.target.closest?.("a[href]");
@@ -3025,7 +3309,7 @@ body {
 (() => {
   "use strict";
   const lifetime = 14 * 24 * 60 * 60 * 1000;
-  const items = [...document.querySelectorAll(".blog-row")].map(row => ({
+  const readItems = () => [...document.querySelectorAll(".blog-row")].map(row => ({
     badge: row.querySelector("[data-cali-new]"),
     published: Date.parse(row.querySelector("time[datetime]")?.getAttribute("datetime") || "")
   })).filter(item => item.badge && Number.isFinite(item.published));
@@ -3034,7 +3318,7 @@ body {
     clearTimeout(timer);
     const now = Date.now();
     let next = Infinity;
-    items.forEach(({badge, published}) => {
+    readItems().forEach(({badge, published}) => {
       badge.hidden = now < published || now >= published + lifetime;
       const boundary = now < published ? published : published + lifetime;
       if (boundary > now) next = Math.min(next, boundary - now);
@@ -3042,6 +3326,7 @@ body {
     if (Number.isFinite(next)) timer = setTimeout(update, Math.min(next + 1, 2147483647));
   }
   update();
+  document.addEventListener("cali:content", update);
   window.addEventListener("pageshow", update);
   window.addEventListener("pagehide", () => clearTimeout(timer));
   document.addEventListener("visibilitychange", () => { if (!document.hidden) update(); });
@@ -3050,7 +3335,16 @@ body {
 {% block body %}
 <div class="cali-shell">
   {{ header() }}
-  <main id="cali-main" class="cali-container cali-list" tabindex="-1">
+  <main id="cali-main" class="cali-container cali-list" tabindex="-1"{% if not category.slug and page.years and page.base_url %} data-cali-archive{% endif %}>
+    {% if category.slug %}
+    <section class="cali-categories" data-cali-categories>
+      <header class="cali-page-heading cali-writing-heading cali-category-heading"><h1>{{ '分类' if zh else 'Categories' }}</h1></header>
+      <nav class="cali-category-tabs" aria-label="{{ '文章分类' if zh else 'Article categories' }}">
+        {% for slug, title in categories %}<a href="{{ linkify('/tags/' ~ slug ~ '/') }}" data-category="{{ slug }}"{% if category.slug == slug %} aria-current="page"{% endif %}>{{ title }}<span class="cali-category-dot" aria-hidden="true"></span></a>{% endfor %}
+      </nav>
+      <p class="cali-category-status" role="status" aria-live="polite"></p>
+      <div id="cali-category-articles" data-category-results>
+    {% else %}
     <header class="cali-page-heading cali-writing-heading">
       {% if page.type == 'tag' %}<h1>{{ page.topic.title }}</h1>{% if page.topic.summary %}<p>{{ page.topic.summary }}</p>{% endif %}
       {% elif page.type == 'author' %}<h1>{{ page.topic.name }}</h1>
@@ -3068,14 +3362,25 @@ body {
         </nav>
       {% endif %}
     </header>
-    {{ writing_list(page.items) }}
+    {% endif %}
+    {% if page.years and page.base_url %}
+    <nav class="cali-years" aria-label="{{ '归档年份' if zh else 'Archive years' }}">
+      {% for year in page.years|sort(reverse=true) %}<a href="{{ linkify(page.base_url ~ year ~ '/') }}"{% if page.year == year %} aria-current="page"{% endif %}><span>{{ year }}</span></a>{% endfor %}
+    </nav>
+    {% endif %}
+    {% if not category.slug and page.years and page.base_url %}<p class="cali-archive-status" role="status" aria-live="polite"></p><div data-archive-results>{% endif %}
+    {% if category.slug %}
+      {{ writing_list(page.items[:20]) }}
+      {% if page.items|length > 20 %}<details data-category-rest class="cali-category-rest"><summary>{{ '显示更多' if zh else 'Show more' }}</summary>{{ writing_list(page.items[20:], '-more') }}</details>{% endif %}
+    {% else %}{{ writing_list(page.items) }}{% endif %}
     {% if page.prev_url or page.next_url %}
     <nav class="cali-pagination" aria-label="Pagination">
       {% if page.prev_url %}<a href="{{ linkify(page.prev_url) }}">← {{ labels.previous }}{% if page.prev_year %} · {{ page.prev_year }}{% endif %}</a>{% endif %}
       {% if page.next_url %}<a href="{{ linkify(page.next_url) }}">{{ labels.next }}{% if page.next_year %} · {{ page.next_year }}{% endif %} →</a>{% endif %}
     </nav>
     {% endif %}
-    {% if page.years and page.base_url %}<nav class="cali-years" aria-label="Years">{% for year in page.years|reverse %}<a href="{{ linkify(page.base_url ~ year ~ '/') }}"{% if page.year == year %} aria-current="page"{% endif %}>{{ year }}</a>{% endfor %}</nav>{% endif %}
+    {% if not category.slug and page.years and page.base_url %}</div>{% endif %}
+    {% if category.slug %}</div><button type="button" class="cali-category-more" data-category-more aria-controls="cali-category-articles" hidden>{{ '显示更多' if zh else 'Show more' }}</button></section>{% endif %}
   </main>
   {{ footer() }}
 </div>
