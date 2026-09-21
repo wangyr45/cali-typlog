@@ -44,7 +44,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory preview
 ```
 
 The build produces three templates with inline CSS/JavaScript, bundled images, and
-`dist/cali-typlog-0.8.6.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
+`dist/cali-typlog-0.8.7.zip`. No Node runtime or separate image account is required. Typlog serves the bundled
 images through its theme static URL. Keep the assets directory in the release. Edit source files under `src/` and run the build; do not edit the
 generated root templates. The `/settings-demo/` preview exercises runtime settings without rebuilding.
 The `/components/` preview demonstrates optional
@@ -211,3 +211,9 @@ bright halo. Use consistent dot spacing on desktop and mobile.
 - Switch category and archive lists in place with a short crossfade, cached results, safe cancellation, and native-link fallback.
 - Keep keyboard and reduced-motion list navigation immediate.
 - Include the reviewed night portrait framing refinements.
+
+## Version 0.8.7
+
+- Display full article-list covers in a consistent 2.35:1 frame on home, category, and archive pages.
+- Use smaller frames on mobile and retain uncropped images of other aspect ratios.
+- Keep article body markup and article cover styles unchanged.
