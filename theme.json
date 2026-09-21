@@ -3,7 +3,7 @@
   "name#zh": "Cali · Typlog",
   "author": "wangyr45",
   "repo": "wangyr45/cali-typlog",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "templates": [
     "home.j2",
     "list.j2",
